@@ -12,6 +12,15 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmCustomer : Form
     {
+        string name;
+        string surname;
+        int intTryParseOut;
+        double doubleTryParseOut;
+        string contactString;
+        string paymentDue;
+        string paymentMade;
+        string[] numbers = new string[10];
+
         public frmCustomer()
         {
             InitializeComponent();
@@ -83,6 +92,86 @@ namespace FleetTrackingInformationSystem
                     --stopper;
                 }
             }
+        }
+
+        public void CheckForNumbers(string name, string surname)
+        {
+            for (int x = 0; x < numbers.Length; x++)
+            {
+                numbers[x] = (x + 1).ToString();
+                if(name.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                }
+                if(surname.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
+                }
+            }
+        }
+
+        public void CheckForLetters(string contact, string paymentMade, string PaymentDue)
+        {
+            if(int.TryParse(contact, out intTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Contact Number' field cannot contain letters");
+            }
+            if(double.TryParse(PaymentDue, out doubleTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Payment Due' field cannot contain letters");
+            }
+            if(double.TryParse(paymentMade, out doubleTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Payment Made' field cannot contain letters");
+            }
+        }
+
+        public void CheckEmpty()
+        {
+            if(txtID.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Customer ID' field is empty");
+            }
+            if(txtName.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Customer Name' field is empty");
+            }
+            if(txtSurname.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Customer Surname' field is empty");
+            }
+            if(cboCustomer.Text == string.Empty)
+            {
+                MessageBox.Show("Please select a customer type from the drop down list");
+            }
+            if(txtContact.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Contact Number' field is empty");
+            }
+            if(txtEmail.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Email Address' field is empty");
+            }
+            if(txtPaymentDue.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Payment Due' field is empty");
+            }
+            if(txtPaymentMade.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Payment Made' field is empty");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            contactString = txtContact.Text;
+            paymentDue = txtPaymentDue.Text;
+            paymentMade = txtPaymentMade.Text;
+            name = txtName.Text;
+            surname = txtSurname.Text;
+            CheckEmpty();
+            CheckForNumbers(name, surname);
+            CheckForLetters(contactString, paymentDue, paymentMade);
         }
     }
 }

@@ -12,6 +12,13 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmEmployee : Form
     {
+        string name;
+        string surname;
+        string contact;
+        string salary;
+        int intTryParseOut;
+        double doubleTryParseOut;
+        string[] numbers = new string[10];
         public frmEmployee()
         {
             InitializeComponent();
@@ -84,6 +91,81 @@ namespace FleetTrackingInformationSystem
                     --stopper;
                 }
             }
+        }
+
+        public void CheckForNumbers(string name, string surname)
+        {
+            for (int x = 0; x < numbers.Length; x++)
+            {
+                numbers[x] = (x + 1).ToString();
+                if (name.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                }
+                if (surname.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
+                }
+            }
+        }
+
+        public void CheckForLetters(string contact, string salary)
+        {
+            if (int.TryParse(contact, out intTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Contact Number' field cannot contain letters");
+            }
+            if (double.TryParse(salary, out doubleTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Monthly Salary' field cannot contain letters");
+            }
+        }
+
+        public void CheckEmpty()
+        {
+            if (txtName.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Employee Name' field is empty");
+            }
+            if (txtSurname.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Employee Surname' field is empty");
+            }
+            if (txtID.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Employee ID' field is empty");
+            }
+            if (cboPosition.Text == string.Empty)
+            {
+                MessageBox.Show("Select the employee position from the drop down list");
+            }
+            if (txtAddress.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Employee Address' field is empty");
+            }
+            if (txtContactNum.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Contact Number' field is empty");
+            }
+            if (txtEmail.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Email Address' field is empty");
+            }
+            if (txtSalary.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Monthly Salary' field is empty");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            name = txtName.Text;
+            surname = txtSurname.Text;
+            contact = txtContactNum.Text;
+            salary = txtSalary.Text;
+            CheckEmpty();
+            CheckForNumbers(name, surname);
+            CheckForLetters(contact, salary);
         }
     }
 }

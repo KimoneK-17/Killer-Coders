@@ -12,6 +12,8 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmLocation : Form
     {
+        string manager;
+        string[] numbers = new string[10];
         public frmLocation()
         {
             InitializeComponent();
@@ -80,6 +82,49 @@ namespace FleetTrackingInformationSystem
                     --stopper;
                 }
             }
+        }
+
+        public void CheckForNumbers(string manager)
+        {
+            for (int x = 0; x < numbers.Length; x++)
+            {
+                numbers[x] = (x + 1).ToString();
+                if (manager.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Manager In Charge' field cannot contain numbers");
+                }
+            }
+        }
+
+        public void CheckEmpty()
+        {
+            if(txtLocationID.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Location ID' field is empty");
+            }
+            if(txtManager.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Manager In Charge' field is empty");
+            }
+            if(cboCity.Text == string.Empty)
+            {
+                MessageBox.Show("Please select a city from the drop down list");
+            }
+            if(cboLocationName.Text == string.Empty)
+            {
+                MessageBox.Show("Please select a location from the drop down list");
+            }
+            if(cboProvince.Text == string.Empty)
+            {
+                MessageBox.Show("Please select a province from the drop down list");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            manager = txtManager.Text;
+            CheckEmpty();
+            CheckForNumbers(manager);
         }
     }
 }
