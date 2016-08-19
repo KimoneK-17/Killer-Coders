@@ -12,6 +12,9 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmTripUsage : Form
     {
+        double doubleTryParseOut;
+        string kmTravelled;
+        string fuelUsage;
         public frmTripUsage()
         {
             InitializeComponent();
@@ -81,6 +84,50 @@ namespace FleetTrackingInformationSystem
                     --stopper;
                 }
             }
+        }
+
+        public void CheckForLetters(string fuelUsage, string kmTravelled)
+        {
+            if (double.TryParse(fuelUsage, out doubleTryParseOut) == false)
+            {
+                MessageBox.Show("The 'Fuel Usage' field cannot contain letters");
+            }
+            if (double.TryParse(kmTravelled, out doubleTryParseOut) == false)
+            {
+                MessageBox.Show("The 'KM Travelled' field cannot contain letters");
+            }
+        }
+
+        public void CheckEmpty()
+        {
+            if(txtFuelUsage.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Fuel Usage' field is empty");
+            }
+            if(txtKM.Text == string.Empty)
+            {
+                MessageBox.Show("The 'KM Travelled' field is empty");
+            }
+            if(txtTripID.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Trip ID' field is empty");
+            }
+            if(txtVehicleIncidents.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Vehicle Incidents' field is empty");
+            }
+            if(txtVehicleRegNumber.Text == string.Empty)
+            {
+                MessageBox.Show("The 'Vehicle Reg Number' field is empty");
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            fuelUsage = txtFuelUsage.Text;
+            kmTravelled = txtKM.Text;
+            CheckEmpty();
+            CheckForLetters(fuelUsage, kmTravelled);
         }
     }
 }

@@ -165,9 +165,9 @@
             this.lblContact.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContact.Location = new System.Drawing.Point(29, 392);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(116, 19);
+            this.lblContact.Size = new System.Drawing.Size(126, 19);
             this.lblContact.TabIndex = 21;
-            this.lblContact.Text = "Contact Details:";
+            this.lblContact.Text = "Contact Number:";
             // 
             // lblEmail
             // 
