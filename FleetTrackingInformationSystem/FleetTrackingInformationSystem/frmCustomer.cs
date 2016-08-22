@@ -12,13 +12,16 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmCustomer : Form
     {
-        string name;
-        string surname;
+        string C_ID;
+        string C_NAME;
+        string C_SNAME;
+        string C_TYPE;
         int intTryParseOut;
         double doubleTryParseOut;
-        string contactString;
-        string paymentDue;
-        string paymentMade;
+        string C_CONTACT;
+        string C_EMAIL;
+        string C_DUE;
+        string C_MADE;
         string[] numbers = new string[10];
 
         public frmCustomer()
@@ -164,14 +167,19 @@ namespace FleetTrackingInformationSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            contactString = txtContact.Text;
-            paymentDue = txtPaymentDue.Text;
-            paymentMade = txtPaymentMade.Text;
-            name = txtName.Text;
-            surname = txtSurname.Text;
+            C_CONTACT = txtContact.Text;
+            C_DUE = txtPaymentDue.Text;
+            C_MADE = txtPaymentMade.Text;
+            C_NAME = txtName.Text;
+            C_SNAME = txtSurname.Text;
             CheckEmpty();
-            CheckForNumbers(name, surname);
-            CheckForLetters(contactString, paymentDue, paymentMade);
+            CheckForNumbers(C_NAME, C_SNAME);
+            CheckForLetters(C_CONTACT, C_DUE, C_MADE);
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
