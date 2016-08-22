@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -175,11 +176,41 @@ namespace FleetTrackingInformationSystem
             CheckEmpty();
             CheckForNumbers(C_NAME, C_SNAME);
             CheckForLetters(C_CONTACT, C_DUE, C_MADE);
+
+            try
+            {
+
+
+                DBConnect objDBConnect = new DBConnect();
+
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
+               
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                MessageBox.Show("SUCCESSFULLY INSERTED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
