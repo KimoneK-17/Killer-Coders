@@ -168,6 +168,17 @@ namespace FleetTrackingInformationSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            C_ID = txtID.Text;
+            C_EMAIL = txtEmail.Text;
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(C_EMAIL);// validates email address
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+            C_TYPE = cboCustomer.SelectedItem.ToString();
             C_CONTACT = txtContact.Text;
             C_DUE = txtPaymentDue.Text;
             C_MADE = txtPaymentMade.Text;

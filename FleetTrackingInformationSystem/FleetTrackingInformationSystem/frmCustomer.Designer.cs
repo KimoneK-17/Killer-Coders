@@ -269,6 +269,9 @@
             // 
             this.cboCustomer.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCustomer.FormattingEnabled = true;
+            this.cboCustomer.Items.AddRange(new object[] {
+            "Vehicle Hire",
+            "Application Hire"});
             this.cboCustomer.Location = new System.Drawing.Point(195, 337);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(234, 26);
