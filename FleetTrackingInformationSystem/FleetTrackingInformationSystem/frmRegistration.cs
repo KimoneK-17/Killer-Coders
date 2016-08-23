@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
+using System.Net.Mail;
+using System.Net;
 
 namespace FleetTrackingInformationSystem
 {
@@ -17,43 +20,17 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
+        string dateOfBirth;
+        string regName;
+        string regSname;
+        string userName;
+        string password;
+        string emailAddress = "myvcemail@gmail.com";
+        string emailPass = "ice-cream2";
+        string currDate;
+        string empPosition;
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (StreamWriter writetext = new StreamWriter("RegistrationDetails.txt")) // Creates Text File
-                {
-                    string dateOfBirth = dtpDateOfBirth.Value.ToShortDateString();
-                    string name = txtName.Text;
-                    string surname = txtSurname.Text;
-                    string userName = txtUserName.Text;
-                    string password = txtPass.Text;
-                    writetext.WriteLine("Registration Details:"); // Writes to the Text File
-                    writetext.WriteLine("Name is: " + name);
-                    writetext.WriteLine("Surname is: " + surname);
-                    writetext.WriteLine("Date of Birth is: " + dateOfBirth);
-                    writetext.WriteLine("User Name is: " + userName);
-                    writetext.WriteLine("Password is: " + password);
-                }
-                MessageBox.Show("Registration Successful");
-                this.Hide();
-                frmLogin log = new frmLogin();
-                log.ShowDialog(); // Goes back to Login Form
-            }
-            catch
-            {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
-            }            
-        }
+        
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -120,5 +97,91 @@ namespace FleetTrackingInformationSystem
                 }
             }
         }
+
+        private string CurrDate(string date)
+        {
+            DateTime localDate = DateTime.Now;
+
+            var culture = new CultureInfo("en-GB");
+         date = localDate.ToString(culture);
+
+          return date;
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            dateOfBirth = dtpDateOfBirth.Value.ToShortDateString();
+            regName = txtName.Text;
+            regSname = txtSurname.Text;
+            userName = txtUserName.Text;
+            password = txtPass.Text;
+            currDate = CurrDate(currDate);
+            empPosition = cboEmpPosition.SelectedItem.ToString();
+
+            Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
+            try
+            {
+                using (StreamWriter writetext = new StreamWriter("UserCred.txt")) // Creates Text File
+                {
+
+                    string s = dateOfBirth + "," + regName + "," + regSname + "," + userName + "," + password;
+                    writetext.WriteLine(s);
+                }
+
+                try
+                {
+                    try
+                    {
+
+                        SmtpClient client = new SmtpClient("smtp.gmail.com");
+                        client.Port = 587;
+                        client.EnableSsl = true;
+                        client.Timeout = 100000;
+                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        client.UseDefaultCredentials = false;
+
+                        client.Credentials = new NetworkCredential(
+                          emailAddress, emailPass);//logins into your email account
+
+                        //gets values from the textboxes
+                        MailMessage msg = new MailMessage();
+                        msg.To.Add(txtEmail.Text);
+                        msg.From = new MailAddress(emailAddress);//checks that email address exists
+                        msg.Subject = "Successful Registration - Fleet Tracking Application";
+                        msg.Body = "Hello " + regName.ToUpper() + " " + regSname.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + currDate + "\nUser Name: " + userName + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
+
+                        client.Send(msg);
+
+                        Cursor.Current = Cursors.Default;// when processing is done default curser will appear
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Email Confirmation Not Sent: " + ex.Message);
+                    }
+                }
+                catch
+                {
+
+                }
+
+                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: "+emailAddress);
+                this.Hide();
+                frmLogin log = new frmLogin();
+                log.ShowDialog(); // Goes back to Login Form
+            }
+            catch
+            {
+                int stopper = 1;
+                while (stopper == 1)
+                {
+                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                    this.Hide();
+                    frmLogin log = new frmLogin();
+                    log.ShowDialog();
+                    --stopper;
+                }
+            }            
+        }
+
     }
 }

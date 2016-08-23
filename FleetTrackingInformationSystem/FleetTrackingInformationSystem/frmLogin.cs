@@ -91,8 +91,8 @@ namespace FleetTrackingInformationSystem
                                 {
 
                                     arrUserCred = line.Split(',');
-                                    name = arrUserCred[0];
-                                    pass = arrUserCred[1];// populates array from file
+                                    name = arrUserCred[3];
+                                    pass = arrUserCred[4];// populates array from file
 
                                     if (userName.ToLower().Equals(name.ToLower()))
                                     {
@@ -118,7 +118,7 @@ namespace FleetTrackingInformationSystem
 
                                     if (((line = file.ReadLine()) == null) && (!(name.ToLower().Equals(userName))))
                                     {
-                                        MessageBox.Show("Failed Attempt, Incorrect Username");
+                                        //MessageBox.Show("Failed Attempt, Incorrect Username");
                                         count++;
                                         //cannot find username in file
                                     }
