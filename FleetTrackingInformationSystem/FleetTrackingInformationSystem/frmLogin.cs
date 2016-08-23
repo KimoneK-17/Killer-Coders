@@ -17,7 +17,16 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
-
+        string userName;
+        string password;
+        string line;
+        string name;
+        string pass;
+        System.IO.StreamReader file;
+        string[] arrUserCred;
+        int count = 0;
+        bool found = false;
+        //declarations
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtUser.Clear(); // Clears the Text Box
@@ -28,8 +37,6 @@ namespace FleetTrackingInformationSystem
         {
             try // Tries the Code
             {
-                string userName = txtUser.Text; // Gets the Username from Text Box
-                string password = txtPass.Text; // Gets Password from Text box
                 this.Hide(); // Will Hide this Form
                 frmRegistration reg = new frmRegistration(); // Creates an Object 
                 reg.ShowDialog(); // Shows the Registration Form
@@ -50,12 +57,102 @@ namespace FleetTrackingInformationSystem
 
         private void btnLog_Click(object sender, EventArgs e)
         {
+
             try
-            {        
-                    this.Hide();
-                    MessageBox.Show("Login Successful");
-                    frmMenu m = new frmMenu();
-                    m.ShowDialog(); //Shows Menu Form  
+            {
+                userName = txtUser.Text; // Gets the Username from Text Box
+                password = txtPass.Text; // Gets Password from Text box
+                    //this.Hide();
+                    //MessageBox.Show("Login Successful");
+                    //frmMenu m = new frmMenu();
+                    //m.ShowDialog(); //Shows Menu Form  
+                if (userName.Equals(""))
+                {
+                    MessageBox.Show("Please enter Username");
+
+                }
+                else
+                {
+                    if (password.Equals(""))
+                    {
+                        MessageBox.Show("Please enter Password");
+                    }
+                    else
+                    {
+
+
+                        try// runs through the code unless exception is thrown
+                        {
+                            found = false;
+                            using (file = new System.IO.StreamReader("UserCred.txt"))// Read the file and display it line by line. 
+                            {
+
+                                while ((line = file.ReadLine()) != null && found == false)
+                                {
+
+                                    arrUserCred = line.Split(',');
+                                    name = arrUserCred[0];
+                                    pass = arrUserCred[1];// populates array from file
+
+                                    if (userName.ToLower().Equals(name.ToLower()))
+                                    {
+                                        found = true;
+                                        //compares username to ones in file
+                                        if (password.Equals(pass))
+                                        {
+                                            //if username and password match menu screen is shown
+                                            frmMenu menu = new frmMenu();
+                                            this.Hide();
+                                            menu.Show();
+
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Failed Attempt, Incorrect Password");
+                                            count++;
+                                            //login unsuccessful
+                                        }
+
+                                    }
+
+                                    if (((line = file.ReadLine()) == null) && (!(name.ToLower().Equals(userName))))
+                                    {
+                                        MessageBox.Show("Failed Attempt, Incorrect Username");
+                                        count++;
+                                        //cannot find username in file
+                                    }
+                                    try
+                                    {
+                                        if (!(name.ToLower().Contains(userName.ToLower())))
+                                        {
+
+                                        }
+                                    }
+                                    catch
+                                    {
+
+                                    }
+
+                                }
+
+
+                            }
+                            if (found == false)
+                            {
+                                MessageBox.Show("Cannot find user is system, please check username or register account");
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+
+                        }
+                    }
+
+                }
+
             }                
             
             catch

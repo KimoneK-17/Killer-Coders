@@ -38,7 +38,6 @@
             this.txtVehicleRegNumber = new System.Windows.Forms.TextBox();
             this.txtEmployeeName = new System.Windows.Forms.TextBox();
             this.pnlService = new System.Windows.Forms.Panel();
-            this.pnlAppointment = new System.Windows.Forms.Panel();
             this.rtfAppointDescription = new System.Windows.Forms.RichTextBox();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +51,6 @@
             this.txtServiceID = new System.Windows.Forms.TextBox();
             this.lblServiceID = new System.Windows.Forms.Label();
             this.pnlService.SuspendLayout();
-            this.pnlAppointment.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlBtns.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +60,7 @@
             this.lblEmployeeName.AutoSize = true;
             this.lblEmployeeName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeName.Location = new System.Drawing.Point(311, 277);
+            this.lblEmployeeName.Location = new System.Drawing.Point(23, 274);
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(124, 19);
             this.lblEmployeeName.TabIndex = 1;
@@ -73,7 +71,7 @@
             this.lblVehicleRegNumber.AutoSize = true;
             this.lblVehicleRegNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleRegNumber.Location = new System.Drawing.Point(302, 201);
+            this.lblVehicleRegNumber.Location = new System.Drawing.Point(23, 215);
             this.lblVehicleRegNumber.Name = "lblVehicleRegNumber";
             this.lblVehicleRegNumber.Size = new System.Drawing.Size(150, 19);
             this.lblVehicleRegNumber.TabIndex = 2;
@@ -84,7 +82,7 @@
             this.lblAppointmentDate.AutoSize = true;
             this.lblAppointmentDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointmentDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointmentDate.Location = new System.Drawing.Point(282, 9);
+            this.lblAppointmentDate.Location = new System.Drawing.Point(23, 378);
             this.lblAppointmentDate.Name = "lblAppointmentDate";
             this.lblAppointmentDate.Size = new System.Drawing.Size(141, 19);
             this.lblAppointmentDate.TabIndex = 3;
@@ -95,7 +93,7 @@
             this.lblAppointmentDes.AutoSize = true;
             this.lblAppointmentDes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointmentDes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointmentDes.Location = new System.Drawing.Point(260, 85);
+            this.lblAppointmentDes.Location = new System.Drawing.Point(23, 329);
             this.lblAppointmentDes.Name = "lblAppointmentDes";
             this.lblAppointmentDes.Size = new System.Drawing.Size(190, 19);
             this.lblAppointmentDes.TabIndex = 4;
@@ -117,7 +115,7 @@
             // 
             this.dtpAppointmentDate.CalendarFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAppointmentDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAppointmentDate.Location = new System.Drawing.Point(223, 31);
+            this.dtpAppointmentDate.Location = new System.Drawing.Point(252, 329);
             this.dtpAppointmentDate.Name = "dtpAppointmentDate";
             this.dtpAppointmentDate.Size = new System.Drawing.Size(247, 26);
             this.dtpAppointmentDate.TabIndex = 6;
@@ -126,7 +124,7 @@
             // 
             this.txtVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleRegNumber.Location = new System.Drawing.Point(252, 237);
+            this.txtVehicleRegNumber.Location = new System.Drawing.Point(252, 208);
             this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
             this.txtVehicleRegNumber.Size = new System.Drawing.Size(247, 26);
             this.txtVehicleRegNumber.TabIndex = 7;
@@ -135,7 +133,7 @@
             // 
             this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmployeeName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(252, 309);
+            this.txtEmployeeName.Location = new System.Drawing.Point(252, 267);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(247, 26);
             this.txtEmployeeName.TabIndex = 9;
@@ -150,21 +148,9 @@
             this.pnlService.Size = new System.Drawing.Size(684, 64);
             this.pnlService.TabIndex = 10;
             // 
-            // pnlAppointment
-            // 
-            this.pnlAppointment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlAppointment.Controls.Add(this.rtfAppointDescription);
-            this.pnlAppointment.Controls.Add(this.lblAppointmentDate);
-            this.pnlAppointment.Controls.Add(this.dtpAppointmentDate);
-            this.pnlAppointment.Controls.Add(this.lblAppointmentDes);
-            this.pnlAppointment.Location = new System.Drawing.Point(27, 377);
-            this.pnlAppointment.Name = "pnlAppointment";
-            this.pnlAppointment.Size = new System.Drawing.Size(684, 220);
-            this.pnlAppointment.TabIndex = 11;
-            // 
             // rtfAppointDescription
             // 
-            this.rtfAppointDescription.Location = new System.Drawing.Point(176, 107);
+            this.rtfAppointDescription.Location = new System.Drawing.Point(247, 378);
             this.rtfAppointDescription.Name = "rtfAppointDescription";
             this.rtfAppointDescription.Size = new System.Drawing.Size(344, 96);
             this.rtfAppointDescription.TabIndex = 7;
@@ -211,7 +197,7 @@
             this.pnlBtns.Controls.Add(this.btnDelete);
             this.pnlBtns.Controls.Add(this.btnSubmit);
             this.pnlBtns.Controls.Add(this.btnReset);
-            this.pnlBtns.Location = new System.Drawing.Point(105, 616);
+            this.pnlBtns.Location = new System.Drawing.Point(104, 518);
             this.pnlBtns.Name = "pnlBtns";
             this.pnlBtns.Size = new System.Drawing.Size(530, 64);
             this.pnlBtns.TabIndex = 15;
@@ -261,7 +247,7 @@
             // 
             this.txtServiceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServiceID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServiceID.Location = new System.Drawing.Point(252, 161);
+            this.txtServiceID.Location = new System.Drawing.Point(252, 154);
             this.txtServiceID.Name = "txtServiceID";
             this.txtServiceID.Size = new System.Drawing.Size(247, 26);
             this.txtServiceID.TabIndex = 16;
@@ -271,7 +257,7 @@
             this.lblServiceID.AutoSize = true;
             this.lblServiceID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblServiceID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServiceID.Location = new System.Drawing.Point(338, 129);
+            this.lblServiceID.Location = new System.Drawing.Point(23, 161);
             this.lblServiceID.Name = "lblServiceID";
             this.lblServiceID.Size = new System.Drawing.Size(80, 19);
             this.lblServiceID.TabIndex = 17;
@@ -282,12 +268,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(734, 701);
+            this.ClientSize = new System.Drawing.Size(734, 594);
+            this.Controls.Add(this.rtfAppointDescription);
             this.Controls.Add(this.lblServiceID);
+            this.Controls.Add(this.lblAppointmentDes);
+            this.Controls.Add(this.dtpAppointmentDate);
+            this.Controls.Add(this.lblAppointmentDate);
             this.Controls.Add(this.txtServiceID);
             this.Controls.Add(this.pnlBtns);
             this.Controls.Add(this.mnuFleet);
-            this.Controls.Add(this.pnlAppointment);
             this.Controls.Add(this.pnlService);
             this.Controls.Add(this.txtEmployeeName);
             this.Controls.Add(this.txtVehicleRegNumber);
@@ -295,11 +284,10 @@
             this.Controls.Add(this.lblEmployeeName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlService.ResumeLayout(false);
             this.pnlService.PerformLayout();
-            this.pnlAppointment.ResumeLayout(false);
-            this.pnlAppointment.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
             this.pnlBtns.ResumeLayout(false);
@@ -319,7 +307,6 @@
         private System.Windows.Forms.TextBox txtVehicleRegNumber;
         private System.Windows.Forms.TextBox txtEmployeeName;
         private System.Windows.Forms.Panel pnlService;
-        private System.Windows.Forms.Panel pnlAppointment;
         private System.Windows.Forms.MenuStrip mnuFleet;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;

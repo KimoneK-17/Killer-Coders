@@ -332,6 +332,7 @@
             this.Controls.Add(this.lblDateFrom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTripUsage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlTripUsage.ResumeLayout(false);
             this.pnlTripUsage.PerformLayout();

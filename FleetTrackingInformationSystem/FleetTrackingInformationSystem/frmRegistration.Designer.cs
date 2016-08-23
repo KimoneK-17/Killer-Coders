@@ -52,11 +52,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.picKillerCoders = new System.Windows.Forms.PictureBox();
             this.mnuFleet.SuspendLayout();
             this.pnlReg.SuspendLayout();
             this.pnlBtns.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picKillerCoders)).BeginInit();
             this.SuspendLayout();
             // 
             // lblReg
@@ -274,22 +272,12 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // picKillerCoders
-            // 
-            this.picKillerCoders.Image = ((System.Drawing.Image)(resources.GetObject("picKillerCoders.Image")));
-            this.picKillerCoders.Location = new System.Drawing.Point(416, 248);
-            this.picKillerCoders.Name = "picKillerCoders";
-            this.picKillerCoders.Size = new System.Drawing.Size(119, 112);
-            this.picKillerCoders.TabIndex = 40;
-            this.picKillerCoders.TabStop = false;
-            // 
             // frmRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(561, 605);
-            this.Controls.Add(this.picKillerCoders);
             this.Controls.Add(this.pnlBtns);
             this.Controls.Add(this.cboEmpPosition);
             this.Controls.Add(this.txtPass);
@@ -314,7 +302,6 @@
             this.pnlReg.ResumeLayout(false);
             this.pnlReg.PerformLayout();
             this.pnlBtns.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picKillerCoders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,6 +332,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.PictureBox picKillerCoders;
     }
 }

@@ -235,6 +235,7 @@
             this.Controls.Add(this.pnlScheduling);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmScheduling";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlScheduling.ResumeLayout(false);
             this.pnlScheduling.PerformLayout();

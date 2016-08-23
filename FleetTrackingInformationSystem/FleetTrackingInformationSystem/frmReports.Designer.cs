@@ -40,10 +40,10 @@
             this.mnuCompletedTrip = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimesheet = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lvwReports = new System.Windows.Forms.ListView();
-            this.mnuPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +129,12 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
             // 
+            // mnuPrint
+            // 
+            this.mnuPrint.Name = "mnuPrint";
+            this.mnuPrint.Size = new System.Drawing.Size(244, 22);
+            this.mnuPrint.Text = "Print";
+            // 
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
@@ -151,12 +157,6 @@
             this.lvwReports.TabIndex = 14;
             this.lvwReports.UseCompatibleStateImageBehavior = false;
             // 
-            // mnuPrint
-            // 
-            this.mnuPrint.Name = "mnuPrint";
-            this.mnuPrint.Size = new System.Drawing.Size(244, 22);
-            this.mnuPrint.Text = "Print";
-            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +167,7 @@
             this.Controls.Add(this.mnuFleet);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmReports_Load);
             this.mnuFleet.ResumeLayout(false);

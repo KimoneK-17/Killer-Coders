@@ -42,11 +42,9 @@
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBtns = new System.Windows.Forms.Panel();
             this.txtPass = new System.Windows.Forms.MaskedTextBox();
-            this.picKillerCoders = new System.Windows.Forms.PictureBox();
             this.pnlFleet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlBtns.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picKillerCoders)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUser
@@ -63,7 +61,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPass.Location = new System.Drawing.Point(43, 281);
+            this.lblPass.Location = new System.Drawing.Point(43, 236);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(100, 26);
             this.lblPass.TabIndex = 1;
@@ -161,7 +159,7 @@
             this.pnlBtns.Controls.Add(this.btnLog);
             this.pnlBtns.Controls.Add(this.btnReset);
             this.pnlBtns.Controls.Add(this.btnReg);
-            this.pnlBtns.Location = new System.Drawing.Point(39, 355);
+            this.pnlBtns.Location = new System.Drawing.Point(39, 288);
             this.pnlBtns.Name = "pnlBtns";
             this.pnlBtns.Size = new System.Drawing.Size(483, 56);
             this.pnlBtns.TabIndex = 10;
@@ -169,19 +167,10 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(176, 281);
+            this.txtPass.Location = new System.Drawing.Point(176, 236);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(180, 26);
             this.txtPass.TabIndex = 11;
-            // 
-            // picKillerCoders
-            // 
-            this.picKillerCoders.Image = ((System.Drawing.Image)(resources.GetObject("picKillerCoders.Image")));
-            this.picKillerCoders.Location = new System.Drawing.Point(391, 183);
-            this.picKillerCoders.Name = "picKillerCoders";
-            this.picKillerCoders.Size = new System.Drawing.Size(119, 112);
-            this.picKillerCoders.TabIndex = 12;
-            this.picKillerCoders.TabStop = false;
             // 
             // frmLogin
             // 
@@ -189,8 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(541, 453);
-            this.Controls.Add(this.picKillerCoders);
+            this.ClientSize = new System.Drawing.Size(541, 361);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.pnlBtns);
             this.Controls.Add(this.pnlFleet);
@@ -201,13 +189,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuFleet;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlFleet.ResumeLayout(false);
             this.pnlFleet.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
             this.pnlBtns.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picKillerCoders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +216,6 @@
         private System.Windows.Forms.Panel pnlBtns;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.MaskedTextBox txtPass;
-        private System.Windows.Forms.PictureBox picKillerCoders;
     }
 }
 

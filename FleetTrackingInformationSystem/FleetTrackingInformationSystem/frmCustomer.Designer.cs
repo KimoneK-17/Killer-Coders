@@ -359,6 +359,7 @@
             this.Controls.Add(this.pnlCustomer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();

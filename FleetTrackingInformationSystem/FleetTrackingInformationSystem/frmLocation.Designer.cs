@@ -330,6 +330,7 @@
             this.Controls.Add(this.pnlLocation);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLocation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.pnlLocation.ResumeLayout(false);
             this.pnlLocation.PerformLayout();
