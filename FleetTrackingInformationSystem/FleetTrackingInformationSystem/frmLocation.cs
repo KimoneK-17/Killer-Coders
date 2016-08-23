@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,14 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmLocation : Form
     {
-        string manager;
+        string L_MANAGER;
+        string L_ID;
+        string L_NAME;
+        string L_CITY;
+        int L_VEHICLES;
+        int L_EMPLOYEES;
+        string L_PROVINCE;
+        
         string[] numbers = new string[10];
         public frmLocation()
         {
@@ -122,9 +130,46 @@ namespace FleetTrackingInformationSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            manager = txtManager.Text;
+            L_ID = txtLocationID.Text;
+            L_NAME = cboLocationName.SelectedItem.ToString();
+            L_CITY = cboCity.SelectedItem.ToString();
+            L_PROVINCE = cboProvince.SelectedItem.ToString();
+            L_VEHICLES = int.Parse(updVehicles.Text);
+            L_EMPLOYEES = int.Parse(updEmployees.Text);
+            L_MANAGER = txtManager.Text;
             CheckEmpty();
-            CheckForNumbers(manager);
+            CheckForNumbers(L_MANAGER);
+
+
+            try
+            {
+
+
+                DBConnect objDBConnect = new DBConnect();
+
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                MessageBox.Show("SUCCESSFULLY INSERTED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
     }
 }

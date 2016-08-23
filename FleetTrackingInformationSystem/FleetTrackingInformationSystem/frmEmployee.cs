@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,13 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmEmployee : Form
     {
-        string name;
-        string surname;
-        string contact;
-        string salary;
+        string E_ID;
+        string E_NAME;
+        string E_SNAME;
+        string E_POS;
+        string E_CONTACT;
+        string E_EMAIL;
+        string E_SALARY;
         int intTryParseOut;
         double doubleTryParseOut;
         string[] numbers = new string[10];
@@ -157,15 +161,62 @@ namespace FleetTrackingInformationSystem
             }
         }
 
+        bool accepted;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            name = txtName.Text;
-            surname = txtSurname.Text;
-            contact = txtContactNum.Text;
-            salary = txtSalary.Text;
+            E_ID = txtID.Text;
+            E_NAME = txtName.Text;
+            E_SNAME = txtSurname.Text;
+            E_POS = cboPosition.SelectedItem.ToString();
+            E_CONTACT = txtContactNum.Text;
+            E_EMAIL = txtEmail.Text;
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(E_EMAIL);// validates email address
+                accepted = true;
+            }
+            catch
+            {
+                MessageBox.Show("Invalid email address");
+            }
+            E_SALARY = txtSalary.Text;
             CheckEmpty();
-            CheckForNumbers(name, surname);
-            CheckForLetters(contact, salary);
+            CheckForNumbers(E_NAME, E_SNAME);
+            CheckForLetters(E_CONTACT, E_SALARY);
+            if (accepted == true)
+            {
+
+                try
+                {
+
+
+                    DBConnect objDBConnect = new DBConnect();
+
+                    objDBConnect.OpenConnection();
+
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error" + ex.Message);
+                }
+            }
         }
     }
 }
