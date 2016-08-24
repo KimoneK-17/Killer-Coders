@@ -128,8 +128,7 @@ namespace FleetTrackingInformationSystem
                     writetext.WriteLine(s);
                 }
 
-                try
-                {
+               
                     try
                     {
 
@@ -156,13 +155,9 @@ namespace FleetTrackingInformationSystem
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Email Confirmation Not Sent: " + ex.Message);
+                        MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
                     }
-                }
-                catch
-                {
-
-                }
+                
 
                 MessageBox.Show("Registration Successful\nConfirmation Email Sent to: "+emailAddress);
                 this.Hide();

@@ -46,7 +46,7 @@
             this.pnlBtns = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.txtServiceID = new System.Windows.Forms.TextBox();
             this.lblServiceID = new System.Windows.Forms.Label();
@@ -195,7 +195,7 @@
             this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBtns.Controls.Add(this.btnSearch);
             this.pnlBtns.Controls.Add(this.btnDelete);
-            this.pnlBtns.Controls.Add(this.btnSubmit);
+            this.pnlBtns.Controls.Add(this.btnAdd);
             this.pnlBtns.Controls.Add(this.btnReset);
             this.pnlBtns.Location = new System.Drawing.Point(104, 518);
             this.pnlBtns.Name = "pnlBtns";
@@ -222,15 +222,16 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btnSubmit
+            // btnAdd
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(292, 12);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(292, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnAdd.Size = new System.Drawing.Size(82, 35);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnReset
             // 
@@ -315,7 +316,7 @@
         private System.Windows.Forms.Panel pnlBtns;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtServiceID;
         private System.Windows.Forms.Label lblServiceID;
