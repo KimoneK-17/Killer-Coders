@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,15 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmVehicles : Form
     {
-        string mileage;
+        string V_MILEAGE;
         double doubleTryParseOut;
+        string V_RN;
+        string V_TYPE;
+        string V_MAKE;
+        string V_MODEL;
+        string V_YEAR;
+
+       
         public frmVehicles()
         {
             InitializeComponent();
@@ -94,23 +102,23 @@ namespace FleetTrackingInformationSystem
 
         public void CheckEmpty()
         {
-            if(txtMake.Text == string.Empty)
+            if (txtMake.Text == string.Empty)
             {
                 MessageBox.Show("The 'Vehicle Make' field is empty");
             }
-            if(txtMileage.Text == string.Empty)
+            if (txtMileage.Text == string.Empty)
             {
                 MessageBox.Show("The 'Vehicle Mileage' field is empty");
             }
-            if(txtModel.Text == string.Empty)
+            if (txtModel.Text == string.Empty)
             {
                 MessageBox.Show("The 'Vehicle Model' field is empty");
             }
-            if(txtRegNum.Text == string.Empty)
+            if (txtRegNum.Text == string.Empty)
             {
                 MessageBox.Show("The 'Registration Number' field is empty");
             }
-            if(cboType.Text == string.Empty)
+            if (cboType.Text == string.Empty)
             {
                 MessageBox.Show("Please select a vehicle type from the drop down list");
             }
@@ -118,9 +126,45 @@ namespace FleetTrackingInformationSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            mileage = txtMileage.Text;
+            V_MILEAGE = txtMileage.Text;
+            V_MAKE = txtMake.Text;
+            V_TYPE = cboType.SelectedItem.ToString();
+            V_MODEL = txtModel.Text;
+            V_YEAR = dtpVehicleYear.Value.ToString();
+            V_RN = txtRegNum.Text;
             CheckEmpty();
-            CheckForLetters(mileage);
+            CheckForLetters(V_MILEAGE);
+
+            try
+            {
+
+
+                DBConnect objDBConnect = new DBConnect();
+
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
+
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                MessageBox.Show("SUCCESSFULLY INSERTED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
         }
     }
 }
