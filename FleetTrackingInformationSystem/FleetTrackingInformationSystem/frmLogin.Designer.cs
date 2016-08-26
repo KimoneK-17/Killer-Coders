@@ -41,7 +41,7 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBtns = new System.Windows.Forms.Panel();
-            this.txtPass = new System.Windows.Forms.MaskedTextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.pnlFleet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlBtns.SuspendLayout();
@@ -166,10 +166,12 @@
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(176, 236);
+            this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtPass.Location = new System.Drawing.Point(175, 238);
+            this.txtPass.MaxLength = 10;
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(180, 26);
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(181, 26);
             this.txtPass.TabIndex = 11;
             // 
             // frmLogin
@@ -215,7 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.Panel pnlBtns;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.MaskedTextBox txtPass;
+        private System.Windows.Forms.TextBox txtPass;
     }
 }
 
