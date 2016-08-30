@@ -218,5 +218,35 @@ namespace FleetTrackingInformationSystem
                 }
             }
         }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+                {
+
+
+                    DBConnect objDBConnect = new DBConnect();
+
+                    objDBConnect.OpenConnection();
+
+                    string sql = "DELETE FROM Employee WHERE (Emp_ID ='"+ E_ID +"');";
+
+                    objDBConnect.sqlCmd = new SqlCommand();
+                    objDBConnect.sqlCmd.CommandText = sql;
+                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                    
+                    MessageBox.Show("SUCCESS");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error" + ex.Message);
+                }
+    }
     }
 }
