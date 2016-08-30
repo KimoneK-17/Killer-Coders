@@ -174,7 +174,7 @@ namespace FleetTrackingInformationSystem
             {
                 var addr = new System.Net.Mail.MailAddress(C_EMAIL);// validates email address
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);
             }
@@ -205,7 +205,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
-               
+
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
 
@@ -219,6 +219,7 @@ namespace FleetTrackingInformationSystem
 
                 MessageBox.Show("Error" + ex.Message);
             }
+
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
