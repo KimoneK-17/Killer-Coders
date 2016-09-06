@@ -130,33 +130,33 @@ namespace FleetTrackingInformationSystem
             CheckForLetters(fuelUsage, kmTravelled);
         }
         
-        private void btnDelete_Click(object sender, EventArgs e)
-	    {
-            try
-                {
-                    DBConnect objDBConnect = new DBConnect();
+        //private void btnDelete_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //        {
+        //            DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+        //            objDBConnect.OpenConnection();
 
-                    string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='"+ T_ID +"');";
+        //            string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='"+ T_ID +"');";
 
-                    objDBConnect.sqlCmd = new SqlCommand();
-                    objDBConnect.sqlCmd.CommandText = sql;
-                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+        //            objDBConnect.sqlCmd = new SqlCommand();
+        //            objDBConnect.sqlCmd.CommandText = sql;
+        //            objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+        //            objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
                     
-                    MessageBox.Show("SUCCESS");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+        //            MessageBox.Show("SUCCESS");
+        //            objDBConnect.sqlDR.Close();
+        //            objDBConnect.sqlConn.Close();
 
-                }
-                catch (Exception ex)
-                {
+        //        }
+        //        catch (Exception ex)
+        //        {
 
-                    MessageBox.Show("Error" + ex.Message);
-                }
-	    }
+        //            MessageBox.Show("Error" + ex.Message);
+        //        }
+        //}
     }
 }
