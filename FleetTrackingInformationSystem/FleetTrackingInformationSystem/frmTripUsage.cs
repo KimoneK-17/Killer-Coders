@@ -17,6 +17,11 @@ namespace FleetTrackingInformationSystem
         double doubleTryParseOut;
         string kmTravelled;
         string fuelUsage;
+        int V_RN;
+        string T_FROM;
+        string T_TO;
+
+
         public frmTripUsage()
         {
             InitializeComponent();
@@ -130,6 +135,27 @@ namespace FleetTrackingInformationSystem
             kmTravelled = txtKM.Text;
             CheckEmpty();
             CheckForLetters(fuelUsage, kmTravelled);
+
+            try
+        {
+	        DBConnect objDBConnect = new DBConnect();
+	        objDBConnect.OpenConnection();
+
+		objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+
+		objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+        MessageBox.Show("Succesfully inserted");
+		objDBConnect.sqlDR.Close();
+		objDBConnect.sqlConn.Close();
+}
+	catch (Exception ex)
+		{
+			MessageBox.Show("Error" + ex.Message);
+		}
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
