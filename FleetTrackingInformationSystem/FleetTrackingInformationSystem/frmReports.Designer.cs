@@ -28,171 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
-            this.mnuFleet = new System.Windows.Forms.MenuStrip();
-            this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuVehicleStatusReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuServiceAppList = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuServiceReqJobSheet = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuVehicleService = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSpecificService = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPlannedTripReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCompletedTrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTimesheet = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvwReports = new System.Windows.Forms.ListView();
-            this.mnuFleet.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mnuFleet
+            // tabControl1
             // 
-            this.mnuFleet.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuOptions});
-            this.mnuFleet.Location = new System.Drawing.Point(0, 0);
-            this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(854, 24);
-            this.mnuFleet.TabIndex = 13;
-            this.mnuFleet.Text = "menuStrip1";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 1);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(527, 343);
+            this.tabControl1.TabIndex = 0;
             // 
-            // mnuOptions
+            // tabPage1
             // 
-            this.mnuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuVehicleStatusReport,
-            this.mnuServiceAppList,
-            this.mnuServiceReqJobSheet,
-            this.mnuVehicleService,
-            this.mnuSpecificService,
-            this.mnuPlannedTripReport,
-            this.mnuCompletedTrip,
-            this.mnuTimesheet,
-            this.toolStripSeparator1,
-            this.mnuPrint,
-            this.mnuBack,
-            this.mnuExit});
-            this.mnuOptions.Name = "mnuOptions";
-            this.mnuOptions.Size = new System.Drawing.Size(61, 20);
-            this.mnuOptions.Text = "Options";
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(519, 317);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Vehicle Status Report";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // mnuVehicleStatusReport
+            // tabPage2
             // 
-            this.mnuVehicleStatusReport.Name = "mnuVehicleStatusReport";
-            this.mnuVehicleStatusReport.Size = new System.Drawing.Size(244, 22);
-            this.mnuVehicleStatusReport.Text = "Vehicle Status Report";
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(519, 317);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Service Appointment List Report";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // mnuServiceAppList
+            // tabPage3
             // 
-            this.mnuServiceAppList.Name = "mnuServiceAppList";
-            this.mnuServiceAppList.Size = new System.Drawing.Size(244, 22);
-            this.mnuServiceAppList.Text = "Service Appointment List Report";
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(519, 317);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Service Requirements Jobsheet Report";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // mnuServiceReqJobSheet
+            // tabPage4
             // 
-            this.mnuServiceReqJobSheet.Name = "mnuServiceReqJobSheet";
-            this.mnuServiceReqJobSheet.Size = new System.Drawing.Size(244, 22);
-            this.mnuServiceReqJobSheet.Text = "Service Requirments Job Sheet";
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(519, 317);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Vehicle Service Report";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // mnuVehicleService
+            // tabPage5
             // 
-            this.mnuVehicleService.Name = "mnuVehicleService";
-            this.mnuVehicleService.Size = new System.Drawing.Size(244, 22);
-            this.mnuVehicleService.Text = "Vehicle Service Report";
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(519, 317);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Specific Service Report";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // mnuSpecificService
+            // tabPage6
             // 
-            this.mnuSpecificService.Name = "mnuSpecificService";
-            this.mnuSpecificService.Size = new System.Drawing.Size(244, 22);
-            this.mnuSpecificService.Text = "Specific Service Report";
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(519, 317);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Planned Trip Report";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // mnuPlannedTripReport
+            // tabPage7
             // 
-            this.mnuPlannedTripReport.Name = "mnuPlannedTripReport";
-            this.mnuPlannedTripReport.Size = new System.Drawing.Size(244, 22);
-            this.mnuPlannedTripReport.Text = "Planned Trip Report";
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(519, 317);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Completed Trip Report ";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // mnuCompletedTrip
+            // tabPage8
             // 
-            this.mnuCompletedTrip.Name = "mnuCompletedTrip";
-            this.mnuCompletedTrip.Size = new System.Drawing.Size(244, 22);
-            this.mnuCompletedTrip.Text = "Completed Trip Report";
-            // 
-            // mnuTimesheet
-            // 
-            this.mnuTimesheet.Name = "mnuTimesheet";
-            this.mnuTimesheet.Size = new System.Drawing.Size(244, 22);
-            this.mnuTimesheet.Text = "Timesheet Report";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
-            // 
-            // mnuPrint
-            // 
-            this.mnuPrint.Name = "mnuPrint";
-            this.mnuPrint.Size = new System.Drawing.Size(244, 22);
-            this.mnuPrint.Text = "Print";
-            // 
-            // mnuBack
-            // 
-            this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(244, 22);
-            this.mnuBack.Text = "Back";
-            this.mnuBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // mnuExit
-            // 
-            this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(244, 22);
-            this.mnuExit.Text = "Exit";
-            this.mnuExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lvwReports
-            // 
-            this.lvwReports.Location = new System.Drawing.Point(0, 27);
-            this.lvwReports.Name = "lvwReports";
-            this.lvwReports.Size = new System.Drawing.Size(854, 482);
-            this.lvwReports.TabIndex = 14;
-            this.lvwReports.UseCompatibleStateImageBehavior = false;
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(519, 317);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Timesheet Report";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(854, 515);
-            this.Controls.Add(this.lvwReports);
-            this.Controls.Add(this.mnuFleet);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ClientSize = new System.Drawing.Size(524, 345);
+            this.Controls.Add(this.tabControl1);
             this.Name = "frmReports";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fleet Tracking Information System";
-            this.Load += new System.EventHandler(this.frmReports_Load);
-            this.mnuFleet.ResumeLayout(false);
-            this.mnuFleet.PerformLayout();
+            this.Text = "frmReports";
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mnuFleet;
-        private System.Windows.Forms.ToolStripMenuItem mnuOptions;
-        private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.ToolStripMenuItem mnuVehicleStatusReport;
-        private System.Windows.Forms.ToolStripMenuItem mnuServiceAppList;
-        private System.Windows.Forms.ToolStripMenuItem mnuServiceReqJobSheet;
-        private System.Windows.Forms.ToolStripMenuItem mnuVehicleService;
-        private System.Windows.Forms.ToolStripMenuItem mnuSpecificService;
-        private System.Windows.Forms.ToolStripMenuItem mnuPlannedTripReport;
-        private System.Windows.Forms.ToolStripMenuItem mnuCompletedTrip;
-        private System.Windows.Forms.ToolStripMenuItem mnuTimesheet;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ListView lvwReports;
-        private System.Windows.Forms.ToolStripMenuItem mnuPrint;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
     }
 }
