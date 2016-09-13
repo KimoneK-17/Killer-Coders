@@ -54,7 +54,7 @@
             this.updHours = new System.Windows.Forms.NumericUpDown();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.pnlBtns = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
@@ -299,7 +299,7 @@
             // 
             this.pnlBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnSearch);
+            this.pnlBtns.Controls.Add(this.btnUpdate);
             this.pnlBtns.Controls.Add(this.btnDelete);
             this.pnlBtns.Controls.Add(this.btnAdd);
             this.pnlBtns.Controls.Add(this.btnReset);
@@ -308,30 +308,31 @@
             this.pnlBtns.Size = new System.Drawing.Size(507, 64);
             this.pnlBtns.TabIndex = 37;
             // 
-            // btnSearch
+            // btnUpdate
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(19, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 35);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(19, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(122, 12);
+            this.btnDelete.Location = new System.Drawing.Point(144, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(292, 12);
+            this.btnAdd.Location = new System.Drawing.Point(269, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -342,7 +343,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(395, 12);
+            this.btnReset.Location = new System.Drawing.Point(394, 12);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(82, 35);
             this.btnReset.TabIndex = 15;
@@ -419,7 +420,7 @@
         private System.Windows.Forms.NumericUpDown updHours;
         private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.Panel pnlBtns;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReset;

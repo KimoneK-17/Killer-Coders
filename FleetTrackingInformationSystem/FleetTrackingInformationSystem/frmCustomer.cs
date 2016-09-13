@@ -166,7 +166,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             C_ID = txtID.Text;
             C_EMAIL = txtEmail.Text;
@@ -222,35 +222,36 @@ namespace FleetTrackingInformationSystem
 
 
         }
-        private void btnDelete_Click(object sender, EventArgs e)
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
-                {
+            {
 
 
-                    DBConnect objDBConnect = new DBConnect();
+                DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-                    string sql = "DELETE FROM Customer WHERE (Cust_ID ='"+ C_ID +"');";
+                string sql = "DELETE FROM Customer WHERE (Cust_ID ='" + C_ID + "');";
 
-                    objDBConnect.sqlCmd = new SqlCommand();
-                    objDBConnect.sqlCmd.CommandText = sql;
-                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    
-                    MessageBox.Show("SUCCESS");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
 
-                }
-                catch (Exception ex)
-                {
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
 
-                    MessageBox.Show("Error" + ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
 
         }
 
