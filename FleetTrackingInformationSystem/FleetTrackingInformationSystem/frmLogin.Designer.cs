@@ -168,7 +168,7 @@
             // 
             this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.txtPass.Location = new System.Drawing.Point(175, 238);
-            this.txtPass.MaxLength = 10;
+            this.txtPass.MaxLength = 25;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(181, 26);
