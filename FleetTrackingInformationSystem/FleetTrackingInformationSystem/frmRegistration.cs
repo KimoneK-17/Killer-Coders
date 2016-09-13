@@ -121,45 +121,45 @@ namespace FleetTrackingInformationSystem
             Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
             try
             {
-                using (StreamWriter writetext = new StreamWriter("UserCred.txt")) // Creates Text File
-                {
+              string s = dateOfBirth + "," + regName + "," + regSname + "," + userName + "," + password;
 
-                    string s = dateOfBirth + "," + regName + "," + regSname + "," + userName + "," + password;
-                    writetext.WriteLine(s);
-                }
+              using (StreamWriter writer = File.AppendText("UserCred.txt"))
+              {
+                  writer.WriteLine(s);
+              }
 
-               
-                    try
-                    {
+                //try
+                //{
 
-                        SmtpClient client = new SmtpClient("smtp.gmail.com");
-                        client.Port = 587;
-                        client.EnableSsl = true;
-                        client.Timeout = 100000;
-                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        client.UseDefaultCredentials = false;
+                //    SmtpClient client = new SmtpClient("smtp.gmail.com");
+                //    client.Port = 587;
+                //    client.EnableSsl = true;
+                //    client.Timeout = 100000;
+                //    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                //    client.UseDefaultCredentials = false;
 
-                        client.Credentials = new NetworkCredential(
-                          emailAddress, emailPass);//logins into your email account
+                //    client.Credentials = new NetworkCredential(
+                //      emailAddress, emailPass);//logins into your email account
 
-                        //gets values from the textboxes
-                        MailMessage msg = new MailMessage();
-                        msg.To.Add(txtEmail.Text);
-                        msg.From = new MailAddress(emailAddress);//checks that email address exists
-                        msg.Subject = "Successful Registration - Fleet Tracking Application";
-                        msg.Body = "Hello " + regName.ToUpper() + " " + regSname.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + currDate + "\nUser Name: " + userName + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
+                //    //gets values from the textboxes
+                //    MailMessage msg = new MailMessage();
+                //    msg.To.Add(txtEmail.Text);
+                //    msg.From = new MailAddress(emailAddress);//checks that email address exists
+                //    msg.Subject = "Successful Registration - Fleet Tracking Application";
+                //    msg.Body = "Hello " + regName.ToUpper() + " " + regSname.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + currDate + "\nUser Name: " + userName + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
 
-                        client.Send(msg);
+                //    client.Send(msg);
 
-                        Cursor.Current = Cursors.Default;// when processing is done default curser will appear
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
-                    }
-                
+                //    Cursor.Current = Cursors.Default;// when processing is done default curser will appear
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
+                //}
 
-                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: "+emailAddress);
+
+                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + emailAddress);
+
                 this.Hide();
                 frmLogin log = new frmLogin();
                 log.ShowDialog(); // Goes back to Login Form
@@ -175,7 +175,10 @@ namespace FleetTrackingInformationSystem
                     log.ShowDialog();
                     --stopper;
                 }
-            }            
+            }
+
+
+         
         }
 
     }
