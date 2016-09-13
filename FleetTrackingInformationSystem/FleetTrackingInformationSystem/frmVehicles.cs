@@ -166,34 +166,35 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error" + ex.Message);
             }
         }
-        
-        private void btnDelete_Click(object sender, EventArgs e)
-	        {
-                try
-                {
-                    DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
 
-                    string sql = "DELETE FROM Vehicle WHERE (Vehicle_RegNumber ='"+ V_RN +"');";
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.sqlCmd = new SqlCommand();
-                    objDBConnect.sqlCmd.CommandText = sql;
-                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                string sql = "DELETE FROM Vehicle WHERE (Vehicle_RegNumber ='" + V_RN + "');";
 
-                    
-                    MessageBox.Show("SUCCESS");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                }
-                catch (Exception ex)
-                {
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    MessageBox.Show("Error" + ex.Message);
-                }
-	}
+
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
     }
 }

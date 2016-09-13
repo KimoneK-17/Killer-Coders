@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmTripUsage : Form
     {
+        string T_ID;
         double doubleTryParseOut;
         string kmTravelled;
         string fuelUsage;
@@ -129,34 +131,37 @@ namespace FleetTrackingInformationSystem
             CheckEmpty();
             CheckForLetters(fuelUsage, kmTravelled);
         }
-        
-        //private void btnDelete_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //        {
-        //            DBConnect objDBConnect = new DBConnect();
 
-        //            objDBConnect.OpenConnection();
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
 
-        //            string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='"+ T_ID +"');";
+            try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
-        //            objDBConnect.sqlCmd = new SqlCommand();
-        //            objDBConnect.sqlCmd.CommandText = sql;
-        //            objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                    objDBConnect.OpenConnection();
 
-        //            objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='"+ T_ID +"');";
+
+                    objDBConnect.sqlCmd = new SqlCommand();
+                    objDBConnect.sqlCmd.CommandText = sql;
+                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
                     
-        //            MessageBox.Show("SUCCESS");
-        //            objDBConnect.sqlDR.Close();
-        //            objDBConnect.sqlConn.Close();
+                    MessageBox.Show("SUCCESS");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
 
-        //        }
-        //        catch (Exception ex)
-        //        {
+                }
+                catch (Exception ex)
+                {
 
-        //            MessageBox.Show("Error" + ex.Message);
-        //        }
-        //}
+                    MessageBox.Show("Error" + ex.Message);
+                }
+        }
+
+        }
+                 
     }
-}
