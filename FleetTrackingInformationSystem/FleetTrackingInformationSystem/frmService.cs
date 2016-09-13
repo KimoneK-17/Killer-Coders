@@ -119,7 +119,7 @@ namespace FleetTrackingInformationSystem
 
             try
             {
-	            DBConect objDBConnect = new DBConnect();
+	            DBConnect objDBConnect = new DBConnect();
 	            objDBConnect.OpenConnection();
 
 		      objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
