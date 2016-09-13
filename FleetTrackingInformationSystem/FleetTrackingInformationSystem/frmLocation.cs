@@ -171,34 +171,35 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error" + ex.Message);
             }
         }
-        private void btnDelete_Click(object sender, EventArgs e)
-        
-	{
-		try
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            try
             {
-                    DBConnect objDBConnect = new DBConnect();
+                DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-                    string sql = "DELETE FROM Location WHERE (Location_ID ='"+ L_ID +"');";
+                string sql = "DELETE FROM Location WHERE (Location_ID ='" + L_ID + "');";
 
-                    objDBConnect.sqlCmd = new SqlCommand();
-                    objDBConnect.sqlCmd.CommandText = sql;
-                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    
-                    MessageBox.Show("SUCCESS");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
 
-                }
-                catch (Exception ex)
-                {
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
 
-                    MessageBox.Show("Error" + ex.Message);
-                }
-	    }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+
+        }
     }
 }

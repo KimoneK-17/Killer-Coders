@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,17 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmService : Form
     {
+        string S_ID;
+        int V_RN;
+        int E_ID;
+        string S_DATE;
+        string S_DES;
         public frmService()
         {
             InitializeComponent();
         }
+
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -81,36 +89,64 @@ namespace FleetTrackingInformationSystem
                 }
             }
         }
-        
-    //private void btnDelete_Click(object sender, EventArgs e)
-    //    {
-    //        try
-    //            {
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
 
-    //                DBConnect objDBConnect = new DBConnect();
+                DBConnect objDBConnect = new DBConnect();
 
-    //                objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-    //                string sql = "DELETE FROM Service WHERE (Service_ID ='"+ S_ID +"');";
+                string sql = "DELETE FROM Service WHERE (Service_ID ='" + S_ID + "');";
 
-    //                objDBConnect.sqlCmd = new SqlCommand();
-    //                objDBConnect.sqlCmd.CommandText = sql;
-    //                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-    //                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    
-    //                MessageBox.Show("SUCCESS");
-    //                objDBConnect.sqlDR.Close();
-    //                objDBConnect.sqlConn.Close();
 
-    //            }
-    //            catch (Exception ex)
-    //            {
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
 
-    //                MessageBox.Show("Error" + ex.Message);
-    //            }
-    //        }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DBConnect objDBConnect = new DBConnect();
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                MessageBox.Show("Succesfully inserted");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+
     }
 }

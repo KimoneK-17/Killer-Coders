@@ -79,5 +79,15 @@ namespace FleetTrackingInformationSystem
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

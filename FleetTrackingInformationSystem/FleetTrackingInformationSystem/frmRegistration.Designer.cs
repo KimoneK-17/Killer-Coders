@@ -48,12 +48,11 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.cboEmpPosition = new System.Windows.Forms.ComboBox();
             this.pnlBtns = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.mnuFleet.SuspendLayout();
             this.pnlReg.SuspendLayout();
             this.pnlBtns.SuspendLayout();
@@ -229,8 +228,7 @@
             // 
             this.pnlBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnSearch);
-            this.pnlBtns.Controls.Add(this.btnDelete);
+            this.pnlBtns.Controls.Add(this.btnUpdate);
             this.pnlBtns.Controls.Add(this.btnRegister);
             this.pnlBtns.Controls.Add(this.btnReset);
             this.pnlBtns.Location = new System.Drawing.Point(19, 505);
@@ -238,30 +236,10 @@
             this.pnlBtns.Size = new System.Drawing.Size(530, 64);
             this.pnlBtns.TabIndex = 39;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(39, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 35);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(140, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 35);
-            this.btnDelete.TabIndex = 16;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(292, 12);
+            this.btnRegister.Location = new System.Drawing.Point(376, 12);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(82, 35);
             this.btnRegister.TabIndex = 15;
@@ -272,7 +250,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(395, 12);
+            this.btnReset.Location = new System.Drawing.Point(66, 12);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(82, 35);
             this.btnReset.TabIndex = 15;
@@ -297,6 +275,16 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(185, 26);
             this.txtEmail.TabIndex = 41;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(221, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // frmRegistration
             // 
@@ -356,11 +344,10 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.ComboBox cboEmpPosition;
         private System.Windows.Forms.Panel pnlBtns;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

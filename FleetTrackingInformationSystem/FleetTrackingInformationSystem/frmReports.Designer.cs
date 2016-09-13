@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -37,7 +38,14 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.fleetTrackingDatabaseDataSet = new FleetTrackingInformationSystem.FleetTrackingDatabaseDataSet();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehicleTableAdapter = new FleetTrackingInformationSystem.FleetTrackingDatabaseDataSetTableAdapters.VehicleTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fleetTrackingDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -53,15 +61,16 @@
             this.tabControl1.Location = new System.Drawing.Point(-3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(527, 343);
+            this.tabControl1.Size = new System.Drawing.Size(1057, 433);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.reportViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(519, 317);
+            this.tabPage1.Size = new System.Drawing.Size(1049, 407);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Vehicle Status Report";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -130,15 +139,41 @@
             this.tabPage8.Text = "Timesheet Report";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // fleetTrackingDatabaseDataSet
+            // 
+            this.fleetTrackingDatabaseDataSet.DataSetName = "FleetTrackingDatabaseDataSet";
+            this.fleetTrackingDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.fleetTrackingDatabaseDataSet;
+            // 
+            // vehicleTableAdapter
+            // 
+            this.vehicleTableAdapter.ClearBeforeFill = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
+            this.reportViewer1.Size = new System.Drawing.Size(1038, 404);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 345);
+            this.ClientSize = new System.Drawing.Size(1054, 434);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmReports";
             this.Text = "frmReports";
+            this.Load += new System.EventHandler(this.frmReports_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fleetTrackingDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +189,9 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
+        private FleetTrackingDatabaseDataSet fleetTrackingDatabaseDataSet;
+        private System.Windows.Forms.BindingSource vehicleBindingSource;
+        private FleetTrackingDatabaseDataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

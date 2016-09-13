@@ -78,7 +78,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(390, 18);
+            this.btnLog.Location = new System.Drawing.Point(385, 18);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(86, 31);
             this.btnLog.TabIndex = 4;
@@ -89,7 +89,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(16, 18);
+            this.btnReset.Location = new System.Drawing.Point(11, 18);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(86, 31);
             this.btnReset.TabIndex = 5;
@@ -100,7 +100,7 @@
             // btnReg
             // 
             this.btnReg.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReg.Location = new System.Drawing.Point(203, 18);
+            this.btnReg.Location = new System.Drawing.Point(198, 18);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(86, 31);
             this.btnReg.TabIndex = 6;
