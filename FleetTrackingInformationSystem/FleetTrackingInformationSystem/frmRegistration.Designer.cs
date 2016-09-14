@@ -48,7 +48,6 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.cboEmpPosition = new System.Windows.Forms.ComboBox();
             this.pnlBtns = new System.Windows.Forms.Panel();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -228,24 +227,12 @@
             // 
             this.pnlBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnUpdate);
             this.pnlBtns.Controls.Add(this.btnRegister);
             this.pnlBtns.Controls.Add(this.btnReset);
             this.pnlBtns.Location = new System.Drawing.Point(19, 505);
             this.pnlBtns.Name = "pnlBtns";
             this.pnlBtns.Size = new System.Drawing.Size(530, 64);
             this.pnlBtns.TabIndex = 39;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(221, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnRegister
             // 
@@ -349,6 +336,5 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnUpdate;
     }
 }

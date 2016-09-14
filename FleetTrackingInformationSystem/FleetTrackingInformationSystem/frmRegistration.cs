@@ -36,7 +36,7 @@ namespace FleetTrackingInformationSystem
         string S_DATE;
         string S_DES;
 
-        
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -109,9 +109,9 @@ namespace FleetTrackingInformationSystem
             DateTime localDate = DateTime.Now;
 
             var culture = new CultureInfo("en-GB");
-         date = localDate.ToString(culture);
+            date = localDate.ToString(culture);
 
-          return date;
+            return date;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -127,12 +127,34 @@ namespace FleetTrackingInformationSystem
             Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
             try
             {
-              string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_UNAME + "," + R_PWORD;
+                try
+                {
 
-              using (StreamWriter writer = File.AppendText("UserCred.txt"))
-              {
-                  writer.WriteLine(s);
-              }
+
+                    DBConnect objDBConnect = new DBConnect();
+
+                    objDBConnect.OpenConnection();
+
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO LOCATION VALUES (@R_DOB, @R_NAME, @R_SNAME, @R_UNAME, @R_PWORD)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", R_DOB);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_NAME", R_NAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_SNAME", R_SNAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error" + ex.Message);
+                }
 
                 //try
                 //{
@@ -184,36 +206,11 @@ namespace FleetTrackingInformationSystem
             }
 
 
-         
+
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                
-            DBConnect objDBConnect = new DBConnect();
 
-            objDBConnect.OpenConnection();
-
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
-
-                MessageBox.Show("SUCCESSFULLY INSERTED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
-            }
-
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error" + ex.Message);
-            }
-            }
-        }
 
     }
+
+}
