@@ -84,12 +84,6 @@
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="FleetTracking.cs" />
-    <Compile Include="frmReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReports.Designer.cs">
-      <DependentUpon>frmReports.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +121,6 @@
       <DependentUpon>frmVehicles.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VehicleServiceReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VehicleServiceReport.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistration.resx">
       <DependentUpon>frmRegistration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReports.resx">
-      <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
@@ -174,7 +160,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VehicleStatus.rdlc" />
     <None Include="FleetTrackingDatabaseDataSet.xsc">
       <DependentUpon>FleetTrackingDatabaseDataSet.xsd</DependentUpon>
     </None>
@@ -195,17 +180,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="VehicleServiceReport.xsc">
-      <DependentUpon>VehicleServiceReport.xsd</DependentUpon>
-    </None>
-    <None Include="VehicleServiceReport.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VehicleServiceReport.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="VehicleServiceReport.xss">
-      <DependentUpon>VehicleServiceReport.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
