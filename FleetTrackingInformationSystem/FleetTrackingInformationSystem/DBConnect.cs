@@ -21,7 +21,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 sqlConn = new SqlConnection();
-                sqlConn.ConnectionString = ("Server=tcp:myserver17.database.windows.net,1433;Initial Catalog=FleetTrackingDB;Persist Security Info=False;User ID=kimmy-17;Password=Gummybear7;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                sqlConn.ConnectionString = ("Data Source=myserver17.database.windows.net;Initial Catalog=FleetTrackingDB;Persist Security Info=True;User ID=kimmy-17");
                 sqlConn.Open();
 
             }
