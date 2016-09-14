@@ -20,6 +20,7 @@ namespace FleetTrackingInformationSystem
         string V_MAKE;
         string V_MODEL;
         string V_YEAR;
+        string V_REC;
 
        
         public frmVehicles()
@@ -190,6 +191,34 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try{
+
+            DBConnect objDBConnect = new DBConnect();
+
+              objDBConnect.OpenConnection();
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RecordNumber", V_REC);
+
+              MessageBox.Show("SUCCESSFULLY UPDATED");
+              objDBConnect.sqlDR.Close();
+              objDBConnect.sqlConn.Close();
+            }
+
             catch (Exception ex)
             {
 

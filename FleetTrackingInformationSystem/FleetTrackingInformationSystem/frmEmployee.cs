@@ -250,5 +250,36 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error" + ex.Message);
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               DBConnect objDBConnect = new DBConnect();
+
+               objDBConnect.OpenConnection();
+
+		      objDBConnect.sqlCmd = new SqlCommand("UPDATE Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+		      objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+            }
+
+        }
     }
-}

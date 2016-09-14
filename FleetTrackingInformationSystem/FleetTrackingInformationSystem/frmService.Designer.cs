@@ -50,6 +50,8 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.txtServiceID = new System.Windows.Forms.TextBox();
             this.lblServiceID = new System.Windows.Forms.Label();
+            this.lblAppointmentTime = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlService.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlBtns.SuspendLayout();
@@ -60,7 +62,7 @@
             this.lblEmployeeName.AutoSize = true;
             this.lblEmployeeName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeName.Location = new System.Drawing.Point(23, 274);
+            this.lblEmployeeName.Location = new System.Drawing.Point(18, 234);
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(124, 19);
             this.lblEmployeeName.TabIndex = 1;
@@ -71,7 +73,7 @@
             this.lblVehicleRegNumber.AutoSize = true;
             this.lblVehicleRegNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleRegNumber.Location = new System.Drawing.Point(23, 215);
+            this.lblVehicleRegNumber.Location = new System.Drawing.Point(18, 187);
             this.lblVehicleRegNumber.Name = "lblVehicleRegNumber";
             this.lblVehicleRegNumber.Size = new System.Drawing.Size(150, 19);
             this.lblVehicleRegNumber.TabIndex = 2;
@@ -93,7 +95,7 @@
             this.lblAppointmentDes.AutoSize = true;
             this.lblAppointmentDes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointmentDes.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointmentDes.Location = new System.Drawing.Point(23, 329);
+            this.lblAppointmentDes.Location = new System.Drawing.Point(12, 278);
             this.lblAppointmentDes.Name = "lblAppointmentDes";
             this.lblAppointmentDes.Size = new System.Drawing.Size(190, 19);
             this.lblAppointmentDes.TabIndex = 4;
@@ -115,7 +117,7 @@
             // 
             this.dtpAppointmentDate.CalendarFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpAppointmentDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAppointmentDate.Location = new System.Drawing.Point(252, 329);
+            this.dtpAppointmentDate.Location = new System.Drawing.Point(247, 274);
             this.dtpAppointmentDate.Name = "dtpAppointmentDate";
             this.dtpAppointmentDate.Size = new System.Drawing.Size(247, 26);
             this.dtpAppointmentDate.TabIndex = 6;
@@ -124,7 +126,7 @@
             // 
             this.txtVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleRegNumber.Location = new System.Drawing.Point(252, 208);
+            this.txtVehicleRegNumber.Location = new System.Drawing.Point(247, 180);
             this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
             this.txtVehicleRegNumber.Size = new System.Drawing.Size(247, 26);
             this.txtVehicleRegNumber.TabIndex = 7;
@@ -133,7 +135,7 @@
             // 
             this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmployeeName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(252, 267);
+            this.txtEmployeeName.Location = new System.Drawing.Point(247, 227);
             this.txtEmployeeName.Name = "txtEmployeeName";
             this.txtEmployeeName.Size = new System.Drawing.Size(247, 26);
             this.txtEmployeeName.TabIndex = 9;
@@ -178,14 +180,14 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(99, 22);
+            this.mnuBack.Size = new System.Drawing.Size(152, 22);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(99, 22);
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -211,6 +213,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -250,7 +253,7 @@
             // 
             this.txtServiceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtServiceID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtServiceID.Location = new System.Drawing.Point(252, 154);
+            this.txtServiceID.Location = new System.Drawing.Point(247, 133);
             this.txtServiceID.Name = "txtServiceID";
             this.txtServiceID.Size = new System.Drawing.Size(247, 26);
             this.txtServiceID.TabIndex = 16;
@@ -260,11 +263,39 @@
             this.lblServiceID.AutoSize = true;
             this.lblServiceID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblServiceID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServiceID.Location = new System.Drawing.Point(23, 161);
+            this.lblServiceID.Location = new System.Drawing.Point(18, 140);
             this.lblServiceID.Name = "lblServiceID";
             this.lblServiceID.Size = new System.Drawing.Size(80, 19);
             this.lblServiceID.TabIndex = 17;
             this.lblServiceID.Text = "Service ID:";
+            // 
+            // lblAppointmentTime
+            // 
+            this.lblAppointmentTime.AutoSize = true;
+            this.lblAppointmentTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblAppointmentTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointmentTime.Location = new System.Drawing.Point(12, 322);
+            this.lblAppointmentTime.Name = "lblAppointmentTime";
+            this.lblAppointmentTime.Size = new System.Drawing.Size(146, 19);
+            this.lblAppointmentTime.TabIndex = 18;
+            this.lblAppointmentTime.Text = " Appointment Time:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "8:00",
+            "9:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00"});
+            this.comboBox1.Location = new System.Drawing.Point(247, 323);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(247, 21);
+            this.comboBox1.TabIndex = 19;
             // 
             // frmService
             // 
@@ -272,6 +303,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(734, 594);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblAppointmentTime);
             this.Controls.Add(this.rtfAppointDescription);
             this.Controls.Add(this.lblServiceID);
             this.Controls.Add(this.lblAppointmentDes);
@@ -322,5 +355,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtServiceID;
         private System.Windows.Forms.Label lblServiceID;
+        private System.Windows.Forms.Label lblAppointmentTime;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

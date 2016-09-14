@@ -11,6 +11,7 @@ using System.IO;
 using System.Globalization;
 using System.Net.Mail;
 using System.Net;
+using System.Data.SqlClient;
 
 namespace FleetTrackingInformationSystem
 {
@@ -20,15 +21,20 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
-        string dateOfBirth;
-        string regName;
-        string regSname;
-        string userName;
-        string password;
-        string emailAddress = "myvcemail@gmail.com";
-        string emailPass = "ice-cream2";
-        string currDate;
-        string empPosition;
+        string R_DOB;
+        string R_NAME;
+        string R_SNAME;
+        string R_UNAME;
+        string R_PWORD;
+        string R_EMAIL = "myvcemail@gmail.com";
+        string R_EPWORD = "ice-cream2";
+        string R_CURRDATE;
+        string R_EMPPOS;
+        string S_ID;
+        string V_RN;
+        string E_ID;
+        string S_DATE;
+        string S_DES;
 
         
 
@@ -110,18 +116,18 @@ namespace FleetTrackingInformationSystem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            dateOfBirth = dtpDateOfBirth.Value.ToShortDateString();
-            regName = txtName.Text;
-            regSname = txtSurname.Text;
-            userName = txtUserName.Text;
-            password = txtPass.Text;
-            currDate = CurrDate(currDate);
-            empPosition = cboEmpPosition.SelectedItem.ToString();
+            R_DOB = dtpDateOfBirth.Value.ToShortDateString();
+            R_NAME = txtName.Text;
+            R_SNAME = txtSurname.Text;
+            R_UNAME = txtUserName.Text;
+            R_PWORD = txtPass.Text;
+            R_CURRDATE = CurrDate(R_CURRDATE);
+            R_EMPPOS = cboEmpPosition.SelectedItem.ToString();
 
             Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
             try
             {
-              string s = dateOfBirth + "," + regName + "," + regSname + "," + userName + "," + password;
+              string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_UNAME + "," + R_PWORD;
 
               using (StreamWriter writer = File.AppendText("UserCred.txt"))
               {
@@ -158,7 +164,7 @@ namespace FleetTrackingInformationSystem
                 //}
 
 
-                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + emailAddress);
+                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_EMAIL);
 
                 this.Hide();
                 frmLogin log = new frmLogin();
@@ -181,5 +187,33 @@ namespace FleetTrackingInformationSystem
          
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            DBConnect objDBConnect = new DBConnect();
+
+            objDBConnect.OpenConnection();
+
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+
+                MessageBox.Show("SUCCESSFULLY INSERTED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+            }
+        }
+
     }
-}
