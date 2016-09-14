@@ -151,3 +151,5 @@ Z:\Git-Repo\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\De
 Z:\Git-Repo\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
 Z:\Git-Repo\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe
 Z:\Git-Repo\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.pdb
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.cache
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
