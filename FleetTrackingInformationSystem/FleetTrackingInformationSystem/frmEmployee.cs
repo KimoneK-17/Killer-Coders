@@ -24,7 +24,6 @@ namespace FleetTrackingInformationSystem
         double doubleTryParseOut;
         string[] numbers = new string[10];
         
-
         public frmEmployee()
         {
             InitializeComponent();
@@ -72,7 +71,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -189,11 +188,8 @@ namespace FleetTrackingInformationSystem
             CheckForLetters(E_CONTACT, E_SALARY);
             if (accepted == true)
             {
-
                 try
                 {
-
-
                     DBConnect objDBConnect = new DBConnect();
 
                     objDBConnect.OpenConnection();
@@ -213,7 +209,6 @@ namespace FleetTrackingInformationSystem
                     MessageBox.Show(message);
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
-
                 }
                 catch (Exception ex)
                 {
@@ -225,11 +220,8 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-
             try
             {
-
-
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
@@ -246,7 +238,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-
             }
             catch (Exception ex)
             {
@@ -263,27 +254,25 @@ namespace FleetTrackingInformationSystem
 
                objDBConnect.OpenConnection();
 
-		      objDBConnect.sqlCmd = new SqlCommand("UPDATE Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
-		      objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+		       objDBConnect.sqlCmd = new SqlCommand("UPDATE Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)",objDBConnect.sqlConn);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+		       objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESSFULLY UPDATED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+               MessageBox.Show("SUCCESSFULLY UPDATED");
+               objDBConnect.sqlDR.Close();
+               objDBConnect.sqlConn.Close();
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
             }
-            }
-
         }
     }
+}

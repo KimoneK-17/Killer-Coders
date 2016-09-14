@@ -72,7 +72,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -190,8 +190,6 @@ namespace FleetTrackingInformationSystem
 
             try
             {
-
-
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
@@ -208,27 +206,20 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-
                 MessageBox.Show("SUCCESSFULLY INSERTED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
             }
-
-
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             try
             {
-
-
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
@@ -241,7 +232,6 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
@@ -249,7 +239,6 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
             }
 
@@ -282,14 +271,8 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
-            }
-                
-
-            
-        }
-
-        
+            }                        
+        }       
     }
 }

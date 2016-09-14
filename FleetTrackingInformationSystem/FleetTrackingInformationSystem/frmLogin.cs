@@ -27,7 +27,7 @@ namespace FleetTrackingInformationSystem
         int count = 0;
         bool found = false;
         //declarations
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             txtUser.Clear(); // Clears the Text Box
             txtPass.Clear();
