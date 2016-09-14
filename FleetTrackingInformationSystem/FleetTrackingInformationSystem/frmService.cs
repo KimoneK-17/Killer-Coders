@@ -13,7 +13,7 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmService : Form
     {
-        string S_ID;
+        string S_ID ;
         int V_RN;
         int E_ID;
         string S_DATE;
