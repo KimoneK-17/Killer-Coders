@@ -71,7 +71,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -130,7 +130,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("The 'Vehicle Reg Number' field is empty");
             }
         }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             fuelUsage = txtFuelUsage.Text;
@@ -139,31 +138,30 @@ namespace FleetTrackingInformationSystem
             CheckForLetters(fuelUsage, kmTravelled);
 
             try
-        {
-	        DBConnect objDBConnect = new DBConnect();
-	        objDBConnect.OpenConnection();
+            {
+	            DBConnect objDBConnect = new DBConnect();
+	            objDBConnect.OpenConnection();
 
-		objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+		        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
 
-		objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-        MessageBox.Show("Succesfully inserted");
-		objDBConnect.sqlDR.Close();
-		objDBConnect.sqlConn.Close();
-}
-	catch (Exception ex)
-		{
-			MessageBox.Show("Error" + ex.Message);
-		}
+		        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                MessageBox.Show("Succesfully inserted");
+		        objDBConnect.sqlDR.Close();
+		        objDBConnect.sqlConn.Close();
+            }
+	        catch (Exception ex)
+		    {
+			    MessageBox.Show("Error" + ex.Message);
+		    }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            try
+                try
                 {
                     DBConnect objDBConnect = new DBConnect();
 
@@ -176,16 +174,13 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-
-                    
+                 
                     MessageBox.Show("SUCCESS");
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
-
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show("Error" + ex.Message);
                 }
         }
@@ -193,11 +188,10 @@ namespace FleetTrackingInformationSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
-            {
-                
-                DBConnect objDBConnect = new DBConnect();
+            {             
+              DBConnect objDBConnect = new DBConnect();
 
-                	objDBConnect.OpenConnection();
+              objDBConnect.OpenConnection();
 
               objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
@@ -207,18 +201,15 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
-                MessageBox.Show("SUCCESSFULLY UPDATED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+              MessageBox.Show("SUCCESSFULLY UPDATED");
+              objDBConnect.sqlDR.Close();
+              objDBConnect.sqlConn.Close();
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
             }
-
-            }
         }
-
-        }
+   }
+}

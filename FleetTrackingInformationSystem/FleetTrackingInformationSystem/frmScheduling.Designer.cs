@@ -41,15 +41,17 @@
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.updHoursWorked = new System.Windows.Forms.NumericUpDown();
-            this.pnlBtns = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlScheduling.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updHoursWorked)).BeginInit();
-            this.pnlBtns.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlScheduling
@@ -164,23 +166,10 @@
             this.updHoursWorked.Size = new System.Drawing.Size(234, 26);
             this.updHoursWorked.TabIndex = 35;
             // 
-            // pnlBtns
-            // 
-            this.pnlBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnUpdate);
-            this.pnlBtns.Controls.Add(this.btnDelete);
-            this.pnlBtns.Controls.Add(this.btnAdd);
-            this.pnlBtns.Controls.Add(this.btnReset);
-            this.pnlBtns.Location = new System.Drawing.Point(29, 349);
-            this.pnlBtns.Name = "pnlBtns";
-            this.pnlBtns.Size = new System.Drawing.Size(523, 64);
-            this.pnlBtns.TabIndex = 36;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(32, 12);
+            this.btnUpdate.Location = new System.Drawing.Point(213, 53);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -190,7 +179,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(153, 12);
+            this.btnDelete.Location = new System.Drawing.Point(32, 53);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -201,7 +190,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(274, 12);
+            this.btnAdd.Location = new System.Drawing.Point(213, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -209,24 +198,59 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnReset
+            // btnClear
             // 
-            this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(395, 12);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(82, 35);
-            this.btnReset.TabIndex = 15;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(395, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(82, 35);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnClear);
+            this.pnlButtons.Controls.Add(this.btnAdd);
+            this.pnlButtons.Controls.Add(this.btnDelete);
+            this.pnlButtons.Controls.Add(this.btnUpdate);
+            this.pnlButtons.Controls.Add(this.btnSearch);
+            this.pnlButtons.Controls.Add(this.btnSubmit);
+            this.pnlButtons.Location = new System.Drawing.Point(29, 347);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(523, 104);
+            this.pnlButtons.TabIndex = 37;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(32, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(82, 35);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(395, 53);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
+            this.btnSubmit.TabIndex = 15;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // frmScheduling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(577, 447);
-            this.Controls.Add(this.pnlBtns);
+            this.ClientSize = new System.Drawing.Size(577, 501);
+            this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.updHoursWorked);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtEmployeeID);
@@ -244,7 +268,7 @@
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updHoursWorked)).EndInit();
-            this.pnlBtns.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,10 +288,12 @@
         private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.NumericUpDown updHoursWorked;
-        private System.Windows.Forms.Panel pnlBtns;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

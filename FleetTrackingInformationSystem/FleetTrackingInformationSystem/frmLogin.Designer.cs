@@ -33,18 +33,21 @@
             this.lblPass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.btnLog = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
             this.lblFleet = new System.Windows.Forms.Label();
             this.pnlFleet = new System.Windows.Forms.Panel();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlBtns = new System.Windows.Forms.Panel();
             this.txtPass = new System.Windows.Forms.TextBox();
+            this.picCargoFleet = new System.Windows.Forms.PictureBox();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnPassReset = new System.Windows.Forms.Button();
             this.pnlFleet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
-            this.pnlBtns.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).BeginInit();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUser
@@ -78,7 +81,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(385, 18);
+            this.btnLog.Location = new System.Drawing.Point(23, 18);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(86, 31);
             this.btnLog.TabIndex = 4;
@@ -86,21 +89,21 @@
             this.btnLog.UseVisualStyleBackColor = true;
             this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
-            // btnReset
+            // btnClear
             // 
-            this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(11, 18);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(86, 31);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(201, 18);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(86, 31);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnReg
             // 
             this.btnReg.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReg.Location = new System.Drawing.Point(198, 18);
+            this.btnReg.Location = new System.Drawing.Point(370, 18);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(86, 31);
             this.btnReg.TabIndex = 6;
@@ -153,17 +156,6 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pnlBtns
-            // 
-            this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnLog);
-            this.pnlBtns.Controls.Add(this.btnReset);
-            this.pnlBtns.Controls.Add(this.btnReg);
-            this.pnlBtns.Location = new System.Drawing.Point(39, 288);
-            this.pnlBtns.Name = "pnlBtns";
-            this.pnlBtns.Size = new System.Drawing.Size(483, 56);
-            this.pnlBtns.TabIndex = 10;
-            // 
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
@@ -174,15 +166,47 @@
             this.txtPass.Size = new System.Drawing.Size(181, 26);
             this.txtPass.TabIndex = 11;
             // 
+            // picCargoFleet
+            // 
+            this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
+            this.picCargoFleet.Location = new System.Drawing.Point(394, 173);
+            this.picCargoFleet.Name = "picCargoFleet";
+            this.picCargoFleet.Size = new System.Drawing.Size(94, 96);
+            this.picCargoFleet.TabIndex = 13;
+            this.picCargoFleet.TabStop = false;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnClear);
+            this.pnlButtons.Controls.Add(this.btnLog);
+            this.pnlButtons.Controls.Add(this.btnPassReset);
+            this.pnlButtons.Controls.Add(this.btnReg);
+            this.pnlButtons.Location = new System.Drawing.Point(39, 305);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(483, 125);
+            this.pnlButtons.TabIndex = 14;
+            // 
+            // btnPassReset
+            // 
+            this.btnPassReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassReset.Location = new System.Drawing.Point(171, 77);
+            this.btnPassReset.Name = "btnPassReset";
+            this.btnPassReset.Size = new System.Drawing.Size(144, 31);
+            this.btnPassReset.TabIndex = 7;
+            this.btnPassReset.Text = "Password Reset";
+            this.btnPassReset.UseVisualStyleBackColor = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(541, 361);
+            this.ClientSize = new System.Drawing.Size(541, 468);
+            this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.picCargoFleet);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.pnlBtns);
             this.Controls.Add(this.pnlFleet);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblPass);
@@ -197,7 +221,8 @@
             this.pnlFleet.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            this.pnlBtns.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).EndInit();
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,15 +234,17 @@
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Button btnLog;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnReg;
         private System.Windows.Forms.Label lblFleet;
         private System.Windows.Forms.Panel pnlFleet;
         private System.Windows.Forms.MenuStrip mnuFleet;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
-        private System.Windows.Forms.Panel pnlBtns;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.PictureBox picCargoFleet;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnPassReset;
     }
 }
 

@@ -76,7 +76,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -98,7 +98,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -120,7 +120,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -142,7 +142,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -164,7 +164,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -186,7 +186,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
-                    frmReports log = new frmReports();
+                    frmLogin log = new frmLogin();
                     log.ShowDialog();
                     --stopper;
                 }
@@ -220,6 +220,28 @@ namespace FleetTrackingInformationSystem
                 this.Hide();
                 frmLogin log = new frmLogin();
                 log.ShowDialog(); // Goes back to Login Form
+            }
+            catch
+            {
+                int stopper = 1;
+                while (stopper == 1)
+                {
+                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                    this.Hide();
+                    frmLogin log = new frmLogin();
+                    log.ShowDialog();
+                    --stopper;
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                frmSearch search = new frmSearch();
+                search.ShowDialog(); // Goes back to Login Form
             }
             catch
             {

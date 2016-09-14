@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace FleetTrackingInformationSystem
 {
-    public partial class frmVehicles : Form
+    public partial class frmLocation : Form
     {
-        string V_MILEAGE;
-        double doubleTryParseOut;
-        string V_RN;
-        string V_TYPE;
-        string V_MAKE;
-        string V_MODEL;
-        string V_YEAR;
-        string V_REC;
-     
-        public frmVehicles()
+        string L_MANAGER;
+        string L_ID;
+        string L_NAME;
+        string L_CITY;
+        int L_VEHICLES;
+        int L_EMPLOYEES;
+        string L_PROVINCE;
+        
+        string[] numbers = new string[10];
+        public frmLocation()
         {
             InitializeComponent();
         }
@@ -73,10 +73,10 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-                txtRegNum.Clear();
-                txtMileage.Clear();
-                txtModel.Clear();
-                txtMake.Clear();
+                txtLocationID.Clear();
+                txtManager.Clear();
+                updEmployees.Value = 0;
+                updVehicles.Value = 0;
             }
             catch
             {
@@ -92,75 +92,85 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForLetters(string mileage)
+        public void CheckForNumbers(string manager)
         {
-            if (double.TryParse(mileage, out doubleTryParseOut) == false)
+            for (int x = 0; x < numbers.Length; x++)
             {
-                MessageBox.Show("The 'Vehicle Mileage' field cannot contain letters");
+                numbers[x] = (x + 1).ToString();
+                if (manager.Contains(numbers[x]))
+                {
+                    MessageBox.Show("The 'Manager In Charge' field cannot contain numbers");
+                }
             }
         }
 
         public void CheckEmpty()
         {
-            if (txtMake.Text == string.Empty)
+            if(txtLocationID.Text == string.Empty)
             {
-                MessageBox.Show("The 'Vehicle Make' field is empty");
+                MessageBox.Show("The 'Location ID' field is empty");
             }
-            if (txtMileage.Text == string.Empty)
+            if(txtManager.Text == string.Empty)
             {
-                MessageBox.Show("The 'Vehicle Mileage' field is empty");
+                MessageBox.Show("The 'Manager In Charge' field is empty");
             }
-            if (txtModel.Text == string.Empty)
+            if(cboCity.Text == string.Empty)
             {
-                MessageBox.Show("The 'Vehicle Model' field is empty");
+                MessageBox.Show("Please select a city from the drop down list");
             }
-            if (txtRegNum.Text == string.Empty)
+            if(cboLocationName.Text == string.Empty)
             {
-                MessageBox.Show("The 'Registration Number' field is empty");
+                MessageBox.Show("Please select a location from the drop down list");
             }
-            if (cboType.Text == string.Empty)
+            if(cboProvince.Text == string.Empty)
             {
-                MessageBox.Show("Please select a vehicle type from the drop down list");
+                MessageBox.Show("Please select a province from the drop down list");
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            V_MILEAGE = txtMileage.Text;
-            V_MAKE = txtMake.Text;
-            V_TYPE = cboType.SelectedItem.ToString();
-            V_MODEL = txtModel.Text;
-            V_YEAR = dtpVehicleYear.Value.ToString();
-            V_RN = txtRegNum.Text;
+            L_ID = txtLocationID.Text;
+            L_NAME = cboLocationName.SelectedItem.ToString();
+            L_CITY = cboCity.SelectedItem.ToString();
+            L_PROVINCE = cboProvince.SelectedItem.ToString();
+            L_VEHICLES = int.Parse(updVehicles.Text);
+            L_EMPLOYEES = int.Parse(updEmployees.Text);
+            L_MANAGER = txtManager.Text;
             CheckEmpty();
-            CheckForLetters(V_MILEAGE);
+            CheckForNumbers(L_MANAGER);
+
 
             try
             {
+
+
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
 
                 MessageBox.Show("SUCCESSFULLY INSERTED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
+
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show("Error" + ex.Message);
             }
         }
-
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
@@ -170,7 +180,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                string sql = "DELETE FROM Vehicle WHERE (Vehicle_RegNumber ='" + V_RN + "');";
+                string sql = "DELETE FROM Location WHERE (Location_ID ='" + L_ID + "');";
 
                 objDBConnect.sqlCmd = new SqlCommand();
                 objDBConnect.sqlCmd.CommandText = sql;
@@ -178,41 +188,46 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
+
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
+
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show("Error" + ex.Message);
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-              DBConnect objDBConnect = new DBConnect();
+                DBConnect objDBConnect = new DBConnect();
 
-              objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RecordNumber", V_REC);
+                objDBConnect.OpenConnection();
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
 
-              MessageBox.Show("SUCCESSFULLY UPDATED");
-              objDBConnect.sqlDR.Close();
-              objDBConnect.sqlConn.Close();
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
             }
 
             catch (Exception ex)
             {
+
                 MessageBox.Show("Error" + ex.Message);
             }
-        }
+       }
     }
 }
+
