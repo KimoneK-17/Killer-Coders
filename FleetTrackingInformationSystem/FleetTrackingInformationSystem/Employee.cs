@@ -21,7 +21,7 @@ namespace FleetTrackingInformationSystem
 
         }
 
-        public Employee(string id, string name, string sname, string pos, string contact, string email, string salary)
+       public Employee(string id, string name, string sname, string pos, string contact, string email, string salary)
        {
 
        }
