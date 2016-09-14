@@ -23,6 +23,8 @@ namespace FleetTrackingInformationSystem
         int intTryParseOut;
         double doubleTryParseOut;
         string[] numbers = new string[10];
+        
+
         public frmEmployee()
         {
             InitializeComponent();
@@ -180,6 +182,8 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Invalid email address");
             }
             E_SALARY = txtSalary.Text;
+
+            Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
             CheckEmpty();
             CheckForNumbers(E_NAME, E_SNAME);
             CheckForLetters(E_CONTACT, E_SALARY);
@@ -205,8 +209,8 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-
-                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    string message = objEmp.SuccessMessage();
+                    MessageBox.Show(message);
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
 
