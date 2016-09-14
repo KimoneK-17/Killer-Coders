@@ -20,7 +20,9 @@ namespace FleetTrackingInformationSystem
         int V_RN;
         string T_FROM;
         string T_TO;
-
+        string T_FUEL;
+        string T_INCIDENTS;
+        string T_MILEAGE;
 
         public frmTripUsage()
         {
@@ -188,6 +190,35 @@ namespace FleetTrackingInformationSystem
                 }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                DBConnect objDBConnect = new DBConnect();
+
+                	objDBConnect.OpenConnection();
+
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+
+            }
         }
-                 
-    }
+
+        }

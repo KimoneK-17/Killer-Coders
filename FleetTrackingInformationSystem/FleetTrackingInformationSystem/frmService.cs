@@ -147,6 +147,32 @@ namespace FleetTrackingInformationSystem
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DBConnect objDBConnect = new DBConnect();
 
+                objDBConnect.OpenConnection();
+
+               objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error" + ex.Message);
+            }
+
+            }
+        }
     }
-}
