@@ -292,6 +292,9 @@
             // 
             this.cboPosition.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPosition.FormattingEnabled = true;
+            this.cboPosition.Items.AddRange(new object[] {
+            "Manager",
+            "Driver"});
             this.cboPosition.Location = new System.Drawing.Point(246, 331);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(234, 26);
@@ -381,7 +384,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(585, 747);
+            this.ClientSize = new System.Drawing.Size(585, 744);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboPosition);
             this.Controls.Add(this.updHours);
