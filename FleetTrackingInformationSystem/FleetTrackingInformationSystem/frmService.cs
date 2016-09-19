@@ -23,8 +23,6 @@ namespace FleetTrackingInformationSystem
             InitializeComponent();
         }
 
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             try
@@ -67,7 +65,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,8 +92,6 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-
-
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
@@ -123,7 +119,6 @@ namespace FleetTrackingInformationSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -155,12 +150,12 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-               objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
@@ -172,7 +167,6 @@ namespace FleetTrackingInformationSystem
 
                 MessageBox.Show("Error" + ex.Message);
             }
-
-            }
         }
     }
+}

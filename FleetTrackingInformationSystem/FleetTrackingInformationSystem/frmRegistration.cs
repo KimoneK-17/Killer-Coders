@@ -81,7 +81,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -109,9 +109,9 @@ namespace FleetTrackingInformationSystem
             DateTime localDate = DateTime.Now;
 
             var culture = new CultureInfo("en-GB");
-         date = localDate.ToString(culture);
+            date = localDate.ToString(culture);
 
-          return date;
+            return date;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -181,10 +181,7 @@ namespace FleetTrackingInformationSystem
                     log.ShowDialog();
                     --stopper;
                 }
-            }
-
-
-         
+            }     
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -192,9 +189,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 
-            DBConnect objDBConnect = new DBConnect();
+              DBConnect objDBConnect = new DBConnect();
 
-            objDBConnect.OpenConnection();
+              objDBConnect.OpenConnection();
 
               objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
@@ -203,17 +200,15 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
-                MessageBox.Show("SUCCESSFULLY UPDATED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+              MessageBox.Show("SUCCESSFULLY INSERTED");
+              objDBConnect.sqlDR.Close();
+              objDBConnect.sqlConn.Close();
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error" + ex.Message);
             }
-            }
         }
-
-    }
+   }
+}

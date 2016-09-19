@@ -69,7 +69,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             try
             {
@@ -208,14 +208,14 @@ namespace FleetTrackingInformationSystem
             {
                 DBConnect objDBConnect = new DBConnect();
 
-                	objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
+                objDBConnect.OpenConnection();
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
 
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
@@ -227,7 +227,7 @@ namespace FleetTrackingInformationSystem
 
                 MessageBox.Show("Error" + ex.Message);
             }
-            }
-        }
+       }
     }
+}
 

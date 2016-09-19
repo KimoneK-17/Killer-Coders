@@ -43,20 +43,22 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlBtns = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.lblDateTo = new System.Windows.Forms.Label();
             this.dtpDateTo = new System.Windows.Forms.DateTimePicker();
             this.lblKm = new System.Windows.Forms.Label();
             this.txtKM = new System.Windows.Forms.TextBox();
             this.lblTripID = new System.Windows.Forms.Label();
             this.txtTripID = new System.Windows.Forms.TextBox();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
-            this.pnlBtns.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblVehicleRegNo
@@ -64,7 +66,7 @@
             this.lblVehicleRegNo.AutoSize = true;
             this.lblVehicleRegNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleRegNo.Location = new System.Drawing.Point(36, 203);
+            this.lblVehicleRegNo.Location = new System.Drawing.Point(68, 203);
             this.lblVehicleRegNo.Name = "lblVehicleRegNo";
             this.lblVehicleRegNo.Size = new System.Drawing.Size(150, 19);
             this.lblVehicleRegNo.TabIndex = 0;
@@ -75,7 +77,7 @@
             this.lblFuelUsage.AutoSize = true;
             this.lblFuelUsage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblFuelUsage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuelUsage.Location = new System.Drawing.Point(36, 360);
+            this.lblFuelUsage.Location = new System.Drawing.Point(68, 360);
             this.lblFuelUsage.Name = "lblFuelUsage";
             this.lblFuelUsage.Size = new System.Drawing.Size(85, 19);
             this.lblFuelUsage.TabIndex = 2;
@@ -86,7 +88,7 @@
             this.lblVehicleIncidents.AutoSize = true;
             this.lblVehicleIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleIncidents.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleIncidents.Location = new System.Drawing.Point(36, 416);
+            this.lblVehicleIncidents.Location = new System.Drawing.Point(68, 416);
             this.lblVehicleIncidents.Name = "lblVehicleIncidents";
             this.lblVehicleIncidents.Size = new System.Drawing.Size(127, 19);
             this.lblVehicleIncidents.TabIndex = 3;
@@ -97,7 +99,7 @@
             this.lblDateFrom.AutoSize = true;
             this.lblDateFrom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateFrom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFrom.Location = new System.Drawing.Point(36, 249);
+            this.lblDateFrom.Location = new System.Drawing.Point(68, 249);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(114, 19);
             this.lblDateFrom.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             this.txtVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleRegNumber.Location = new System.Drawing.Point(192, 196);
+            this.txtVehicleRegNumber.Location = new System.Drawing.Point(232, 196);
             this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
             this.txtVehicleRegNumber.Size = new System.Drawing.Size(197, 26);
             this.txtVehicleRegNumber.TabIndex = 5;
@@ -116,7 +118,7 @@
             // 
             this.txtVehicleIncidents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVehicleIncidents.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleIncidents.Location = new System.Drawing.Point(192, 409);
+            this.txtVehicleIncidents.Location = new System.Drawing.Point(232, 409);
             this.txtVehicleIncidents.Name = "txtVehicleIncidents";
             this.txtVehicleIncidents.Size = new System.Drawing.Size(197, 26);
             this.txtVehicleIncidents.TabIndex = 6;
@@ -125,7 +127,7 @@
             // 
             this.txtFuelUsage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFuelUsage.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFuelUsage.Location = new System.Drawing.Point(192, 353);
+            this.txtFuelUsage.Location = new System.Drawing.Point(232, 353);
             this.txtFuelUsage.Name = "txtFuelUsage";
             this.txtFuelUsage.Size = new System.Drawing.Size(197, 26);
             this.txtFuelUsage.TabIndex = 7;
@@ -133,7 +135,7 @@
             // dtpDateFrom
             // 
             this.dtpDateFrom.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateFrom.Location = new System.Drawing.Point(192, 242);
+            this.dtpDateFrom.Location = new System.Drawing.Point(232, 244);
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.Size = new System.Drawing.Size(197, 26);
             this.dtpDateFrom.TabIndex = 8;
@@ -193,23 +195,10 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pnlBtns
-            // 
-            this.pnlBtns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlBtns.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBtns.Controls.Add(this.btnUpdate);
-            this.pnlBtns.Controls.Add(this.btnDelete);
-            this.pnlBtns.Controls.Add(this.btnAdd);
-            this.pnlBtns.Controls.Add(this.btnReset);
-            this.pnlBtns.Location = new System.Drawing.Point(40, 529);
-            this.pnlBtns.Name = "pnlBtns";
-            this.pnlBtns.Size = new System.Drawing.Size(530, 64);
-            this.pnlBtns.TabIndex = 14;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(39, 12);
+            this.btnUpdate.Location = new System.Drawing.Point(223, 53);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -220,7 +209,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(157, 12);
+            this.btnDelete.Location = new System.Drawing.Point(39, 53);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -231,7 +220,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(275, 12);
+            this.btnAdd.Location = new System.Drawing.Point(223, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -239,23 +228,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // btnReset
+            // btnClear
             // 
-            this.btnReset.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(393, 12);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(82, 35);
-            this.btnReset.TabIndex = 15;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(395, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(82, 35);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblDateTo
             // 
             this.lblDateTo.AutoSize = true;
             this.lblDateTo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateTo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateTo.Location = new System.Drawing.Point(36, 301);
+            this.lblDateTo.Location = new System.Drawing.Point(68, 301);
             this.lblDateTo.Name = "lblDateTo";
             this.lblDateTo.Size = new System.Drawing.Size(95, 19);
             this.lblDateTo.TabIndex = 15;
@@ -264,7 +253,7 @@
             // dtpDateTo
             // 
             this.dtpDateTo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateTo.Location = new System.Drawing.Point(192, 296);
+            this.dtpDateTo.Location = new System.Drawing.Point(232, 294);
             this.dtpDateTo.Name = "dtpDateTo";
             this.dtpDateTo.Size = new System.Drawing.Size(197, 26);
             this.dtpDateTo.TabIndex = 16;
@@ -274,7 +263,7 @@
             this.lblKm.AutoSize = true;
             this.lblKm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblKm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKm.Location = new System.Drawing.Point(36, 477);
+            this.lblKm.Location = new System.Drawing.Point(68, 477);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(102, 19);
             this.lblKm.TabIndex = 17;
@@ -284,7 +273,7 @@
             // 
             this.txtKM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKM.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKM.Location = new System.Drawing.Point(192, 470);
+            this.txtKM.Location = new System.Drawing.Point(232, 470);
             this.txtKM.Name = "txtKM";
             this.txtKM.Size = new System.Drawing.Size(197, 26);
             this.txtKM.TabIndex = 18;
@@ -294,7 +283,7 @@
             this.lblTripID.AutoSize = true;
             this.lblTripID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTripID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTripID.Location = new System.Drawing.Point(36, 157);
+            this.lblTripID.Location = new System.Drawing.Point(68, 157);
             this.lblTripID.Name = "lblTripID";
             this.lblTripID.Size = new System.Drawing.Size(57, 19);
             this.lblTripID.TabIndex = 19;
@@ -304,17 +293,53 @@
             // 
             this.txtTripID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTripID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTripID.Location = new System.Drawing.Point(192, 150);
+            this.txtTripID.Location = new System.Drawing.Point(232, 150);
             this.txtTripID.Name = "txtTripID";
             this.txtTripID.Size = new System.Drawing.Size(197, 26);
             this.txtTripID.TabIndex = 20;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnClear);
+            this.pnlButtons.Controls.Add(this.btnAdd);
+            this.pnlButtons.Controls.Add(this.btnDelete);
+            this.pnlButtons.Controls.Add(this.btnUpdate);
+            this.pnlButtons.Controls.Add(this.btnSearch);
+            this.pnlButtons.Controls.Add(this.btnSubmit);
+            this.pnlButtons.Location = new System.Drawing.Point(40, 532);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(530, 105);
+            this.pnlButtons.TabIndex = 21;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(39, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(82, 35);
+            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(395, 53);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
+            this.btnSubmit.TabIndex = 15;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // frmTripUsage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(594, 615);
+            this.ClientSize = new System.Drawing.Size(594, 676);
+            this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtTripID);
             this.Controls.Add(this.lblTripID);
             this.Controls.Add(this.txtKM);
@@ -322,7 +347,6 @@
             this.Controls.Add(this.dtpDateTo);
             this.Controls.Add(this.lblDateTo);
             this.Controls.Add(this.txtVehicleIncidents);
-            this.Controls.Add(this.pnlBtns);
             this.Controls.Add(this.lblVehicleIncidents);
             this.Controls.Add(this.txtFuelUsage);
             this.Controls.Add(this.lblFuelUsage);
@@ -340,7 +364,7 @@
             this.pnlTripUsage.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            this.pnlBtns.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,8 +386,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
-        private System.Windows.Forms.Panel pnlBtns;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblDateTo;
         private System.Windows.Forms.DateTimePicker dtpDateTo;
@@ -373,5 +396,8 @@
         private System.Windows.Forms.TextBox txtTripID;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

@@ -15,7 +15,7 @@ namespace FleetTrackingInformationSystem
        private string password;
        private string empPosition;
 
-        public Register()
+       public Register()
        {
 
        }
@@ -95,7 +95,6 @@ namespace FleetTrackingInformationSystem
                 empPosition = value;
             }
         }
-
 
         public string SuccessMessage()
         {

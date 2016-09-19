@@ -51,6 +51,8 @@
             this.pnlVehicle = new System.Windows.Forms.Panel();
             this.pnlEmployee = new System.Windows.Forms.Panel();
             this.btnEmployee = new System.Windows.Forms.Button();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlTrip.SuspendLayout();
@@ -61,6 +63,7 @@
             this.pnlReport.SuspendLayout();
             this.pnlVehicle.SuspendLayout();
             this.pnlEmployee.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMenu
@@ -275,12 +278,33 @@
             this.btnEmployee.UseVisualStyleBackColor = true;
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
+            // pnlSearch
+            // 
+            this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSearch.Controls.Add(this.btnSearch);
+            this.pnlSearch.Location = new System.Drawing.Point(213, 305);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(138, 79);
+            this.pnlSearch.TabIndex = 20;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(15, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 31);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(565, 537);
+            this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlEmployee);
             this.Controls.Add(this.pnlVehicle);
             this.Controls.Add(this.pnlReport);
@@ -307,6 +331,7 @@
             this.pnlReport.ResumeLayout(false);
             this.pnlVehicle.ResumeLayout(false);
             this.pnlEmployee.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,5 +361,7 @@
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
+        private System.Windows.Forms.Panel pnlSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
