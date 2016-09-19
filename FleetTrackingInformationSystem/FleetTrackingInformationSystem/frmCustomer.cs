@@ -118,15 +118,15 @@ namespace FleetTrackingInformationSystem
         {
             if(int.TryParse(contact, out intTryParseOut) == false)
             {
-                MessageBox.Show("The 'Contact Number' field cannot contain letters");
+                MessageBox.Show("The 'Contact Number' field cannot contain letters or symbols");
             }
             if(double.TryParse(PaymentDue, out doubleTryParseOut) == false)
             {
-                MessageBox.Show("The 'Payment Due' field cannot contain letters");
+                MessageBox.Show("The 'Payment Due' field cannot contain letters or symbols");
             }
             if(double.TryParse(paymentMade, out doubleTryParseOut) == false)
             {
-                MessageBox.Show("The 'Payment Made' field cannot contain letters");
+                MessageBox.Show("The 'Payment Made' field cannot contain letters or symbols");
             }
         }
 
@@ -186,7 +186,7 @@ namespace FleetTrackingInformationSystem
             C_SNAME = txtSurname.Text;
             CheckEmpty();
             CheckForNumbers(C_NAME, C_SNAME);
-            CheckForLetters(C_CONTACT, C_DUE, C_MADE);
+            CheckForLetters(C_CONTACT, C_MADE, C_DUE);
 
             try
             {
