@@ -51,6 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FleetTrackingDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FleetTrackingDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +92,6 @@
     </Compile>
     <Compile Include="frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSearch.Designer.cs">
-      <DependentUpon>frmSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmService.cs">
       <SubType>Form</SubType>
@@ -147,9 +146,6 @@
     <EmbeddedResource Include="frmRegistration.resx">
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSearch.resx">
-      <DependentUpon>frmSearch.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +180,17 @@
     </None>
     <None Include="FleetTrackingDBDataSet.xss">
       <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FleetTrackingDBDataSet1.xsc">
+      <DependentUpon>FleetTrackingDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FleetTrackingDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FleetTrackingDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FleetTrackingDBDataSet1.xss">
+      <DependentUpon>FleetTrackingDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
