@@ -77,6 +77,12 @@
       <DependentUpon>frmRegistration.cs</DependentUpon>
     </Compile>
     <Compile Include="FleetTracking.cs" />
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmService.cs">
       <SubType>Form</SubType>
     </Compile>
