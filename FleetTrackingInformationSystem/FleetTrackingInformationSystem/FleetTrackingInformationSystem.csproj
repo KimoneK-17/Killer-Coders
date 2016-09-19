@@ -89,11 +89,11 @@
     <Compile Include="frmService.Designer.cs">
       <DependentUpon>frmService.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmScheduling.cs">
+    <Compile Include="frmTimesheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmScheduling.Designer.cs">
-      <DependentUpon>frmScheduling.cs</DependentUpon>
+    <Compile Include="frmTimesheet.Designer.cs">
+      <DependentUpon>frmTimesheet.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSplashScreen.cs">
       <SubType>Form</SubType>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmScheduling.resx">
-      <DependentUpon>frmScheduling.cs</DependentUpon>
+    <EmbeddedResource Include="frmTimesheet.resx">
+      <DependentUpon>frmTimesheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTripUsage.resx">
       <DependentUpon>frmTripUsage.cs</DependentUpon>

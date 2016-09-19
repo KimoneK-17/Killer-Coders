@@ -81,7 +81,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(23, 18);
+            this.btnLog.Location = new System.Drawing.Point(23, 29);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(86, 31);
             this.btnLog.TabIndex = 4;
@@ -92,7 +92,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(201, 18);
+            this.btnClear.Location = new System.Drawing.Point(201, 29);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(86, 31);
             this.btnClear.TabIndex = 5;
@@ -103,7 +103,7 @@
             // btnReg
             // 
             this.btnReg.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReg.Location = new System.Drawing.Point(370, 18);
+            this.btnReg.Location = new System.Drawing.Point(370, 29);
             this.btnReg.Name = "btnReg";
             this.btnReg.Size = new System.Drawing.Size(86, 31);
             this.btnReg.TabIndex = 6;
@@ -115,7 +115,7 @@
             // 
             this.lblFleet.AutoSize = true;
             this.lblFleet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFleet.Location = new System.Drawing.Point(36, 27);
+            this.lblFleet.Location = new System.Drawing.Point(41, 15);
             this.lblFleet.Name = "lblFleet";
             this.lblFleet.Size = new System.Drawing.Size(398, 33);
             this.lblFleet.TabIndex = 7;
@@ -126,9 +126,9 @@
             this.pnlFleet.BackColor = System.Drawing.Color.Transparent;
             this.pnlFleet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFleet.Controls.Add(this.lblFleet);
-            this.pnlFleet.Location = new System.Drawing.Point(39, 35);
+            this.pnlFleet.Location = new System.Drawing.Point(15, 45);
             this.pnlFleet.Name = "pnlFleet";
-            this.pnlFleet.Size = new System.Drawing.Size(483, 89);
+            this.pnlFleet.Size = new System.Drawing.Size(507, 66);
             this.pnlFleet.TabIndex = 8;
             // 
             // mnuFleet
@@ -182,9 +182,9 @@
             this.pnlButtons.Controls.Add(this.btnLog);
             this.pnlButtons.Controls.Add(this.btnPassReset);
             this.pnlButtons.Controls.Add(this.btnReg);
-            this.pnlButtons.Location = new System.Drawing.Point(39, 305);
+            this.pnlButtons.Location = new System.Drawing.Point(15, 305);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(483, 125);
+            this.pnlButtons.Size = new System.Drawing.Size(507, 125);
             this.pnlButtons.TabIndex = 14;
             // 
             // btnPassReset

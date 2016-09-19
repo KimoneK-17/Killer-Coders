@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FleetTrackingInformationSystem
 {
-    public partial class frmScheduling : Form
+    public partial class frmTimesheet : Form
     {
-        public frmScheduling()
+        public frmTimesheet()
         {
             InitializeComponent();
         }

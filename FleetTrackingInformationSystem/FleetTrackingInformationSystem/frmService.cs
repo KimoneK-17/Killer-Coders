@@ -168,5 +168,40 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error" + ex.Message);
             }
         }
+
+        private void frmService_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtVehicleRegNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtServiceID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmployeeName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpAppointmentDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboAppointTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtfAppointDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

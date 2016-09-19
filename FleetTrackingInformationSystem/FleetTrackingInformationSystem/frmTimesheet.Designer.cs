@@ -1,6 +1,6 @@
 ﻿namespace FleetTrackingInformationSystem
 {
-    partial class frmScheduling
+    partial class frmTimesheet
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduling));
-            this.pnlScheduling = new System.Windows.Forms.Panel();
-            this.lblScheduling = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimesheet));
+            this.pnlTimesheet = new System.Windows.Forms.Panel();
+            this.lblTimesheet = new System.Windows.Forms.Label();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,33 +46,31 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.pnlScheduling.SuspendLayout();
+            this.pnlTimesheet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updHoursWorked)).BeginInit();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlScheduling
+            // pnlTimesheet
             // 
-            this.pnlScheduling.BackColor = System.Drawing.Color.Transparent;
-            this.pnlScheduling.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlScheduling.Controls.Add(this.lblScheduling);
-            this.pnlScheduling.Location = new System.Drawing.Point(29, 54);
-            this.pnlScheduling.Name = "pnlScheduling";
-            this.pnlScheduling.Size = new System.Drawing.Size(523, 89);
-            this.pnlScheduling.TabIndex = 9;
+            this.pnlTimesheet.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTimesheet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTimesheet.Controls.Add(this.lblTimesheet);
+            this.pnlTimesheet.Location = new System.Drawing.Point(29, 54);
+            this.pnlTimesheet.Name = "pnlTimesheet";
+            this.pnlTimesheet.Size = new System.Drawing.Size(526, 66);
+            this.pnlTimesheet.TabIndex = 9;
             // 
-            // lblScheduling
+            // lblTimesheet
             // 
-            this.lblScheduling.AutoSize = true;
-            this.lblScheduling.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScheduling.Location = new System.Drawing.Point(195, 23);
-            this.lblScheduling.Name = "lblScheduling";
-            this.lblScheduling.Size = new System.Drawing.Size(136, 33);
-            this.lblScheduling.TabIndex = 7;
-            this.lblScheduling.Text = "Scheduling";
+            this.lblTimesheet.AutoSize = true;
+            this.lblTimesheet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimesheet.Location = new System.Drawing.Point(193, 14);
+            this.lblTimesheet.Name = "lblTimesheet";
+            this.lblTimesheet.Size = new System.Drawing.Size(133, 33);
+            this.lblTimesheet.TabIndex = 7;
+            this.lblTimesheet.Text = "Timesheet";
             // 
             // mnuFleet
             // 
@@ -169,7 +167,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(213, 53);
+            this.btnUpdate.Location = new System.Drawing.Point(155, 14);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -179,7 +177,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(32, 53);
+            this.btnDelete.Location = new System.Drawing.Point(55, 14);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -190,7 +188,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(213, 12);
+            this.btnAdd.Location = new System.Drawing.Point(255, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -201,7 +199,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(395, 12);
+            this.btnClear.Location = new System.Drawing.Point(354, 14);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -217,34 +215,12 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Controls.Add(this.btnSearch);
-            this.pnlButtons.Controls.Add(this.btnSubmit);
-            this.pnlButtons.Location = new System.Drawing.Point(29, 347);
+            this.pnlButtons.Location = new System.Drawing.Point(29, 362);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(523, 104);
+            this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 37;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(32, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 35);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(395, 53);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            // 
-            // frmScheduling
+            // frmTimesheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,13 +234,13 @@
             this.Controls.Add(this.lblNumHoursWorked);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.mnuFleet);
-            this.Controls.Add(this.pnlScheduling);
+            this.Controls.Add(this.pnlTimesheet);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmScheduling";
+            this.Name = "frmTimesheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
-            this.pnlScheduling.ResumeLayout(false);
-            this.pnlScheduling.PerformLayout();
+            this.pnlTimesheet.ResumeLayout(false);
+            this.pnlTimesheet.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updHoursWorked)).EndInit();
@@ -276,8 +252,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlScheduling;
-        private System.Windows.Forms.Label lblScheduling;
+        private System.Windows.Forms.Panel pnlTimesheet;
+        private System.Windows.Forms.Label lblTimesheet;
         private System.Windows.Forms.MenuStrip mnuFleet;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
@@ -293,7 +269,5 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnSubmit;
     }
 }

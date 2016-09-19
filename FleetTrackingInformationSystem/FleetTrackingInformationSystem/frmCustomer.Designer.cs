@@ -53,11 +53,9 @@
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlCustomer.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -68,16 +66,16 @@
             this.pnlCustomer.BackColor = System.Drawing.Color.Transparent;
             this.pnlCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCustomer.Controls.Add(this.lblCustomer);
-            this.pnlCustomer.Location = new System.Drawing.Point(12, 57);
+            this.pnlCustomer.Location = new System.Drawing.Point(33, 66);
             this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(577, 89);
+            this.pnlCustomer.Size = new System.Drawing.Size(526, 66);
             this.pnlCustomer.TabIndex = 9;
             // 
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(221, 23);
+            this.lblCustomer.Location = new System.Drawing.Point(205, 12);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(124, 33);
             this.lblCustomer.TabIndex = 7;
@@ -282,7 +280,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(253, 53);
+            this.btnUpdate.Location = new System.Drawing.Point(278, 15);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -293,7 +291,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(39, 53);
+            this.btnDelete.Location = new System.Drawing.Point(64, 15);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -301,21 +299,10 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(253, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(82, 35);
-            this.btnAdd.TabIndex = 15;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(451, 12);
+            this.btnClear.Location = new System.Drawing.Point(389, 15);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -323,40 +310,29 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(172, 15);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(82, 35);
+            this.btnAdd.TabIndex = 15;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // pnlButtons
             // 
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
+            this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Controls.Add(this.btnAdd);
-            this.pnlButtons.Controls.Add(this.btnSearch);
-            this.pnlButtons.Controls.Add(this.btnSubmit);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 587);
+            this.pnlButtons.Location = new System.Drawing.Point(33, 600);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(577, 102);
+            this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 39;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(39, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 35);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(451, 54);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // frmCustomer
             // 
@@ -422,11 +398,9 @@
         private System.Windows.Forms.TextBox txtPaymentMade;
         private System.Windows.Forms.ComboBox cboCustomer;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnSubmit;
     }
 }
