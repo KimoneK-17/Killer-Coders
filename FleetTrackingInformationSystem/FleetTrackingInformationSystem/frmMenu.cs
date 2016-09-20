@@ -88,7 +88,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 this.Hide(); // Will Hide this Form
-                frmScheduling tS = new frmScheduling(); // Creates an Object 
+                frmTimesheet tS = new frmTimesheet(); // Creates an Object 
                 tS.ShowDialog(); // Shows the Timesheet Form
             }
             catch

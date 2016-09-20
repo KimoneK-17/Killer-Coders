@@ -54,8 +54,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.pnlLocation.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updEmployees)).BeginInit();
@@ -70,14 +68,14 @@
             this.pnlLocation.Controls.Add(this.lblLocation);
             this.pnlLocation.Location = new System.Drawing.Point(12, 58);
             this.pnlLocation.Name = "pnlLocation";
-            this.pnlLocation.Size = new System.Drawing.Size(527, 89);
+            this.pnlLocation.Size = new System.Drawing.Size(526, 66);
             this.pnlLocation.TabIndex = 9;
             // 
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocation.Location = new System.Drawing.Point(202, 25);
+            this.lblLocation.Location = new System.Drawing.Point(201, 16);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(110, 33);
             this.lblLocation.TabIndex = 7;
@@ -255,7 +253,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(395, 11);
+            this.btnClear.Location = new System.Drawing.Point(368, 14);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -266,7 +264,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(221, 11);
+            this.btnAdd.Location = new System.Drawing.Point(156, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -277,7 +275,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(39, 52);
+            this.btnDelete.Location = new System.Drawing.Point(50, 14);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -288,7 +286,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(221, 52);
+            this.btnUpdate.Location = new System.Drawing.Point(262, 14);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -304,32 +302,10 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Controls.Add(this.btnSearch);
-            this.pnlButtons.Controls.Add(this.btnSubmit);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 551);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 565);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(527, 101);
+            this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 38;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(39, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 35);
-            this.btnSearch.TabIndex = 17;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(395, 52);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(82, 35);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // frmLocation
             // 
@@ -397,7 +373,5 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnSubmit;
     }
 }
