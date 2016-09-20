@@ -85,17 +85,7 @@ SELECT Cust_ID, Cust_Name, Cust_Surname, Cust_Type, Cust_ContactNo, Cust_Email, 
               <Mapping SourceColumn="Cust_PayDue" DataSetColumn="Cust_PayDue" />
               <Mapping SourceColumn="Cust_PayMade" DataSetColumn="Cust_PayMade" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="FleetTrackingDBConnectionString (Settings)" DbObjectName="FleetTrackingDB.dbo.Customer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        Cust_ID, Cust_Name, Cust_Surname, Cust_Type, Cust_ContactNo, Cust_Email, Cust_PayDue, Cust_PayMade
-FROM            Customer</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmployeeTableAdapter" GeneratorDataComponentClassName="EmployeeTableAdapter" Name="Employee" UserDataComponentName="EmployeeTableAdapter">
             <MainSource>
@@ -502,7 +492,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
   <xs:element name="FleetTrackingDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FleetTrackingDBDataSet" msprop:Generator_UserDSName="FleetTrackingDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_RowClassName="CustomerRow" msprop:Generator_UserTableName="Customer" msprop:Generator_RowEvArgName="CustomerRowChangeEvent">
+        <xs:element name="Customer" msprop:Generator_TableClassName="CustomerDataTable" msprop:Generator_TableVarName="tableCustomer" msprop:Generator_TablePropName="Customer" msprop:Generator_RowDeletingName="CustomerRowDeleting" msprop:Generator_RowChangingName="CustomerRowChanging" msprop:Generator_RowEvHandlerName="CustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomerRowDeleted" msprop:Generator_UserTableName="Customer" msprop:Generator_RowChangedName="CustomerRowChanged" msprop:Generator_RowEvArgName="CustomerRowChangeEvent" msprop:Generator_RowClassName="CustomerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Cust_ID" msprop:Generator_ColumnVarNameInTable="columnCust_ID" msprop:Generator_ColumnPropNameInRow="Cust_ID" msprop:Generator_ColumnPropNameInTable="Cust_IDColumn" msprop:Generator_UserColumnName="Cust_ID" type="xs:int" />
@@ -540,7 +530,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_RowClassName="EmployeeRow" msprop:Generator_UserTableName="Employee" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent">
+        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_UserTableName="Employee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent" msprop:Generator_RowClassName="EmployeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Emp_ID" msprop:Generator_ColumnVarNameInTable="columnEmp_ID" msprop:Generator_ColumnPropNameInRow="Emp_ID" msprop:Generator_ColumnPropNameInTable="Emp_IDColumn" msprop:Generator_UserColumnName="Emp_ID" type="xs:int" />
@@ -584,7 +574,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Location" msprop:Generator_TableClassName="LocationDataTable" msprop:Generator_TableVarName="tableLocation" msprop:Generator_RowChangedName="LocationRowChanged" msprop:Generator_TablePropName="Location" msprop:Generator_RowDeletingName="LocationRowDeleting" msprop:Generator_RowChangingName="LocationRowChanging" msprop:Generator_RowEvHandlerName="LocationRowChangeEventHandler" msprop:Generator_RowDeletedName="LocationRowDeleted" msprop:Generator_RowClassName="LocationRow" msprop:Generator_UserTableName="Location" msprop:Generator_RowEvArgName="LocationRowChangeEvent">
+        <xs:element name="Location" msprop:Generator_TableClassName="LocationDataTable" msprop:Generator_TableVarName="tableLocation" msprop:Generator_TablePropName="Location" msprop:Generator_RowDeletingName="LocationRowDeleting" msprop:Generator_RowChangingName="LocationRowChanging" msprop:Generator_RowEvHandlerName="LocationRowChangeEventHandler" msprop:Generator_RowDeletedName="LocationRowDeleted" msprop:Generator_UserTableName="Location" msprop:Generator_RowChangedName="LocationRowChanged" msprop:Generator_RowEvArgName="LocationRowChangeEvent" msprop:Generator_RowClassName="LocationRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Location_ID" msprop:Generator_ColumnVarNameInTable="columnLocation_ID" msprop:Generator_ColumnPropNameInRow="Location_ID" msprop:Generator_ColumnPropNameInTable="Location_IDColumn" msprop:Generator_UserColumnName="Location_ID" type="xs:int" />
@@ -614,7 +604,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Register" msprop:Generator_TableClassName="RegisterDataTable" msprop:Generator_TableVarName="tableRegister" msprop:Generator_RowChangedName="RegisterRowChanged" msprop:Generator_TablePropName="Register" msprop:Generator_RowDeletingName="RegisterRowDeleting" msprop:Generator_RowChangingName="RegisterRowChanging" msprop:Generator_RowEvHandlerName="RegisterRowChangeEventHandler" msprop:Generator_RowDeletedName="RegisterRowDeleted" msprop:Generator_RowClassName="RegisterRow" msprop:Generator_UserTableName="Register" msprop:Generator_RowEvArgName="RegisterRowChangeEvent">
+        <xs:element name="Register" msprop:Generator_TableClassName="RegisterDataTable" msprop:Generator_TableVarName="tableRegister" msprop:Generator_TablePropName="Register" msprop:Generator_RowDeletingName="RegisterRowDeleting" msprop:Generator_RowChangingName="RegisterRowChanging" msprop:Generator_RowEvHandlerName="RegisterRowChangeEventHandler" msprop:Generator_RowDeletedName="RegisterRowDeleted" msprop:Generator_UserTableName="Register" msprop:Generator_RowChangedName="RegisterRowChanged" msprop:Generator_RowEvArgName="RegisterRowChangeEvent" msprop:Generator_RowClassName="RegisterRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="R_DOB" msprop:Generator_ColumnVarNameInTable="columnR_DOB" msprop:Generator_ColumnPropNameInRow="R_DOB" msprop:Generator_ColumnPropNameInTable="R_DOBColumn" msprop:Generator_UserColumnName="R_DOB" type="xs:dateTime" />
@@ -649,7 +639,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblService" msprop:Generator_TableClassName="tblServiceDataTable" msprop:Generator_TableVarName="tabletblService" msprop:Generator_RowChangedName="tblServiceRowChanged" msprop:Generator_TablePropName="tblService" msprop:Generator_RowDeletingName="tblServiceRowDeleting" msprop:Generator_RowChangingName="tblServiceRowChanging" msprop:Generator_RowEvHandlerName="tblServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="tblServiceRowDeleted" msprop:Generator_RowClassName="tblServiceRow" msprop:Generator_UserTableName="tblService" msprop:Generator_RowEvArgName="tblServiceRowChangeEvent">
+        <xs:element name="tblService" msprop:Generator_TableClassName="tblServiceDataTable" msprop:Generator_TableVarName="tabletblService" msprop:Generator_TablePropName="tblService" msprop:Generator_RowDeletingName="tblServiceRowDeleting" msprop:Generator_RowChangingName="tblServiceRowChanging" msprop:Generator_RowEvHandlerName="tblServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="tblServiceRowDeleted" msprop:Generator_UserTableName="tblService" msprop:Generator_RowChangedName="tblServiceRowChanged" msprop:Generator_RowEvArgName="tblServiceRowChangeEvent" msprop:Generator_RowClassName="tblServiceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Service_ID" msprop:Generator_ColumnVarNameInTable="columnService_ID" msprop:Generator_ColumnPropNameInRow="Service_ID" msprop:Generator_ColumnPropNameInTable="Service_IDColumn" msprop:Generator_UserColumnName="Service_ID" type="xs:int" />
@@ -672,7 +662,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TripUsage" msprop:Generator_TableClassName="TripUsageDataTable" msprop:Generator_TableVarName="tableTripUsage" msprop:Generator_RowChangedName="TripUsageRowChanged" msprop:Generator_TablePropName="TripUsage" msprop:Generator_RowDeletingName="TripUsageRowDeleting" msprop:Generator_RowChangingName="TripUsageRowChanging" msprop:Generator_RowEvHandlerName="TripUsageRowChangeEventHandler" msprop:Generator_RowDeletedName="TripUsageRowDeleted" msprop:Generator_RowClassName="TripUsageRow" msprop:Generator_UserTableName="TripUsage" msprop:Generator_RowEvArgName="TripUsageRowChangeEvent">
+        <xs:element name="TripUsage" msprop:Generator_TableClassName="TripUsageDataTable" msprop:Generator_TableVarName="tableTripUsage" msprop:Generator_TablePropName="TripUsage" msprop:Generator_RowDeletingName="TripUsageRowDeleting" msprop:Generator_RowChangingName="TripUsageRowChanging" msprop:Generator_RowEvHandlerName="TripUsageRowChangeEventHandler" msprop:Generator_RowDeletedName="TripUsageRowDeleted" msprop:Generator_UserTableName="TripUsage" msprop:Generator_RowChangedName="TripUsageRowChanged" msprop:Generator_RowEvArgName="TripUsageRowChangeEvent" msprop:Generator_RowClassName="TripUsageRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Trip_ID" msprop:Generator_ColumnVarNameInTable="columnTrip_ID" msprop:Generator_ColumnPropNameInRow="Trip_ID" msprop:Generator_ColumnPropNameInTable="Trip_IDColumn" msprop:Generator_UserColumnName="Trip_ID" type="xs:int" />
@@ -697,7 +687,7 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vehicle" msprop:Generator_TableClassName="VehicleDataTable" msprop:Generator_TableVarName="tableVehicle" msprop:Generator_RowChangedName="VehicleRowChanged" msprop:Generator_TablePropName="Vehicle" msprop:Generator_RowDeletingName="VehicleRowDeleting" msprop:Generator_RowChangingName="VehicleRowChanging" msprop:Generator_RowEvHandlerName="VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="VehicleRowDeleted" msprop:Generator_RowClassName="VehicleRow" msprop:Generator_UserTableName="Vehicle" msprop:Generator_RowEvArgName="VehicleRowChangeEvent">
+        <xs:element name="Vehicle" msprop:Generator_TableClassName="VehicleDataTable" msprop:Generator_TableVarName="tableVehicle" msprop:Generator_TablePropName="Vehicle" msprop:Generator_RowDeletingName="VehicleRowDeleting" msprop:Generator_RowChangingName="VehicleRowChanging" msprop:Generator_RowEvHandlerName="VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="VehicleRowDeleted" msprop:Generator_UserTableName="Vehicle" msprop:Generator_RowChangedName="VehicleRowChanged" msprop:Generator_RowEvArgName="VehicleRowChangeEvent" msprop:Generator_RowClassName="VehicleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Vehicle_RegNumber" msprop:Generator_ColumnVarNameInTable="columnVehicle_RegNumber" msprop:Generator_ColumnPropNameInRow="Vehicle_RegNumber" msprop:Generator_ColumnPropNameInTable="Vehicle_RegNumberColumn" msprop:Generator_UserColumnName="Vehicle_RegNumber">
@@ -769,9 +759,9 @@ SELECT Vehicle_RegNumber, Vehicle_Type, Vehicle_Make, Vehicle_Model, Vehicle_Yea
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Emp_ID" msdata:parent="Employee" msdata:child="tblService" msdata:parentkey="Emp_ID" msdata:childkey="Emp_ID" msprop:Generator_UserChildTable="tblService" msprop:Generator_ChildPropName="GettblServiceRows" msprop:Generator_UserRelationName="FK_Emp_ID" msprop:Generator_RelationVarName="relationFK_Emp_ID" msprop:Generator_UserParentTable="Employee" msprop:Generator_ParentPropName="EmployeeRow" />
-      <msdata:Relationship name="FK_Vehicle_Reg" msdata:parent="Vehicle" msdata:child="tblService" msdata:parentkey="Vehicle_RegNumber" msdata:childkey="Vehicle_RegNumber" msprop:Generator_UserChildTable="tblService" msprop:Generator_ChildPropName="GettblServiceRows" msprop:Generator_UserRelationName="FK_Vehicle_Reg" msprop:Generator_ParentPropName="VehicleRow" msprop:Generator_RelationVarName="relationFK_Vehicle_Reg" msprop:Generator_UserParentTable="Vehicle" />
-      <msdata:Relationship name="FK_Veh_Reg" msdata:parent="Vehicle" msdata:child="TripUsage" msdata:parentkey="Vehicle_RegNumber" msdata:childkey="Vehicle_RegNumber" msprop:Generator_UserChildTable="TripUsage" msprop:Generator_ChildPropName="GetTripUsageRows" msprop:Generator_UserRelationName="FK_Veh_Reg" msprop:Generator_ParentPropName="VehicleRow" msprop:Generator_RelationVarName="relationFK_Veh_Reg" msprop:Generator_UserParentTable="Vehicle" />
+      <msdata:Relationship name="FK_Emp_ID" msdata:parent="Employee" msdata:child="tblService" msdata:parentkey="Emp_ID" msdata:childkey="Emp_ID" msprop:Generator_UserChildTable="tblService" msprop:Generator_ChildPropName="GettblServiceRows" msprop:Generator_UserRelationName="FK_Emp_ID" msprop:Generator_ParentPropName="EmployeeRow" msprop:Generator_RelationVarName="relationFK_Emp_ID" msprop:Generator_UserParentTable="Employee" />
+      <msdata:Relationship name="FK_Vehicle_Reg" msdata:parent="Vehicle" msdata:child="tblService" msdata:parentkey="Vehicle_RegNumber" msdata:childkey="Vehicle_RegNumber" msprop:Generator_UserChildTable="tblService" msprop:Generator_ChildPropName="GettblServiceRows" msprop:Generator_UserRelationName="FK_Vehicle_Reg" msprop:Generator_RelationVarName="relationFK_Vehicle_Reg" msprop:Generator_UserParentTable="Vehicle" msprop:Generator_ParentPropName="VehicleRow" />
+      <msdata:Relationship name="FK_Veh_Reg" msdata:parent="Vehicle" msdata:child="TripUsage" msdata:parentkey="Vehicle_RegNumber" msdata:childkey="Vehicle_RegNumber" msprop:Generator_UserChildTable="TripUsage" msprop:Generator_ChildPropName="GetTripUsageRows" msprop:Generator_UserRelationName="FK_Veh_Reg" msprop:Generator_RelationVarName="relationFK_Veh_Reg" msprop:Generator_UserParentTable="Vehicle" msprop:Generator_ParentPropName="VehicleRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
