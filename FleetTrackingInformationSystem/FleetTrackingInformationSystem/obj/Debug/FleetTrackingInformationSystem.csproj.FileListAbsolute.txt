@@ -178,3 +178,5 @@ C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.cache
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
+C:\Users\15005917\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+C:\Users\15005917\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
