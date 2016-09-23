@@ -34,7 +34,7 @@
             this.FleetTrackingDBDataSet = new FleetTrackingInformationSystem.FleetTrackingDBDataSet();
             this.tabReports = new System.Windows.Forms.TabControl();
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportV = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabServiceAppoint = new System.Windows.Forms.TabPage();
             this.tabServiceRequire = new System.Windows.Forms.TabPage();
             this.tabVehicleServiceCompleted = new System.Windows.Forms.TabPage();
@@ -43,10 +43,18 @@
             this.tabCompletedTrip = new System.Windows.Forms.TabPage();
             this.tabTimesheet = new System.Windows.Forms.TabPage();
             this.VehicleTableAdapter = new FleetTrackingInformationSystem.FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter();
+            this.pnlCustomer = new System.Windows.Forms.Panel();
+            this.lblCustomer = new System.Windows.Forms.Label();
+            this.mnuFleet = new System.Windows.Forms.MenuStrip();
+            this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
+            this.pnlCustomer.SuspendLayout();
+            this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
             // 
             // VehicleBindingSource
@@ -69,7 +77,7 @@
             this.tabReports.Controls.Add(this.tabPlannedTrip);
             this.tabReports.Controls.Add(this.tabCompletedTrip);
             this.tabReports.Controls.Add(this.tabTimesheet);
-            this.tabReports.Location = new System.Drawing.Point(70, 95);
+            this.tabReports.Location = new System.Drawing.Point(70, 140);
             this.tabReports.Name = "tabReports";
             this.tabReports.SelectedIndex = 0;
             this.tabReports.Size = new System.Drawing.Size(1023, 472);
@@ -77,7 +85,7 @@
             // 
             // tabVehicleStat
             // 
-            this.tabVehicleStat.Controls.Add(this.reportViewer1);
+            this.tabVehicleStat.Controls.Add(this.reportV);
             this.tabVehicleStat.Location = new System.Drawing.Point(4, 22);
             this.tabVehicleStat.Name = "tabVehicleStat";
             this.tabVehicleStat.Padding = new System.Windows.Forms.Padding(3);
@@ -86,17 +94,17 @@
             this.tabVehicleStat.Text = "Vehicle Status Report";
             this.tabVehicleStat.UseVisualStyleBackColor = true;
             // 
-            // reportViewer1
+            // reportV
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportV.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.VehicleBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "FleetTrackingInformationSystem.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1009, 440);
-            this.reportViewer1.TabIndex = 0;
+            this.reportV.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportV.LocalReport.ReportEmbeddedResource = "FleetTrackingInformationSystem.Report1.rdlc";
+            this.reportV.Location = new System.Drawing.Point(3, 3);
+            this.reportV.Name = "reportV";
+            this.reportV.Size = new System.Drawing.Size(1009, 440);
+            this.reportV.TabIndex = 0;
             // 
             // tabServiceAppoint
             // 
@@ -166,12 +174,67 @@
             // 
             this.VehicleTableAdapter.ClearBeforeFill = true;
             // 
+            // pnlCustomer
+            // 
+            this.pnlCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCustomer.Controls.Add(this.lblCustomer);
+            this.pnlCustomer.Location = new System.Drawing.Point(70, 41);
+            this.pnlCustomer.Name = "pnlCustomer";
+            this.pnlCustomer.Size = new System.Drawing.Size(1016, 66);
+            this.pnlCustomer.TabIndex = 10;
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.AutoSize = true;
+            this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.Location = new System.Drawing.Point(443, 13);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(103, 33);
+            this.lblCustomer.TabIndex = 7;
+            this.lblCustomer.Text = "Reports";
+            // 
+            // mnuFleet
+            // 
+            this.mnuFleet.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuOptions});
+            this.mnuFleet.Location = new System.Drawing.Point(0, 0);
+            this.mnuFleet.Name = "mnuFleet";
+            this.mnuFleet.Size = new System.Drawing.Size(1148, 24);
+            this.mnuFleet.TabIndex = 14;
+            this.mnuFleet.Text = "menuStrip1";
+            // 
+            // mnuOptions
+            // 
+            this.mnuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuBack,
+            this.mnuExit});
+            this.mnuOptions.Name = "mnuOptions";
+            this.mnuOptions.Size = new System.Drawing.Size(61, 20);
+            this.mnuOptions.Text = "Options";
+            // 
+            // mnuBack
+            // 
+            this.mnuBack.Name = "mnuBack";
+            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1148, 579);
+            this.ClientSize = new System.Drawing.Size(1148, 643);
+            this.Controls.Add(this.mnuFleet);
+            this.Controls.Add(this.pnlCustomer);
             this.Controls.Add(this.tabReports);
             this.Name = "frmReports";
             this.Text = "Fleet Tracking Information System";
@@ -180,7 +243,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabVehicleStat.ResumeLayout(false);
+            this.pnlCustomer.ResumeLayout(false);
+            this.pnlCustomer.PerformLayout();
+            this.mnuFleet.ResumeLayout(false);
+            this.mnuFleet.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,9 +263,15 @@
         private System.Windows.Forms.TabPage tabPlannedTrip;
         private System.Windows.Forms.TabPage tabCompletedTrip;
         private System.Windows.Forms.TabPage tabTimesheet;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportV;
         private System.Windows.Forms.BindingSource VehicleBindingSource;
         private FleetTrackingDBDataSet FleetTrackingDBDataSet;
         private FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter VehicleTableAdapter;
+        private System.Windows.Forms.Panel pnlCustomer;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.MenuStrip mnuFleet;
+        private System.Windows.Forms.ToolStripMenuItem mnuOptions;
+        private System.Windows.Forms.ToolStripMenuItem mnuBack;
+        private System.Windows.Forms.ToolStripMenuItem mnuExit;
     }
 }

@@ -69,6 +69,18 @@ namespace FleetTrackingInformationSystem
                 txtNewPassword.Clear();
                 txtUsername.Clear();
             }
+            catch
+            {
+                int stopper = 1;
+                while (stopper == 1)
+                {
+                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                    this.Hide();
+                    frmLogin log = new frmLogin();
+                    log.ShowDialog();
+                    --stopper;
+                }
+            }
         }
     }
 }
