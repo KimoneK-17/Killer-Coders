@@ -1,2 +1,0 @@
-C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
-C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
