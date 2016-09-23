@@ -185,7 +185,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Reports.rdlc" />
     <None Include="FleetTrackingDBDataSet.xsc">
       <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
     </None>
