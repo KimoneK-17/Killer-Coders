@@ -188,5 +188,10 @@ namespace FleetTrackingInformationSystem
                 }
             }
         }
+
+        private void btnPassReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,35 +10,25 @@ using System.Windows.Forms;
 
 namespace FleetTrackingInformationSystem
 {
-    public partial class frmReports : Form
+    public partial class frmPasswordReset : Form
     {
-        public frmReports()
+        public frmPasswordReset()
         {
             InitializeComponent();
         }
 
-        private void frmReports_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'FleetTrackingDBDataSet.Vehicle' table. You can move, or remove it, as needed.
-            this.VehicleTableAdapter.Fill(this.FleetTrackingDBDataSet.Vehicle);
-
-            this.reportV.RefreshReport();
-        }
-
-        private void mnuBack_Click(object sender, EventArgs e)
+        private void mnuExit_Click(object sender, EventArgs e)
         {
             try
             {
-                this.Hide();
-                frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.ShowDialog();
+                System.Environment.Exit(0); // Exits the Entire Application
             }
             catch
             {
                 int stopper = 1;
                 while (stopper == 1)
                 {
-                    MessageBox.Show("Application Error");
+                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
                     frmLogin log = new frmLogin();
                     log.ShowDialog();
@@ -47,11 +37,37 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void mnuExit_Click(object sender, EventArgs e)
+        private void mnuBack_Click(object sender, EventArgs e)
         {
             try
             {
-                System.Environment.Exit(0); // Exits the Entire Application
+                this.Hide();
+                frmLogin log = new frmLogin();
+                log.ShowDialog(); // Goes back to Login Form
+            }
+            catch
+            {
+                int stopper = 1;
+                while (stopper == 1)
+                {
+                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                    this.Hide();
+                    frmLogin log = new frmLogin();
+                    log.ShowDialog();
+                    --stopper;
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtConfirmPassword.Clear();
+                txtCurrentPassword.Clear();
+                txtEmail.Clear();
+                txtNewPassword.Clear();
+                txtUsername.Clear();
             }
             catch
             {
