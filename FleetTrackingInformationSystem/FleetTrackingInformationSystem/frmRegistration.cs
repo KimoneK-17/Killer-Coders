@@ -26,17 +26,14 @@ namespace FleetTrackingInformationSystem
         string R_SNAME;
         string R_UNAME;
         string R_PWORD;
-        string R_EMAIL = "myvcemail@gmail.com";
+        string R_EMAIL;
+        string R_MEMAIL = "myvcemail@gmail.com";
         string R_EPWORD = "ice-cream2";
         string R_CURRDATE;
         string R_EMPPOS;
-        string S_ID;
-        string V_RN;
-        string E_ID;
-        string S_DATE;
-        string S_DES;
 
-        
+
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -116,99 +113,157 @@ namespace FleetTrackingInformationSystem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
+
             R_DOB = dtpDateOfBirth.Value.ToShortDateString();
             R_NAME = txtName.Text;
             R_SNAME = txtSurname.Text;
             R_UNAME = txtUserName.Text;
             R_PWORD = txtPass.Text;
+            R_EMAIL = txtEmail.Text;
             R_CURRDATE = CurrDate(R_CURRDATE);
             R_EMPPOS = cboEmpPosition.SelectedItem.ToString();
+            bool email = false;
 
-            Cursor.Current = Cursors.WaitCursor;//this is used to show the user that a process is occuring
-            try
+            if (!R_NAME.Equals(""))
             {
-              string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_UNAME + "," + R_PWORD;
-
-              using (StreamWriter writer = File.AppendText("UserCred.txt"))
-              {
-                  writer.WriteLine(s);
-              }
-
-                //try
-                //{
-
-                //    SmtpClient client = new SmtpClient("smtp.gmail.com");
-                //    client.Port = 587;
-                //    client.EnableSsl = true;
-                //    client.Timeout = 100000;
-                //    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                //    client.UseDefaultCredentials = false;
-
-                //    client.Credentials = new NetworkCredential(
-                //      emailAddress, emailPass);//logins into your email account
-
-                //    //gets values from the textboxes
-                //    MailMessage msg = new MailMessage();
-                //    msg.To.Add(txtEmail.Text);
-                //    msg.From = new MailAddress(emailAddress);//checks that email address exists
-                //    msg.Subject = "Successful Registration - Fleet Tracking Application";
-                //    msg.Body = "Hello " + regName.ToUpper() + " " + regSname.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + currDate + "\nUser Name: " + userName + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
-
-                //    client.Send(msg);
-
-                //    Cursor.Current = Cursors.Default;// when processing is done default curser will appear
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
-                //}
-
-
-                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_EMAIL);
-
-                this.Hide();
-                frmLogin log = new frmLogin();
-                log.ShowDialog(); // Goes back to Login Form
-            }
-            catch
-            {
-                int stopper = 1;
-                while (stopper == 1)
+                if (!R_SNAME.Equals(""))
                 {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
+                    if (!(cboEmpPosition.SelectedIndex < 0))
+                    {
+                        if (!R_EMAIL.Equals(""))
+                        {
+                            try
+                            {
+                                var addr = new System.Net.Mail.MailAddress(R_EMAIL);// validates email address
+                                email = true;
+                            }
+                            catch
+                            {
+
+                            }
+                            if (email == true)
+                            {
+                                if (!R_UNAME.Equals(""))
+                                {
+                                    if(!R_PWORD.Equals(""))
+                                    {
+                                        try
+                                        {
+                                            DBConnect objDBConnect = new DBConnect();
+                                            objDBConnect.OpenConnection();
+
+                                            objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Register VALUES (@R_DOB, @R_NAME, @R_SNAME,@R_EMPPOS,@R_UNAME, @R_PWORD)", objDBConnect.sqlConn);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", R_DOB);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_NAME", R_NAME);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_SNAME", R_SNAME);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMPPOS", R_EMPPOS);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
+                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
+
+
+                                            objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                                            objDBConnect.sqlDR.Close();
+                                            objDBConnect.sqlConn.Close();
+
+                                            try
+                                            {
+
+
+                                                string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_EMPPOS + "," + R_UNAME + "," + R_PWORD;
+
+                                                try
+                                                {
+
+                                                    SmtpClient client = new SmtpClient("smtp.gmail.com");
+                                                    client.Port = 587;
+                                                    client.EnableSsl = true;
+                                                    client.Timeout = 100000;
+                                                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                                                    client.UseDefaultCredentials = false;
+
+                                                    client.Credentials = new NetworkCredential(
+                                                      R_MEMAIL, R_EPWORD);//logins into your email account
+
+                                                    //gets values from the textboxes
+                                                    MailMessage msg = new MailMessage();
+                                                    msg.To.Add(txtEmail.Text);
+                                                    msg.From = new MailAddress(R_MEMAIL);//checks that email address exists
+                                                    msg.Subject = "Successful Registration - Fleet Tracking Application";
+                                                    msg.Body = "Hello " + R_NAME.ToUpper() + " " + R_SNAME.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + R_CURRDATE + "\nUser Name: " + R_UNAME + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
+
+                                                    client.Send(msg);
+
+                                                    Cursor.Current = Cursors.Default;// when processing is done default curser will appear
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
+                                                }
+
+
+                                                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_MEMAIL);
+
+                                                this.Hide();
+                                                frmLogin log = new frmLogin();
+                                                log.ShowDialog(); // Goes back to Login Form
+                                            }
+                                            catch
+                                            {
+                                                int stopper = 1;
+                                                while (stopper == 1)
+                                                {
+                                                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                                                    this.Hide();
+                                                    frmLogin log = new frmLogin();
+                                                    log.ShowDialog();
+                                                    --stopper;
+                                                }
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show("Error" + ex.Message);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Enter A Password");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please Enter a Username");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid Email Address: "+R_EMAIL);
+                            }
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Enter Your Email Address");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select The Employees Position");
+                    }
                 }
-            }     
+                else
+                {
+                    MessageBox.Show("Please Enter Your Surname");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Your Name");
+            }
+            
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                
-              DBConnect objDBConnect = new DBConnect();
-
-              objDBConnect.OpenConnection();
-
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
-
-              MessageBox.Show("SUCCESSFULLY INSERTED");
-              objDBConnect.sqlDR.Close();
-              objDBConnect.sqlConn.Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex.Message);
-            }
-        }
-   }
+    }
 }

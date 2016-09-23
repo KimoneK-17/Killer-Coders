@@ -47,14 +47,12 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.cboEmpPosition = new System.Windows.Forms.ComboBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.picCargoFleet = new System.Windows.Forms.PictureBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.mnuFleet.SuspendLayout();
             this.pnlReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).BeginInit();
@@ -105,9 +103,11 @@
             // 
             this.dtpDateOfBirth.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDateOfBirth.Location = new System.Drawing.Point(210, 235);
+            this.dtpDateOfBirth.MaxDate = new System.DateTime(2003, 1, 1, 0, 0, 0, 0);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(185, 26);
             this.dtpDateOfBirth.TabIndex = 4;
+            this.dtpDateOfBirth.Value = new System.DateTime(2003, 1, 1, 0, 0, 0, 0);
             // 
             // txtName
             // 
@@ -227,21 +227,10 @@
             this.cboEmpPosition.Size = new System.Drawing.Size(185, 26);
             this.cboEmpPosition.TabIndex = 38;
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(163, 14);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(279, 14);
+            this.btnRegister.Location = new System.Drawing.Point(14, 14);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(82, 35);
             this.btnRegister.TabIndex = 15;
@@ -252,7 +241,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(391, 14);
+            this.btnClear.Location = new System.Drawing.Point(390, 14);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -293,22 +282,10 @@
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnRegister);
-            this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Controls.Add(this.button1);
             this.pnlButtons.Location = new System.Drawing.Point(23, 524);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 43;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(42, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 35);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmRegistration
             // 
@@ -373,9 +350,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.PictureBox picCargoFleet;
         private System.Windows.Forms.Panel pnlButtons;
-        private System.Windows.Forms.Button button1;
     }
 }

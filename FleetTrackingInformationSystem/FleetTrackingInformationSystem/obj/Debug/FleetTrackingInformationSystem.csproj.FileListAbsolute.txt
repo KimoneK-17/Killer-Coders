@@ -178,3 +178,8 @@ C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.cache
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmPasswordReset.resources
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmReports.resources
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTimesheet.resources
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.cache
+C:\Users\kimon\Documents\GitHub\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
