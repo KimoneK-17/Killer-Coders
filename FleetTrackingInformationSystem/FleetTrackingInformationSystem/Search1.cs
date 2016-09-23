@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace FleetTrackingInformationSystem
 {
-    public partial class frmPasswordReset : Form
+    public partial class Search1 : Form
     {
-        public frmPasswordReset()
+        public Search1()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }
