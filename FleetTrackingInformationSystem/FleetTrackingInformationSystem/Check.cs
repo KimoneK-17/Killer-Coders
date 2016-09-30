@@ -18,9 +18,24 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForNumbers()
+        public void CheckForNumbers(string text, string fieldName)
         {
-
+            string[] numbers = new string[10];
+            try
+            {
+                for (int x = 0; x < numbers.Length; x++)
+                {
+                    numbers[x] = (x + 1).ToString();
+                    if (text.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The {0} field cannot contain numbers", fieldName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check For Numbers: " + ex); // Shows an error message 
+            }
         }
 
         public void CheckForLetters(string text, string fieldName)

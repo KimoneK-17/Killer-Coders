@@ -74,95 +74,6 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForNumbers(string name, string surname)
-        {
-            try
-            {
-                for (int x = 0; x < numbers.Length; x++)
-                {
-                    numbers[x] = (x + 1).ToString();
-                    if (name.Contains(numbers[x]))
-                    {
-                        MessageBox.Show("The 'Customer Name' field cannot contain numbers");
-                    }
-                    if (surname.Contains(numbers[x]))
-                    {
-                        MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error For Number Checking: " + ex.Message); // Shows an error message
-            }
-        }
-
-        public void CheckForLetters(string contact, string paymentMade, string PaymentDue)
-        {
-            try
-            {
-                if (int.TryParse(contact, out intTryParseOut) == false)
-                {
-                    MessageBox.Show("The 'Contact Number' field cannot contain letters or symbols");
-                }
-                if (double.TryParse(PaymentDue, out doubleTryParseOut) == false)
-                {
-                    MessageBox.Show("The 'Payment Due' field cannot contain letters or symbols");
-                }
-                if (double.TryParse(paymentMade, out doubleTryParseOut) == false)
-                {
-                    MessageBox.Show("The 'Payment Made' field cannot contain letters or symbols");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error For Letter Checking: " + ex.Message); // Shows an error message
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            try
-            {
-                if (txtID.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Customer ID' field is empty");
-                }
-                if (txtName.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Customer Name' field is empty");
-                }
-                if (txtSurname.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Customer Surname' field is empty");
-                }
-                if (cboCustomer.Text == string.Empty)
-                {
-                    MessageBox.Show("Please select a customer type from the drop down list");
-                }
-                if (txtContact.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Contact Number' field is empty");
-                }
-                if (txtEmail.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Email Address' field is empty");
-                }
-                if (txtPaymentDue.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Payment Due' field is empty");
-                }
-                if (txtPaymentMade.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Payment Made' field is empty");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error For Checking if Fields are Empty: " + ex.Message); // Shows an error message
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             C_ID = txtID.Text;
@@ -175,15 +86,27 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Validate Email Address: " + ex.Message);
             }
+
+            Check check = new Check();
+
             C_TYPE = cboCustomer.SelectedItem.ToString();
             C_CONTACT = txtContact.Text;
             C_DUE = txtPaymentDue.Text;
             C_MADE = txtPaymentMade.Text;
             C_NAME = txtName.Text;
             C_SNAME = txtSurname.Text;
-            CheckEmpty();
-            CheckForNumbers(C_NAME, C_SNAME);
-            CheckForLetters(C_CONTACT, C_MADE, C_DUE);
+
+            check.CheckEmpty(C_TYPE, "Customer Type");
+            check.CheckEmpty(C_CONTACT, "Customer Contact Number");
+            check.CheckEmpty(C_DUE, "Payment Due");
+            check.CheckEmpty(C_MADE, "Payment Made");
+            check.CheckEmpty(C_NAME, "Customer Name");
+            check.CheckEmpty(C_SNAME, "Customer Surname");
+            check.CheckForNumbers(C_NAME, "Customer Name");
+            check.CheckForNumbers(C_SNAME, "Customer Surname");
+            check.CheckForLetters(C_CONTACT, "Customer Contact Number");
+            check.CheckForLetters(C_DUE, "Payment Due");
+            check.CheckForLetters(C_MADE, "Payment Made");
 
             try
             {

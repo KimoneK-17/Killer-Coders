@@ -74,94 +74,11 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForNumbers(string name, string surname)
-        {
-            try
-            {
-                for (int x = 0; x < numbers.Length; x++)
-                {
-                    numbers[x] = (x + 1).ToString();
-                    if (name.Contains(numbers[x]))
-                    {
-                        MessageBox.Show("The 'Customer Name' field cannot contain numbers");
-                    }
-                    if (surname.Contains(numbers[x]))
-                    {
-                        MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Check For Numbers: " + ex.Message); // Shows an error message
-            }
-        }
-
-        public void CheckForLetters(string contact, string salary)
-        {
-            try
-            {
-                if (int.TryParse(contact, out intTryParseOut) == false)
-                {
-                    MessageBox.Show("The 'Contact Number' field cannot contain letters");
-                }
-                if (double.TryParse(salary, out doubleTryParseOut) == false)
-                {
-                    MessageBox.Show("The 'Monthly Salary' field cannot contain letters");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Check For Letters: " + ex.Message); // Shows an error message
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            try
-            {
-                if (txtName.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Employee Name' field is empty");
-                }
-                if (txtSurname.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Employee Surname' field is empty");
-                }
-                if (txtID.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Employee ID' field is empty");
-                }
-                if (cboPosition.Text == string.Empty)
-                {
-                    MessageBox.Show("Select the employee position from the drop down list");
-                }
-                if (txtAddress.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Employee Address' field is empty");
-                }
-                if (txtContactNum.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Contact Number' field is empty");
-                }
-                if (txtEmail.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Email Address' field is empty");
-                }
-                if (txtSalary.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Monthly Salary' field is empty");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Check if Fields are Empty: " + ex.Message); // Shows an error message
-            }
-        }
-
         bool accepted;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+
             E_ID = txtID.Text;
             E_NAME = txtName.Text;
             E_SNAME = txtSurname.Text;
@@ -180,9 +97,18 @@ namespace FleetTrackingInformationSystem
             E_SALARY = txtSalary.Text;
 
             Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
-            CheckEmpty();
-            CheckForNumbers(E_NAME, E_SNAME);
-            CheckForLetters(E_CONTACT, E_SALARY);
+
+            check.CheckEmpty(E_NAME, "Employee Name");
+            check.CheckEmpty(E_ID, "Employee ID");
+            check.CheckEmpty(E_SNAME, "Employee Surname");
+            check.CheckEmpty(E_POS, "Employee Position");
+            check.CheckEmpty(E_CONTACT, "Employee Contact");
+            check.CheckEmpty(E_EMAIL, "Employee Email");
+            check.CheckForNumbers(E_NAME, "Employee Name");
+            check.CheckForNumbers(E_SNAME, "Employee Surname");
+            check.CheckForLetters(E_CONTACT, "Employee Contact Number");
+            check.CheckForLetters(E_SALARY, "Employee Salary");
+
             if (accepted == true)
             {
                 try

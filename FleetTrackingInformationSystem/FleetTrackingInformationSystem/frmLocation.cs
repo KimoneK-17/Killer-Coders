@@ -21,7 +21,6 @@ namespace FleetTrackingInformationSystem
         int L_EMPLOYEES;
         string L_PROVINCE;
         
-        string[] numbers = new string[10];
         public frmLocation()
         {
             InitializeComponent();
@@ -68,58 +67,10 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForNumbers(string manager)
-        {
-            try
-            {
-                for (int x = 0; x < numbers.Length; x++)
-                {
-                    numbers[x] = (x + 1).ToString();
-                    if (manager.Contains(numbers[x]))
-                    {
-                        MessageBox.Show("The 'Manager In Charge' field cannot contain numbers");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Check For Numbers: " + ex); // Shows an error message 
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            try
-            {
-                if (txtLocationID.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Location ID' field is empty");
-                }
-                if (txtManager.Text == string.Empty)
-                {
-                    MessageBox.Show("The 'Manager In Charge' field is empty");
-                }
-                if (cboCity.Text == string.Empty)
-                {
-                    MessageBox.Show("Please select a city from the drop down list");
-                }
-                if (cboLocationName.Text == string.Empty)
-                {
-                    MessageBox.Show("Please select a location from the drop down list");
-                }
-                if (cboProvince.Text == string.Empty)
-                {
-                    MessageBox.Show("Please select a province from the drop down list");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Check if Fields are Empty: " + ex); // Shows an error message 
-            }
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+
             L_ID = txtLocationID.Text;
             L_NAME = cboLocationName.SelectedItem.ToString();
             L_CITY = cboCity.SelectedItem.ToString();
@@ -127,8 +78,13 @@ namespace FleetTrackingInformationSystem
             L_VEHICLES = int.Parse(updVehicles.Text);
             L_EMPLOYEES = int.Parse(updEmployees.Text);
             L_MANAGER = txtManager.Text;
-            CheckEmpty();
-            CheckForNumbers(L_MANAGER);
+
+            check.CheckEmpty(L_ID, "Location ID");
+            check.CheckEmpty(L_MANAGER, "Manager In Charge");
+            check.CheckEmpty(L_CITY, "City");
+            check.CheckEmpty(L_NAME, "Location");
+            check.CheckEmpty(L_PROVINCE, "Province");
+            check.CheckForNumbers(L_MANAGER, "Manager In Charge");
 
             try
             {
