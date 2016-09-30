@@ -37,17 +37,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back to Previous Form: " + ex.Message); // Shows an Error Message
             }
         }
 
@@ -57,17 +49,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -84,81 +68,94 @@ namespace FleetTrackingInformationSystem
                 txtSurname.Clear();
                 updHours.Value = 0;
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message
             }
         }
 
         public void CheckForNumbers(string name, string surname)
         {
-            for (int x = 0; x < numbers.Length; x++)
+            try
             {
-                numbers[x] = (x + 1).ToString();
-                if (name.Contains(numbers[x]))
+                for (int x = 0; x < numbers.Length; x++)
                 {
-                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                    numbers[x] = (x + 1).ToString();
+                    if (name.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                    }
+                    if (surname.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
+                    }
                 }
-                if (surname.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check For Numbers: " + ex.Message); // Shows an error message
             }
         }
 
         public void CheckForLetters(string contact, string salary)
         {
-            if (int.TryParse(contact, out intTryParseOut) == false)
+            try
             {
-                MessageBox.Show("The 'Contact Number' field cannot contain letters");
+                if (int.TryParse(contact, out intTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Contact Number' field cannot contain letters");
+                }
+                if (double.TryParse(salary, out doubleTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Monthly Salary' field cannot contain letters");
+                }
             }
-            if (double.TryParse(salary, out doubleTryParseOut) == false)
+            catch (Exception ex)
             {
-                MessageBox.Show("The 'Monthly Salary' field cannot contain letters");
+                MessageBox.Show("Error Cannot Check For Letters: " + ex.Message); // Shows an error message
             }
         }
 
         public void CheckEmpty()
         {
-            if (txtName.Text == string.Empty)
+            try
             {
-                MessageBox.Show("The 'Employee Name' field is empty");
+                if (txtName.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Employee Name' field is empty");
+                }
+                if (txtSurname.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Employee Surname' field is empty");
+                }
+                if (txtID.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Employee ID' field is empty");
+                }
+                if (cboPosition.Text == string.Empty)
+                {
+                    MessageBox.Show("Select the employee position from the drop down list");
+                }
+                if (txtAddress.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Employee Address' field is empty");
+                }
+                if (txtContactNum.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Contact Number' field is empty");
+                }
+                if (txtEmail.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Email Address' field is empty");
+                }
+                if (txtSalary.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Monthly Salary' field is empty");
+                }
             }
-            if (txtSurname.Text == string.Empty)
+            catch (Exception ex)
             {
-                MessageBox.Show("The 'Employee Surname' field is empty");
-            }
-            if (txtID.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee ID' field is empty");
-            }
-            if (cboPosition.Text == string.Empty)
-            {
-                MessageBox.Show("Select the employee position from the drop down list");
-            }
-            if (txtAddress.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee Address' field is empty");
-            }
-            if (txtContactNum.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Contact Number' field is empty");
-            }
-            if (txtEmail.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Email Address' field is empty");
-            }
-            if (txtSalary.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Monthly Salary' field is empty");
+                MessageBox.Show("Error Cannot Check if Fields are Empty: " + ex.Message); // Shows an error message
             }
         }
 
@@ -176,9 +173,9 @@ namespace FleetTrackingInformationSystem
                 var addr = new System.Net.Mail.MailAddress(E_EMAIL);// validates email address
                 accepted = true;
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Invalid email address");
+                MessageBox.Show("Error Invalid email address: " + ex.Message); // Shows an error message
             }
             E_SALARY = txtSalary.Text;
 
@@ -212,13 +209,12 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("Error Cannot Add Employee Details: " + ex.Message);
                 }
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -242,7 +238,7 @@ namespace FleetTrackingInformationSystem
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Employee Details: " + ex.Message); // Shows an error message
             }
         }
 
@@ -271,7 +267,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Employee Details: " + ex.Message); // Shows an error message
             }
         }
     }

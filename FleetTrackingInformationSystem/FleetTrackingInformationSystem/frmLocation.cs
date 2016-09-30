@@ -35,17 +35,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back to Previous Form: " + ex);
             }
         }
 
@@ -55,17 +47,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit the Application: " + ex); // Shows an error message 
             }
         }
 
@@ -78,57 +62,63 @@ namespace FleetTrackingInformationSystem
                 updEmployees.Value = 0;
                 updVehicles.Value = 0;
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear the Form: " + ex); // Shows an error message 
             }
         }
 
         public void CheckForNumbers(string manager)
         {
-            for (int x = 0; x < numbers.Length; x++)
+            try
             {
-                numbers[x] = (x + 1).ToString();
-                if (manager.Contains(numbers[x]))
+                for (int x = 0; x < numbers.Length; x++)
                 {
-                    MessageBox.Show("The 'Manager In Charge' field cannot contain numbers");
+                    numbers[x] = (x + 1).ToString();
+                    if (manager.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The 'Manager In Charge' field cannot contain numbers");
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check For Numbers: " + ex); // Shows an error message 
             }
         }
 
         public void CheckEmpty()
         {
-            if(txtLocationID.Text == string.Empty)
+            try
             {
-                MessageBox.Show("The 'Location ID' field is empty");
+                if (txtLocationID.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Location ID' field is empty");
+                }
+                if (txtManager.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Manager In Charge' field is empty");
+                }
+                if (cboCity.Text == string.Empty)
+                {
+                    MessageBox.Show("Please select a city from the drop down list");
+                }
+                if (cboLocationName.Text == string.Empty)
+                {
+                    MessageBox.Show("Please select a location from the drop down list");
+                }
+                if (cboProvince.Text == string.Empty)
+                {
+                    MessageBox.Show("Please select a province from the drop down list");
+                }
             }
-            if(txtManager.Text == string.Empty)
+            catch (Exception ex)
             {
-                MessageBox.Show("The 'Manager In Charge' field is empty");
-            }
-            if(cboCity.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a city from the drop down list");
-            }
-            if(cboLocationName.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a location from the drop down list");
-            }
-            if(cboProvince.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a province from the drop down list");
+                MessageBox.Show("Error Cannot Check if Fields are Empty: " + ex); // Shows an error message 
             }
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             L_ID = txtLocationID.Text;
             L_NAME = cboLocationName.SelectedItem.ToString();
@@ -140,11 +130,8 @@ namespace FleetTrackingInformationSystem
             CheckEmpty();
             CheckForNumbers(L_MANAGER);
 
-
             try
             {
-
-
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
@@ -159,20 +146,17 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-
                 MessageBox.Show("SUCCESSFULLY INSERTED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Submit Location Details: " + ex.Message);
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -196,8 +180,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Location Details: " + ex.Message);
             }
 
         }
@@ -208,14 +191,14 @@ namespace FleetTrackingInformationSystem
             {
                 DBConnect objDBConnect = new DBConnect();
 
-                	objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
+                objDBConnect.OpenConnection();
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
 
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
@@ -224,10 +207,9 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error" + ex.Message);
-            }
+                MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
             }
         }
-    }
+   }
+}
 
