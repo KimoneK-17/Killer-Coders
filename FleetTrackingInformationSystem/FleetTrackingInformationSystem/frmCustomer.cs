@@ -88,6 +88,7 @@ namespace FleetTrackingInformationSystem
             }
 
             Check check = new Check();
+            bool exit = false;
 
             C_TYPE = cboCustomer.SelectedItem.ToString();
             C_CONTACT = txtContact.Text;
@@ -96,42 +97,45 @@ namespace FleetTrackingInformationSystem
             C_NAME = txtName.Text;
             C_SNAME = txtSurname.Text;
 
-            check.CheckEmpty(C_TYPE, "Customer Type");
-            check.CheckEmpty(C_CONTACT, "Customer Contact Number");
-            check.CheckEmpty(C_DUE, "Payment Due");
-            check.CheckEmpty(C_MADE, "Payment Made");
-            check.CheckEmpty(C_NAME, "Customer Name");
-            check.CheckEmpty(C_SNAME, "Customer Surname");
-            check.CheckForNumbers(C_NAME, "Customer Name");
-            check.CheckForNumbers(C_SNAME, "Customer Surname");
-            check.CheckForLetters(C_CONTACT, "Customer Contact Number");
-            check.CheckForLetters(C_DUE, "Payment Due");
-            check.CheckForLetters(C_MADE, "Payment Made");
+            exit = check.CheckEmpty(C_TYPE, "Customer Type");
+            exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number");
+            exit = check.CheckEmpty(C_DUE, "Payment Due");
+            exit = check.CheckEmpty(C_MADE, "Payment Made");
+            exit = check.CheckEmpty(C_NAME, "Customer Name");
+            exit = check.CheckEmpty(C_SNAME, "Customer Surname");
+            exit = check.CheckForNumbers(C_NAME, "Customer Name");
+            exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
+            exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
+            exit = check.CheckForLetters(C_DUE, "Payment Due");
+            exit = check.CheckForLetters(C_MADE, "Payment Made");
 
-            try
+            if (exit == false)
             {
-                DBConnect objDBConnect = new DBConnect();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
-                objDBConnect.OpenConnection();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Customer WHERE C_ID = @Cust_ID) BEGIN INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Customer WHERE C_ID = @Cust_ID) BEGIN INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESSFULLY INSERTED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message);
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message);
+                }
             }
         }
 

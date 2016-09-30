@@ -94,6 +94,7 @@ namespace FleetTrackingInformationSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Check check = new Check();
+            bool exit = false;
 
             V_MILEAGE = txtMileage.Text;
             V_MAKE = txtMake.Text;
@@ -102,36 +103,39 @@ namespace FleetTrackingInformationSystem
             V_YEAR = dtpVehicleYear.Value.ToString();
             V_RN = txtRegNum.Text;
 
-            check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
-            check.CheckEmpty(V_MAKE, "Vehicle Make");
-            check.CheckEmpty(V_MODEL, "Vehicle Model");
-            check.CheckEmpty(V_RN, "Registration Number");
-            check.CheckEmpty(V_TYPE, "Type of Vehicle");
-            check.CheckForLetters(V_MILEAGE, "Vehicle Milage");
+            exit = check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
+            exit = check.CheckEmpty(V_MAKE, "Vehicle Make");
+            exit = check.CheckEmpty(V_MODEL, "Vehicle Model");
+            exit = check.CheckEmpty(V_RN, "Registration Number");
+            exit = check.CheckEmpty(V_TYPE, "Type of Vehicle");
+            exit = check.CheckForLetters(V_MILEAGE, "Vehicle Milage");
 
-            try
+            if (exit == false)
             {
-                DBConnect objDBConnect = new DBConnect();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
-                objDBConnect.OpenConnection();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE V_RN = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE V_RN = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESSFULLY INSERTED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.Message);
+                }
             }
         }
 
