@@ -142,8 +142,8 @@ namespace FleetTrackingInformationSystem
 	            DBConnect objDBConnect = new DBConnect();
 	            objDBConnect.OpenConnection();
 
-		        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);

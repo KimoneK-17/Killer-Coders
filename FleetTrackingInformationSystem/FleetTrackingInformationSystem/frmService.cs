@@ -124,7 +124,7 @@ namespace FleetTrackingInformationSystem
                 DBConnect objDBConnect = new DBConnect();
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Service WHERE S_ID = @Service_ID) BEGIN INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
