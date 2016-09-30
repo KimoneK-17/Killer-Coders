@@ -38,17 +38,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go back to Previous Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -58,17 +50,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -84,85 +68,98 @@ namespace FleetTrackingInformationSystem
                 txtPaymentMade.Clear();
                 txtSurname.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message 
             }
         }
 
         public void CheckForNumbers(string name, string surname)
         {
-            for (int x = 0; x < numbers.Length; x++)
+            try
             {
-                numbers[x] = (x + 1).ToString();
-                if(name.Contains(numbers[x]))
+                for (int x = 0; x < numbers.Length; x++)
                 {
-                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                    numbers[x] = (x + 1).ToString();
+                    if (name.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The 'Customer Name' field cannot contain numbers");
+                    }
+                    if (surname.Contains(numbers[x]))
+                    {
+                        MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
+                    }
                 }
-                if(surname.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error For Number Checking: " + ex.Message); // Shows an error message
             }
         }
 
         public void CheckForLetters(string contact, string paymentMade, string PaymentDue)
         {
-            if(int.TryParse(contact, out intTryParseOut) == false)
+            try
             {
-                MessageBox.Show("The 'Contact Number' field cannot contain letters or symbols");
+                if (int.TryParse(contact, out intTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Contact Number' field cannot contain letters or symbols");
+                }
+                if (double.TryParse(PaymentDue, out doubleTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Payment Due' field cannot contain letters or symbols");
+                }
+                if (double.TryParse(paymentMade, out doubleTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Payment Made' field cannot contain letters or symbols");
+                }
             }
-            if(double.TryParse(PaymentDue, out doubleTryParseOut) == false)
+            catch (Exception ex)
             {
-                MessageBox.Show("The 'Payment Due' field cannot contain letters or symbols");
-            }
-            if(double.TryParse(paymentMade, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Payment Made' field cannot contain letters or symbols");
+                MessageBox.Show("Error For Letter Checking: " + ex.Message); // Shows an error message
             }
         }
 
         public void CheckEmpty()
         {
-            if(txtID.Text == string.Empty)
+            try
             {
-                MessageBox.Show("The 'Customer ID' field is empty");
+                if (txtID.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Customer ID' field is empty");
+                }
+                if (txtName.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Customer Name' field is empty");
+                }
+                if (txtSurname.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Customer Surname' field is empty");
+                }
+                if (cboCustomer.Text == string.Empty)
+                {
+                    MessageBox.Show("Please select a customer type from the drop down list");
+                }
+                if (txtContact.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Contact Number' field is empty");
+                }
+                if (txtEmail.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Email Address' field is empty");
+                }
+                if (txtPaymentDue.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Payment Due' field is empty");
+                }
+                if (txtPaymentMade.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Payment Made' field is empty");
+                }
             }
-            if(txtName.Text == string.Empty)
+            catch(Exception ex)
             {
-                MessageBox.Show("The 'Customer Name' field is empty");
-            }
-            if(txtSurname.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Customer Surname' field is empty");
-            }
-            if(cboCustomer.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a customer type from the drop down list");
-            }
-            if(txtContact.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Contact Number' field is empty");
-            }
-            if(txtEmail.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Email Address' field is empty");
-            }
-            if(txtPaymentDue.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Payment Due' field is empty");
-            }
-            if(txtPaymentMade.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Payment Made' field is empty");
+                MessageBox.Show("Error For Checking if Fields are Empty: " + ex.Message); // Shows an error message
             }
         }
 
@@ -176,7 +173,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Validate Email Address: " + ex.Message);
             }
             C_TYPE = cboCustomer.SelectedItem.ToString();
             C_CONTACT = txtContact.Text;
@@ -212,11 +209,11 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message);
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -239,9 +236,8 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Customer Details: " + ex.Message);
             }
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -271,7 +267,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
             }                        
         }       
     }

@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FleetTrackingDBDataSet = new FleetTrackingInformationSystem.FleetTrackingDBDataSet();
             this.tabReports = new System.Windows.Forms.TabControl();
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
-            this.reportV = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabServiceAppoint = new System.Windows.Forms.TabPage();
             this.tabServiceRequire = new System.Windows.Forms.TabPage();
             this.tabVehicleServiceCompleted = new System.Windows.Forms.TabPage();
@@ -52,7 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).BeginInit();
             this.tabReports.SuspendLayout();
-            this.tabVehicleStat.SuspendLayout();
             this.pnlCustomer.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +82,6 @@
             // 
             // tabVehicleStat
             // 
-            this.tabVehicleStat.Controls.Add(this.reportV);
             this.tabVehicleStat.Location = new System.Drawing.Point(4, 22);
             this.tabVehicleStat.Name = "tabVehicleStat";
             this.tabVehicleStat.Padding = new System.Windows.Forms.Padding(3);
@@ -93,18 +89,6 @@
             this.tabVehicleStat.TabIndex = 0;
             this.tabVehicleStat.Text = "Vehicle Status Report";
             this.tabVehicleStat.UseVisualStyleBackColor = true;
-            // 
-            // reportV
-            // 
-            this.reportV.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.VehicleBindingSource;
-            this.reportV.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportV.LocalReport.ReportEmbeddedResource = "FleetTrackingInformationSystem.Report1.rdlc";
-            this.reportV.Location = new System.Drawing.Point(3, 3);
-            this.reportV.Name = "reportV";
-            this.reportV.Size = new System.Drawing.Size(1009, 440);
-            this.reportV.TabIndex = 0;
             // 
             // tabServiceAppoint
             // 
@@ -216,14 +200,14 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Size = new System.Drawing.Size(99, 22);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -242,7 +226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).EndInit();
             this.tabReports.ResumeLayout(false);
-            this.tabVehicleStat.ResumeLayout(false);
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
@@ -263,7 +246,6 @@
         private System.Windows.Forms.TabPage tabPlannedTrip;
         private System.Windows.Forms.TabPage tabCompletedTrip;
         private System.Windows.Forms.TabPage tabTimesheet;
-        private Microsoft.Reporting.WinForms.ReportViewer reportV;
         private System.Windows.Forms.BindingSource VehicleBindingSource;
         private FleetTrackingDBDataSet FleetTrackingDBDataSet;
         private FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter VehicleTableAdapter;

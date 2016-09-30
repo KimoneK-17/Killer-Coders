@@ -35,17 +35,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go back to Previous Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -55,17 +47,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -78,49 +62,55 @@ namespace FleetTrackingInformationSystem
                 txtModel.Clear();
                 txtMake.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear Form: " + ex.Message); // Shows an error message 
             }
         }
 
         public void CheckForLetters(string mileage)
         {
-            if (double.TryParse(mileage, out doubleTryParseOut) == false)
+            try
             {
-                MessageBox.Show("The 'Vehicle Mileage' field cannot contain letters");
+                if (double.TryParse(mileage, out doubleTryParseOut) == false)
+                {
+                    MessageBox.Show("The 'Vehicle Mileage' field cannot contain letters");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check For Letters: " + ex.Message); // Shows an error message 
             }
         }
 
         public void CheckEmpty()
         {
-            if (txtMake.Text == string.Empty)
+            try
             {
-                MessageBox.Show("The 'Vehicle Make' field is empty");
+                if (txtMake.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Vehicle Make' field is empty");
+                }
+                if (txtMileage.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Vehicle Mileage' field is empty");
+                }
+                if (txtModel.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Vehicle Model' field is empty");
+                }
+                if (txtRegNum.Text == string.Empty)
+                {
+                    MessageBox.Show("The 'Registration Number' field is empty");
+                }
+                if (cboType.Text == string.Empty)
+                {
+                    MessageBox.Show("Please select a vehicle type from the drop down list");
+                }
             }
-            if (txtMileage.Text == string.Empty)
+            catch (Exception ex)
             {
-                MessageBox.Show("The 'Vehicle Mileage' field is empty");
-            }
-            if (txtModel.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Model' field is empty");
-            }
-            if (txtRegNum.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Registration Number' field is empty");
-            }
-            if (cboType.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a vehicle type from the drop down list");
+                MessageBox.Show("Error Cannot Check if Fields are Empty: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -157,12 +147,12 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Add Vehicle Details: " + ex.Message);
             }
         }
 
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -184,7 +174,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Vehicle Details: " + ex.Message);
             }
         }
 
@@ -211,7 +201,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Vehicle Details: " + ex.Message);
             }
         }
     }
