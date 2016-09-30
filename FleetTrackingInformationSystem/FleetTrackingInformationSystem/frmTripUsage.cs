@@ -17,7 +17,7 @@ namespace FleetTrackingInformationSystem
         double doubleTryParseOut;
         string kmTravelled;
         string fuelUsage;
-        int V_RN;
+        string V_RN;
         string T_FROM;
         string T_TO;
         string T_FUEL;
@@ -95,48 +95,19 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForLetters(string fuelUsage, string kmTravelled)
-        {
-            if (double.TryParse(fuelUsage, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Fuel Usage' field cannot contain letters");
-            }
-            if (double.TryParse(kmTravelled, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'KM Travelled' field cannot contain letters");
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            if(txtFuelUsage.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Fuel Usage' field is empty");
-            }
-            if(txtKM.Text == string.Empty)
-            {
-                MessageBox.Show("The 'KM Travelled' field is empty");
-            }
-            if(txtTripID.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Trip ID' field is empty");
-            }
-            if(txtVehicleIncidents.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Incidents' field is empty");
-            }
-            if(txtVehicleRegNumber.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Reg Number' field is empty");
-            }
-        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
             fuelUsage = txtFuelUsage.Text;
             kmTravelled = txtKM.Text;
-            CheckEmpty();
-            CheckForLetters(fuelUsage, kmTravelled);
 
+            check.CheckEmpty(T_ID, "Trip ID");
+            check.CheckEmpty(fuelUsage, "Fuel Usage");
+            check.CheckEmpty(kmTravelled, "KM Travelled");
+            check.CheckEmpty(V_RN, "Vehicle Reg Number");
+            check.CheckForLetters(kmTravelled, "KM Travelled");
+            check.CheckForLetters(fuelUsage, "Fuel Usage");
+               
             try
             {
 	            DBConnect objDBConnect = new DBConnect();

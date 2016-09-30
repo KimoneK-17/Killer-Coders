@@ -14,7 +14,6 @@ namespace FleetTrackingInformationSystem
     public partial class frmVehicles : Form
     {
         string V_MILEAGE;
-        double doubleTryParseOut;
         string V_RN;
         string V_TYPE;
         string V_MAKE;
@@ -92,48 +91,23 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        public void CheckForLetters(string mileage)
-        {
-            if (double.TryParse(mileage, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Vehicle Mileage' field cannot contain letters");
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            if (txtMake.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Make' field is empty");
-            }
-            if (txtMileage.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Mileage' field is empty");
-            }
-            if (txtModel.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Model' field is empty");
-            }
-            if (txtRegNum.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Registration Number' field is empty");
-            }
-            if (cboType.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a vehicle type from the drop down list");
-            }
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+
             V_MILEAGE = txtMileage.Text;
             V_MAKE = txtMake.Text;
             V_TYPE = cboType.SelectedItem.ToString();
             V_MODEL = txtModel.Text;
             V_YEAR = dtpVehicleYear.Value.ToString();
             V_RN = txtRegNum.Text;
-            CheckEmpty();
-            CheckForLetters(V_MILEAGE);
+
+            check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
+            check.CheckEmpty(V_MAKE, "Vehicle Make");
+            check.CheckEmpty(V_MODEL, "Vehicle Model");
+            check.CheckEmpty(V_RN, "Registration Number");
+            check.CheckEmpty(V_TYPE, "Type of Vehicle");
+            check.CheckForLetters(V_MILEAGE, "Vehicle Milage");
 
             try
             {

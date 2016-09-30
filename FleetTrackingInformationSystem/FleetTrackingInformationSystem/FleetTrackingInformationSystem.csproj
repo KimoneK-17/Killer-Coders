@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Check.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="FleetTrackingDBDataSet.Designer.cs">
