@@ -180,3 +180,5 @@ C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem
 C:\Users\Administrator\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\RdlCompile.compiled
 C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
 C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
+Z:\WIL GIT\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+Z:\WIL GIT\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe

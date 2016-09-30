@@ -194,7 +194,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Employee WHERE E_ID = @Emp_ID) BEGIN INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
