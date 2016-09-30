@@ -41,17 +41,12 @@ namespace FleetTrackingInformationSystem
                 frmRegistration reg = new frmRegistration(); // Creates an Object 
                 reg.ShowDialog(); // Shows the Registration Form
             }
-            catch
+            catch (Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
                     frmLogin log = new frmLogin();
                     log.ShowDialog();
-                    --stopper;
-                }
             }
         }
 
@@ -104,8 +99,6 @@ namespace FleetTrackingInformationSystem
                                             frmMenu menu = new frmMenu();
                                             this.Hide();
                                             menu.Show();
-
-
                                         }
                                         else
                                         {
@@ -129,9 +122,9 @@ namespace FleetTrackingInformationSystem
 
                                         }
                                     }
-                                    catch
+                                    catch (Exception ex)
                                     {
-
+                                        MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
                                     }
 
                                 }
@@ -144,10 +137,19 @@ namespace FleetTrackingInformationSystem
                             }
 
                         }
+                        catch (IOException ex)
+                        {
+                            MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                        }
+                        
+                        catch (ArgumentOutOfRangeException ex)
+                        {
+                            MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                        }
+
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-
                         }
                     }
 
@@ -156,16 +158,11 @@ namespace FleetTrackingInformationSystem
             }                
             
             catch
-            {
-                int stopper = 1;
-                while (stopper == 1)
-                {
+            { 
                     MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
                     frmLogin log = new frmLogin();
                     log.ShowDialog();
-                    --stopper;
-                }
             }            
         }
 
@@ -175,17 +172,15 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch (Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
+
+                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace); ; // Shows an error message and takes you back to Form Login if an error has to occur
                     this.Hide();
                     frmLogin log = new frmLogin();
                     log.ShowDialog();
-                    --stopper;
-                }
+                   
+              
             }
         }
 
