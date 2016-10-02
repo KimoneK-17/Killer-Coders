@@ -78,6 +78,7 @@ namespace FleetTrackingInformationSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Check check = new Check();
+            bool exit = false;
 
             E_ID = txtID.Text;
             E_NAME = txtName.Text;
@@ -98,44 +99,47 @@ namespace FleetTrackingInformationSystem
 
             Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
 
-            check.CheckEmpty(E_NAME, "Employee Name");
-            check.CheckEmpty(E_ID, "Employee ID");
-            check.CheckEmpty(E_SNAME, "Employee Surname");
-            check.CheckEmpty(E_POS, "Employee Position");
-            check.CheckEmpty(E_CONTACT, "Employee Contact");
-            check.CheckEmpty(E_EMAIL, "Employee Email");
-            check.CheckForNumbers(E_NAME, "Employee Name");
-            check.CheckForNumbers(E_SNAME, "Employee Surname");
-            check.CheckForLetters(E_CONTACT, "Employee Contact Number");
-            check.CheckForLetters(E_SALARY, "Employee Salary");
+            exit = check.CheckEmpty(E_NAME, "Employee Name");
+            exit = check.CheckEmpty(E_ID, "Employee ID");
+            exit = check.CheckEmpty(E_SNAME, "Employee Surname");
+            exit = check.CheckEmpty(E_POS, "Employee Position");
+            exit = check.CheckEmpty(E_CONTACT, "Employee Contact");
+            exit = check.CheckEmpty(E_EMAIL, "Employee Email");
+            exit = check.CheckForNumbers(E_NAME, "Employee Name");
+            exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
+            exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
+            exit = check.CheckForLetters(E_SALARY, "Employee Salary");
 
             if (accepted == true)
             {
-                try
+                if(exit == false)
                 {
-                    DBConnect objDBConnect = new DBConnect();
+                    try
+                    {
+                        DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                        objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Employee WHERE E_ID = @Emp_ID) BEGIN INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+                        objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Employee WHERE E_ID = @Emp_ID) BEGIN INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    string message = objEmp.SuccessMessage();
-                    MessageBox.Show(message);
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error Cannot Add Employee Details: " + ex.Message);
+                        string message = objEmp.SuccessMessage();
+                        MessageBox.Show(message);
+                        objDBConnect.sqlDR.Close();
+                        objDBConnect.sqlConn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Cannot Add Employee Details: " + ex.Message);
+                    }
                 }
             }
         }

@@ -98,36 +98,41 @@ namespace FleetTrackingInformationSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             Check check = new Check();
+            bool exit = false;
+
             fuelUsage = txtFuelUsage.Text;
             kmTravelled = txtKM.Text;
 
-            check.CheckEmpty(T_ID, "Trip ID");
-            check.CheckEmpty(fuelUsage, "Fuel Usage");
-            check.CheckEmpty(kmTravelled, "KM Travelled");
-            check.CheckEmpty(V_RN, "Vehicle Reg Number");
-            check.CheckForLetters(kmTravelled, "KM Travelled");
-            check.CheckForLetters(fuelUsage, "Fuel Usage");
-               
-            try
+            exit = check.CheckEmpty(T_ID, "Trip ID");
+            exit = check.CheckEmpty(fuelUsage, "Fuel Usage");
+            exit = check.CheckEmpty(kmTravelled, "KM Travelled");
+            exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
+            exit = check.CheckForLetters(kmTravelled, "KM Travelled");
+            exit = check.CheckForLetters(fuelUsage, "Fuel Usage");
+              
+            if(exit == false)
             {
-	            DBConnect objDBConnect = new DBConnect();
-	            objDBConnect.OpenConnection();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
 
-		        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("Succesfully inserted");
-		        objDBConnect.sqlDR.Close();
-		        objDBConnect.sqlConn.Close();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("Succesfully inserted");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.Message);
+                }
             }
-	        catch (Exception ex)
-		    {
-			    MessageBox.Show("Error" + ex.Message);
-		    }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
