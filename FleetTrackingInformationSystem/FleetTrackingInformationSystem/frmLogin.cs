@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace FleetTrackingInformationSystem
 {
@@ -19,14 +20,15 @@ namespace FleetTrackingInformationSystem
         }
         string userName;
         string password;
-        string line;
-        string name;
-        string pass;
         System.IO.StreamReader file;
         string[] arrUserCred;
         int count = 0;
-        bool found = false;
+        bool found;
+        bool checkValid;
+        
         //declarations
+
+        DBConnect objDBConnect = new DBConnect();
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtUser.Clear(); // Clears the Text Box
@@ -78,62 +80,30 @@ namespace FleetTrackingInformationSystem
 
                         try// runs through the code unless exception is thrown
                         {
-                            found = false;
-                            using (file = new System.IO.StreamReader("UserCred.txt"))// Read the file and display it line by line. 
-                            {
-
-                                while ((line = file.ReadLine()) != null && found == false)
-                                {
-
-                                    arrUserCred = line.Split(',');
-                                    name = arrUserCred[3];
-                                    pass = arrUserCred[4];// populates array from file
-
-                                    if (userName.ToLower().Equals(name.ToLower()))
-                                    {
-                                        found = true;
-                                        //compares username to ones in file
-                                        if (password.Equals(pass))
-                                        {
-                                            //if username and password match menu screen is shown
-                                            frmMenu menu = new frmMenu();
-                                            this.Hide();
-                                            menu.Show();
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Failed Attempt, Incorrect Password");
-                                            count++;
-                                            //login unsuccessful
-                                        }
-
-                                    }
-
-                                    if (((line = file.ReadLine()) == null) && (!(name.ToLower().Equals(userName))))
-                                    {
-                                        //MessageBox.Show("Failed Attempt, Incorrect Username");
-                                        count++;
-                                        //cannot find username in file
-                                    }
-                                    try
-                                    {
-                                        if (!(name.ToLower().Contains(userName.ToLower())))
-                                        {
-
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-                                    }
-
-                                }
-
-
-                            }
+                            CheckExisting();
+                            
                             if (found == false)
                             {
                                 MessageBox.Show("Cannot find user is system, please check username or register account");
+                            }
+                            else
+                            {
+                                if(found == true)
+                                {
+                                    CheckValid();
+
+                                    if(checkValid == true)
+                                    {
+                                        frmMenu mnu = new frmMenu();
+
+                                        this.Hide();
+                                        mnu.Show();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid password entered. Please Try Again");
+                                    }
+                                }
                             }
 
                         }
@@ -186,6 +156,60 @@ namespace FleetTrackingInformationSystem
 
         private void btnPassReset_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void CheckExisting()
+        {
+            string existName;
+            //checks to see if patient already exists in database
+            objDBConnect.OpenConnection();
+
+            objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
+            //query
+            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME",userName );
+            //parameter
+            existName = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+            //assigning query to variable
+            if (int.Parse(existName) > 0)
+            {
+                found = true;
+                //in database
+            }
+            else
+            {
+                found = false;
+                //not in database
+            }
+
+
+        }
+
+        private void CheckValid()
+        {
+            string checkVal;
+            //checks to see if patient already exists in database
+            objDBConnect.OpenConnection();
+
+            objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
+            //query
+            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", password);
+
+            //parameter
+            checkVal = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+            //assigning query to variable
+            if (int.Parse(checkVal) > 0)
+            {
+                checkValid = true;
+                //in database
+            }
+            else
+            {
+                checkValid = false;
+                //not in database
+            }
+
 
         }
     }
