@@ -135,6 +135,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportVieweer.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Search1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search1.Designer.cs">
+      <DependentUpon>Search1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +184,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports.rdlc" />
+    <EmbeddedResource Include="Search1.resx">
+      <DependentUpon>Search1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="FleetTrackingDBDataSet.xsc">
       <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
     </None>
