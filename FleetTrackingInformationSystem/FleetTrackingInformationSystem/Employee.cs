@@ -114,6 +114,5 @@ namespace FleetTrackingInformationSystem
         {
             return "Details Added Successfully";
         }
-
     }
 }

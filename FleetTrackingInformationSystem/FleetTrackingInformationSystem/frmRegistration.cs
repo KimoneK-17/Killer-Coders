@@ -32,9 +32,6 @@ namespace FleetTrackingInformationSystem
         string R_CURRDATE;
         string R_EMPPOS;
 
-
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             try
@@ -42,17 +39,9 @@ namespace FleetTrackingInformationSystem
                 System.Environment.Exit(0);
             }
 
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message);
             }
         }
 
@@ -64,17 +53,9 @@ namespace FleetTrackingInformationSystem
                 frmLogin log = new frmLogin(); // Goes back to Login Form
                 log.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -87,17 +68,9 @@ namespace FleetTrackingInformationSystem
                 txtUserName.Clear();
                 txtPass.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Clear The Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -161,15 +134,12 @@ namespace FleetTrackingInformationSystem
                                             objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
                                             objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
 
-
                                             objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                                             objDBConnect.sqlDR.Close();
                                             objDBConnect.sqlConn.Close();
 
                                             try
                                             {
-
-
                                                 string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_EMPPOS + "," + R_UNAME + "," + R_PWORD;
 
                                                 try
@@ -183,7 +153,7 @@ namespace FleetTrackingInformationSystem
                                                     client.UseDefaultCredentials = false;
 
                                                     client.Credentials = new NetworkCredential(
-                                                      R_MEMAIL, R_EPWORD);//logins into your email account
+                                                      R_MEMAIL, R_EPWORD);//logs into your email account
 
                                                     //gets values from the textboxes
                                                     MailMessage msg = new MailMessage();
@@ -208,22 +178,14 @@ namespace FleetTrackingInformationSystem
                                                 frmLogin log = new frmLogin();
                                                 log.ShowDialog(); // Goes back to Login Form
                                             }
-                                            catch
+                                            catch(Exception ex)
                                             {
-                                                int stopper = 1;
-                                                while (stopper == 1)
-                                                {
-                                                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                                                    this.Hide();
-                                                    frmLogin log = new frmLogin();
-                                                    log.ShowDialog();
-                                                    --stopper;
-                                                }
+                                                MessageBox.Show("Error Cannot Be Registered: " + ex.Message); // Shows an error message 
                                             }
                                         }
                                         catch (Exception ex)
                                         {
-                                            MessageBox.Show("Error" + ex.Message);
+                                            MessageBox.Show("Error Cannot Be Registered: " + ex.Message);
                                         }
                                     }
                                     else
@@ -238,10 +200,8 @@ namespace FleetTrackingInformationSystem
                             }
                             else
                             {
-                                MessageBox.Show("Invalid Email Address: "+R_EMAIL);
+                                MessageBox.Show("Invalid Email Address: "+ R_EMAIL);
                             }
-
-
                         }
                         else
                         {
@@ -261,9 +221,7 @@ namespace FleetTrackingInformationSystem
             else
             {
                 MessageBox.Show("Please Enter Your Name");
-            }
-            
+            }           
         }
-
     }
 }

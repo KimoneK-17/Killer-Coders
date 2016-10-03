@@ -88,7 +88,7 @@ namespace FleetTrackingInformationSystem
             E_EMAIL = txtEmail.Text;
             try
             {
-                var addr = new System.Net.Mail.MailAddress(E_EMAIL);// validates email address
+                var addr = new System.Net.Mail.MailAddress(E_EMAIL);// Validates email address
                 accepted = true;
             }
             catch(Exception ex)

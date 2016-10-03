@@ -37,17 +37,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -57,17 +49,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -81,17 +65,9 @@ namespace FleetTrackingInformationSystem
                 txtVehicleRegNumber.Clear();
                 txtKM.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -130,7 +106,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
                 }
             }
         }
@@ -157,7 +133,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
                 }
         }
 
@@ -184,7 +160,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Records: " + ex.Message);
             }
         }
    }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
             this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.FleetTrackingDBDataSet = new FleetTrackingInformationSystem.FleetTrackingDBDataSet();
             this.tabReports = new System.Windows.Forms.TabControl();
@@ -220,6 +221,7 @@
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCustomer);
             this.Controls.Add(this.tabReports);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReports";
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmReports_Load);

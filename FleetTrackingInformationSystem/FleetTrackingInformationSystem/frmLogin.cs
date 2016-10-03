@@ -45,10 +45,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
+                MessageBox.Show("Error Cannot Go To Registration Form: " + ex.Message + "\n" + ex.StackTrace); // Shows an error message
             }
         }
 
@@ -122,17 +119,12 @@ namespace FleetTrackingInformationSystem
                             MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
                         }
                     }
-
                 }
-
             }                
             
-            catch
+            catch(Exception ex)
             { 
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
+                MessageBox.Show("Error Cannot Login: " + ex.Message); // Shows an error message
             }            
         }
 
@@ -144,13 +136,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-
-                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace); ; // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                   
-              
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message + "\n" + ex.StackTrace); ; // Shows an error message                             
             }
         }
 
@@ -161,56 +147,66 @@ namespace FleetTrackingInformationSystem
 
         private void CheckExisting()
         {
-            string existName;
-            //checks to see if patient already exists in database
-            objDBConnect.OpenConnection();
-
-            objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
-            //query
-            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME",userName );
-            //parameter
-            existName = objDBConnect.sqlCmd.ExecuteScalar().ToString();
-            //assigning query to variable
-            if (int.Parse(existName) > 0)
+            try
             {
-                found = true;
-                //in database
+                string existName;
+                //checks to see if patient already exists in database
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
+                //query
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+                //parameter
+                existName = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+                //assigning query to variable
+                if (int.Parse(existName) > 0)
+                {
+                    found = true;
+                    //in database
+                }
+                else
+                {
+                    found = false;
+                    //not in database
+                }
             }
-            else
+            catch (Exception ex)
             {
-                found = false;
-                //not in database
+                MessageBox.Show("Error Cannot Check If Patient Already Exists In Database: " + ex.Message); // Shows an error message
             }
-
-
         }
 
         private void CheckValid()
         {
-            string checkVal;
-            //checks to see if patient already exists in database
-            objDBConnect.OpenConnection();
-
-            objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
-            //query
-            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
-            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", password);
-
-            //parameter
-            checkVal = objDBConnect.sqlCmd.ExecuteScalar().ToString();
-            //assigning query to variable
-            if (int.Parse(checkVal) > 0)
+            try
             {
-                checkValid = true;
-                //in database
+                string checkVal;
+                //checks to see if patient already exists in database
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
+                //query
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", password);
+
+                //parameter
+                checkVal = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+                //assigning query to variable
+                if (int.Parse(checkVal) > 0)
+                {
+                    checkValid = true;
+                    //in database
+                }
+                else
+                {
+                    checkValid = false;
+                    //not in database
+                }
             }
-            else
+            catch (Exception ex)
             {
-                checkValid = false;
-                //not in database
+                MessageBox.Show("Error Cannot Check Validation of Patient In Database: " + ex.Message); // Shows an error message
             }
-
-
         }
     }
 }
