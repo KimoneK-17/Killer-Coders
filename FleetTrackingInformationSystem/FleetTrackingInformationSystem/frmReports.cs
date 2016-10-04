@@ -63,9 +63,5 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Exit the Application: " + ex.Message); // Shows an error message 
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
     }
 }
