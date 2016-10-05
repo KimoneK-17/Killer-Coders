@@ -33,8 +33,6 @@ namespace FleetTrackingInformationSystem
         string R_EMPPOS;
 
 
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             try
