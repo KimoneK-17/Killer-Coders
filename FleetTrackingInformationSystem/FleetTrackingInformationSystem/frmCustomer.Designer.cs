@@ -75,7 +75,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(205, 12);
+            this.lblCustomer.Location = new System.Drawing.Point(194, 16);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(124, 33);
             this.lblCustomer.TabIndex = 7;
@@ -119,7 +119,7 @@
             this.lblCustName.AutoSize = true;
             this.lblCustName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustName.Location = new System.Drawing.Point(29, 241);
+            this.lblCustName.Location = new System.Drawing.Point(89, 241);
             this.lblCustName.Name = "lblCustName";
             this.lblCustName.Size = new System.Drawing.Size(122, 19);
             this.lblCustName.TabIndex = 17;
@@ -130,7 +130,7 @@
             this.lblCustSurname.AutoSize = true;
             this.lblCustSurname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustSurname.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustSurname.Location = new System.Drawing.Point(29, 292);
+            this.lblCustSurname.Location = new System.Drawing.Point(89, 292);
             this.lblCustSurname.Name = "lblCustSurname";
             this.lblCustSurname.Size = new System.Drawing.Size(143, 19);
             this.lblCustSurname.TabIndex = 18;
@@ -141,7 +141,7 @@
             this.lblCustID.AutoSize = true;
             this.lblCustID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustID.Location = new System.Drawing.Point(29, 192);
+            this.lblCustID.Location = new System.Drawing.Point(89, 192);
             this.lblCustID.Name = "lblCustID";
             this.lblCustID.Size = new System.Drawing.Size(96, 19);
             this.lblCustID.TabIndex = 19;
@@ -152,7 +152,7 @@
             this.lblType.AutoSize = true;
             this.lblType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(29, 344);
+            this.lblType.Location = new System.Drawing.Point(89, 344);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(135, 19);
             this.lblType.TabIndex = 20;
@@ -163,7 +163,7 @@
             this.lblContact.AutoSize = true;
             this.lblContact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblContact.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContact.Location = new System.Drawing.Point(29, 392);
+            this.lblContact.Location = new System.Drawing.Point(89, 392);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(126, 19);
             this.lblContact.TabIndex = 21;
@@ -174,7 +174,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(29, 438);
+            this.lblEmail.Location = new System.Drawing.Point(89, 438);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(108, 19);
             this.lblEmail.TabIndex = 22;
@@ -185,7 +185,7 @@
             this.lblPaymentDue.AutoSize = true;
             this.lblPaymentDue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPaymentDue.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentDue.Location = new System.Drawing.Point(29, 481);
+            this.lblPaymentDue.Location = new System.Drawing.Point(89, 481);
             this.lblPaymentDue.Name = "lblPaymentDue";
             this.lblPaymentDue.Size = new System.Drawing.Size(105, 19);
             this.lblPaymentDue.TabIndex = 23;
@@ -196,7 +196,7 @@
             this.lblPaymentMade.AutoSize = true;
             this.lblPaymentMade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPaymentMade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentMade.Location = new System.Drawing.Point(29, 528);
+            this.lblPaymentMade.Location = new System.Drawing.Point(89, 528);
             this.lblPaymentMade.Name = "lblPaymentMade";
             this.lblPaymentMade.Size = new System.Drawing.Size(117, 19);
             this.lblPaymentMade.TabIndex = 24;
@@ -206,7 +206,7 @@
             // 
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(195, 185);
+            this.txtID.Location = new System.Drawing.Point(268, 185);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(234, 26);
             this.txtID.TabIndex = 25;
@@ -215,7 +215,7 @@
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(195, 234);
+            this.txtName.Location = new System.Drawing.Point(268, 234);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(234, 26);
             this.txtName.TabIndex = 26;
@@ -224,7 +224,7 @@
             // 
             this.txtSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSurname.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(195, 285);
+            this.txtSurname.Location = new System.Drawing.Point(268, 285);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(234, 26);
             this.txtSurname.TabIndex = 27;
@@ -233,7 +233,7 @@
             // 
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContact.Location = new System.Drawing.Point(195, 385);
+            this.txtContact.Location = new System.Drawing.Point(268, 385);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(234, 26);
             this.txtContact.TabIndex = 29;
@@ -242,7 +242,7 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(195, 431);
+            this.txtEmail.Location = new System.Drawing.Point(268, 431);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 26);
             this.txtEmail.TabIndex = 30;
@@ -251,7 +251,7 @@
             // 
             this.txtPaymentDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentDue.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaymentDue.Location = new System.Drawing.Point(195, 474);
+            this.txtPaymentDue.Location = new System.Drawing.Point(268, 474);
             this.txtPaymentDue.Name = "txtPaymentDue";
             this.txtPaymentDue.Size = new System.Drawing.Size(234, 26);
             this.txtPaymentDue.TabIndex = 31;
@@ -260,7 +260,7 @@
             // 
             this.txtPaymentMade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaymentMade.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaymentMade.Location = new System.Drawing.Point(195, 521);
+            this.txtPaymentMade.Location = new System.Drawing.Point(268, 521);
             this.txtPaymentMade.Name = "txtPaymentMade";
             this.txtPaymentMade.Size = new System.Drawing.Size(234, 26);
             this.txtPaymentMade.TabIndex = 32;
@@ -272,7 +272,7 @@
             this.cboCustomer.Items.AddRange(new object[] {
             "Vehicle Hire",
             "Application Hire"});
-            this.cboCustomer.Location = new System.Drawing.Point(195, 337);
+            this.cboCustomer.Location = new System.Drawing.Point(268, 337);
             this.cboCustomer.Name = "cboCustomer";
             this.cboCustomer.Size = new System.Drawing.Size(234, 26);
             this.cboCustomer.TabIndex = 37;
@@ -280,7 +280,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(278, 15);
+            this.btnUpdate.Location = new System.Drawing.Point(279, 15);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -291,18 +291,18 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(64, 15);
+            this.btnDelete.Location = new System.Drawing.Point(38, 15);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(389, 15);
+            this.btnClear.Location = new System.Drawing.Point(396, 15);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -313,7 +313,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(172, 15);
+            this.btnAdd.Location = new System.Drawing.Point(160, 15);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -339,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(601, 723);
+            this.ClientSize = new System.Drawing.Size(601, 712);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboCustomer);
             this.Controls.Add(this.txtPaymentMade);

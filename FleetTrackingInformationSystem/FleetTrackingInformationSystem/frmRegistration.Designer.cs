@@ -230,7 +230,7 @@
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(14, 14);
+            this.btnRegister.Location = new System.Drawing.Point(42, 14);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(82, 35);
             this.btnRegister.TabIndex = 15;
@@ -282,7 +282,7 @@
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnRegister);
-            this.pnlButtons.Location = new System.Drawing.Point(23, 524);
+            this.pnlButtons.Location = new System.Drawing.Point(23, 486);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 43;
@@ -292,7 +292,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(561, 641);
+            this.ClientSize = new System.Drawing.Size(561, 592);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.picCargoFleet);
             this.Controls.Add(this.txtEmail);

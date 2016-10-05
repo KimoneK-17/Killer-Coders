@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace FleetTrackingInformationSystem
 {
@@ -19,14 +20,15 @@ namespace FleetTrackingInformationSystem
         }
         string userName;
         string password;
-        string line;
-        string name;
-        string pass;
         System.IO.StreamReader file;
         string[] arrUserCred;
         int count = 0;
-        bool found = false;
+        bool found;
+        bool checkValid;
+        
         //declarations
+
+        DBConnect objDBConnect = new DBConnect();
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtUser.Clear(); // Clears the Text Box
@@ -41,17 +43,9 @@ namespace FleetTrackingInformationSystem
                 frmRegistration reg = new frmRegistration(); // Creates an Object 
                 reg.ShowDialog(); // Shows the Registration Form
             }
-            catch
+            catch (Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Registration Form: " + ex.Message + "\n" + ex.StackTrace); // Shows an error message
             }
         }
 
@@ -83,89 +77,54 @@ namespace FleetTrackingInformationSystem
 
                         try// runs through the code unless exception is thrown
                         {
-                            found = false;
-                            using (file = new System.IO.StreamReader("UserCred.txt"))// Read the file and display it line by line. 
-                            {
-
-                                while ((line = file.ReadLine()) != null && found == false)
-                                {
-
-                                    arrUserCred = line.Split(',');
-                                    name = arrUserCred[3];
-                                    pass = arrUserCred[4];// populates array from file
-
-                                    if (userName.ToLower().Equals(name.ToLower()))
-                                    {
-                                        found = true;
-                                        //compares username to ones in file
-                                        if (password.Equals(pass))
-                                        {
-                                            //if username and password match menu screen is shown
-                                            frmMenu menu = new frmMenu();
-                                            this.Hide();
-                                            menu.Show();
-
-
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Failed Attempt, Incorrect Password");
-                                            count++;
-                                            //login unsuccessful
-                                        }
-
-                                    }
-
-                                    if (((line = file.ReadLine()) == null) && (!(name.ToLower().Equals(userName))))
-                                    {
-                                        //MessageBox.Show("Failed Attempt, Incorrect Username");
-                                        count++;
-                                        //cannot find username in file
-                                    }
-                                    try
-                                    {
-                                        if (!(name.ToLower().Contains(userName.ToLower())))
-                                        {
-
-                                        }
-                                    }
-                                    catch
-                                    {
-
-                                    }
-
-                                }
-
-
-                            }
+                            CheckExisting();
+                            
                             if (found == false)
                             {
                                 MessageBox.Show("Cannot find user is system, please check username or register account");
                             }
+                            else
+                            {
+                                if(found == true)
+                                {
+                                    CheckValid();
+
+                                    if(checkValid == true)
+                                    {
+                                        frmMenu mnu = new frmMenu();
+
+                                        this.Hide();
+                                        mnu.Show();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid password entered. Please Try Again");
+                                    }
+                                }
+                            }
 
                         }
+                        catch (IOException ex)
+                        {
+                            MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                        }
+                        
+                        catch (ArgumentOutOfRangeException ex)
+                        {
+                            MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                        }
+
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
-
                         }
                     }
-
                 }
-
             }                
             
-            catch
-            {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+            catch(Exception ex)
+            { 
+                MessageBox.Show("Error Cannot Login: " + ex.Message); // Shows an error message
             }            
         }
 
@@ -175,23 +134,79 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch (Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message + "\n" + ex.StackTrace); ; // Shows an error message                             
             }
         }
 
         private void btnPassReset_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckExisting()
+        {
+            try
+            {
+                string existName;
+                //checks to see if patient already exists in database
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
+                //query
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+                //parameter
+                existName = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+                //assigning query to variable
+                if (int.Parse(existName) > 0)
+                {
+                    found = true;
+                    //in database
+                }
+                else
+                {
+                    found = false;
+                    //not in database
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check If Patient Already Exists In Database: " + ex.Message); // Shows an error message
+            }
+        }
+
+        private void CheckValid()
+        {
+            try
+            {
+                string checkVal;
+                //checks to see if patient already exists in database
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
+                //query
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", password);
+
+                //parameter
+                checkVal = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+                //assigning query to variable
+                if (int.Parse(checkVal) > 0)
+                {
+                    checkValid = true;
+                    //in database
+                }
+                else
+                {
+                    checkValid = false;
+                    //not in database
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Check Validation of Patient In Database: " + ex.Message); // Shows an error message
+            }
         }
     }
 }

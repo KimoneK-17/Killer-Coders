@@ -38,17 +38,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go back to Previous Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -58,17 +50,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -84,85 +68,9 @@ namespace FleetTrackingInformationSystem
                 txtPaymentMade.Clear();
                 txtSurname.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
-            }
-        }
-
-        public void CheckForNumbers(string name, string surname)
-        {
-            for (int x = 0; x < numbers.Length; x++)
-            {
-                numbers[x] = (x + 1).ToString();
-                if(name.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
-                }
-                if(surname.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                }
-            }
-        }
-
-        public void CheckForLetters(string contact, string paymentMade, string PaymentDue)
-        {
-            if(int.TryParse(contact, out intTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Contact Number' field cannot contain letters or symbols");
-            }
-            if(double.TryParse(PaymentDue, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Payment Due' field cannot contain letters or symbols");
-            }
-            if(double.TryParse(paymentMade, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Payment Made' field cannot contain letters or symbols");
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            if(txtID.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Customer ID' field is empty");
-            }
-            if(txtName.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Customer Name' field is empty");
-            }
-            if(txtSurname.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Customer Surname' field is empty");
-            }
-            if(cboCustomer.Text == string.Empty)
-            {
-                MessageBox.Show("Please select a customer type from the drop down list");
-            }
-            if(txtContact.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Contact Number' field is empty");
-            }
-            if(txtEmail.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Email Address' field is empty");
-            }
-            if(txtPaymentDue.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Payment Due' field is empty");
-            }
-            if(txtPaymentMade.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Payment Made' field is empty");
+                MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -176,47 +84,62 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Validate Email Address: " + ex.Message);
             }
+
+            Check check = new Check();
+            bool exit = false;
+
             C_TYPE = cboCustomer.SelectedItem.ToString();
             C_CONTACT = txtContact.Text;
             C_DUE = txtPaymentDue.Text;
             C_MADE = txtPaymentMade.Text;
             C_NAME = txtName.Text;
             C_SNAME = txtSurname.Text;
-            CheckEmpty();
-            CheckForNumbers(C_NAME, C_SNAME);
-            CheckForLetters(C_CONTACT, C_MADE, C_DUE);
 
-            try
+            exit = check.CheckEmpty(C_TYPE, "Customer Type");
+            exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number");
+            exit = check.CheckEmpty(C_DUE, "Payment Due");
+            exit = check.CheckEmpty(C_MADE, "Payment Made");
+            exit = check.CheckEmpty(C_NAME, "Customer Name");
+            exit = check.CheckEmpty(C_SNAME, "Customer Surname");
+            exit = check.CheckForNumbers(C_NAME, "Customer Name");
+            exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
+            exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
+            exit = check.CheckForLetters(C_DUE, "Payment Due");
+            exit = check.CheckForLetters(C_MADE, "Payment Made");
+
+            if (exit == false)
             {
-                DBConnect objDBConnect = new DBConnect();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
-                objDBConnect.OpenConnection();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Customer WHERE C_ID = @Cust_ID) BEGIN INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESSFULLY INSERTED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message);
+                }
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -239,9 +162,8 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Customer Details: " + ex.Message);
             }
-
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -271,7 +193,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
             }                        
         }       
     }

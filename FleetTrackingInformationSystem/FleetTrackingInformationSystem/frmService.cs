@@ -29,17 +29,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -51,17 +43,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -74,17 +58,9 @@ namespace FleetTrackingInformationSystem
                 txtEmployeeName.Clear();
                 txtVehicleRegNumber.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -104,7 +80,6 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
@@ -112,8 +87,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Record From Service Table in Database: " + ex.Message);
             }
         }
 
@@ -124,7 +98,7 @@ namespace FleetTrackingInformationSystem
                 DBConnect objDBConnect = new DBConnect();
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Service WHERE S_ID = @Service_ID) BEGIN INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
@@ -138,7 +112,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Add Record to Service Table in Database: " + ex.Message);
             }
         }
 
@@ -164,8 +138,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Details in Service Table: " + ex.Message);
             }
         }
 

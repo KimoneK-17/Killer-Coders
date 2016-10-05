@@ -17,7 +17,7 @@ namespace FleetTrackingInformationSystem
         double doubleTryParseOut;
         string kmTravelled;
         string fuelUsage;
-        int V_RN;
+        string V_RN;
         string T_FROM;
         string T_TO;
         string T_FUEL;
@@ -37,17 +37,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -57,17 +49,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -81,82 +65,50 @@ namespace FleetTrackingInformationSystem
                 txtVehicleRegNumber.Clear();
                 txtKM.Clear();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message 
             }
         }
 
-        public void CheckForLetters(string fuelUsage, string kmTravelled)
-        {
-            if (double.TryParse(fuelUsage, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Fuel Usage' field cannot contain letters");
-            }
-            if (double.TryParse(kmTravelled, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'KM Travelled' field cannot contain letters");
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            if(txtFuelUsage.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Fuel Usage' field is empty");
-            }
-            if(txtKM.Text == string.Empty)
-            {
-                MessageBox.Show("The 'KM Travelled' field is empty");
-            }
-            if(txtTripID.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Trip ID' field is empty");
-            }
-            if(txtVehicleIncidents.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Incidents' field is empty");
-            }
-            if(txtVehicleRegNumber.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Vehicle Reg Number' field is empty");
-            }
-        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+            bool exit = false;
+
             fuelUsage = txtFuelUsage.Text;
             kmTravelled = txtKM.Text;
-            CheckEmpty();
-            CheckForLetters(fuelUsage, kmTravelled);
 
-            try
+            exit = check.CheckEmpty(T_ID, "Trip ID");
+            exit = check.CheckEmpty(fuelUsage, "Fuel Usage");
+            exit = check.CheckEmpty(kmTravelled, "KM Travelled");
+            exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
+            exit = check.CheckForLetters(kmTravelled, "KM Travelled");
+            exit = check.CheckForLetters(fuelUsage, "Fuel Usage");
+              
+            if(exit == false)
             {
-	            DBConnect objDBConnect = new DBConnect();
-	            objDBConnect.OpenConnection();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
+                    objDBConnect.OpenConnection();
 
-		        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
 
-		        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("Succesfully inserted");
-		        objDBConnect.sqlDR.Close();
-		        objDBConnect.sqlConn.Close();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("Succesfully inserted");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
+                }
             }
-	        catch (Exception ex)
-		    {
-			    MessageBox.Show("Error" + ex.Message);
-		    }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -181,7 +133,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
                 }
         }
 
@@ -208,7 +160,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Records: " + ex.Message);
             }
         }
    }

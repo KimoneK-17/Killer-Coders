@@ -37,17 +37,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go Back to Previous Form: " + ex.Message); // Shows an Error Message
             }
         }
 
@@ -57,17 +49,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -84,87 +68,18 @@ namespace FleetTrackingInformationSystem
                 txtSurname.Clear();
                 updHours.Value = 0;
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
-            }
-        }
-
-        public void CheckForNumbers(string name, string surname)
-        {
-            for (int x = 0; x < numbers.Length; x++)
-            {
-                numbers[x] = (x + 1).ToString();
-                if (name.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Name' field cannot contain numbers");
-                }
-                if (surname.Contains(numbers[x]))
-                {
-                    MessageBox.Show("The 'Customer Surname' field cannot contain numbers");
-                }
-            }
-        }
-
-        public void CheckForLetters(string contact, string salary)
-        {
-            if (int.TryParse(contact, out intTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Contact Number' field cannot contain letters");
-            }
-            if (double.TryParse(salary, out doubleTryParseOut) == false)
-            {
-                MessageBox.Show("The 'Monthly Salary' field cannot contain letters");
-            }
-        }
-
-        public void CheckEmpty()
-        {
-            if (txtName.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee Name' field is empty");
-            }
-            if (txtSurname.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee Surname' field is empty");
-            }
-            if (txtID.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee ID' field is empty");
-            }
-            if (cboPosition.Text == string.Empty)
-            {
-                MessageBox.Show("Select the employee position from the drop down list");
-            }
-            if (txtAddress.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Employee Address' field is empty");
-            }
-            if (txtContactNum.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Contact Number' field is empty");
-            }
-            if (txtEmail.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Email Address' field is empty");
-            }
-            if (txtSalary.Text == string.Empty)
-            {
-                MessageBox.Show("The 'Monthly Salary' field is empty");
+                MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message
             }
         }
 
         bool accepted;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            Check check = new Check();
+            bool exit = false;
+
             E_ID = txtID.Text;
             E_NAME = txtName.Text;
             E_SNAME = txtSurname.Text;
@@ -173,52 +88,63 @@ namespace FleetTrackingInformationSystem
             E_EMAIL = txtEmail.Text;
             try
             {
-                var addr = new System.Net.Mail.MailAddress(E_EMAIL);// validates email address
+                var addr = new System.Net.Mail.MailAddress(E_EMAIL);// Validates email address
                 accepted = true;
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Invalid email address");
+                MessageBox.Show("Error Invalid email address: " + ex.Message); // Shows an error message
             }
             E_SALARY = txtSalary.Text;
 
             Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
-            CheckEmpty();
-            CheckForNumbers(E_NAME, E_SNAME);
-            CheckForLetters(E_CONTACT, E_SALARY);
+
+            exit = check.CheckEmpty(E_NAME, "Employee Name");
+            exit = check.CheckEmpty(E_ID, "Employee ID");
+            exit = check.CheckEmpty(E_SNAME, "Employee Surname");
+            exit = check.CheckEmpty(E_POS, "Employee Position");
+            exit = check.CheckEmpty(E_CONTACT, "Employee Contact");
+            exit = check.CheckEmpty(E_EMAIL, "Employee Email");
+            exit = check.CheckForNumbers(E_NAME, "Employee Name");
+            exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
+            exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
+            exit = check.CheckForLetters(E_SALARY, "Employee Salary");
+
             if (accepted == true)
             {
-                try
+                if(exit == false)
                 {
-                    DBConnect objDBConnect = new DBConnect();
+                    try
+                    {
+                        DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                        objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+                        objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Employee WHERE E_ID = @Emp_ID) BEGIN INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    string message = objEmp.SuccessMessage();
-                    MessageBox.Show(message);
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("Error" + ex.Message);
+                        string message = objEmp.SuccessMessage();
+                        MessageBox.Show(message);
+                        objDBConnect.sqlDR.Close();
+                        objDBConnect.sqlConn.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Cannot Add Employee Details: " + ex.Message);
+                    }
                 }
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -242,7 +168,7 @@ namespace FleetTrackingInformationSystem
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Delete Employee Details: " + ex.Message); // Shows an error message
             }
         }
 
@@ -271,7 +197,7 @@ namespace FleetTrackingInformationSystem
 
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error Cannot Update Employee Details: " + ex.Message); // Shows an error message
             }
         }
     }

@@ -25,17 +25,9 @@ namespace FleetTrackingInformationSystem
                 frmService ser = new frmService(); // Creates an Object 
                 ser.ShowDialog(); // Shows the Service Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Service Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -47,17 +39,9 @@ namespace FleetTrackingInformationSystem
                 frmTripUsage tU = new frmTripUsage(); // Creates an Object 
                 tU.ShowDialog(); // Shows the Trip and Usage Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Trip Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -69,17 +53,9 @@ namespace FleetTrackingInformationSystem
                 frmReports rp = new frmReports(); // Creates an Object 
                 rp.ShowDialog(); // Shows the Report Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Reports Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -91,17 +67,9 @@ namespace FleetTrackingInformationSystem
                 frmTimesheet tS = new frmTimesheet(); // Creates an Object 
                 tS.ShowDialog(); // Shows the Timesheet Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Scheduling Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -113,17 +81,9 @@ namespace FleetTrackingInformationSystem
                 frmLocation loc = new frmLocation(); // Creates an Object 
                 loc.ShowDialog(); // Shows the Location Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Location Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -135,17 +95,9 @@ namespace FleetTrackingInformationSystem
                 frmCustomer cus = new frmCustomer(); // Creates an Object 
                 cus.ShowDialog(); // Shows the Customer Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Customer Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -155,19 +107,11 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmVehicles veh = new frmVehicles(); // Creates an Object 
-                veh.ShowDialog(); // Shows the Vehicles Form
+                veh.ShowDialog(); // Shows the Vehicle Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Vehicle Form: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -179,17 +123,9 @@ namespace FleetTrackingInformationSystem
                 frmEmployee emp = new frmEmployee(); // Creates an Object 
                 emp.ShowDialog(); // Shows the Employee Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Employee Form: " + ex.Message); // Shows an error message
             }
         }
 
@@ -199,17 +135,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message 
             }
         }
 
@@ -221,17 +149,9 @@ namespace FleetTrackingInformationSystem
                 frmLogin log = new frmLogin();
                 log.ShowDialog(); // Goes back to Login Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Logout of System: " + ex.Message); // Shows an error message
             }
         }
 
@@ -241,19 +161,11 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmSearch search = new frmSearch();
-                search.ShowDialog(); // Goes back to Login Form
+                search.ShowDialog(); // Goes To the Search Form
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
             }
         }
     }
