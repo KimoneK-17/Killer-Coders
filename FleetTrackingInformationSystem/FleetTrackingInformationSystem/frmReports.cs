@@ -7,20 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace FleetTrackingInformationSystem
 {
     public partial class frmReports : Form
     {
+        SqlConnection Connection;
+        SqlDataAdapter dataAdapter;
+        SqlCommandBuilder commandBuilder;
+        DataGridView DataSource;
         public frmReports()
         {
             InitializeComponent();
         }
-
         private void frmReports_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'FleetTrackingDBDataSet.Vehicle' table. You can move, or remove it, as needed.
             this.VehicleTableAdapter.Fill(this.FleetTrackingDBDataSet.Vehicle);
+
+            //sql data grids
+
+            string select = "SELECT * FROM SqlFleetCreate";
+            SqlConnection Report = new SqlConnection();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(select, Report); //Report is the connection string
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
+            DataSet ds = new DataSet();
+            dataAdapter.Fill(ds);
+            dgvVehicleStatus.ReadOnly = true;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
