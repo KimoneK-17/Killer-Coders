@@ -25,7 +25,6 @@ namespace FleetTrackingInformationSystem
         private void frmReports_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'FleetTrackingDBDataSet.Vehicle' table. You can move, or remove it, as needed.
-            this.VehicleTableAdapter.Fill(this.FleetTrackingDBDataSet.Vehicle);
 
             //sql data grids
 

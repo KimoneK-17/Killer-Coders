@@ -50,11 +50,6 @@
     <Compile Include="Check.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="FleetTrackingDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,12 +86,6 @@
     </Compile>
     <Compile Include="frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSearch.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSearch.designer.cs">
-      <DependentUpon>frmSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="frmService.cs">
       <SubType>Form</SubType>
@@ -136,17 +125,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs" />
-    <Compile Include="ReportVieweer.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Search1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Search1.Designer.cs">
-      <DependentUpon>Search1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,9 +142,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSearch.resx">
-      <DependentUpon>frmSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
@@ -192,21 +167,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports.rdlc" />
-    <EmbeddedResource Include="Search1.resx">
-      <DependentUpon>Search1.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="FleetTrackingDBDataSet.xsc">
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FleetTrackingDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FleetTrackingDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FleetTrackingDBDataSet.xss">
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -216,20 +176,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ReportVieweer.xsc">
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </None>
-    <None Include="ReportVieweer.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportVieweer.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ReportVieweer.xss">
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HTMLPage1.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
