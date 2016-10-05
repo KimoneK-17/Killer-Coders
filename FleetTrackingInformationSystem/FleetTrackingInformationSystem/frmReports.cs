@@ -14,9 +14,6 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmReports : Form
     {
-        SqlConnection Connection;
-        SqlDataAdapter dataAdapter;
-        SqlCommandBuilder commandBuilder;
         DataGridView DataSource;
         public frmReports()
         {
@@ -39,21 +36,21 @@ namespace FleetTrackingInformationSystem
                 db.sqlDA.Fill(ds); // Fills the DataSet
                 dgvVehicleStatus.ReadOnly = true;
 
-                string selectServiceAppoint = "SELECT * FROM Service";
+                string selectServiceAppoint = "SELECT * FROM tblService";
                 db.sqlDA = new SqlDataAdapter(selectServiceAppoint, db.sqlConn);
                 SqlCommandBuilder commandBuilder2 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds2 = new DataSet();
                 db.sqlDA.Fill(ds2);
                 dgvServiceAppointment.ReadOnly = true;
 
-                string selectServiceReq = "SELECT * FROM Service";
+                string selectServiceReq = "SELECT Vehicle_RegNumber, Service_Description, Service_Date, Service_Time FROM tblService";
                 db.sqlDA = new SqlDataAdapter(selectServiceReq, db.sqlConn);
                 SqlCommandBuilder commandBuilder3 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds3 = new DataSet();
                 db.sqlDA.Fill(ds3);
                 dgvServiceReq.ReadOnly = true;
 
-                string selectVehicleServices = "SELECT * FROM Service";
+                string selectVehicleServices = "SELECT * FROM tblService";
                 db.sqlDA = new SqlDataAdapter(selectVehicleServices, db.sqlConn);
                 SqlCommandBuilder commandBuilder4 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds4 = new DataSet();
@@ -67,21 +64,21 @@ namespace FleetTrackingInformationSystem
                 db.sqlDA.Fill(ds5);
                 dgvDetailedService.ReadOnly = true;
 
-                string selectPlannedTrip = "SELECT * FROM Service";
+                string selectPlannedTrip = "SELECT * FROM TripUsage";
                 db.sqlDA = new SqlDataAdapter(selectPlannedTrip, db.sqlConn);
                 SqlCommandBuilder commandBuilder6 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds6 = new DataSet();
                 db.sqlDA.Fill(ds6);
                 dgvPlannedTrip.ReadOnly = true;
 
-                string selectCompletedTrip = "SELECT * FROM Service";
+                string selectCompletedTrip = "SELECT * FROM TripUsage";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTrip, db.sqlConn);
                 SqlCommandBuilder commandBuilder7 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds7 = new DataSet();
                 db.sqlDA.Fill(ds7);
                 dgvCompletedTrip.ReadOnly = true;
 
-                string selectTimeSheet = "SELECT * FROM Service";
+                string selectTimeSheet = "SELECT * FROM TripUsage";
                 db.sqlDA = new SqlDataAdapter(selectTimeSheet, db.sqlConn);
                 SqlCommandBuilder commandBuilder8 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds8 = new DataSet();
