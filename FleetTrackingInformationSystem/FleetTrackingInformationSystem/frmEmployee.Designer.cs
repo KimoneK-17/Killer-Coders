@@ -42,7 +42,6 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblContactNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblHours = new System.Windows.Forms.Label();
             this.lblSalary = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -51,7 +50,6 @@
             this.txtContactNum = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
-            this.updHours = new System.Windows.Forms.NumericUpDown();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -60,7 +58,6 @@
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.pnlEmployee.SuspendLayout();
             this.mnuFleet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updHours)).BeginInit();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,17 +191,6 @@
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email Address:";
             // 
-            // lblHours
-            // 
-            this.lblHours.AutoSize = true;
-            this.lblHours.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblHours.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHours.Location = new System.Drawing.Point(50, 521);
-            this.lblHours.Name = "lblHours";
-            this.lblHours.Size = new System.Drawing.Size(111, 19);
-            this.lblHours.TabIndex = 24;
-            this.lblHours.Text = "Hours Worked:";
-            // 
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
@@ -278,14 +264,6 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(234, 26);
             this.txtSalary.TabIndex = 34;
-            // 
-            // updHours
-            // 
-            this.updHours.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updHours.Location = new System.Drawing.Point(246, 514);
-            this.updHours.Name = "updHours";
-            this.updHours.Size = new System.Drawing.Size(234, 26);
-            this.updHours.TabIndex = 35;
             // 
             // cboPosition
             // 
@@ -364,7 +342,6 @@
             this.ClientSize = new System.Drawing.Size(585, 728);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboPosition);
-            this.Controls.Add(this.updHours);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtContactNum);
@@ -373,7 +350,6 @@
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblSalary);
-            this.Controls.Add(this.lblHours);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblContactNum);
             this.Controls.Add(this.lblAddress);
@@ -391,7 +367,6 @@
             this.pnlEmployee.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updHours)).EndInit();
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -413,7 +388,6 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblContactNum;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblHours;
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
@@ -422,7 +396,6 @@
         private System.Windows.Forms.TextBox txtContactNum;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.NumericUpDown updHours;
         private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;

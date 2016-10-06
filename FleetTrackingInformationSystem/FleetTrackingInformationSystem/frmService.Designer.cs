@@ -33,7 +33,7 @@
             this.lblVehicleRegNumber = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
             this.txtVehicleRegNumber = new System.Windows.Forms.TextBox();
-            this.txtEmployeeName = new System.Windows.Forms.TextBox();
+            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.pnlService = new System.Windows.Forms.Panel();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,9 +64,9 @@
             this.lblEmployeeName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeName.Location = new System.Drawing.Point(41, 248);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(124, 19);
+            this.lblEmployeeName.Size = new System.Drawing.Size(94, 19);
             this.lblEmployeeName.TabIndex = 1;
-            this.lblEmployeeName.Text = "Employee Name:";
+            this.lblEmployeeName.Text = "Employee ID";
             // 
             // lblVehicleRegNumber
             // 
@@ -99,17 +99,15 @@
             this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
             this.txtVehicleRegNumber.Size = new System.Drawing.Size(247, 26);
             this.txtVehicleRegNumber.TabIndex = 7;
-            this.txtVehicleRegNumber.TextChanged += new System.EventHandler(this.txtVehicleRegNumber_TextChanged);
             // 
-            // txtEmployeeName
+            // txtEmployeeID
             // 
-            this.txtEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmployeeName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeName.Location = new System.Drawing.Point(247, 241);
-            this.txtEmployeeName.Name = "txtEmployeeName";
-            this.txtEmployeeName.Size = new System.Drawing.Size(247, 26);
-            this.txtEmployeeName.TabIndex = 9;
-            this.txtEmployeeName.TextChanged += new System.EventHandler(this.txtEmployeeName_TextChanged);
+            this.txtEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmployeeID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeID.Location = new System.Drawing.Point(247, 241);
+            this.txtEmployeeID.Name = "txtEmployeeID";
+            this.txtEmployeeID.Size = new System.Drawing.Size(247, 26);
+            this.txtEmployeeID.TabIndex = 9;
             // 
             // pnlService
             // 
@@ -207,7 +205,6 @@
             this.txtServiceID.Name = "txtServiceID";
             this.txtServiceID.Size = new System.Drawing.Size(247, 26);
             this.txtServiceID.TabIndex = 16;
-            this.txtServiceID.TextChanged += new System.EventHandler(this.txtServiceID_TextChanged);
             // 
             // lblServiceID
             // 
@@ -237,7 +234,6 @@
             this.cboAppointTime.Name = "cboAppointTime";
             this.cboAppointTime.Size = new System.Drawing.Size(247, 26);
             this.cboAppointTime.TabIndex = 19;
-            this.cboAppointTime.SelectedIndexChanged += new System.EventHandler(this.cboAppointTime_SelectedIndexChanged);
             // 
             // pnlButtons
             // 
@@ -271,7 +267,6 @@
             this.dtpAppointmentDate.Name = "dtpAppointmentDate";
             this.dtpAppointmentDate.Size = new System.Drawing.Size(247, 26);
             this.dtpAppointmentDate.TabIndex = 6;
-            this.dtpAppointmentDate.ValueChanged += new System.EventHandler(this.dtpAppointmentDate_ValueChanged);
             // 
             // lblAppointDescription
             // 
@@ -302,7 +297,6 @@
             this.rtfAppointDescription.Size = new System.Drawing.Size(344, 96);
             this.rtfAppointDescription.TabIndex = 7;
             this.rtfAppointDescription.Text = "";
-            this.rtfAppointDescription.TextChanged += new System.EventHandler(this.rtfAppointDescription_TextChanged);
             // 
             // frmService
             // 
@@ -321,7 +315,7 @@
             this.Controls.Add(this.txtServiceID);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlService);
-            this.Controls.Add(this.txtEmployeeName);
+            this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.txtVehicleRegNumber);
             this.Controls.Add(this.lblVehicleRegNumber);
             this.Controls.Add(this.lblEmployeeName);
@@ -329,7 +323,6 @@
             this.Name = "frmService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
-            this.Load += new System.EventHandler(this.frmService_Load);
             this.pnlService.ResumeLayout(false);
             this.pnlService.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
@@ -346,7 +339,7 @@
         private System.Windows.Forms.Label lblVehicleRegNumber;
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.TextBox txtVehicleRegNumber;
-        private System.Windows.Forms.TextBox txtEmployeeName;
+        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Panel pnlService;
         private System.Windows.Forms.MenuStrip mnuFleet;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;

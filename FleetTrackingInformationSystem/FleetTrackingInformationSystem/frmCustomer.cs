@@ -174,7 +174,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Customer SET (Cust_Name= @Cust_Name, Cust_Surname=@Cust_Surname, Cust_Type=@Cust_Type, Cust_ContactNo=@Cust_ContactNo,Cust_Email=@Cust_Email, Cust_PayDue=@Cust_PayDue, Cust_PayMade=@Cust_PayMade) WHERE Cust_ID = @Cust_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);

@@ -13,10 +13,11 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmService : Form
     {
-        string S_ID ;
+        string S_ID;
         int V_RN;
         int E_ID;
         string S_DATE;
+        string S_TIME;
         string S_DES;
         public frmService()
         {
@@ -29,7 +30,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message 
             }
@@ -43,7 +44,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
@@ -55,10 +56,10 @@ namespace FleetTrackingInformationSystem
             {
                 txtServiceID.Clear();
                 rtfAppointDescription.Clear(); // Clears text Box
-                txtEmployeeName.Clear();
+                txtEmployeeID.Clear();
                 txtVehicleRegNumber.Clear();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message
             }
@@ -66,6 +67,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -93,6 +95,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -118,18 +121,19 @@ namespace FleetTrackingInformationSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)",objDBConnect.sqlConn);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET (Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description) WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
@@ -142,39 +146,14 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void frmService_Load(object sender, EventArgs e)
+        public void getValues()
         {
-
-        }
-
-        private void txtVehicleRegNumber_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtServiceID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmployeeName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpAppointmentDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboAppointTime_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rtfAppointDescription_TextChanged(object sender, EventArgs e)
-        {
-
+            S_ID = txtServiceID.Text; ;
+            V_RN = int.Parse(txtVehicleRegNumber.Text);
+            E_ID = int.Parse(txtEmployeeID.Text);
+            S_DATE = dtpAppointmentDate.Text;
+            S_TIME = cboAppointTime.GetItemText(cboAppointTime).ToString();
+            S_DES = rtfAppointDescription.Text;
         }
     }
 }

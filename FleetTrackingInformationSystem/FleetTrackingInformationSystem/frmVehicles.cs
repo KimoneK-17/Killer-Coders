@@ -73,15 +73,9 @@ namespace FleetTrackingInformationSystem
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            getValues();
             Check check = new Check();
             bool exit = false;
-
-            V_MILEAGE = txtMileage.Text;
-            V_MAKE = txtMake.Text;
-            V_TYPE = cboType.SelectedItem.ToString();
-            V_MODEL = txtModel.Text;
-            V_YEAR = dtpVehicleYear.Value.ToString();
-            V_RN = txtRegNum.Text;
 
             exit = check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
             exit = check.CheckEmpty(V_MAKE, "Vehicle Make");
@@ -98,7 +92,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE V_RN = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE Vehicle_RegNumber = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -122,6 +116,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -148,12 +143,13 @@ namespace FleetTrackingInformationSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
               DBConnect objDBConnect = new DBConnect();
 
               objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)",objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET (Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage, Vehicle_RecordNumber=@Vehicle_RecordNumber) WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -171,6 +167,16 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Update Vehicle Details: " + ex.Message);
             }
+        }
+
+        private void getValues()
+        {
+            V_MILEAGE = txtMileage.Text;
+            V_MAKE = txtMake.Text;
+            V_TYPE = cboType.SelectedItem.ToString();
+            V_MODEL = txtModel.Text;
+            V_YEAR = dtpVehicleYear.Value.ToString();
+            V_RN = txtRegNum.Text;
         }
     }
 }
