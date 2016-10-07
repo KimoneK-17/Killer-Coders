@@ -14,7 +14,6 @@ namespace FleetTrackingInformationSystem
     public partial class frmTripUsage : Form
     {
         string T_ID;
-        double doubleTryParseOut;
        
        
         string V_RN;
