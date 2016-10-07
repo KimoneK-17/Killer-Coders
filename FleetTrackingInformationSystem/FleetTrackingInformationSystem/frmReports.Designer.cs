@@ -166,6 +166,7 @@
             this.dgvVehicleStatus.Name = "dgvVehicleStatus";
             this.dgvVehicleStatus.Size = new System.Drawing.Size(1015, 479);
             this.dgvVehicleStatus.TabIndex = 0;
+            this.dgvVehicleStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehicleStatus_CellContentClick);
             // 
             // tabServiceAppoint
             // 
