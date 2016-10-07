@@ -135,6 +135,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();

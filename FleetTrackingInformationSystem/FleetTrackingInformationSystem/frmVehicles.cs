@@ -157,6 +157,7 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RecordNumber", V_REC);
+              objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
               MessageBox.Show("SUCCESSFULLY UPDATED");
               objDBConnect.sqlDR.Close();

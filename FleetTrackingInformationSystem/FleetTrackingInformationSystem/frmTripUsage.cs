@@ -154,6 +154,7 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+              objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
               MessageBox.Show("SUCCESSFULLY UPDATED");
               objDBConnect.sqlDR.Close();
               objDBConnect.sqlConn.Close();

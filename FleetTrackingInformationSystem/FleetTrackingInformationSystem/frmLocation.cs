@@ -156,7 +156,7 @@ namespace FleetTrackingInformationSystem
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
-
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
