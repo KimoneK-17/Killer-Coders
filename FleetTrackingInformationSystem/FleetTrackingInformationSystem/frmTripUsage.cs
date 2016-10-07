@@ -15,8 +15,8 @@ namespace FleetTrackingInformationSystem
     {
         string T_ID;
         double doubleTryParseOut;
-        string kmTravelled;
-        string fuelUsage;
+       
+       
         string V_RN;
         string T_FROM;
         string T_TO;
@@ -75,16 +75,15 @@ namespace FleetTrackingInformationSystem
         {
             Check check = new Check();
             bool exit = false;
-
-            fuelUsage = txtFuelUsage.Text;
-            kmTravelled = txtKM.Text;
+            getValues();
+          
 
             exit = check.CheckEmpty(T_ID, "Trip ID");
-            exit = check.CheckEmpty(fuelUsage, "Fuel Usage");
-            exit = check.CheckEmpty(kmTravelled, "KM Travelled");
+            exit = check.CheckEmpty(T_FUEL, "Fuel Usage");
+            exit = check.CheckEmpty(T_MILEAGE, "KM Travelled");
             exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
-            exit = check.CheckForLetters(kmTravelled, "KM Travelled");
-            exit = check.CheckForLetters(fuelUsage, "Fuel Usage");
+            exit = check.CheckForLetters(T_MILEAGE, "KM Travelled");
+            exit = check.CheckForLetters(T_FUEL, "Fuel Usage");
               
             if(exit == false)
             {
@@ -113,6 +112,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            getValues();
                 try
                 {
                     DBConnect objDBConnect = new DBConnect();
@@ -139,13 +139,14 @@ namespace FleetTrackingInformationSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {             
               DBConnect objDBConnect = new DBConnect();
 
               objDBConnect.OpenConnection();
 
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)",objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo, Trip_FuelUsed=@Trip_FuelUsed,Trip_Incidents= @Trip_Incidents,Trip_Mileage= @Trip_Mileage)", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
@@ -153,6 +154,7 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+              objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
               MessageBox.Show("SUCCESSFULLY UPDATED");
               objDBConnect.sqlDR.Close();
               objDBConnect.sqlConn.Close();
@@ -162,6 +164,17 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Update Records: " + ex.Message);
             }
+        }
+
+        public void getValues()
+        {
+            T_FUEL = txtFuelUsage.Text;
+            T_MILEAGE = txtKM.Text;
+            T_ID = txtTripID.Text;
+            T_INCIDENTS = txtVehicleIncidents.Text;
+            T_TO = dtpDateTo.Text;
+            T_FROM = dtpDateFrom.Text;
+            V_RN = txtVehicleRegNumber.Text;
         }
    }
 }

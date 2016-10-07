@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
             this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.FleetTrackingDBDataSet = new FleetTrackingInformationSystem.FleetTrackingDBDataSet();
             this.tabReports = new System.Windows.Forms.TabControl();
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
             this.dgvVehicleStatus = new System.Windows.Forms.DataGridView();
@@ -49,7 +48,6 @@
             this.dgvCompletedTrip = new System.Windows.Forms.DataGridView();
             this.tabTimesheet = new System.Windows.Forms.TabPage();
             this.dgvTimeSheet = new System.Windows.Forms.DataGridView();
-            this.VehicleTableAdapter = new FleetTrackingInformationSystem.FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter();
             this.pnlCustomer = new System.Windows.Forms.Panel();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
@@ -57,7 +55,6 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).BeginInit();
@@ -78,16 +75,6 @@
             this.pnlCustomer.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // VehicleBindingSource
-            // 
-            this.VehicleBindingSource.DataMember = "Vehicle";
-            this.VehicleBindingSource.DataSource = this.FleetTrackingDBDataSet;
-            // 
-            // FleetTrackingDBDataSet
-            // 
-            this.FleetTrackingDBDataSet.DataSetName = "FleetTrackingDBDataSet";
-            this.FleetTrackingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabReports
             // 
@@ -251,10 +238,6 @@
             this.dgvTimeSheet.Size = new System.Drawing.Size(1045, 496);
             this.dgvTimeSheet.TabIndex = 0;
             // 
-            // VehicleTableAdapter
-            // 
-            this.VehicleTableAdapter.ClearBeforeFill = true;
-            // 
             // pnlCustomer
             // 
             this.pnlCustomer.BackColor = System.Drawing.Color.Transparent;
@@ -297,14 +280,14 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Size = new System.Drawing.Size(99, 22);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -322,7 +305,6 @@
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabVehicleStat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).EndInit();
@@ -361,8 +343,6 @@
         private System.Windows.Forms.TabPage tabCompletedTrip;
         private System.Windows.Forms.TabPage tabTimesheet;
         private System.Windows.Forms.BindingSource VehicleBindingSource;
-        private FleetTrackingDBDataSet FleetTrackingDBDataSet;
-        private FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter VehicleTableAdapter;
         private System.Windows.Forms.Panel pnlCustomer;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.MenuStrip mnuFleet;

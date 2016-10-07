@@ -157,16 +157,18 @@ namespace FleetTrackingInformationSystem
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Hide();
-                frmSearch search = new frmSearch();
-                search.ShowDialog(); // Goes To the Search Form
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
-            }
+            //try
+            //{
+            //    this.Hide();
+            //    frmSearch search = new frmSearch();
+            //    search.ShowDialog(); // Goes To the Search Form
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
+            //}
         }
+
+    
     }
 }

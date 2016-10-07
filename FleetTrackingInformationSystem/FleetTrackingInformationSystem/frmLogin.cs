@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace FleetTrackingInformationSystem
 {
@@ -153,7 +154,7 @@ namespace FleetTrackingInformationSystem
                 //checks to see if patient already exists in database
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Register WHERE R_UNAME LIKE @R_UNAME;", objDBConnect.sqlConn);
                 //query
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
                 //parameter
@@ -172,7 +173,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Cannot Check If Patient Already Exists In Database: " + ex.Message); // Shows an error message
+                MessageBox.Show("Error Cannot Check If User  Exists In Database: " + ex.Message); // Shows an error message
             }
         }
 
@@ -184,7 +185,7 @@ namespace FleetTrackingInformationSystem
                 //checks to see if patient already exists in database
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Patients WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM Register WHERE R_UNAME LIKE @R_UNAME AND R_PWORD LIKE @R_PWORD;", objDBConnect.sqlConn);
                 //query
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", password);
@@ -205,8 +206,14 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Cannot Check Validation of Patient In Database: " + ex.Message); // Shows an error message
+                MessageBox.Show("Error Cannot Check Validation of Users In Database: " + ex.Message); // Shows an error message
             }
+        }
+
+        
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
         }
     }
 }
