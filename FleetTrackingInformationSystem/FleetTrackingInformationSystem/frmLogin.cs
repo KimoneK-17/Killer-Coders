@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Mail;
 
 namespace FleetTrackingInformationSystem
 {
@@ -140,10 +142,77 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message + "\n" + ex.StackTrace); ; // Shows an error message                             
             }
         }
-
+        //Code adapted from: http://www.codeproject.com/Tips/520998/Send-Email-from-Yahoo-Gmail-Hotmail-Csharp
         private void btnPassReset_Click(object sender, EventArgs e)
         {
+            try
+            {
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
+                    objDBConnect.OpenConnection();
+
+                    objDBConnect.sqlCmd = new SqlCommand("SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                string smtpAddress = "smtp.gmail.com";
+                int portNumber = 587;
+                bool enableSSL = true;
+
+                string emailFrom = "scottgersbank@gmail.com";
+                string password = "Slg5059087";
+                string emailTo = "scottgersbank@ymail.com";
+                string subject = "Hello";
+                string body = "Hello, I'm just writing this to say Hi!";
+
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.From = new MailAddress(emailFrom);
+                    mail.To.Add(emailTo);
+                    mail.Subject = subject;
+                    mail.Body = body;
+                    mail.IsBodyHtml = false;
+                    // Can set to false, if you are sending pure text.
+
+                    //mail.Attachments.Add(new Attachment("C:\\SomeFile.txt"));
+                    //mail.Attachments.Add(new Attachment("C:\\SomeZip.zip"));
+
+                    using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
+                    {
+                        smtp.Credentials = new NetworkCredential(emailFrom, password);
+                        smtp.EnableSsl = enableSSL;
+                        smtp.Send(mail);
+                    }
+                }
+            }
+            catch (SmtpFailedRecipientException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (SmtpException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void CheckExisting()
