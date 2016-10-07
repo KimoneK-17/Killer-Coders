@@ -142,10 +142,15 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message + "\n" + ex.StackTrace); ; // Shows an error message                             
             }
         }
-        //Code adapted from: http://www.codeproject.com/Tips/520998/Send-Email-from-Yahoo-Gmail-Hotmail-Csharp
+        
         private void btnPassReset_Click(object sender, EventArgs e)
         {
-            try
+            //Code adapted from: http://www.codeproject.com/Tips/520998/Send-Email-from-Yahoo-Gmail-Hotmail-Csharp
+            Check check = new Check();
+            bool exit = false;
+            userName = txtUser.Text;
+            exit = check.CheckEmpty(userName, "Username");
+            if (exit == false)
             {
                 try
                 {
@@ -153,16 +158,53 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("IF EXISTS(SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME) BEGIN SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME END", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    string email = ((string)objDBConnect.sqlCmd.ExecuteScalar());
 
-
-                    objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
+
+                    string smtpAddress = "smtp.gmail.com";
+                    int portNumber = 587;
+                    bool enableSSL = true;
+
+                    string emailFrom = "scottgersbank@gmail.com";
+                    string password = "Slg5059087";
+                    string emailTo = email;
+                    string subject = "Test";
+                    string body = "This is a test";
+                    MessageBox.Show(email);
+                    using (MailMessage mail = new MailMessage())
+                    {
+                        mail.From = new MailAddress(emailFrom);
+                        mail.To.Add(emailTo);
+                        mail.Subject = subject;
+                        mail.Body = body;
+                        mail.IsBodyHtml = false;
+                        // Can set to false, if you are sending pure text.
+
+                        //mail.Attachments.Add(new Attachment("C:\\SomeFile.txt"));
+                        //mail.Attachments.Add(new Attachment("C:\\SomeZip.zip"));
+
+                        using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
+                        {
+                            smtp.Credentials = new NetworkCredential(emailFrom, password);
+                            smtp.EnableSsl = enableSSL;
+                            smtp.Send(mail);
+                            MessageBox.Show("An email has been sent. If you do not receive the email within 5min check that the username you entered is correct");
+                        }
+                    }
                 }
                 catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (SmtpFailedRecipientException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (SmtpException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -170,49 +212,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show(ex.Message);
                 }
-                string smtpAddress = "smtp.gmail.com";
-                int portNumber = 587;
-                bool enableSSL = true;
-
-                string emailFrom = "scottgersbank@gmail.com";
-                string password = "Slg5059087";
-                string emailTo = "scottgersbank@ymail.com";
-                string subject = "Hello";
-                string body = "Hello, I'm just writing this to say Hi!";
-
-                using (MailMessage mail = new MailMessage())
-                {
-                    mail.From = new MailAddress(emailFrom);
-                    mail.To.Add(emailTo);
-                    mail.Subject = subject;
-                    mail.Body = body;
-                    mail.IsBodyHtml = false;
-                    // Can set to false, if you are sending pure text.
-
-                    //mail.Attachments.Add(new Attachment("C:\\SomeFile.txt"));
-                    //mail.Attachments.Add(new Attachment("C:\\SomeZip.zip"));
-
-                    using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
-                    {
-                        smtp.Credentials = new NetworkCredential(emailFrom, password);
-                        smtp.EnableSsl = enableSSL;
-                        smtp.Send(mail);
-                    }
-                }
-            }
-            catch (SmtpFailedRecipientException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (SmtpException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            } 
         }
 
         private void CheckExisting()
