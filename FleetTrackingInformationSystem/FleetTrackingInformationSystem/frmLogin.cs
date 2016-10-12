@@ -169,8 +169,8 @@ namespace FleetTrackingInformationSystem
                     int portNumber = 587;
                     bool enableSSL = true;
 
-                    string emailFrom = "scottgersbank@gmail.com";
-                    string password = "Slg5059087";
+                    string emailFrom = "cargofleetdonotreply@gmail.com";
+                    string password = "Pass123456";
                     string emailTo = email;
                     string subject = "Test";
                     string body = "This is a test";
