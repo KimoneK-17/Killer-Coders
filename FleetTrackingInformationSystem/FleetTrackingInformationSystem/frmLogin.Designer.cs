@@ -218,7 +218,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.pnlFleet.ResumeLayout(false);
             this.pnlFleet.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
