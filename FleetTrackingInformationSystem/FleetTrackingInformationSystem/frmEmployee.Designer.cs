@@ -196,7 +196,7 @@
             this.lblSalary.AutoSize = true;
             this.lblSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSalary.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(50, 569);
+            this.lblSalary.Location = new System.Drawing.Point(50, 525);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(114, 19);
             this.lblSalary.TabIndex = 25;
@@ -260,7 +260,7 @@
             // 
             this.txtSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalary.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(246, 562);
+            this.txtSalary.Location = new System.Drawing.Point(246, 518);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(234, 26);
             this.txtSalary.TabIndex = 34;
