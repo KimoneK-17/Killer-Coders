@@ -87,6 +87,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Delete Record From Service Table in Database: " + ex.Message);
@@ -112,6 +116,10 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Succesfully inserted");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -140,7 +148,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Details in Service Table: " + ex.Message);
