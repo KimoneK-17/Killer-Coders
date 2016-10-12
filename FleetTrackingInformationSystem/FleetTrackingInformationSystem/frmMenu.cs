@@ -167,8 +167,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
             }
-        }
-
-    
+        }   
     }
 }

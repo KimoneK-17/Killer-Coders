@@ -278,11 +278,5 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Check Validation of Users In Database: " + ex.Message); // Shows an error message
             }
         }
-
-        
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-        }
     }
 }
