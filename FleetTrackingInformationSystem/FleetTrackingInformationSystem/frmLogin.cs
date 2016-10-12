@@ -192,7 +192,7 @@ namespace FleetTrackingInformationSystem
                             smtp.Credentials = new NetworkCredential(emailFrom, password);
                             smtp.EnableSsl = enableSSL;
                             smtp.Send(mail);
-                            MessageBox.Show("An email has been sent. If you do not receive the email within 5min check that the username you entered is correct");
+                            MessageBox.Show("An email has been sent. If you do not receive the email within 5 minutes check that the username you entered is correct");
                         }
                     }
                 }
@@ -240,6 +240,10 @@ namespace FleetTrackingInformationSystem
                     //not in database
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Check If User  Exists In Database: " + ex.Message); // Shows an error message
@@ -272,6 +276,10 @@ namespace FleetTrackingInformationSystem
                     checkValid = false;
                     //not in database
                 }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {

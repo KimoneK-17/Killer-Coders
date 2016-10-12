@@ -182,6 +182,11 @@ namespace FleetTrackingInformationSystem
                                             {
                                                 MessageBox.Show("Error Cannot Be Registered: " + ex.Message); // Shows an error message 
                                             }
+
+                                        }
+                                        catch (SqlException ex)
+                                        {
+                                            MessageBox.Show(ex.Message);
                                         }
                                         catch (Exception ex)
                                         {

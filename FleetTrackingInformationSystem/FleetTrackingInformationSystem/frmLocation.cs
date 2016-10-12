@@ -104,6 +104,10 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
                 }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Submit Location Details: " + ex.Message);
@@ -134,6 +138,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Delete Location Details: " + ex.Message);
@@ -161,7 +169,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);

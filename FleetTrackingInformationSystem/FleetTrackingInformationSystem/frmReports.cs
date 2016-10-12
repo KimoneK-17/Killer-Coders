@@ -164,6 +164,10 @@ namespace FleetTrackingInformationSystem
                 dgvTSDaily.ReadOnly = true;
                 dgvTSDaily.DataSource = ds.Tables[0];
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Load Sql Commands to The Data Grid Views: " + ex.Message); // Shows an error message
