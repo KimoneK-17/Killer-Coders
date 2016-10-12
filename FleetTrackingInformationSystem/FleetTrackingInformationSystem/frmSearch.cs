@@ -131,7 +131,7 @@ namespace FleetTrackingInformationSystem
                 cboL_ID.DataSource = dt;*/
 
                 string query = "SELECT Location_ID from Location;";
-objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
                 
                 DataSet ds = new DataSet();
@@ -217,7 +217,7 @@ objDBConnect.OpenConnection();
             string T_ID = cboT_ID.SelectedItem.ToString();
             try
                 {	//creates object of DBConnect class
-                    objDBConnect.GiveCommand("SELECT * from TripUsage WHERE Trip_ID LIKE @T_ID");
+                objDBConnect.GiveCommand("SELECT * from TripUsage WHERE Trip_ID LIKE @T_ID");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID );
 	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
 	            DataTable dtSearch = new DataTable();
@@ -225,7 +225,7 @@ objDBConnect.OpenConnection();
 	            dgvTripUsage.DataSource = dtSearch;
 	            dgvTripUsage.AutoResizeColumns();
 	
-}
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(""); // Shows an error message
@@ -316,5 +316,5 @@ objDBConnect.OpenConnection();
         }
 
     }
-    }
+ }
 

@@ -35,101 +35,101 @@
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
             this.dgvVehicleStatus = new System.Windows.Forms.DataGridView();
             this.tabServiceAppoint = new System.Windows.Forms.TabPage();
+            this.tabSADailyWeekly = new System.Windows.Forms.TabControl();
+            this.tabSADaily = new System.Windows.Forms.TabPage();
+            this.dgvSADaily = new System.Windows.Forms.DataGridView();
+            this.tabSAWeekly = new System.Windows.Forms.TabPage();
+            this.dgvSAWeekly = new System.Windows.Forms.DataGridView();
             this.tabServiceRequire = new System.Windows.Forms.TabPage();
             this.dgvServiceReq = new System.Windows.Forms.DataGridView();
             this.tabVehicleServiceCompleted = new System.Windows.Forms.TabPage();
+            this.tabDWMYVehicleServices = new System.Windows.Forms.TabControl();
+            this.tabVSDaily = new System.Windows.Forms.TabPage();
+            this.dgvVSDaily = new System.Windows.Forms.DataGridView();
+            this.tabVSWeekly = new System.Windows.Forms.TabPage();
+            this.dgvVSWeekly = new System.Windows.Forms.DataGridView();
+            this.tabVSMonthly = new System.Windows.Forms.TabPage();
+            this.dgvVSMonthly = new System.Windows.Forms.DataGridView();
+            this.tabVSYearly = new System.Windows.Forms.TabPage();
+            this.dgvVSYearly = new System.Windows.Forms.DataGridView();
             this.tabDetailedServiceInfo = new System.Windows.Forms.TabPage();
             this.dgvDetailedService = new System.Windows.Forms.DataGridView();
             this.tabPlannedTrip = new System.Windows.Forms.TabPage();
+            this.tabDWPlannedTrip = new System.Windows.Forms.TabControl();
+            this.tabPTDaily = new System.Windows.Forms.TabPage();
+            this.dgvPTDaily = new System.Windows.Forms.DataGridView();
+            this.tabPTWeekly = new System.Windows.Forms.TabPage();
+            this.dgvPTWeekly = new System.Windows.Forms.DataGridView();
             this.tabCompletedTrip = new System.Windows.Forms.TabPage();
+            this.tabDWMCompletedTrip = new System.Windows.Forms.TabControl();
+            this.tabCTDaily = new System.Windows.Forms.TabPage();
+            this.dgvCTDaily = new System.Windows.Forms.DataGridView();
+            this.tabCTWeekly = new System.Windows.Forms.TabPage();
+            this.dgvCTWeekly = new System.Windows.Forms.DataGridView();
+            this.tabCTMonthly = new System.Windows.Forms.TabPage();
+            this.dgvCTMonthly = new System.Windows.Forms.DataGridView();
             this.tabTimesheet = new System.Windows.Forms.TabPage();
+            this.tabDWMTimeSheet = new System.Windows.Forms.TabControl();
+            this.tabTSDaily = new System.Windows.Forms.TabPage();
+            this.dgvTSDaily = new System.Windows.Forms.DataGridView();
+            this.tabTSWeekly = new System.Windows.Forms.TabPage();
+            this.dgvTSWeekly = new System.Windows.Forms.DataGridView();
+            this.tabTSMonthly = new System.Windows.Forms.TabPage();
+            this.dgvTSMonthly = new System.Windows.Forms.DataGridView();
             this.pnlCustomer = new System.Windows.Forms.Panel();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabDWMTimeSheet = new System.Windows.Forms.TabControl();
-            this.tabTSDaily = new System.Windows.Forms.TabPage();
-            this.tabTSWeekly = new System.Windows.Forms.TabPage();
-            this.tabTSMonthly = new System.Windows.Forms.TabPage();
-            this.tabDWMCompletedTrip = new System.Windows.Forms.TabControl();
-            this.tabCTDaily = new System.Windows.Forms.TabPage();
-            this.tabCTWeekly = new System.Windows.Forms.TabPage();
-            this.tabCTMonthly = new System.Windows.Forms.TabPage();
-            this.tabDWPlannedTrip = new System.Windows.Forms.TabControl();
-            this.tabPTDaily = new System.Windows.Forms.TabPage();
-            this.tabPTWeekly = new System.Windows.Forms.TabPage();
-            this.tabDWMYVehicleServices = new System.Windows.Forms.TabControl();
-            this.tabVSDaily = new System.Windows.Forms.TabPage();
-            this.tabVSWeekly = new System.Windows.Forms.TabPage();
-            this.tabVSMonthly = new System.Windows.Forms.TabPage();
-            this.tabVSYearly = new System.Windows.Forms.TabPage();
-            this.dgvVSDaily = new System.Windows.Forms.DataGridView();
-            this.dgvVSWeekly = new System.Windows.Forms.DataGridView();
-            this.dgvVSMonthly = new System.Windows.Forms.DataGridView();
-            this.dgvVSYearly = new System.Windows.Forms.DataGridView();
-            this.dgvPTDaily = new System.Windows.Forms.DataGridView();
-            this.dgvPTWeekly = new System.Windows.Forms.DataGridView();
-            this.dgvCTDaily = new System.Windows.Forms.DataGridView();
-            this.dgvCTWeekly = new System.Windows.Forms.DataGridView();
-            this.dgvCTMonthly = new System.Windows.Forms.DataGridView();
-            this.dgvTSDaily = new System.Windows.Forms.DataGridView();
-            this.dgvTSWeekly = new System.Windows.Forms.DataGridView();
-            this.dgvTSMonthly = new System.Windows.Forms.DataGridView();
-            this.tabSADailyWeekly = new System.Windows.Forms.TabControl();
-            this.tabSADaily = new System.Windows.Forms.TabPage();
-            this.tabSAWeekly = new System.Windows.Forms.TabPage();
-            this.dgvSADaily = new System.Windows.Forms.DataGridView();
-            this.dgvSAWeekly = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).BeginInit();
             this.tabServiceAppoint.SuspendLayout();
+            this.tabSADailyWeekly.SuspendLayout();
+            this.tabSADaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).BeginInit();
+            this.tabSAWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).BeginInit();
             this.tabServiceRequire.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceReq)).BeginInit();
             this.tabVehicleServiceCompleted.SuspendLayout();
+            this.tabDWMYVehicleServices.SuspendLayout();
+            this.tabVSDaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).BeginInit();
+            this.tabVSWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).BeginInit();
+            this.tabVSMonthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).BeginInit();
+            this.tabVSYearly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).BeginInit();
             this.tabDetailedServiceInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailedService)).BeginInit();
             this.tabPlannedTrip.SuspendLayout();
-            this.tabCompletedTrip.SuspendLayout();
-            this.tabTimesheet.SuspendLayout();
-            this.pnlCustomer.SuspendLayout();
-            this.mnuFleet.SuspendLayout();
-            this.tabDWMTimeSheet.SuspendLayout();
-            this.tabTSDaily.SuspendLayout();
-            this.tabTSWeekly.SuspendLayout();
-            this.tabTSMonthly.SuspendLayout();
-            this.tabDWMCompletedTrip.SuspendLayout();
-            this.tabCTDaily.SuspendLayout();
-            this.tabCTWeekly.SuspendLayout();
-            this.tabCTMonthly.SuspendLayout();
             this.tabDWPlannedTrip.SuspendLayout();
             this.tabPTDaily.SuspendLayout();
-            this.tabPTWeekly.SuspendLayout();
-            this.tabDWMYVehicleServices.SuspendLayout();
-            this.tabVSDaily.SuspendLayout();
-            this.tabVSWeekly.SuspendLayout();
-            this.tabVSMonthly.SuspendLayout();
-            this.tabVSYearly.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTDaily)).BeginInit();
+            this.tabPTWeekly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTWeekly)).BeginInit();
+            this.tabCompletedTrip.SuspendLayout();
+            this.tabDWMCompletedTrip.SuspendLayout();
+            this.tabCTDaily.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTDaily)).BeginInit();
+            this.tabCTWeekly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTWeekly)).BeginInit();
+            this.tabCTMonthly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTMonthly)).BeginInit();
+            this.tabTimesheet.SuspendLayout();
+            this.tabDWMTimeSheet.SuspendLayout();
+            this.tabTSDaily.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTSDaily)).BeginInit();
+            this.tabTSWeekly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTSWeekly)).BeginInit();
+            this.tabTSMonthly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).BeginInit();
-            this.tabSADailyWeekly.SuspendLayout();
-            this.tabSADaily.SuspendLayout();
-            this.tabSAWeekly.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).BeginInit();
+            this.pnlCustomer.SuspendLayout();
+            this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabReports
@@ -166,7 +166,6 @@
             this.dgvVehicleStatus.Name = "dgvVehicleStatus";
             this.dgvVehicleStatus.Size = new System.Drawing.Size(1015, 479);
             this.dgvVehicleStatus.TabIndex = 0;
-            this.dgvVehicleStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehicleStatus_CellContentClick);
             // 
             // tabServiceAppoint
             // 
@@ -178,6 +177,56 @@
             this.tabServiceAppoint.TabIndex = 1;
             this.tabServiceAppoint.Text = "Service Appointment list";
             this.tabServiceAppoint.UseVisualStyleBackColor = true;
+            // 
+            // tabSADailyWeekly
+            // 
+            this.tabSADailyWeekly.Controls.Add(this.tabSADaily);
+            this.tabSADailyWeekly.Controls.Add(this.tabSAWeekly);
+            this.tabSADailyWeekly.Location = new System.Drawing.Point(7, 7);
+            this.tabSADailyWeekly.Name = "tabSADailyWeekly";
+            this.tabSADailyWeekly.SelectedIndex = 0;
+            this.tabSADailyWeekly.Size = new System.Drawing.Size(1008, 443);
+            this.tabSADailyWeekly.TabIndex = 0;
+            // 
+            // tabSADaily
+            // 
+            this.tabSADaily.Controls.Add(this.dgvSADaily);
+            this.tabSADaily.Location = new System.Drawing.Point(4, 22);
+            this.tabSADaily.Name = "tabSADaily";
+            this.tabSADaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSADaily.Size = new System.Drawing.Size(1000, 417);
+            this.tabSADaily.TabIndex = 0;
+            this.tabSADaily.Text = "Daily";
+            this.tabSADaily.UseVisualStyleBackColor = true;
+            // 
+            // dgvSADaily
+            // 
+            this.dgvSADaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSADaily.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSADaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvSADaily.Name = "dgvSADaily";
+            this.dgvSADaily.Size = new System.Drawing.Size(994, 411);
+            this.dgvSADaily.TabIndex = 0;
+            // 
+            // tabSAWeekly
+            // 
+            this.tabSAWeekly.Controls.Add(this.dgvSAWeekly);
+            this.tabSAWeekly.Location = new System.Drawing.Point(4, 22);
+            this.tabSAWeekly.Name = "tabSAWeekly";
+            this.tabSAWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSAWeekly.Size = new System.Drawing.Size(1000, 417);
+            this.tabSAWeekly.TabIndex = 1;
+            this.tabSAWeekly.Text = "Weekly";
+            this.tabSAWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dgvSAWeekly
+            // 
+            this.dgvSAWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSAWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSAWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvSAWeekly.Name = "dgvSAWeekly";
+            this.dgvSAWeekly.Size = new System.Drawing.Size(994, 411);
+            this.dgvSAWeekly.TabIndex = 0;
             // 
             // tabServiceRequire
             // 
@@ -207,6 +256,96 @@
             this.tabVehicleServiceCompleted.Text = "Vehicle Services Completed";
             this.tabVehicleServiceCompleted.UseVisualStyleBackColor = true;
             // 
+            // tabDWMYVehicleServices
+            // 
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSDaily);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSWeekly);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSMonthly);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSYearly);
+            this.tabDWMYVehicleServices.Location = new System.Drawing.Point(0, 4);
+            this.tabDWMYVehicleServices.Name = "tabDWMYVehicleServices";
+            this.tabDWMYVehicleServices.SelectedIndex = 0;
+            this.tabDWMYVehicleServices.Size = new System.Drawing.Size(1015, 446);
+            this.tabDWMYVehicleServices.TabIndex = 0;
+            // 
+            // tabVSDaily
+            // 
+            this.tabVSDaily.Controls.Add(this.dgvVSDaily);
+            this.tabVSDaily.Location = new System.Drawing.Point(4, 22);
+            this.tabVSDaily.Name = "tabVSDaily";
+            this.tabVSDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVSDaily.Size = new System.Drawing.Size(1007, 420);
+            this.tabVSDaily.TabIndex = 0;
+            this.tabVSDaily.Text = "Daily";
+            this.tabVSDaily.UseVisualStyleBackColor = true;
+            // 
+            // dgvVSDaily
+            // 
+            this.dgvVSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSDaily.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVSDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvVSDaily.Name = "dgvVSDaily";
+            this.dgvVSDaily.Size = new System.Drawing.Size(1001, 414);
+            this.dgvVSDaily.TabIndex = 0;
+            // 
+            // tabVSWeekly
+            // 
+            this.tabVSWeekly.Controls.Add(this.dgvVSWeekly);
+            this.tabVSWeekly.Location = new System.Drawing.Point(4, 22);
+            this.tabVSWeekly.Name = "tabVSWeekly";
+            this.tabVSWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVSWeekly.Size = new System.Drawing.Size(1007, 420);
+            this.tabVSWeekly.TabIndex = 1;
+            this.tabVSWeekly.Text = "Weekly";
+            this.tabVSWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dgvVSWeekly
+            // 
+            this.dgvVSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVSWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvVSWeekly.Name = "dgvVSWeekly";
+            this.dgvVSWeekly.Size = new System.Drawing.Size(1001, 414);
+            this.dgvVSWeekly.TabIndex = 0;
+            // 
+            // tabVSMonthly
+            // 
+            this.tabVSMonthly.Controls.Add(this.dgvVSMonthly);
+            this.tabVSMonthly.Location = new System.Drawing.Point(4, 22);
+            this.tabVSMonthly.Name = "tabVSMonthly";
+            this.tabVSMonthly.Size = new System.Drawing.Size(1007, 420);
+            this.tabVSMonthly.TabIndex = 2;
+            this.tabVSMonthly.Text = "Monthly";
+            this.tabVSMonthly.UseVisualStyleBackColor = true;
+            // 
+            // dgvVSMonthly
+            // 
+            this.dgvVSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVSMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvVSMonthly.Name = "dgvVSMonthly";
+            this.dgvVSMonthly.Size = new System.Drawing.Size(1007, 420);
+            this.dgvVSMonthly.TabIndex = 0;
+            // 
+            // tabVSYearly
+            // 
+            this.tabVSYearly.Controls.Add(this.dgvVSYearly);
+            this.tabVSYearly.Location = new System.Drawing.Point(4, 22);
+            this.tabVSYearly.Name = "tabVSYearly";
+            this.tabVSYearly.Size = new System.Drawing.Size(1007, 420);
+            this.tabVSYearly.TabIndex = 3;
+            this.tabVSYearly.Text = "Yearly";
+            this.tabVSYearly.UseVisualStyleBackColor = true;
+            // 
+            // dgvVSYearly
+            // 
+            this.dgvVSYearly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSYearly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVSYearly.Location = new System.Drawing.Point(0, 0);
+            this.dgvVSYearly.Name = "dgvVSYearly";
+            this.dgvVSYearly.Size = new System.Drawing.Size(1007, 420);
+            this.dgvVSYearly.TabIndex = 0;
+            // 
             // tabDetailedServiceInfo
             // 
             this.tabDetailedServiceInfo.Controls.Add(this.dgvDetailedService);
@@ -235,6 +374,56 @@
             this.tabPlannedTrip.Text = "Planned Trip Report";
             this.tabPlannedTrip.UseVisualStyleBackColor = true;
             // 
+            // tabDWPlannedTrip
+            // 
+            this.tabDWPlannedTrip.Controls.Add(this.tabPTDaily);
+            this.tabDWPlannedTrip.Controls.Add(this.tabPTWeekly);
+            this.tabDWPlannedTrip.Location = new System.Drawing.Point(4, 4);
+            this.tabDWPlannedTrip.Name = "tabDWPlannedTrip";
+            this.tabDWPlannedTrip.SelectedIndex = 0;
+            this.tabDWPlannedTrip.Size = new System.Drawing.Size(1008, 442);
+            this.tabDWPlannedTrip.TabIndex = 0;
+            // 
+            // tabPTDaily
+            // 
+            this.tabPTDaily.Controls.Add(this.dgvPTDaily);
+            this.tabPTDaily.Location = new System.Drawing.Point(4, 22);
+            this.tabPTDaily.Name = "tabPTDaily";
+            this.tabPTDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPTDaily.Size = new System.Drawing.Size(1000, 416);
+            this.tabPTDaily.TabIndex = 0;
+            this.tabPTDaily.Text = "Daily";
+            this.tabPTDaily.UseVisualStyleBackColor = true;
+            // 
+            // dgvPTDaily
+            // 
+            this.dgvPTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTDaily.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPTDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvPTDaily.Name = "dgvPTDaily";
+            this.dgvPTDaily.Size = new System.Drawing.Size(994, 410);
+            this.dgvPTDaily.TabIndex = 0;
+            // 
+            // tabPTWeekly
+            // 
+            this.tabPTWeekly.Controls.Add(this.dgvPTWeekly);
+            this.tabPTWeekly.Location = new System.Drawing.Point(4, 22);
+            this.tabPTWeekly.Name = "tabPTWeekly";
+            this.tabPTWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPTWeekly.Size = new System.Drawing.Size(1000, 416);
+            this.tabPTWeekly.TabIndex = 1;
+            this.tabPTWeekly.Text = "Weekly";
+            this.tabPTWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dgvPTWeekly
+            // 
+            this.dgvPTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPTWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvPTWeekly.Name = "dgvPTWeekly";
+            this.dgvPTWeekly.Size = new System.Drawing.Size(994, 410);
+            this.dgvPTWeekly.TabIndex = 0;
+            // 
             // tabCompletedTrip
             // 
             this.tabCompletedTrip.Controls.Add(this.tabDWMCompletedTrip);
@@ -245,6 +434,76 @@
             this.tabCompletedTrip.Text = "Completed Trip Report";
             this.tabCompletedTrip.UseVisualStyleBackColor = true;
             // 
+            // tabDWMCompletedTrip
+            // 
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTDaily);
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTWeekly);
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTMonthly);
+            this.tabDWMCompletedTrip.Location = new System.Drawing.Point(4, 4);
+            this.tabDWMCompletedTrip.Name = "tabDWMCompletedTrip";
+            this.tabDWMCompletedTrip.SelectedIndex = 0;
+            this.tabDWMCompletedTrip.Size = new System.Drawing.Size(1015, 446);
+            this.tabDWMCompletedTrip.TabIndex = 0;
+            // 
+            // tabCTDaily
+            // 
+            this.tabCTDaily.Controls.Add(this.dgvCTDaily);
+            this.tabCTDaily.Location = new System.Drawing.Point(4, 22);
+            this.tabCTDaily.Name = "tabCTDaily";
+            this.tabCTDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCTDaily.Size = new System.Drawing.Size(1007, 420);
+            this.tabCTDaily.TabIndex = 0;
+            this.tabCTDaily.Text = "Daily";
+            this.tabCTDaily.UseVisualStyleBackColor = true;
+            // 
+            // dgvCTDaily
+            // 
+            this.dgvCTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTDaily.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvCTDaily.Name = "dgvCTDaily";
+            this.dgvCTDaily.Size = new System.Drawing.Size(1001, 414);
+            this.dgvCTDaily.TabIndex = 0;
+            // 
+            // tabCTWeekly
+            // 
+            this.tabCTWeekly.Controls.Add(this.dgvCTWeekly);
+            this.tabCTWeekly.Location = new System.Drawing.Point(4, 22);
+            this.tabCTWeekly.Name = "tabCTWeekly";
+            this.tabCTWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCTWeekly.Size = new System.Drawing.Size(1007, 420);
+            this.tabCTWeekly.TabIndex = 1;
+            this.tabCTWeekly.Text = "Weekly";
+            this.tabCTWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dgvCTWeekly
+            // 
+            this.dgvCTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvCTWeekly.Name = "dgvCTWeekly";
+            this.dgvCTWeekly.Size = new System.Drawing.Size(1001, 414);
+            this.dgvCTWeekly.TabIndex = 0;
+            // 
+            // tabCTMonthly
+            // 
+            this.tabCTMonthly.Controls.Add(this.dgvCTMonthly);
+            this.tabCTMonthly.Location = new System.Drawing.Point(4, 22);
+            this.tabCTMonthly.Name = "tabCTMonthly";
+            this.tabCTMonthly.Size = new System.Drawing.Size(1007, 420);
+            this.tabCTMonthly.TabIndex = 2;
+            this.tabCTMonthly.Text = "Monthly";
+            this.tabCTMonthly.UseVisualStyleBackColor = true;
+            // 
+            // dgvCTMonthly
+            // 
+            this.dgvCTMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvCTMonthly.Name = "dgvCTMonthly";
+            this.dgvCTMonthly.Size = new System.Drawing.Size(1007, 420);
+            this.dgvCTMonthly.TabIndex = 0;
+            // 
             // tabTimesheet
             // 
             this.tabTimesheet.Controls.Add(this.tabDWMTimeSheet);
@@ -254,6 +513,76 @@
             this.tabTimesheet.TabIndex = 7;
             this.tabTimesheet.Text = "Time Sheet Report";
             this.tabTimesheet.UseVisualStyleBackColor = true;
+            // 
+            // tabDWMTimeSheet
+            // 
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSDaily);
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSWeekly);
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSMonthly);
+            this.tabDWMTimeSheet.Location = new System.Drawing.Point(3, 0);
+            this.tabDWMTimeSheet.Name = "tabDWMTimeSheet";
+            this.tabDWMTimeSheet.SelectedIndex = 0;
+            this.tabDWMTimeSheet.Size = new System.Drawing.Size(1009, 443);
+            this.tabDWMTimeSheet.TabIndex = 0;
+            // 
+            // tabTSDaily
+            // 
+            this.tabTSDaily.Controls.Add(this.dgvTSDaily);
+            this.tabTSDaily.Location = new System.Drawing.Point(4, 22);
+            this.tabTSDaily.Name = "tabTSDaily";
+            this.tabTSDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTSDaily.Size = new System.Drawing.Size(1001, 417);
+            this.tabTSDaily.TabIndex = 0;
+            this.tabTSDaily.Text = "Daily";
+            this.tabTSDaily.UseVisualStyleBackColor = true;
+            // 
+            // dgvTSDaily
+            // 
+            this.dgvTSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSDaily.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTSDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvTSDaily.Name = "dgvTSDaily";
+            this.dgvTSDaily.Size = new System.Drawing.Size(995, 411);
+            this.dgvTSDaily.TabIndex = 0;
+            // 
+            // tabTSWeekly
+            // 
+            this.tabTSWeekly.Controls.Add(this.dgvTSWeekly);
+            this.tabTSWeekly.Location = new System.Drawing.Point(4, 22);
+            this.tabTSWeekly.Name = "tabTSWeekly";
+            this.tabTSWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTSWeekly.Size = new System.Drawing.Size(1001, 417);
+            this.tabTSWeekly.TabIndex = 1;
+            this.tabTSWeekly.Text = "Weekly";
+            this.tabTSWeekly.UseVisualStyleBackColor = true;
+            // 
+            // dgvTSWeekly
+            // 
+            this.dgvTSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTSWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvTSWeekly.Name = "dgvTSWeekly";
+            this.dgvTSWeekly.Size = new System.Drawing.Size(995, 411);
+            this.dgvTSWeekly.TabIndex = 0;
+            // 
+            // tabTSMonthly
+            // 
+            this.tabTSMonthly.Controls.Add(this.dgvTSMonthly);
+            this.tabTSMonthly.Location = new System.Drawing.Point(4, 22);
+            this.tabTSMonthly.Name = "tabTSMonthly";
+            this.tabTSMonthly.Size = new System.Drawing.Size(1001, 417);
+            this.tabTSMonthly.TabIndex = 2;
+            this.tabTSMonthly.Text = "Monthly";
+            this.tabTSMonthly.UseVisualStyleBackColor = true;
+            // 
+            // dgvTSMonthly
+            // 
+            this.dgvTSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTSMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvTSMonthly.Name = "dgvTSMonthly";
+            this.dgvTSMonthly.Size = new System.Drawing.Size(1001, 417);
+            this.dgvTSMonthly.TabIndex = 0;
             // 
             // pnlCustomer
             // 
@@ -308,336 +637,6 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // tabDWMTimeSheet
-            // 
-            this.tabDWMTimeSheet.Controls.Add(this.tabTSDaily);
-            this.tabDWMTimeSheet.Controls.Add(this.tabTSWeekly);
-            this.tabDWMTimeSheet.Controls.Add(this.tabTSMonthly);
-            this.tabDWMTimeSheet.Location = new System.Drawing.Point(3, 0);
-            this.tabDWMTimeSheet.Name = "tabDWMTimeSheet";
-            this.tabDWMTimeSheet.SelectedIndex = 0;
-            this.tabDWMTimeSheet.Size = new System.Drawing.Size(1009, 443);
-            this.tabDWMTimeSheet.TabIndex = 0;
-            // 
-            // tabTSDaily
-            // 
-            this.tabTSDaily.Controls.Add(this.dgvTSDaily);
-            this.tabTSDaily.Location = new System.Drawing.Point(4, 22);
-            this.tabTSDaily.Name = "tabTSDaily";
-            this.tabTSDaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTSDaily.Size = new System.Drawing.Size(1001, 417);
-            this.tabTSDaily.TabIndex = 0;
-            this.tabTSDaily.Text = "Daily";
-            this.tabTSDaily.UseVisualStyleBackColor = true;
-            // 
-            // tabTSWeekly
-            // 
-            this.tabTSWeekly.Controls.Add(this.dgvTSWeekly);
-            this.tabTSWeekly.Location = new System.Drawing.Point(4, 22);
-            this.tabTSWeekly.Name = "tabTSWeekly";
-            this.tabTSWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTSWeekly.Size = new System.Drawing.Size(1001, 417);
-            this.tabTSWeekly.TabIndex = 1;
-            this.tabTSWeekly.Text = "Weekly";
-            this.tabTSWeekly.UseVisualStyleBackColor = true;
-            // 
-            // tabTSMonthly
-            // 
-            this.tabTSMonthly.Controls.Add(this.dgvTSMonthly);
-            this.tabTSMonthly.Location = new System.Drawing.Point(4, 22);
-            this.tabTSMonthly.Name = "tabTSMonthly";
-            this.tabTSMonthly.Size = new System.Drawing.Size(1001, 417);
-            this.tabTSMonthly.TabIndex = 2;
-            this.tabTSMonthly.Text = "Monthly";
-            this.tabTSMonthly.UseVisualStyleBackColor = true;
-            // 
-            // tabDWMCompletedTrip
-            // 
-            this.tabDWMCompletedTrip.Controls.Add(this.tabCTDaily);
-            this.tabDWMCompletedTrip.Controls.Add(this.tabCTWeekly);
-            this.tabDWMCompletedTrip.Controls.Add(this.tabCTMonthly);
-            this.tabDWMCompletedTrip.Location = new System.Drawing.Point(4, 4);
-            this.tabDWMCompletedTrip.Name = "tabDWMCompletedTrip";
-            this.tabDWMCompletedTrip.SelectedIndex = 0;
-            this.tabDWMCompletedTrip.Size = new System.Drawing.Size(1015, 446);
-            this.tabDWMCompletedTrip.TabIndex = 0;
-            // 
-            // tabCTDaily
-            // 
-            this.tabCTDaily.Controls.Add(this.dgvCTDaily);
-            this.tabCTDaily.Location = new System.Drawing.Point(4, 22);
-            this.tabCTDaily.Name = "tabCTDaily";
-            this.tabCTDaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCTDaily.Size = new System.Drawing.Size(1007, 420);
-            this.tabCTDaily.TabIndex = 0;
-            this.tabCTDaily.Text = "Daily";
-            this.tabCTDaily.UseVisualStyleBackColor = true;
-            // 
-            // tabCTWeekly
-            // 
-            this.tabCTWeekly.Controls.Add(this.dgvCTWeekly);
-            this.tabCTWeekly.Location = new System.Drawing.Point(4, 22);
-            this.tabCTWeekly.Name = "tabCTWeekly";
-            this.tabCTWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCTWeekly.Size = new System.Drawing.Size(1007, 420);
-            this.tabCTWeekly.TabIndex = 1;
-            this.tabCTWeekly.Text = "Weekly";
-            this.tabCTWeekly.UseVisualStyleBackColor = true;
-            // 
-            // tabCTMonthly
-            // 
-            this.tabCTMonthly.Controls.Add(this.dgvCTMonthly);
-            this.tabCTMonthly.Location = new System.Drawing.Point(4, 22);
-            this.tabCTMonthly.Name = "tabCTMonthly";
-            this.tabCTMonthly.Size = new System.Drawing.Size(1007, 420);
-            this.tabCTMonthly.TabIndex = 2;
-            this.tabCTMonthly.Text = "Monthly";
-            this.tabCTMonthly.UseVisualStyleBackColor = true;
-            // 
-            // tabDWPlannedTrip
-            // 
-            this.tabDWPlannedTrip.Controls.Add(this.tabPTDaily);
-            this.tabDWPlannedTrip.Controls.Add(this.tabPTWeekly);
-            this.tabDWPlannedTrip.Location = new System.Drawing.Point(4, 4);
-            this.tabDWPlannedTrip.Name = "tabDWPlannedTrip";
-            this.tabDWPlannedTrip.SelectedIndex = 0;
-            this.tabDWPlannedTrip.Size = new System.Drawing.Size(1008, 442);
-            this.tabDWPlannedTrip.TabIndex = 0;
-            // 
-            // tabPTDaily
-            // 
-            this.tabPTDaily.Controls.Add(this.dgvPTDaily);
-            this.tabPTDaily.Location = new System.Drawing.Point(4, 22);
-            this.tabPTDaily.Name = "tabPTDaily";
-            this.tabPTDaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPTDaily.Size = new System.Drawing.Size(1000, 416);
-            this.tabPTDaily.TabIndex = 0;
-            this.tabPTDaily.Text = "Daily";
-            this.tabPTDaily.UseVisualStyleBackColor = true;
-            // 
-            // tabPTWeekly
-            // 
-            this.tabPTWeekly.Controls.Add(this.dgvPTWeekly);
-            this.tabPTWeekly.Location = new System.Drawing.Point(4, 22);
-            this.tabPTWeekly.Name = "tabPTWeekly";
-            this.tabPTWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPTWeekly.Size = new System.Drawing.Size(1000, 416);
-            this.tabPTWeekly.TabIndex = 1;
-            this.tabPTWeekly.Text = "Weekly";
-            this.tabPTWeekly.UseVisualStyleBackColor = true;
-            // 
-            // tabDWMYVehicleServices
-            // 
-            this.tabDWMYVehicleServices.Controls.Add(this.tabVSDaily);
-            this.tabDWMYVehicleServices.Controls.Add(this.tabVSWeekly);
-            this.tabDWMYVehicleServices.Controls.Add(this.tabVSMonthly);
-            this.tabDWMYVehicleServices.Controls.Add(this.tabVSYearly);
-            this.tabDWMYVehicleServices.Location = new System.Drawing.Point(0, 4);
-            this.tabDWMYVehicleServices.Name = "tabDWMYVehicleServices";
-            this.tabDWMYVehicleServices.SelectedIndex = 0;
-            this.tabDWMYVehicleServices.Size = new System.Drawing.Size(1015, 446);
-            this.tabDWMYVehicleServices.TabIndex = 0;
-            // 
-            // tabVSDaily
-            // 
-            this.tabVSDaily.Controls.Add(this.dgvVSDaily);
-            this.tabVSDaily.Location = new System.Drawing.Point(4, 22);
-            this.tabVSDaily.Name = "tabVSDaily";
-            this.tabVSDaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVSDaily.Size = new System.Drawing.Size(1007, 420);
-            this.tabVSDaily.TabIndex = 0;
-            this.tabVSDaily.Text = "Daily";
-            this.tabVSDaily.UseVisualStyleBackColor = true;
-            // 
-            // tabVSWeekly
-            // 
-            this.tabVSWeekly.Controls.Add(this.dgvVSWeekly);
-            this.tabVSWeekly.Location = new System.Drawing.Point(4, 22);
-            this.tabVSWeekly.Name = "tabVSWeekly";
-            this.tabVSWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVSWeekly.Size = new System.Drawing.Size(1007, 420);
-            this.tabVSWeekly.TabIndex = 1;
-            this.tabVSWeekly.Text = "Weekly";
-            this.tabVSWeekly.UseVisualStyleBackColor = true;
-            // 
-            // tabVSMonthly
-            // 
-            this.tabVSMonthly.Controls.Add(this.dgvVSMonthly);
-            this.tabVSMonthly.Location = new System.Drawing.Point(4, 22);
-            this.tabVSMonthly.Name = "tabVSMonthly";
-            this.tabVSMonthly.Size = new System.Drawing.Size(1007, 420);
-            this.tabVSMonthly.TabIndex = 2;
-            this.tabVSMonthly.Text = "Monthly";
-            this.tabVSMonthly.UseVisualStyleBackColor = true;
-            // 
-            // tabVSYearly
-            // 
-            this.tabVSYearly.Controls.Add(this.dgvVSYearly);
-            this.tabVSYearly.Location = new System.Drawing.Point(4, 22);
-            this.tabVSYearly.Name = "tabVSYearly";
-            this.tabVSYearly.Size = new System.Drawing.Size(1007, 420);
-            this.tabVSYearly.TabIndex = 3;
-            this.tabVSYearly.Text = "Yearly";
-            this.tabVSYearly.UseVisualStyleBackColor = true;
-            // 
-            // dgvVSDaily
-            // 
-            this.dgvVSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVSDaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVSDaily.Location = new System.Drawing.Point(3, 3);
-            this.dgvVSDaily.Name = "dgvVSDaily";
-            this.dgvVSDaily.Size = new System.Drawing.Size(1001, 414);
-            this.dgvVSDaily.TabIndex = 0;
-            // 
-            // dgvVSWeekly
-            // 
-            this.dgvVSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVSWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVSWeekly.Location = new System.Drawing.Point(3, 3);
-            this.dgvVSWeekly.Name = "dgvVSWeekly";
-            this.dgvVSWeekly.Size = new System.Drawing.Size(1001, 414);
-            this.dgvVSWeekly.TabIndex = 0;
-            // 
-            // dgvVSMonthly
-            // 
-            this.dgvVSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVSMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVSMonthly.Location = new System.Drawing.Point(0, 0);
-            this.dgvVSMonthly.Name = "dgvVSMonthly";
-            this.dgvVSMonthly.Size = new System.Drawing.Size(1007, 420);
-            this.dgvVSMonthly.TabIndex = 0;
-            // 
-            // dgvVSYearly
-            // 
-            this.dgvVSYearly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVSYearly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVSYearly.Location = new System.Drawing.Point(0, 0);
-            this.dgvVSYearly.Name = "dgvVSYearly";
-            this.dgvVSYearly.Size = new System.Drawing.Size(1007, 420);
-            this.dgvVSYearly.TabIndex = 0;
-            // 
-            // dgvPTDaily
-            // 
-            this.dgvPTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTDaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPTDaily.Location = new System.Drawing.Point(3, 3);
-            this.dgvPTDaily.Name = "dgvPTDaily";
-            this.dgvPTDaily.Size = new System.Drawing.Size(994, 410);
-            this.dgvPTDaily.TabIndex = 0;
-            // 
-            // dgvPTWeekly
-            // 
-            this.dgvPTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPTWeekly.Location = new System.Drawing.Point(3, 3);
-            this.dgvPTWeekly.Name = "dgvPTWeekly";
-            this.dgvPTWeekly.Size = new System.Drawing.Size(994, 410);
-            this.dgvPTWeekly.TabIndex = 0;
-            // 
-            // dgvCTDaily
-            // 
-            this.dgvCTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTDaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTDaily.Location = new System.Drawing.Point(3, 3);
-            this.dgvCTDaily.Name = "dgvCTDaily";
-            this.dgvCTDaily.Size = new System.Drawing.Size(1001, 414);
-            this.dgvCTDaily.TabIndex = 0;
-            // 
-            // dgvCTWeekly
-            // 
-            this.dgvCTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTWeekly.Location = new System.Drawing.Point(3, 3);
-            this.dgvCTWeekly.Name = "dgvCTWeekly";
-            this.dgvCTWeekly.Size = new System.Drawing.Size(1001, 414);
-            this.dgvCTWeekly.TabIndex = 0;
-            // 
-            // dgvCTMonthly
-            // 
-            this.dgvCTMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTMonthly.Location = new System.Drawing.Point(0, 0);
-            this.dgvCTMonthly.Name = "dgvCTMonthly";
-            this.dgvCTMonthly.Size = new System.Drawing.Size(1007, 420);
-            this.dgvCTMonthly.TabIndex = 0;
-            // 
-            // dgvTSDaily
-            // 
-            this.dgvTSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTSDaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTSDaily.Location = new System.Drawing.Point(3, 3);
-            this.dgvTSDaily.Name = "dgvTSDaily";
-            this.dgvTSDaily.Size = new System.Drawing.Size(995, 411);
-            this.dgvTSDaily.TabIndex = 0;
-            // 
-            // dgvTSWeekly
-            // 
-            this.dgvTSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTSWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTSWeekly.Location = new System.Drawing.Point(3, 3);
-            this.dgvTSWeekly.Name = "dgvTSWeekly";
-            this.dgvTSWeekly.Size = new System.Drawing.Size(995, 411);
-            this.dgvTSWeekly.TabIndex = 0;
-            // 
-            // dgvTSMonthly
-            // 
-            this.dgvTSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTSMonthly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTSMonthly.Location = new System.Drawing.Point(0, 0);
-            this.dgvTSMonthly.Name = "dgvTSMonthly";
-            this.dgvTSMonthly.Size = new System.Drawing.Size(1001, 417);
-            this.dgvTSMonthly.TabIndex = 0;
-            // 
-            // tabSADailyWeekly
-            // 
-            this.tabSADailyWeekly.Controls.Add(this.tabSADaily);
-            this.tabSADailyWeekly.Controls.Add(this.tabSAWeekly);
-            this.tabSADailyWeekly.Location = new System.Drawing.Point(7, 7);
-            this.tabSADailyWeekly.Name = "tabSADailyWeekly";
-            this.tabSADailyWeekly.SelectedIndex = 0;
-            this.tabSADailyWeekly.Size = new System.Drawing.Size(1008, 443);
-            this.tabSADailyWeekly.TabIndex = 0;
-            // 
-            // tabSADaily
-            // 
-            this.tabSADaily.Controls.Add(this.dgvSADaily);
-            this.tabSADaily.Location = new System.Drawing.Point(4, 22);
-            this.tabSADaily.Name = "tabSADaily";
-            this.tabSADaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSADaily.Size = new System.Drawing.Size(1000, 417);
-            this.tabSADaily.TabIndex = 0;
-            this.tabSADaily.Text = "Daily";
-            this.tabSADaily.UseVisualStyleBackColor = true;
-            // 
-            // tabSAWeekly
-            // 
-            this.tabSAWeekly.Controls.Add(this.dgvSAWeekly);
-            this.tabSAWeekly.Location = new System.Drawing.Point(4, 22);
-            this.tabSAWeekly.Name = "tabSAWeekly";
-            this.tabSAWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSAWeekly.Size = new System.Drawing.Size(1000, 417);
-            this.tabSAWeekly.TabIndex = 1;
-            this.tabSAWeekly.Text = "Weekly";
-            this.tabSAWeekly.UseVisualStyleBackColor = true;
-            // 
-            // dgvSADaily
-            // 
-            this.dgvSADaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSADaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSADaily.Location = new System.Drawing.Point(3, 3);
-            this.dgvSADaily.Name = "dgvSADaily";
-            this.dgvSADaily.Size = new System.Drawing.Size(994, 411);
-            this.dgvSADaily.TabIndex = 0;
-            // 
-            // dgvSAWeekly
-            // 
-            this.dgvSAWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSAWeekly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSAWeekly.Location = new System.Drawing.Point(3, 3);
-            this.dgvSAWeekly.Name = "dgvSAWeekly";
-            this.dgvSAWeekly.Size = new System.Drawing.Size(994, 411);
-            this.dgvSAWeekly.TabIndex = 0;
-            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,51 +655,51 @@
             this.tabVehicleStat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).EndInit();
             this.tabServiceAppoint.ResumeLayout(false);
+            this.tabSADailyWeekly.ResumeLayout(false);
+            this.tabSADaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).EndInit();
+            this.tabSAWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).EndInit();
             this.tabServiceRequire.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceReq)).EndInit();
             this.tabVehicleServiceCompleted.ResumeLayout(false);
+            this.tabDWMYVehicleServices.ResumeLayout(false);
+            this.tabVSDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).EndInit();
+            this.tabVSWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).EndInit();
+            this.tabVSMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).EndInit();
+            this.tabVSYearly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).EndInit();
             this.tabDetailedServiceInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailedService)).EndInit();
             this.tabPlannedTrip.ResumeLayout(false);
+            this.tabDWPlannedTrip.ResumeLayout(false);
+            this.tabPTDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTDaily)).EndInit();
+            this.tabPTWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTWeekly)).EndInit();
             this.tabCompletedTrip.ResumeLayout(false);
+            this.tabDWMCompletedTrip.ResumeLayout(false);
+            this.tabCTDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTDaily)).EndInit();
+            this.tabCTWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTWeekly)).EndInit();
+            this.tabCTMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTMonthly)).EndInit();
             this.tabTimesheet.ResumeLayout(false);
+            this.tabDWMTimeSheet.ResumeLayout(false);
+            this.tabTSDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSDaily)).EndInit();
+            this.tabTSWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSWeekly)).EndInit();
+            this.tabTSMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).EndInit();
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            this.tabDWMTimeSheet.ResumeLayout(false);
-            this.tabTSDaily.ResumeLayout(false);
-            this.tabTSWeekly.ResumeLayout(false);
-            this.tabTSMonthly.ResumeLayout(false);
-            this.tabDWMCompletedTrip.ResumeLayout(false);
-            this.tabCTDaily.ResumeLayout(false);
-            this.tabCTWeekly.ResumeLayout(false);
-            this.tabCTMonthly.ResumeLayout(false);
-            this.tabDWPlannedTrip.ResumeLayout(false);
-            this.tabPTDaily.ResumeLayout(false);
-            this.tabPTWeekly.ResumeLayout(false);
-            this.tabDWMYVehicleServices.ResumeLayout(false);
-            this.tabVSDaily.ResumeLayout(false);
-            this.tabVSWeekly.ResumeLayout(false);
-            this.tabVSMonthly.ResumeLayout(false);
-            this.tabVSYearly.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPTDaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPTWeekly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTDaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTWeekly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTMonthly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTSDaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTSWeekly)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).EndInit();
-            this.tabSADailyWeekly.ResumeLayout(false);
-            this.tabSADaily.ResumeLayout(false);
-            this.tabSAWeekly.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
