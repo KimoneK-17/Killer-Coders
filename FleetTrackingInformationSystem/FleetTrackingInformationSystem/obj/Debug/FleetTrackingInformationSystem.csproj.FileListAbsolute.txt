@@ -262,3 +262,6 @@ C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\Flee
 C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmVehicles.resources
 C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.Properties.Resources.resources
 C:\Users\14002499\Source\Repos\Killer-Coders\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
+C:\Users\kimon\Documents\github 5\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+C:\Users\kimon\Documents\github 5\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
+C:\Users\kimon\Documents\github 5\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.pdb
