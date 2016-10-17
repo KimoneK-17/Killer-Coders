@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using System.IO;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
@@ -23,6 +24,8 @@ namespace FleetTrackingInformationSystem
 
         private void frmReports_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+          
             try
             {
                 dgvDetailedService.AutoSizeColumnsMode =
