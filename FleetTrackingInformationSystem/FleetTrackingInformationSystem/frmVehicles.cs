@@ -36,7 +36,7 @@ namespace FleetTrackingInformationSystem
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
+                MessageBox.Show("Error! You Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -48,7 +48,7 @@ namespace FleetTrackingInformationSystem
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message
+                MessageBox.Show("Error! You Cannot Exit This Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -66,7 +66,7 @@ namespace FleetTrackingInformationSystem
                 int stopper = 1;
                 while (stopper == 1)
                 {
-                    MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message
+                    MessageBox.Show("Error! You Cannot Clear The Form: " + ex.Message); // Shows an error message
                 }
             }
         }
@@ -112,11 +112,10 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Cannot Submit Vehicle Details: " + ex.Message);
+                    MessageBox.Show("Error! You Cannot Submit Vehicle Details: " + ex.Message);
                 }
             }
         }
-
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -135,7 +134,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESS");
+                MessageBox.Show("SUCCESSFUL");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
@@ -145,7 +144,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Cannot Delete Vehicle Details: " + ex.Message);
+                MessageBox.Show("Error! You Cannot Delete Vehicle Details: " + ex.Message);
             }
         }
 
@@ -177,7 +176,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Cannot Update Vehicle Details: " + ex.Message);
+                MessageBox.Show("Error! You Cannot Update Vehicle Details: " + ex.Message);
             }
         }
 
