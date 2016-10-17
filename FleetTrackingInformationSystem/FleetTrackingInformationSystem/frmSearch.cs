@@ -47,26 +47,21 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
-
-
       
-
-
         private void frmSearch_Load(object sender, EventArgs e)
         {
             try
             {
 
-                objDBConnect.GiveCommand("SELECT Emp_ID FROM Employee");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Emp_ID", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
+                string query = "SELECT Emp_ID from Employee;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
-                cboE_ID.ValueMember = "E_ID";
-                cboE_ID.DisplayMember = "E_ID";
-                cboE_ID.DataSource = dt;
-
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Employee");
+                cboE_ID.ValueMember = "Emp_ID";
+                cboE_ID.DisplayMember = "Emp_ID";
+                cboE_ID.DataSource = ds.Tables["Employee"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -82,17 +77,17 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                objDBConnect.GiveCommand("SELECT Cust_ID  from Customer;");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Cust_ID", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
+                string query = "SELECT Cust_ID from Customer;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
-                cboC_ID.ValueMember = "C_ID";
-                cboC_ID.DisplayMember = "C_ID";
-                cboC_ID.DataSource = dt;
-
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Customer");
+                cboC_ID.ValueMember = "Cust_ID";
+                cboC_ID.DisplayMember = "Cust_ID";
+                cboC_ID.DataSource = ds.Tables["Customer"];
                 objDBConnect.sqlConn.Close();
+
 
             }
             catch (SqlException ex)
@@ -106,16 +101,15 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                objDBConnect.GiveCommand("SELECT Trip_ID from TripUsage; ");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Trip_ID", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
-
-                cboT_ID.ValueMember = "T_ID";
-                cboT_ID.DisplayMember = "T_ID";
-                cboT_ID.DataSource = dt;
-
+                string query = "SELECT Location_ID from Location;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+                
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Location");
+                cboL_ID.ValueMember = "Location_ID";
+                cboL_ID.DisplayMember = "Location_ID";
+                cboL_ID.DataSource = ds.Tables["Location"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -130,18 +124,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                
-                /*objDBConnect.GiveCommand("SELECT Location_ID from Location; ");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Fleet");
-                dt.Columns.Add("Location_ID", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
-
-                cboL_ID.ValueMember = "L_ID";
-                cboL_ID.DisplayMember = "L_ID";
-                cboL_ID.DataSource = dt;*/
-
-                string query = "SELECT Location_ID from Location;";
+               string query = "SELECT Location_ID from Location;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
                 
@@ -165,16 +148,15 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                objDBConnect.GiveCommand("SELECT Vehicle_RegNumber from Vehicle;");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Vehicle_RegNumber", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
+                string query = "SELECT Vehicle_RegNumber from Vehicle;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
-                cboV_RN.ValueMember = "V_RN";
-                cboV_RN.DisplayMember = "V_RN";
-                cboV_RN.DataSource = dt;
-
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Vehicle");
+                cboV_RN.ValueMember = "Vehicle_RegNumber";
+                cboV_RN.DisplayMember = "Vehicle_RegNumber";
+                cboV_RN.DataSource = ds.Tables["Vehicle"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -189,16 +171,15 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                objDBConnect.GiveCommand("SELECT Service_ID from tblService ;");
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Service_ID", typeof(string));
-                dt.Load(objDBConnect.sqlDR);
+                string query = "SELECT Service_ID from tblService;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
-                cboS_ID.ValueMember = "S_ID ";
-                cboS_ID.DisplayMember = "S_ID ";
-                cboS_ID.DataSource = dt;
-
+                DataSet ds = new DataSet();
+                da.Fill(ds, "tblService");
+                cboS_ID.ValueMember = "S_ID";
+                cboS_ID.DisplayMember = "S_ID";
+                cboS_ID.DataSource = ds.Tables["tblService"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -210,8 +191,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-
-
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
@@ -265,7 +244,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnEmp_Click(object sender, EventArgs e)
         {   
-            string E_ID = cboT_ID.SelectedItem.ToString();
+            string E_ID = cboE_ID.SelectedItem.ToString();
             try
             {	//creates object of DBConnect class
                     objDBConnect.GiveCommand("SELECT * from Employee WHERE Emp_ID  LIKE @E_ID;");
@@ -294,8 +273,8 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
 
                
-                    objDBConnect.GiveCommand("SELECT * from Location WHERE Location_ID LIKE @Location_ID ");
-                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+                objDBConnect.GiveCommand("SELECT * from Location WHERE Location_ID LIKE @Location_ID ");
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
 	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
 	            DataTable dtSearch = new DataTable();
 	            objDBConnect.sqlDA.Fill(dtSearch); 
@@ -340,7 +319,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            string S_ID = cboV_RN.SelectedItem.ToString();
+            string S_ID = cboS_ID.SelectedItem.ToString();
             try
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Service  WHERE tblService_ID LIKE @S_ID");
@@ -363,4 +342,3 @@ namespace FleetTrackingInformationSystem
         }
     }
  }
-
