@@ -344,6 +344,7 @@
             this.Name = "frmService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
+         
             this.pnlService.ResumeLayout(false);
             this.pnlService.PerformLayout();
             this.mnuFleet.ResumeLayout(false);

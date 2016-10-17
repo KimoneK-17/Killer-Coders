@@ -181,13 +181,12 @@
             // btnPrintVehicleStat
             // 
             this.btnPrintVehicleStat.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintVehicleStat.Location = new System.Drawing.Point(605, 490);
+            this.btnPrintVehicleStat.Location = new System.Drawing.Point(600, 475);
             this.btnPrintVehicleStat.Name = "btnPrintVehicleStat";
-            this.btnPrintVehicleStat.Size = new System.Drawing.Size(105, 38);
+            this.btnPrintVehicleStat.Size = new System.Drawing.Size(132, 51);
             this.btnPrintVehicleStat.TabIndex = 18;
             this.btnPrintVehicleStat.Text = "Print";
             this.btnPrintVehicleStat.UseVisualStyleBackColor = true;
-            this.btnPrintVehicleStat.Click += new System.EventHandler(this.btnPrintVehicleStat_Click);
             // 
             // dgvVehicleStatus
             // 
@@ -789,9 +788,7 @@
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.BackColor = System.Drawing.Color.Transparent;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustomer.Location = new System.Drawing.Point(609, 12);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(103, 33);
@@ -804,9 +801,10 @@
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
             this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(1464, 24);
+            this.mnuFleet.Size = new System.Drawing.Size(1448, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
+
             // 
             // mnuOptions
             // 
@@ -836,8 +834,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1464, 760);
+            this.ClientSize = new System.Drawing.Size(1448, 760);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCustomer);
             this.Controls.Add(this.tabReports);

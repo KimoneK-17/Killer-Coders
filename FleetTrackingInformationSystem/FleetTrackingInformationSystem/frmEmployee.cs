@@ -215,7 +215,7 @@ namespace FleetTrackingInformationSystem
             E_ID = txtID.Text;
             E_NAME = txtName.Text;
             E_SNAME = txtSurname.Text;
-            E_POS = cboPosition.SelectedItem.ToString();
+            E_POS = cboPosition.SelectedValue.ToString();
             E_ADDRESS = txtAddress.Text;
             E_CONTACT = txtContactNum.Text;
             E_EMAIL = txtEmail.Text;
