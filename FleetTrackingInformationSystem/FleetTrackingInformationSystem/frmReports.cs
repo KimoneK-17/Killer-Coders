@@ -129,7 +129,7 @@ namespace FleetTrackingInformationSystem
                 dgvDetailedService.ReadOnly = true;
                 dgvDetailedService.DataSource = ds5.Tables[0];
 
-                string selectPlannedTripDaily = "SELECT * FROM TripUsage WHERE Trip_DateFrom >= GETDATE() ORDER BY Trip_DateFrom";
+                string selectPlannedTripDaily = "SELECT * FROM TripUsage WHERE Trip_DateFrom = GETDATE() ORDER BY Trip_DateFrom";
                 db.sqlDA = new SqlDataAdapter(selectPlannedTripDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder6 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds6 = new DataSet();
@@ -145,7 +145,7 @@ namespace FleetTrackingInformationSystem
                 dgvPTWeekly.ReadOnly = true;
                 dgvPTWeekly.DataSource = ds15.Tables[0];
 
-                string selectCompletedTripDaily = "SELECT * FROM TripUsage ORDER BY Trip_DateFrom";
+                string selectCompletedTripDaily = "SELECT * FROM TripUsage WHERE Trip_DateFrom = GETDATE() ORDER BY Trip_DateFrom";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder7 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds7 = new DataSet();
@@ -153,7 +153,7 @@ namespace FleetTrackingInformationSystem
                 dgvCTDaily.ReadOnly = true;
                 dgvCTDaily.DataSource = ds7.Tables[0];
 
-                string selectCompletedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5";
+                string selectCompletedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5 ORDER BY Trip_DateFrom";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripWeekly, db.sqlConn);
                 SqlCommandBuilder commandBuilder16 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds16 = new DataSet();
@@ -161,7 +161,7 @@ namespace FleetTrackingInformationSystem
                 dgvCTWeekly.ReadOnly = true;
                 dgvCTWeekly.DataSource = ds16.Tables[0];
 
-                string selectCompletedTripMonthly = "SELECT * FROM TripUsage WHERE MONTH(Trip_DateFrom) = MONTH(dateadd(dd, -1, GetDate()));";
+                string selectCompletedTripMonthly = "SELECT * FROM TripUsage WHERE MONTH(Trip_DateFrom) = MONTH(dateadd(dd, -1, GetDate())) ORDER BY Trip_DateFrom";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripMonthly, db.sqlConn);
                 SqlCommandBuilder commandBuilder17 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds17 = new DataSet();
