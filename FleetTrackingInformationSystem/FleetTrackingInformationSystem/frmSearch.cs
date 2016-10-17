@@ -361,7 +361,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(""); // Shows an error message
             }
         }
-
     }
  }
 

@@ -106,6 +106,7 @@
             this.tabCust.Controls.Add(this.dgvSearch);
             this.tabCust.Controls.Add(this.lblCustID);
             this.tabCust.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabCust.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabCust.Location = new System.Drawing.Point(4, 28);
             this.tabCust.Name = "tabCust";
             this.tabCust.Padding = new System.Windows.Forms.Padding(3);
@@ -116,12 +117,14 @@
             // 
             // btnEmployee
             // 
-            this.btnEmployee.Location = new System.Drawing.Point(398, 34);
+            this.btnEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployee.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEmployee.Location = new System.Drawing.Point(899, 39);
             this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(83, 26);
+            this.btnEmployee.Size = new System.Drawing.Size(82, 35);
             this.btnEmployee.TabIndex = 4;
             this.btnEmployee.Text = "Search";
-            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.UseVisualStyleBackColor = false;
             // 
             // cboC_ID
             // 
@@ -142,6 +145,7 @@
             // lblCustID
             // 
             this.lblCustID.AutoSize = true;
+            this.lblCustID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustID.Location = new System.Drawing.Point(23, 43);
             this.lblCustID.Name = "lblCustID";
             this.lblCustID.Size = new System.Drawing.Size(92, 19);
@@ -155,6 +159,7 @@
             this.tabTripUsage.Controls.Add(this.dgvTripUsage);
             this.tabTripUsage.Controls.Add(this.lblTripID);
             this.tabTripUsage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabTripUsage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabTripUsage.Location = new System.Drawing.Point(4, 28);
             this.tabTripUsage.Name = "tabTripUsage";
             this.tabTripUsage.Padding = new System.Windows.Forms.Padding(3);
@@ -165,9 +170,10 @@
             // 
             // btnTrip
             // 
-            this.btnTrip.Location = new System.Drawing.Point(349, 32);
+            this.btnTrip.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTrip.Location = new System.Drawing.Point(899, 39);
             this.btnTrip.Name = "btnTrip";
-            this.btnTrip.Size = new System.Drawing.Size(83, 26);
+            this.btnTrip.Size = new System.Drawing.Size(82, 35);
             this.btnTrip.TabIndex = 5;
             this.btnTrip.Text = "Search";
             this.btnTrip.UseVisualStyleBackColor = true;
@@ -176,23 +182,23 @@
             // cboT_ID
             // 
             this.cboT_ID.FormattingEnabled = true;
-            this.cboT_ID.Location = new System.Drawing.Point(92, 33);
+            this.cboT_ID.Location = new System.Drawing.Point(137, 35);
             this.cboT_ID.Name = "cboT_ID";
-            this.cboT_ID.Size = new System.Drawing.Size(186, 27);
+            this.cboT_ID.Size = new System.Drawing.Size(209, 27);
             this.cboT_ID.TabIndex = 4;
             // 
             // dgvTripUsage
             // 
             this.dgvTripUsage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTripUsage.Location = new System.Drawing.Point(23, 101);
+            this.dgvTripUsage.Location = new System.Drawing.Point(27, 95);
             this.dgvTripUsage.Name = "dgvTripUsage";
-            this.dgvTripUsage.Size = new System.Drawing.Size(985, 292);
+            this.dgvTripUsage.Size = new System.Drawing.Size(978, 292);
             this.dgvTripUsage.TabIndex = 3;
             // 
             // lblTripID
             // 
             this.lblTripID.AutoSize = true;
-            this.lblTripID.Location = new System.Drawing.Point(19, 41);
+            this.lblTripID.Location = new System.Drawing.Point(23, 43);
             this.lblTripID.Name = "lblTripID";
             this.lblTripID.Size = new System.Drawing.Size(53, 19);
             this.lblTripID.TabIndex = 1;
@@ -205,6 +211,7 @@
             this.tabEmployee.Controls.Add(this.dgvEmployee);
             this.tabEmployee.Controls.Add(this.lblEmpID);
             this.tabEmployee.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabEmployee.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabEmployee.Location = new System.Drawing.Point(4, 28);
             this.tabEmployee.Name = "tabEmployee";
             this.tabEmployee.Size = new System.Drawing.Size(1033, 424);
@@ -214,9 +221,10 @@
             // 
             // btnEmp
             // 
-            this.btnEmp.Location = new System.Drawing.Point(390, 35);
+            this.btnEmp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEmp.Location = new System.Drawing.Point(899, 39);
             this.btnEmp.Name = "btnEmp";
-            this.btnEmp.Size = new System.Drawing.Size(83, 26);
+            this.btnEmp.Size = new System.Drawing.Size(82, 35);
             this.btnEmp.TabIndex = 5;
             this.btnEmp.Text = "Search";
             this.btnEmp.UseVisualStyleBackColor = true;
@@ -225,7 +233,7 @@
             // cboE_ID
             // 
             this.cboE_ID.FormattingEnabled = true;
-            this.cboE_ID.Location = new System.Drawing.Point(135, 36);
+            this.cboE_ID.Location = new System.Drawing.Point(137, 35);
             this.cboE_ID.Name = "cboE_ID";
             this.cboE_ID.Size = new System.Drawing.Size(184, 27);
             this.cboE_ID.TabIndex = 4;
@@ -233,15 +241,15 @@
             // dgvEmployee
             // 
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployee.Location = new System.Drawing.Point(22, 95);
+            this.dgvEmployee.Location = new System.Drawing.Point(27, 95);
             this.dgvEmployee.Name = "dgvEmployee";
-            this.dgvEmployee.Size = new System.Drawing.Size(985, 296);
+            this.dgvEmployee.Size = new System.Drawing.Size(978, 292);
             this.dgvEmployee.TabIndex = 3;
             // 
             // lblEmpID
             // 
             this.lblEmpID.AutoSize = true;
-            this.lblEmpID.Location = new System.Drawing.Point(19, 44);
+            this.lblEmpID.Location = new System.Drawing.Point(23, 43);
             this.lblEmpID.Name = "lblEmpID";
             this.lblEmpID.Size = new System.Drawing.Size(98, 19);
             this.lblEmpID.TabIndex = 1;
@@ -254,6 +262,7 @@
             this.tabLocation.Controls.Add(this.dgvLocation);
             this.tabLocation.Controls.Add(this.lblLocationID);
             this.tabLocation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabLocation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabLocation.Location = new System.Drawing.Point(4, 28);
             this.tabLocation.Name = "tabLocation";
             this.tabLocation.Size = new System.Drawing.Size(1033, 424);
@@ -263,9 +272,10 @@
             // 
             // btnLocation
             // 
-            this.btnLocation.Location = new System.Drawing.Point(400, 36);
+            this.btnLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLocation.Location = new System.Drawing.Point(899, 39);
             this.btnLocation.Name = "btnLocation";
-            this.btnLocation.Size = new System.Drawing.Size(83, 26);
+            this.btnLocation.Size = new System.Drawing.Size(82, 35);
             this.btnLocation.TabIndex = 5;
             this.btnLocation.Text = "Search";
             this.btnLocation.UseVisualStyleBackColor = true;
@@ -274,7 +284,7 @@
             // cboL_ID
             // 
             this.cboL_ID.FormattingEnabled = true;
-            this.cboL_ID.Location = new System.Drawing.Point(129, 37);
+            this.cboL_ID.Location = new System.Drawing.Point(137, 35);
             this.cboL_ID.Name = "cboL_ID";
             this.cboL_ID.Size = new System.Drawing.Size(195, 27);
             this.cboL_ID.TabIndex = 4;
@@ -282,15 +292,15 @@
             // dgvLocation
             // 
             this.dgvLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocation.Location = new System.Drawing.Point(20, 97);
+            this.dgvLocation.Location = new System.Drawing.Point(27, 95);
             this.dgvLocation.Name = "dgvLocation";
-            this.dgvLocation.Size = new System.Drawing.Size(987, 300);
+            this.dgvLocation.Size = new System.Drawing.Size(978, 292);
             this.dgvLocation.TabIndex = 3;
             // 
             // lblLocationID
             // 
             this.lblLocationID.AutoSize = true;
-            this.lblLocationID.Location = new System.Drawing.Point(16, 45);
+            this.lblLocationID.Location = new System.Drawing.Point(23, 43);
             this.lblLocationID.Name = "lblLocationID";
             this.lblLocationID.Size = new System.Drawing.Size(85, 19);
             this.lblLocationID.TabIndex = 1;
@@ -303,6 +313,7 @@
             this.tabVehicle.Controls.Add(this.dgvVehicleRegNum);
             this.tabVehicle.Controls.Add(this.lblVehicleRN);
             this.tabVehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabVehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabVehicle.Location = new System.Drawing.Point(4, 28);
             this.tabVehicle.Name = "tabVehicle";
             this.tabVehicle.Size = new System.Drawing.Size(1033, 424);
@@ -312,9 +323,10 @@
             // 
             // btnVehicle
             // 
-            this.btnVehicle.Location = new System.Drawing.Point(448, 33);
+            this.btnVehicle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVehicle.Location = new System.Drawing.Point(899, 39);
             this.btnVehicle.Name = "btnVehicle";
-            this.btnVehicle.Size = new System.Drawing.Size(83, 26);
+            this.btnVehicle.Size = new System.Drawing.Size(82, 35);
             this.btnVehicle.TabIndex = 5;
             this.btnVehicle.Text = "Search";
             this.btnVehicle.UseVisualStyleBackColor = true;
@@ -323,7 +335,7 @@
             // cboV_RN
             // 
             this.cboV_RN.FormattingEnabled = true;
-            this.cboV_RN.Location = new System.Drawing.Point(194, 34);
+            this.cboV_RN.Location = new System.Drawing.Point(175, 35);
             this.cboV_RN.Name = "cboV_RN";
             this.cboV_RN.Size = new System.Drawing.Size(192, 27);
             this.cboV_RN.TabIndex = 4;
@@ -331,19 +343,19 @@
             // dgvVehicleRegNum
             // 
             this.dgvVehicleRegNum.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehicleRegNum.Location = new System.Drawing.Point(26, 100);
+            this.dgvVehicleRegNum.Location = new System.Drawing.Point(27, 95);
             this.dgvVehicleRegNum.Name = "dgvVehicleRegNum";
-            this.dgvVehicleRegNum.Size = new System.Drawing.Size(979, 298);
+            this.dgvVehicleRegNum.Size = new System.Drawing.Size(978, 292);
             this.dgvVehicleRegNum.TabIndex = 3;
             // 
             // lblVehicleRN
             // 
             this.lblVehicleRN.AutoSize = true;
-            this.lblVehicleRN.Location = new System.Drawing.Point(22, 42);
+            this.lblVehicleRN.Location = new System.Drawing.Point(23, 43);
             this.lblVehicleRN.Name = "lblVehicleRN";
-            this.lblVehicleRN.Size = new System.Drawing.Size(142, 19);
+            this.lblVehicleRN.Size = new System.Drawing.Size(146, 19);
             this.lblVehicleRN.TabIndex = 1;
-            this.lblVehicleRN.Text = "Vehicle RegNumber";
+            this.lblVehicleRN.Text = "Vehicle Reg Number";
             // 
             // tabService
             // 
@@ -352,6 +364,7 @@
             this.tabService.Controls.Add(this.dgvService);
             this.tabService.Controls.Add(this.lblServiceID);
             this.tabService.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabService.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.tabService.Location = new System.Drawing.Point(4, 28);
             this.tabService.Name = "tabService";
             this.tabService.Size = new System.Drawing.Size(1033, 424);
@@ -361,9 +374,10 @@
             // 
             // btnService
             // 
-            this.btnService.Location = new System.Drawing.Point(368, 33);
+            this.btnService.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnService.Location = new System.Drawing.Point(899, 39);
             this.btnService.Name = "btnService";
-            this.btnService.Size = new System.Drawing.Size(83, 26);
+            this.btnService.Size = new System.Drawing.Size(82, 35);
             this.btnService.TabIndex = 5;
             this.btnService.Text = "Search";
             this.btnService.UseVisualStyleBackColor = true;
@@ -372,7 +386,7 @@
             // cboS_ID
             // 
             this.cboS_ID.FormattingEnabled = true;
-            this.cboS_ID.Location = new System.Drawing.Point(132, 34);
+            this.cboS_ID.Location = new System.Drawing.Point(137, 35);
             this.cboS_ID.Name = "cboS_ID";
             this.cboS_ID.Size = new System.Drawing.Size(191, 27);
             this.cboS_ID.TabIndex = 4;
@@ -380,15 +394,15 @@
             // dgvService
             // 
             this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Location = new System.Drawing.Point(34, 89);
+            this.dgvService.Location = new System.Drawing.Point(27, 95);
             this.dgvService.Name = "dgvService";
-            this.dgvService.Size = new System.Drawing.Size(968, 304);
+            this.dgvService.Size = new System.Drawing.Size(978, 292);
             this.dgvService.TabIndex = 3;
             // 
             // lblServiceID
             // 
             this.lblServiceID.AutoSize = true;
-            this.lblServiceID.Location = new System.Drawing.Point(30, 42);
+            this.lblServiceID.Location = new System.Drawing.Point(23, 43);
             this.lblServiceID.Name = "lblServiceID";
             this.lblServiceID.Size = new System.Drawing.Size(76, 19);
             this.lblServiceID.TabIndex = 1;
@@ -429,7 +443,7 @@
             // 
             // pnlSearch
             // 
-            this.pnlSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlSearch.BackColor = System.Drawing.Color.Transparent;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSearch.Controls.Add(this.lblSearch);
             this.pnlSearch.Location = new System.Drawing.Point(27, 41);
@@ -441,6 +455,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblSearch.Location = new System.Drawing.Point(476, 13);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(105, 39);
@@ -452,6 +467,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1096, 632);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.mnuFleet);

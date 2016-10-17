@@ -60,22 +60,28 @@
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
+            this.lblEmployeeName.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmployeeName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmployeeName.Location = new System.Drawing.Point(41, 248);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(94, 19);
+            this.lblEmployeeName.Size = new System.Drawing.Size(96, 21);
             this.lblEmployeeName.TabIndex = 1;
             this.lblEmployeeName.Text = "Employee ID";
             // 
             // lblVehicleRegNumber
             // 
             this.lblVehicleRegNumber.AutoSize = true;
+            this.lblVehicleRegNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblVehicleRegNumber.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleRegNumber.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVehicleRegNumber.Location = new System.Drawing.Point(41, 194);
             this.lblVehicleRegNumber.Name = "lblVehicleRegNumber";
-            this.lblVehicleRegNumber.Size = new System.Drawing.Size(150, 19);
+            this.lblVehicleRegNumber.Size = new System.Drawing.Size(152, 21);
             this.lblVehicleRegNumber.TabIndex = 2;
             this.lblVehicleRegNumber.Text = "Vehicle Reg Number:";
             // 
@@ -84,7 +90,7 @@
             this.lblService.AutoSize = true;
             this.lblService.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblService.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblService.ForeColor = System.Drawing.Color.Black;
+            this.lblService.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblService.Location = new System.Drawing.Point(292, 11);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(97, 33);
@@ -111,6 +117,7 @@
             // 
             // pnlService
             // 
+            this.pnlService.BackColor = System.Drawing.Color.Transparent;
             this.pnlService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlService.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlService.Controls.Add(this.lblService);
@@ -209,11 +216,14 @@
             // lblServiceID
             // 
             this.lblServiceID.AutoSize = true;
+            this.lblServiceID.BackColor = System.Drawing.Color.Transparent;
+            this.lblServiceID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblServiceID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblServiceID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServiceID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblServiceID.Location = new System.Drawing.Point(41, 140);
             this.lblServiceID.Name = "lblServiceID";
-            this.lblServiceID.Size = new System.Drawing.Size(80, 19);
+            this.lblServiceID.Size = new System.Drawing.Size(82, 21);
             this.lblServiceID.TabIndex = 17;
             this.lblServiceID.Text = "Service ID:";
             // 
@@ -237,6 +247,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -251,11 +262,14 @@
             // lblAppointmentTime
             // 
             this.lblAppointmentTime.AutoSize = true;
+            this.lblAppointmentTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblAppointmentTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAppointmentTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointmentTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointmentTime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblAppointmentTime.Location = new System.Drawing.Point(41, 356);
             this.lblAppointmentTime.Name = "lblAppointmentTime";
-            this.lblAppointmentTime.Size = new System.Drawing.Size(142, 19);
+            this.lblAppointmentTime.Size = new System.Drawing.Size(144, 21);
             this.lblAppointmentTime.TabIndex = 18;
             this.lblAppointmentTime.Text = "Appointment Time:";
             // 
@@ -271,22 +285,28 @@
             // lblAppointDescription
             // 
             this.lblAppointDescription.AutoSize = true;
+            this.lblAppointDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lblAppointDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAppointDescription.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointDescription.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointDescription.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblAppointDescription.Location = new System.Drawing.Point(41, 402);
             this.lblAppointDescription.Name = "lblAppointDescription";
-            this.lblAppointDescription.Size = new System.Drawing.Size(186, 19);
+            this.lblAppointDescription.Size = new System.Drawing.Size(188, 21);
             this.lblAppointDescription.TabIndex = 4;
             this.lblAppointDescription.Text = "Appointment Description:";
             // 
             // lblAppointDate
             // 
             this.lblAppointDate.AutoSize = true;
+            this.lblAppointDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblAppointDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAppointDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAppointDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblAppointDate.Location = new System.Drawing.Point(41, 302);
             this.lblAppointDate.Name = "lblAppointDate";
-            this.lblAppointDate.Size = new System.Drawing.Size(141, 19);
+            this.lblAppointDate.Size = new System.Drawing.Size(143, 21);
             this.lblAppointDate.TabIndex = 3;
             this.lblAppointDate.Text = "Appointment Date:";
             // 
@@ -303,6 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(734, 685);
             this.Controls.Add(this.rtfAppointDescription);
             this.Controls.Add(this.lblAppointDescription);
