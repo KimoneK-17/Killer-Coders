@@ -201,8 +201,6 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void btnPrintVehicleStat_Click(object sender, EventArgs e)
-        {
-        }
+        
     }
 }
