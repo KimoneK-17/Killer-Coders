@@ -132,6 +132,10 @@ namespace FleetTrackingInformationSystem
                         objDBConnect.sqlDR.Close();
                         objDBConnect.sqlConn.Close();
                     }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error Cannot Add Employee Details: " + ex.Message);
@@ -162,9 +166,12 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error Cannot Delete Employee Details: " + ex.Message); // Shows an error message
             }
         }
@@ -193,7 +200,10 @@ namespace FleetTrackingInformationSystem
                objDBConnect.sqlDR.Close();
                objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Employee Details: " + ex.Message); // Shows an error message

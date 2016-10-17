@@ -20,16 +20,57 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
+
         private void frmReports_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'FleetTrackingDBDataSet.Vehicle' table. You can move, or remove it, as needed.
+            try
+            {
+                dgvDetailedService.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvCTDaily.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvCTMonthly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvCTWeekly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvPTDaily.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvPTWeekly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvSADaily.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvSAWeekly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvServiceReq.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvTSDaily.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvTSMonthly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvTSWeekly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvVehicleStatus.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvVSDaily.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvVSMonthly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvVSWeekly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvVSYearly.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problem with Resizing Data Grid Views: " + ex);
+            }
 
             DBConnect db = new DBConnect();
             db.OpenConnection();
 
             try
             {
-                string selectVehicleStatus = "SELECT * FROM Vehicle"; // Sql For Data Grid View         
+                string selectVehicleStatus = "SELECT * FROM Vehicle ORDER BY Vehicle_Year"; // Sql For Data Grid View         
                 db.sqlDA = new SqlDataAdapter(selectVehicleStatus, db.sqlConn);
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds = new DataSet();
@@ -37,13 +78,14 @@ namespace FleetTrackingInformationSystem
                 dgvVehicleStatus.ReadOnly = true;
                 dgvVehicleStatus.DataSource = ds.Tables[0];
 
-                string selectServiceAppointDaily = "SELECT * FROM tblService WHERE Service_Date BETWEEN GETDATE() and GETDATE()+1 ORDER BY Service_Date";
+                string selectServiceAppointDaily = "SELECT * FROM tblService WHERE Service_Date >= GETDATE() ORDER BY Service_Date";
                 db.sqlDA = new SqlDataAdapter(selectServiceAppointDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder2 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds2 = new DataSet();
                 db.sqlDA.Fill(ds2);
                 dgvSADaily.ReadOnly = true;
                 dgvSADaily.DataSource = ds2.Tables[0];
+
 
                 string selectServiceAppointWeekly = "SELECT * FROM tblService WHERE Service_Date BETWEEN GETDATE() and GETDATE()+5 ORDER BY Service_Date";
                 db.sqlDA = new SqlDataAdapter(selectServiceAppointWeekly, db.sqlConn);

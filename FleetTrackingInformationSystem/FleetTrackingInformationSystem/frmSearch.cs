@@ -70,6 +70,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Shows an error message
@@ -91,7 +95,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
-            
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Shows an error message
@@ -111,6 +118,10 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlConn.Close();
 
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -142,6 +153,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Shows an error message
@@ -163,6 +178,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Shows an error message
@@ -182,6 +201,10 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlConn.Close();
 
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -205,6 +228,10 @@ namespace FleetTrackingInformationSystem
                 dgvEmployee.AutoResizeColumns();
 	
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(""); // Shows an error message
@@ -216,7 +243,7 @@ namespace FleetTrackingInformationSystem
         {
             string T_ID = cboT_ID.SelectedItem.ToString();
             try
-                {	//creates object of DBConnect class
+            {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from TripUsage WHERE Trip_ID LIKE @T_ID");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID );
 	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
@@ -225,7 +252,11 @@ namespace FleetTrackingInformationSystem
 	            dgvTripUsage.DataSource = dtSearch;
 	            dgvTripUsage.AutoResizeColumns();
 	
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(""); // Shows an error message
@@ -233,10 +264,10 @@ namespace FleetTrackingInformationSystem
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
-        {
+        {   
             string E_ID = cboT_ID.SelectedItem.ToString();
             try
-                {	//creates object of DBConnect class
+            {	//creates object of DBConnect class
                     objDBConnect.GiveCommand("SELECT * from Employee WHERE Emp_ID  LIKE @E_ID;");
 	                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID ", E_ID );
 	                objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
@@ -245,7 +276,11 @@ namespace FleetTrackingInformationSystem
 	                dgvEmployee.DataSource = dtSearch;
                     dgvEmployee.AutoResizeColumns();
 	
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(""); // Shows an error message
@@ -256,7 +291,7 @@ namespace FleetTrackingInformationSystem
         {
             string L_ID = cboL_ID.SelectedValue.ToString();
             try
-                {	//creates object of DBConnect class
+            {	//creates object of DBConnect class
 
                
                     objDBConnect.GiveCommand("SELECT * from Location WHERE Location_ID LIKE @Location_ID ");
@@ -267,7 +302,11 @@ namespace FleetTrackingInformationSystem
 	            dgvLocation.DataSource = dtSearch;
                 dgvLocation.AutoResizeColumns();
 	
-        }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message); // Shows an error message
@@ -287,6 +326,10 @@ namespace FleetTrackingInformationSystem
                 dgvVehicleRegNum.DataSource = dtSearch;
                 dgvVehicleRegNum.AutoResizeColumns();
 	
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -308,6 +351,10 @@ namespace FleetTrackingInformationSystem
 	            dgvService.DataSource = dtSearch;
                 dgvService.AutoResizeColumns();
 	
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {

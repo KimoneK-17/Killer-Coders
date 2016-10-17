@@ -131,6 +131,10 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
                 }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message);
@@ -157,7 +161,10 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -189,7 +196,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
