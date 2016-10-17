@@ -161,7 +161,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("SUCCESS");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {
