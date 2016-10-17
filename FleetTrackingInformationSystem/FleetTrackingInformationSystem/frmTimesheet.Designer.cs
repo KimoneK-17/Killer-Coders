@@ -66,6 +66,7 @@
             // 
             this.lblTimesheet.AutoSize = true;
             this.lblTimesheet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimesheet.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTimesheet.Location = new System.Drawing.Point(193, 14);
             this.lblTimesheet.Name = "lblTimesheet";
             this.lblTimesheet.Size = new System.Drawing.Size(133, 33);
@@ -108,33 +109,42 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmployeeID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeID.Location = new System.Drawing.Point(38, 170);
+            this.lblEmployeeID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblEmployeeID.Location = new System.Drawing.Point(68, 179);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(98, 19);
+            this.lblEmployeeID.Size = new System.Drawing.Size(100, 21);
             this.lblEmployeeID.TabIndex = 17;
             this.lblEmployeeID.Text = "Employee ID:";
             // 
             // lblNumHoursWorked
             // 
             this.lblNumHoursWorked.AutoSize = true;
+            this.lblNumHoursWorked.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumHoursWorked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNumHoursWorked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblNumHoursWorked.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumHoursWorked.Location = new System.Drawing.Point(38, 225);
+            this.lblNumHoursWorked.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumHoursWorked.Location = new System.Drawing.Point(68, 234);
             this.lblNumHoursWorked.Name = "lblNumHoursWorked";
-            this.lblNumHoursWorked.Size = new System.Drawing.Size(191, 19);
+            this.lblNumHoursWorked.Size = new System.Drawing.Size(193, 21);
             this.lblNumHoursWorked.TabIndex = 18;
             this.lblNumHoursWorked.Text = "Number Of Hours Worked:";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(38, 285);
+            this.lblDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblDate.Location = new System.Drawing.Point(68, 294);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(45, 19);
+            this.lblDate.Size = new System.Drawing.Size(47, 21);
             this.lblDate.TabIndex = 19;
             this.lblDate.Text = "Date:";
             // 
@@ -142,7 +152,7 @@
             // 
             this.txtEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmployeeID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeID.Location = new System.Drawing.Point(244, 163);
+            this.txtEmployeeID.Location = new System.Drawing.Point(274, 172);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(234, 26);
             this.txtEmployeeID.TabIndex = 20;
@@ -151,7 +161,7 @@
             // 
             this.dtpDate.CalendarFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Location = new System.Drawing.Point(244, 278);
+            this.dtpDate.Location = new System.Drawing.Point(274, 287);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(234, 26);
             this.dtpDate.TabIndex = 21;
@@ -159,7 +169,7 @@
             // updHoursWorked
             // 
             this.updHoursWorked.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updHoursWorked.Location = new System.Drawing.Point(244, 218);
+            this.updHoursWorked.Location = new System.Drawing.Point(274, 227);
             this.updHoursWorked.Name = "updHoursWorked";
             this.updHoursWorked.Size = new System.Drawing.Size(234, 26);
             this.updHoursWorked.TabIndex = 35;
@@ -210,13 +220,14 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Location = new System.Drawing.Point(29, 362);
+            this.pnlButtons.Location = new System.Drawing.Point(29, 400);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 37;
@@ -226,6 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(577, 489);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.updHoursWorked);

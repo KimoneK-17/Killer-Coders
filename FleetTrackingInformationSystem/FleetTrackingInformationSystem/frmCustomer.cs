@@ -194,6 +194,8 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
             }                        
-        }       
+        }
+
+      
     }
 }

@@ -64,8 +64,10 @@
             // pnlCustomer
             // 
             this.pnlCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCustomer.Controls.Add(this.lblCustomer);
+            this.pnlCustomer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlCustomer.Location = new System.Drawing.Point(33, 66);
             this.pnlCustomer.Name = "pnlCustomer";
             this.pnlCustomer.Size = new System.Drawing.Size(526, 66);
@@ -75,6 +77,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustomer.Location = new System.Drawing.Point(194, 16);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(124, 33);
@@ -83,6 +86,7 @@
             // 
             // mnuFleet
             // 
+            this.mnuFleet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mnuFleet.BackgroundImage")));
             this.mnuFleet.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
@@ -117,88 +121,112 @@
             // lblCustName
             // 
             this.lblCustName.AutoSize = true;
+            this.lblCustName.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCustName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustName.Location = new System.Drawing.Point(89, 241);
             this.lblCustName.Name = "lblCustName";
-            this.lblCustName.Size = new System.Drawing.Size(122, 19);
+            this.lblCustName.Size = new System.Drawing.Size(124, 21);
             this.lblCustName.TabIndex = 17;
             this.lblCustName.Text = "Customer Name:";
             // 
             // lblCustSurname
             // 
             this.lblCustSurname.AutoSize = true;
+            this.lblCustSurname.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCustSurname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustSurname.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustSurname.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustSurname.Location = new System.Drawing.Point(89, 292);
             this.lblCustSurname.Name = "lblCustSurname";
-            this.lblCustSurname.Size = new System.Drawing.Size(143, 19);
+            this.lblCustSurname.Size = new System.Drawing.Size(145, 21);
             this.lblCustSurname.TabIndex = 18;
             this.lblCustSurname.Text = "Customer Surname:";
             // 
             // lblCustID
             // 
             this.lblCustID.AutoSize = true;
+            this.lblCustID.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCustID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCustID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustID.Location = new System.Drawing.Point(89, 192);
             this.lblCustID.Name = "lblCustID";
-            this.lblCustID.Size = new System.Drawing.Size(96, 19);
+            this.lblCustID.Size = new System.Drawing.Size(98, 21);
             this.lblCustID.TabIndex = 19;
             this.lblCustID.Text = "Customer ID:";
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
+            this.lblType.BackColor = System.Drawing.Color.Transparent;
+            this.lblType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblType.Location = new System.Drawing.Point(89, 344);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(135, 19);
+            this.lblType.Size = new System.Drawing.Size(137, 21);
             this.lblType.TabIndex = 20;
             this.lblType.Text = "Type Of Customer:";
             // 
             // lblContact
             // 
             this.lblContact.AutoSize = true;
+            this.lblContact.BackColor = System.Drawing.Color.Transparent;
+            this.lblContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblContact.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblContact.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblContact.Location = new System.Drawing.Point(89, 392);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(126, 19);
+            this.lblContact.Size = new System.Drawing.Size(128, 21);
             this.lblContact.TabIndex = 21;
             this.lblContact.Text = "Contact Number:";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmail.Location = new System.Drawing.Point(89, 438);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(108, 19);
+            this.lblEmail.Size = new System.Drawing.Size(110, 21);
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email Address:";
             // 
             // lblPaymentDue
             // 
             this.lblPaymentDue.AutoSize = true;
+            this.lblPaymentDue.BackColor = System.Drawing.Color.Transparent;
+            this.lblPaymentDue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPaymentDue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPaymentDue.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentDue.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPaymentDue.Location = new System.Drawing.Point(89, 481);
             this.lblPaymentDue.Name = "lblPaymentDue";
-            this.lblPaymentDue.Size = new System.Drawing.Size(105, 19);
+            this.lblPaymentDue.Size = new System.Drawing.Size(107, 21);
             this.lblPaymentDue.TabIndex = 23;
             this.lblPaymentDue.Text = "Payment Due:";
             // 
             // lblPaymentMade
             // 
             this.lblPaymentMade.AutoSize = true;
+            this.lblPaymentMade.BackColor = System.Drawing.Color.Transparent;
+            this.lblPaymentMade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPaymentMade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPaymentMade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentMade.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPaymentMade.Location = new System.Drawing.Point(89, 528);
             this.lblPaymentMade.Name = "lblPaymentMade";
-            this.lblPaymentMade.Size = new System.Drawing.Size(117, 19);
+            this.lblPaymentMade.Size = new System.Drawing.Size(119, 21);
             this.lblPaymentMade.TabIndex = 24;
             this.lblPaymentMade.Text = "Payment Made:";
             // 
@@ -280,6 +308,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnUpdate.Location = new System.Drawing.Point(279, 15);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
@@ -290,18 +319,21 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDelete.Location = new System.Drawing.Point(38, 15);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClear.Location = new System.Drawing.Point(396, 15);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
@@ -313,6 +345,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdd.Location = new System.Drawing.Point(160, 15);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
@@ -323,6 +356,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -338,7 +372,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(601, 712);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboCustomer);
@@ -359,6 +395,7 @@
             this.Controls.Add(this.lblCustName);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCustomer);
+            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

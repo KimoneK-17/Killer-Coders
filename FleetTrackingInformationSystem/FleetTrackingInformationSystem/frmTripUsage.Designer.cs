@@ -62,8 +62,10 @@
             // lblVehicleRegNo
             // 
             this.lblVehicleRegNo.AutoSize = true;
+            this.lblVehicleRegNo.BackColor = System.Drawing.Color.Transparent;
             this.lblVehicleRegNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleRegNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVehicleRegNo.Location = new System.Drawing.Point(68, 203);
             this.lblVehicleRegNo.Name = "lblVehicleRegNo";
             this.lblVehicleRegNo.Size = new System.Drawing.Size(150, 19);
@@ -73,8 +75,10 @@
             // lblFuelUsage
             // 
             this.lblFuelUsage.AutoSize = true;
+            this.lblFuelUsage.BackColor = System.Drawing.Color.Transparent;
             this.lblFuelUsage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblFuelUsage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuelUsage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblFuelUsage.Location = new System.Drawing.Point(68, 360);
             this.lblFuelUsage.Name = "lblFuelUsage";
             this.lblFuelUsage.Size = new System.Drawing.Size(85, 19);
@@ -84,8 +88,10 @@
             // lblVehicleIncidents
             // 
             this.lblVehicleIncidents.AutoSize = true;
+            this.lblVehicleIncidents.BackColor = System.Drawing.Color.Transparent;
             this.lblVehicleIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleIncidents.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleIncidents.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVehicleIncidents.Location = new System.Drawing.Point(68, 416);
             this.lblVehicleIncidents.Name = "lblVehicleIncidents";
             this.lblVehicleIncidents.Size = new System.Drawing.Size(127, 19);
@@ -95,8 +101,10 @@
             // lblDateFrom
             // 
             this.lblDateFrom.AutoSize = true;
+            this.lblDateFrom.BackColor = System.Drawing.Color.Transparent;
             this.lblDateFrom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateFrom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDateFrom.Location = new System.Drawing.Point(68, 249);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(114, 19);
@@ -143,15 +151,16 @@
             this.lblTripUsage.AutoSize = true;
             this.lblTripUsage.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lblTripUsage.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTripUsage.ForeColor = System.Drawing.Color.Black;
+            this.lblTripUsage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTripUsage.Location = new System.Drawing.Point(184, 10);
             this.lblTripUsage.Name = "lblTripUsage";
-            this.lblTripUsage.Size = new System.Drawing.Size(152, 33);
+            this.lblTripUsage.Size = new System.Drawing.Size(133, 33);
             this.lblTripUsage.TabIndex = 10;
-            this.lblTripUsage.Text = "TRIP/USAGE";
+            this.lblTripUsage.Text = "Trip Usage";
             // 
             // pnlTripUsage
             // 
+            this.pnlTripUsage.BackColor = System.Drawing.Color.Transparent;
             this.pnlTripUsage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlTripUsage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTripUsage.Controls.Add(this.lblTripUsage);
@@ -240,8 +249,10 @@
             // lblDateTo
             // 
             this.lblDateTo.AutoSize = true;
+            this.lblDateTo.BackColor = System.Drawing.Color.Transparent;
             this.lblDateTo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateTo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDateTo.Location = new System.Drawing.Point(68, 301);
             this.lblDateTo.Name = "lblDateTo";
             this.lblDateTo.Size = new System.Drawing.Size(95, 19);
@@ -259,8 +270,10 @@
             // lblKm
             // 
             this.lblKm.AutoSize = true;
+            this.lblKm.BackColor = System.Drawing.Color.Transparent;
             this.lblKm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblKm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblKm.Location = new System.Drawing.Point(68, 477);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(102, 19);
@@ -279,8 +292,10 @@
             // lblTripID
             // 
             this.lblTripID.AutoSize = true;
+            this.lblTripID.BackColor = System.Drawing.Color.Transparent;
             this.lblTripID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTripID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTripID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTripID.Location = new System.Drawing.Point(68, 157);
             this.lblTripID.Name = "lblTripID";
             this.lblTripID.Size = new System.Drawing.Size(57, 19);
@@ -298,6 +313,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -314,6 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 643);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtTripID);

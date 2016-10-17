@@ -75,6 +75,7 @@
             // 
             this.lblLocation.AutoSize = true;
             this.lblLocation.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblLocation.Location = new System.Drawing.Point(201, 16);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(110, 33);
@@ -117,66 +118,84 @@
             // lblLocationName
             // 
             this.lblLocationName.AutoSize = true;
+            this.lblLocationName.BackColor = System.Drawing.Color.Transparent;
+            this.lblLocationName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLocationName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLocationName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblLocationName.Location = new System.Drawing.Point(82, 187);
             this.lblLocationName.Name = "lblLocationName";
-            this.lblLocationName.Size = new System.Drawing.Size(115, 19);
+            this.lblLocationName.Size = new System.Drawing.Size(117, 21);
             this.lblLocationName.TabIndex = 17;
             this.lblLocationName.Text = "Location Name:";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
+            this.lblCity.BackColor = System.Drawing.Color.Transparent;
+            this.lblCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCity.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCity.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCity.Location = new System.Drawing.Point(82, 291);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(39, 19);
+            this.lblCity.Size = new System.Drawing.Size(41, 21);
             this.lblCity.TabIndex = 19;
             this.lblCity.Text = "City:";
             // 
             // lblProvince
             // 
             this.lblProvince.AutoSize = true;
+            this.lblProvince.BackColor = System.Drawing.Color.Transparent;
+            this.lblProvince.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblProvince.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblProvince.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvince.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblProvince.Location = new System.Drawing.Point(82, 347);
             this.lblProvince.Name = "lblProvince";
-            this.lblProvince.Size = new System.Drawing.Size(73, 19);
+            this.lblProvince.Size = new System.Drawing.Size(75, 21);
             this.lblProvince.TabIndex = 20;
             this.lblProvince.Text = "Province:";
             // 
             // lblNoOfVehicles
             // 
             this.lblNoOfVehicles.AutoSize = true;
+            this.lblNoOfVehicles.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoOfVehicles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNoOfVehicles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblNoOfVehicles.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoOfVehicles.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblNoOfVehicles.Location = new System.Drawing.Point(82, 398);
             this.lblNoOfVehicles.Name = "lblNoOfVehicles";
-            this.lblNoOfVehicles.Size = new System.Drawing.Size(145, 19);
+            this.lblNoOfVehicles.Size = new System.Drawing.Size(147, 21);
             this.lblNoOfVehicles.TabIndex = 21;
             this.lblNoOfVehicles.Text = "Number of Vehicles:";
             // 
             // lblEmployees
             // 
             this.lblEmployees.AutoSize = true;
+            this.lblEmployees.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployees.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployees.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployees.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmployees.Location = new System.Drawing.Point(82, 452);
             this.lblEmployees.Name = "lblEmployees";
-            this.lblEmployees.Size = new System.Drawing.Size(164, 19);
+            this.lblEmployees.Size = new System.Drawing.Size(166, 21);
             this.lblEmployees.TabIndex = 22;
             this.lblEmployees.Text = "Number of Employees:";
             // 
             // lblManager
             // 
             this.lblManager.AutoSize = true;
+            this.lblManager.BackColor = System.Drawing.Color.Transparent;
+            this.lblManager.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblManager.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblManager.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManager.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblManager.Location = new System.Drawing.Point(82, 507);
             this.lblManager.Name = "lblManager";
-            this.lblManager.Size = new System.Drawing.Size(142, 19);
+            this.lblManager.Size = new System.Drawing.Size(144, 21);
             this.lblManager.TabIndex = 23;
             this.lblManager.Text = "Manager In Charge:";
             // 
@@ -234,11 +253,14 @@
             // lblLocationID
             // 
             this.lblLocationID.AutoSize = true;
+            this.lblLocationID.BackColor = System.Drawing.Color.Transparent;
+            this.lblLocationID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLocationID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblLocationID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblLocationID.Location = new System.Drawing.Point(82, 241);
             this.lblLocationID.Name = "lblLocationID";
-            this.lblLocationID.Size = new System.Drawing.Size(89, 19);
+            this.lblLocationID.Size = new System.Drawing.Size(91, 21);
             this.lblLocationID.TabIndex = 35;
             this.lblLocationID.Text = "Location ID:";
             // 
@@ -296,6 +318,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -312,6 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(558, 688);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtLocationID);

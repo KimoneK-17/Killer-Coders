@@ -70,7 +70,8 @@
             // 
             this.lblMenu.AutoSize = true;
             this.lblMenu.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(206, 22);
+            this.lblMenu.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblMenu.Location = new System.Drawing.Point(206, 30);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(95, 39);
             this.lblMenu.TabIndex = 0;
@@ -78,6 +79,7 @@
             // 
             // pnlMenu
             // 
+            this.pnlMenu.BackColor = System.Drawing.Color.Transparent;
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlMenu.Controls.Add(this.lblMenu);
             this.pnlMenu.Location = new System.Drawing.Point(27, 56);
@@ -88,6 +90,7 @@
             // btnVehicle
             // 
             this.btnVehicle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnVehicle.Location = new System.Drawing.Point(15, 23);
             this.btnVehicle.Name = "btnVehicle";
             this.btnVehicle.Size = new System.Drawing.Size(100, 31);
@@ -99,6 +102,7 @@
             // btnReports
             // 
             this.btnReports.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnReports.Location = new System.Drawing.Point(14, 21);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(100, 31);
@@ -110,6 +114,7 @@
             // btnTrip
             // 
             this.btnTrip.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrip.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnTrip.Location = new System.Drawing.Point(19, 23);
             this.btnTrip.Name = "btnTrip";
             this.btnTrip.Size = new System.Drawing.Size(100, 31);
@@ -121,6 +126,7 @@
             // btnService
             // 
             this.btnService.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnService.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnService.Location = new System.Drawing.Point(15, 22);
             this.btnService.Name = "btnService";
             this.btnService.Size = new System.Drawing.Size(100, 31);
@@ -132,6 +138,7 @@
             // btnScheduling
             // 
             this.btnScheduling.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScheduling.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnScheduling.Location = new System.Drawing.Point(16, 22);
             this.btnScheduling.Name = "btnScheduling";
             this.btnScheduling.Size = new System.Drawing.Size(100, 31);
@@ -143,6 +150,7 @@
             // btnLocation
             // 
             this.btnLocation.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLocation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnLocation.Location = new System.Drawing.Point(15, 21);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(100, 31);
@@ -154,6 +162,7 @@
             // btnCustomer
             // 
             this.btnCustomer.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCustomer.Location = new System.Drawing.Point(18, 21);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(100, 31);
@@ -197,6 +206,7 @@
             // 
             // pnlTrip
             // 
+            this.pnlTrip.BackColor = System.Drawing.Color.Transparent;
             this.pnlTrip.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTrip.Controls.Add(this.btnTrip);
             this.pnlTrip.Location = new System.Drawing.Point(27, 187);
@@ -206,6 +216,7 @@
             // 
             // pnlService
             // 
+            this.pnlService.BackColor = System.Drawing.Color.Transparent;
             this.pnlService.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlService.Controls.Add(this.btnService);
             this.pnlService.Location = new System.Drawing.Point(213, 187);
@@ -215,6 +226,7 @@
             // 
             // pnlLocation
             // 
+            this.pnlLocation.BackColor = System.Drawing.Color.Transparent;
             this.pnlLocation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlLocation.Controls.Add(this.btnLocation);
             this.pnlLocation.Location = new System.Drawing.Point(213, 419);
@@ -224,6 +236,7 @@
             // 
             // pnlTime
             // 
+            this.pnlTime.BackColor = System.Drawing.Color.Transparent;
             this.pnlTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTime.Controls.Add(this.btnScheduling);
             this.pnlTime.Location = new System.Drawing.Point(27, 305);
@@ -233,6 +246,7 @@
             // 
             // pnlCustomer
             // 
+            this.pnlCustomer.BackColor = System.Drawing.Color.Transparent;
             this.pnlCustomer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCustomer.Controls.Add(this.btnCustomer);
             this.pnlCustomer.Location = new System.Drawing.Point(391, 305);
@@ -242,6 +256,7 @@
             // 
             // pnlReport
             // 
+            this.pnlReport.BackColor = System.Drawing.Color.Transparent;
             this.pnlReport.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlReport.Controls.Add(this.btnReports);
             this.pnlReport.Location = new System.Drawing.Point(391, 187);
@@ -251,6 +266,7 @@
             // 
             // pnlVehicle
             // 
+            this.pnlVehicle.BackColor = System.Drawing.Color.Transparent;
             this.pnlVehicle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlVehicle.Controls.Add(this.btnVehicle);
             this.pnlVehicle.Location = new System.Drawing.Point(27, 419);
@@ -260,6 +276,7 @@
             // 
             // pnlEmployee
             // 
+            this.pnlEmployee.BackColor = System.Drawing.Color.Transparent;
             this.pnlEmployee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlEmployee.Controls.Add(this.btnEmployee);
             this.pnlEmployee.Location = new System.Drawing.Point(391, 419);
@@ -270,6 +287,7 @@
             // btnEmployee
             // 
             this.btnEmployee.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmployee.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnEmployee.Location = new System.Drawing.Point(15, 23);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(100, 31);
@@ -280,6 +298,7 @@
             // 
             // pnlSearch
             // 
+            this.pnlSearch.BackColor = System.Drawing.Color.Transparent;
             this.pnlSearch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSearch.Controls.Add(this.btnSearch);
             this.pnlSearch.Location = new System.Drawing.Point(213, 305);
@@ -290,6 +309,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSearch.Location = new System.Drawing.Point(15, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 31);
@@ -303,6 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(565, 537);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlEmployee);
