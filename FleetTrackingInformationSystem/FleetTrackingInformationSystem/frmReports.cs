@@ -228,10 +228,108 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Exit the Application: " + ex.Message); // Shows an error message 
             }
         }
-
-        private void btnPrintVehicleStat_Click(object sender, EventArgs e)
+        private void btnPrintVehicleStat_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                printDocument1.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
 
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) // Settings For The Printing
+        {
+            try
+            {
+                Bitmap bm = new Bitmap(this.dgvVehicleStatus.Width, this.dgvVehicleStatus.Height);
+                dgvVehicleStatus.DrawToBitmap(bm, new Rectangle(0, 0, this.dgvVehicleStatus.Width, this.dgvVehicleStatus.Height));
+                e.Graphics.DrawImage(bm, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintSerAppDaily_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument2.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument2_PrintPage(object sender, PrintPageEventArgs e) // Settings For the Printing
+        {
+            try
+            {
+                Bitmap bm2 = new Bitmap(this.dgvSADaily.Width, this.dgvSADaily.Height);
+                dgvSADaily.DrawToBitmap(bm2, new Rectangle(0, 0, this.dgvSADaily.Width, this.dgvSADaily.Height));
+                e.Graphics.DrawImage(bm2, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintSerAppWeek_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument3.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument3_PrintPage(object sender, PrintPageEventArgs e) // Setting for the Printing
+        {
+            try
+            {
+                Bitmap bm3 = new Bitmap(this.dgvSAWeekly.Width, this.dgvSAWeekly.Height);
+                dgvSAWeekly.DrawToBitmap(bm3, new Rectangle(0, 0, this.dgvSAWeekly.Width, this.dgvSAWeekly.Height));
+                e.Graphics.DrawImage(bm3, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintSerReq_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument4.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument4_PrintPage(object sender, PrintPageEventArgs e) // Settings for the Printing
+        {
+            try
+            {
+                Bitmap bm4 = new Bitmap(this.dgvServiceReq.Width, this.dgvServiceReq.Height);
+                dgvServiceReq.DrawToBitmap(bm4, new Rectangle(0, 0, this.dgvServiceReq.Width, this.dgvServiceReq.Height));
+                e.Graphics.DrawImage(bm4, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
         }
     }
 }
