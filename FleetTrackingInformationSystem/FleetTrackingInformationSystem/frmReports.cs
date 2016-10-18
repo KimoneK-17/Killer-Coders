@@ -16,7 +16,6 @@ namespace FleetTrackingInformationSystem
 {
     public partial class frmReports : Form
     {
-        DataGridView DataSource;
         public frmReports()
         {
             InitializeComponent();
@@ -25,16 +24,16 @@ namespace FleetTrackingInformationSystem
         private void frmReports_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-          
-            try
+
+            try // Resizes Columns in the Datagridviews
             {
-                dgvDetailedService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Resizes Columns in the Datagridview
+                dgvDetailedService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvCTDaily.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvCTMonthly.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvCTWeekly.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvPTDaily.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvPTWeekly.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dgvSADaily.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvSADaily.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Resizes the Column
                 dgvSAWeekly.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvServiceReq.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvTSDaily.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -48,13 +47,13 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Problem with Resizing Data Grid Views: " + ex);
+                MessageBox.Show("Problem with Resizing Data Grid Views: " + ex); // Shows Error Message if there is a Problem
             }
 
             DBConnect db = new DBConnect();
             db.OpenConnection();
 
-            try
+            try // Adds Data to the Data Grid Views
             {
                 string selectVehicleStatus = "SELECT * FROM Vehicle ORDER BY Vehicle_Year"; // Sql For Data Grid View         
                 db.sqlDA = new SqlDataAdapter(selectVehicleStatus, db.sqlConn);
@@ -89,11 +88,11 @@ namespace FleetTrackingInformationSystem
                 dgvServiceReq.ReadOnly = true;
                 dgvServiceReq.DataSource = ds3.Tables[0];
 
-                string selectVehicleServicesDaily = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date";
+                string selectVehicleServicesDaily = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date"; // Sql For Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectVehicleServicesDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder4 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds4 = new DataSet();
-                db.sqlDA.Fill(ds4);
+                db.sqlDA.Fill(ds4); // Fills the DataSet
                 dgvVSDaily.ReadOnly = true;
                 dgvVSDaily.DataSource = ds4.Tables[0];
 
@@ -121,11 +120,11 @@ namespace FleetTrackingInformationSystem
                 dgvVSYearly.ReadOnly = true;
                 dgvVSYearly.DataSource = ds14.Tables[0];
 
-                string selectDetailService = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date";
+                string selectDetailService = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date"; // Sql For Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectDetailService, db.sqlConn);
                 SqlCommandBuilder commandBuilder5 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds5 = new DataSet();
-                db.sqlDA.Fill(ds5);
+                db.sqlDA.Fill(ds5); // Fills the DataSet
                 dgvDetailedService.ReadOnly = true;
                 dgvDetailedService.DataSource = ds5.Tables[0];
 
@@ -169,11 +168,11 @@ namespace FleetTrackingInformationSystem
                 dgvCTMonthly.ReadOnly = true;
                 dgvCTMonthly.DataSource = ds17.Tables[0];
 
-                string selectTimeSheetWeek = "SELECT * FROM Timesheet WHERE T_Date BETWEEN GETDATE() and GETDATE()+5";
+                string selectTimeSheetWeek = "SELECT * FROM Timesheet WHERE T_Date BETWEEN GETDATE() and GETDATE()+5"; // Sql for Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetWeek, db.sqlConn);
                 SqlCommandBuilder commandBuilder8 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds8 = new DataSet();
-                db.sqlDA.Fill(ds8);
+                db.sqlDA.Fill(ds8); // Fills the DataSet
                 dgvTSWeekly.ReadOnly = true;
                 dgvTSWeekly.DataSource = ds8.Tables[0];
 
@@ -325,6 +324,110 @@ namespace FleetTrackingInformationSystem
                 Bitmap bm4 = new Bitmap(this.dgvServiceReq.Width, this.dgvServiceReq.Height);
                 dgvServiceReq.DrawToBitmap(bm4, new Rectangle(0, 0, this.dgvServiceReq.Width, this.dgvServiceReq.Height));
                 e.Graphics.DrawImage(bm4, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintVehSerComDaily_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument5.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument5_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm5 = new Bitmap(this.dgvVSDaily.Width, this.dgvVSDaily.Height);
+                dgvVSDaily.DrawToBitmap(bm5, new Rectangle(0, 0, this.dgvVSDaily.Width, this.dgvVSDaily.Height));
+                e.Graphics.DrawImage(bm5, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintVehSerComWeek_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument6.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument6_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm6 = new Bitmap(this.dgvVSWeekly.Width, this.dgvVSWeekly.Height);
+                dgvVSWeekly.DrawToBitmap(bm6, new Rectangle(0, 0, this.dgvVSWeekly.Width, this.dgvVSWeekly.Height));
+                e.Graphics.DrawImage(bm6, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintVehSerMonth_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument7.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument7_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm7 = new Bitmap(this.dgvVSMonthly.Width, this.dgvVSMonthly.Height);
+                dgvVSMonthly.DrawToBitmap(bm7, new Rectangle(0, 0, this.dgvVSMonthly.Width, this.dgvVSMonthly.Height));
+                e.Graphics.DrawImage(bm7, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintVehSerYear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument8.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument8_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm8 = new Bitmap(this.dgvVSYearly.Width, this.dgvVSYearly.Height);
+                dgvVSYearly.DrawToBitmap(bm8, new Rectangle(0, 0, this.dgvVSYearly.Width, this.dgvVSYearly.Height));
+                e.Graphics.DrawImage(bm8, 10, 10);
             }
             catch (Exception ex)
             {
