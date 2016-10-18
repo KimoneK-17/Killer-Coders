@@ -266,7 +266,7 @@
             // 
             // btnGenQR
             // 
-            this.btnGenQR.Location = new System.Drawing.Point(277, 425);
+            this.btnGenQR.Location = new System.Drawing.Point(264, 354);
             this.btnGenQR.Name = "btnGenQR";
             this.btnGenQR.Size = new System.Drawing.Size(181, 23);
             this.btnGenQR.TabIndex = 24;

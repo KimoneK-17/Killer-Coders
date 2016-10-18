@@ -35,7 +35,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
@@ -47,7 +47,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message
             }
@@ -58,9 +58,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 txtTripID.Clear();
-               
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message 
             }
@@ -71,14 +71,14 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
             getValues();
-          
+
 
             exit = check.CheckEmpty(T_ID, "Trip ID");
-            
+
             exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
-           
-              
-            if(exit == false)
+
+
+            if (exit == false)
             {
                 try
                 {
@@ -96,6 +96,8 @@ namespace FleetTrackingInformationSystem
                     MessageBox.Show("Succesfully inserted");
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
+
+
                 }
                 catch (SqlException ex)
                 {
@@ -111,53 +113,53 @@ namespace FleetTrackingInformationSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
             getValues();
-                try
-                {
-                    DBConnect objDBConnect = new DBConnect();
+            try
+            {
+                DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-                    string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='"+ T_ID +"');";
+                string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='" + T_ID + "');";
 
-                    objDBConnect.sqlCmd = new SqlCommand();
-                    objDBConnect.sqlCmd.CommandText = sql;
-                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                 
-                    MessageBox.Show("SUCCESS");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
-                }
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             getValues();
             try
-            {             
-              DBConnect objDBConnect = new DBConnect();
+            {
+                DBConnect objDBConnect = new DBConnect();
 
-              objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo)", objDBConnect.sqlConn);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
-		    
-              objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-              MessageBox.Show("SUCCESSFULLY UPDATED");
-              objDBConnect.sqlDR.Close();
-              objDBConnect.sqlConn.Close();
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
             }
             catch (SqlException ex)
             {
@@ -171,12 +173,12 @@ namespace FleetTrackingInformationSystem
 
         public void getValues()
         {
-            
+
             T_ID = txtTripID.Text;
             T_TO = dtpDateTo.Text;
             T_FROM = dtpDateFrom.Text;
             V_RN = cboV_RN.SelectedValue.ToString();
-            
+
 
         }
 
@@ -210,11 +212,59 @@ namespace FleetTrackingInformationSystem
 
         private void btnGenQR_Click(object sender, EventArgs e)
         {
-            getValues();
-            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
-            QRCodeEncoder encodeQR = new QRCodeEncoder();
-            Bitmap qr = encodeQR.Encode(trip_plan);
-            pbxQR.Image = qr as Image;
+            try
+            {
+                getValues();
+                trip_plans();
+                QRCodeEncoder encodeQR = new QRCodeEncoder();
+                Bitmap qr = encodeQR.Encode(trip_plan);
+                pbxQR.Image = qr as Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Display QR Code.\n Error: " + ex.Message);
+            }
         }
-   }
+
+        public void trip_plans()
+        {
+            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
+
+        }
+
+        public void saveQR()
+        {
+            try
+            {
+                DialogResult saveqrcode = MessageBox.Show("Do you want to save the generate QR Code?", "Save QR Code", MessageBoxButtons.YesNoCancel);
+                if (saveqrcode == DialogResult.Yes)
+                {
+                    SaveFileDialog saveQr = new SaveFileDialog();
+                    saveQr.Filter = "PNG|*.png|JPEG|*.jpg|BMP|*.bmp|GIF|*.gif";
+                    if (saveQr.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        pbxQR.Image.Save(saveQr.FileName);
+                        MessageBox.Show("QR Code Saved Successfully.\n Image Saved As: " + saveQr.FileName);
+                    }
+                }
+                else
+                {
+                    if (saveqrcode == DialogResult.No)
+                    {
+                        MessageBox.Show("QR Code Not Saved.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saving Cancelled");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Save unsuccessful.\n" + ex.Message);
+            }
+
+
+        }
+    }
 }
