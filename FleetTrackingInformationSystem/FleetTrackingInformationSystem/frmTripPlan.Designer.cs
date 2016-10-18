@@ -50,6 +50,7 @@
             this.cboV_RN = new System.Windows.Forms.ComboBox();
             this.pbxQR = new System.Windows.Forms.PictureBox();
             this.btnGenQR = new System.Windows.Forms.Button();
+            this.btnSaveQR = new System.Windows.Forms.Button();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -257,10 +258,11 @@
             // 
             // pbxQR
             // 
+            this.pbxQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxQR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbxQR.Location = new System.Drawing.Point(41, 354);
             this.pbxQR.Name = "pbxQR";
-            this.pbxQR.Size = new System.Drawing.Size(194, 147);
+            this.pbxQR.Size = new System.Drawing.Size(194, 170);
             this.pbxQR.TabIndex = 23;
             this.pbxQR.TabStop = false;
             // 
@@ -274,6 +276,16 @@
             this.btnGenQR.UseVisualStyleBackColor = true;
             this.btnGenQR.Click += new System.EventHandler(this.btnGenQR_Click);
             // 
+            // btnSaveQR
+            // 
+            this.btnSaveQR.Location = new System.Drawing.Point(264, 393);
+            this.btnSaveQR.Name = "btnSaveQR";
+            this.btnSaveQR.Size = new System.Drawing.Size(95, 23);
+            this.btnSaveQR.TabIndex = 25;
+            this.btnSaveQR.Text = "Save QR Image";
+            this.btnSaveQR.UseVisualStyleBackColor = true;
+            this.btnSaveQR.Click += new System.EventHandler(this.btnSaveQR_Click);
+            // 
             // frmTripPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +293,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 643);
+            this.Controls.Add(this.btnSaveQR);
             this.Controls.Add(this.btnGenQR);
             this.Controls.Add(this.pbxQR);
             this.Controls.Add(this.cboV_RN);
@@ -333,5 +346,6 @@
         private System.Windows.Forms.ComboBox cboV_RN;
         private System.Windows.Forms.PictureBox pbxQR;
         private System.Windows.Forms.Button btnGenQR;
+        private System.Windows.Forms.Button btnSaveQR;
     }
 }

@@ -71,7 +71,7 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
             getValues();
-
+            
 
             exit = check.CheckEmpty(T_ID, "Trip ID");
 
@@ -94,7 +94,7 @@ namespace FleetTrackingInformationSystem
 
                     MessageBox.Show("Succesfully inserted");
                     CloseConnections();
-
+                   
 
                 }
                 catch (SqlException ex)
@@ -140,6 +140,7 @@ namespace FleetTrackingInformationSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             getValues();
+          
             try
             {
 
@@ -213,6 +214,7 @@ namespace FleetTrackingInformationSystem
                 QRCodeEncoder encodeQR = new QRCodeEncoder();
                 Bitmap qr = encodeQR.Encode(trip_plan);
                 pbxQR.Image = qr as Image;
+                pbxQR.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             catch (Exception ex)
             {
@@ -265,6 +267,23 @@ namespace FleetTrackingInformationSystem
         {
             objDBConnect.sqlDR.Close();
             objDBConnect.sqlConn.Close();
+        }
+
+        public void checkPicture()
+        {
+            if(pbxQR.Image==null)
+            {
+                MessageBox.Show("Please Generate QR Code First");
+            }
+            else
+            {
+                saveQR();
+            }
+        }
+
+        private void btnSaveQR_Click(object sender, EventArgs e)
+        {
+            checkPicture();
         }
     }
 }
