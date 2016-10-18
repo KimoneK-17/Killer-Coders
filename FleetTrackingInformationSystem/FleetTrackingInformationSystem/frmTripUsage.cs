@@ -189,8 +189,30 @@ namespace FleetTrackingInformationSystem
 
         private void frmTripUsage_Load(object sender, EventArgs e)
         {
-            frmService objService = new frmService();
-            objService.populateV_RN();
+            DBConnect objDBConnect = new DBConnect();
+            try
+            {
+
+                string query = "SELECT Vehicle_RegNumber from Vehicle;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Vehicle");
+                cboV_RN.ValueMember = "Vehicle_RegNumber";
+                cboV_RN.DisplayMember = "Vehicle_RegNumber";
+                cboV_RN.DataSource = ds.Tables["Vehicle"];
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Shows an error message
+            }
         }
    }
 }
