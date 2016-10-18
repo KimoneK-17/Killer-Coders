@@ -99,6 +99,7 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -187,6 +188,7 @@
             this.btnPrintVehicleStat.TabIndex = 18;
             this.btnPrintVehicleStat.Text = "Print";
             this.btnPrintVehicleStat.UseVisualStyleBackColor = true;
+            this.btnPrintVehicleStat.Click += new System.EventHandler(this.btnPrintVehicleStat_Click_1);
             // 
             // dgvVehicleStatus
             // 
@@ -804,7 +806,6 @@
             this.mnuFleet.Size = new System.Drawing.Size(1448, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
-
             // 
             // mnuOptions
             // 
@@ -828,6 +829,10 @@
             this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // frmReports
             // 
@@ -968,5 +973,6 @@
         private System.Windows.Forms.Button btnPrintTimeDaily;
         private System.Windows.Forms.Button btnPrintTimeWeekly;
         private System.Windows.Forms.Button btnPrintTimeMonth;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

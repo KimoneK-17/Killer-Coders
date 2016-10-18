@@ -228,10 +228,16 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Exit the Application: " + ex.Message); // Shows an error message 
             }
         }
-
-        private void btnPrintVehicleStat_Click(object sender, EventArgs e)
+        private void btnPrintVehicleStat_Click_1(object sender, EventArgs e)
         {
+            printDocument1.Print();
+        }
 
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dgvVehicleStatus.Width, this.dgvVehicleStatus.Height);
+            dgvVehicleStatus.DrawToBitmap(bm, new Rectangle(0,0, this.dgvVehicleStatus.Width, this.dgvVehicleStatus.Height));
+            e.Graphics.DrawImage(bm,10,10);
         }
     }
 }
