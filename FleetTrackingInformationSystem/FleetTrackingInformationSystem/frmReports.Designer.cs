@@ -113,6 +113,9 @@
             this.printDocument12 = new System.Drawing.Printing.PrintDocument();
             this.printDocument13 = new System.Drawing.Printing.PrintDocument();
             this.printDocument14 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument15 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument16 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument17 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -735,6 +738,7 @@
             this.btnPrintTimeDaily.TabIndex = 20;
             this.btnPrintTimeDaily.Text = "Print";
             this.btnPrintTimeDaily.UseVisualStyleBackColor = true;
+            this.btnPrintTimeDaily.Click += new System.EventHandler(this.btnPrintTimeDaily_Click);
             // 
             // dgvTSDaily
             // 
@@ -765,6 +769,7 @@
             this.btnPrintTimeWeekly.TabIndex = 20;
             this.btnPrintTimeWeekly.Text = "Print";
             this.btnPrintTimeWeekly.UseVisualStyleBackColor = true;
+            this.btnPrintTimeWeekly.Click += new System.EventHandler(this.btnPrintTimeWeekly_Click);
             // 
             // dgvTSWeekly
             // 
@@ -794,6 +799,7 @@
             this.btnPrintTimeMonth.TabIndex = 20;
             this.btnPrintTimeMonth.Text = "Print";
             this.btnPrintTimeMonth.UseVisualStyleBackColor = true;
+            this.btnPrintTimeMonth.Click += new System.EventHandler(this.btnPrintTimeMonth_Click);
             // 
             // dgvTSMonthly
             // 
@@ -911,6 +917,18 @@
             // printDocument14
             // 
             this.printDocument14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument14_PrintPage);
+            // 
+            // printDocument15
+            // 
+            this.printDocument15.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument15_PrintPage);
+            // 
+            // printDocument16
+            // 
+            this.printDocument16.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument16_PrintPage);
+            // 
+            // printDocument17
+            // 
+            this.printDocument17.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument17_PrintPage);
             // 
             // frmReports
             // 
@@ -1065,5 +1083,8 @@
         private System.Drawing.Printing.PrintDocument printDocument12;
         private System.Drawing.Printing.PrintDocument printDocument13;
         private System.Drawing.Printing.PrintDocument printDocument14;
+        private System.Drawing.Printing.PrintDocument printDocument15;
+        private System.Drawing.Printing.PrintDocument printDocument16;
+        private System.Drawing.Printing.PrintDocument printDocument17;
     }
 }

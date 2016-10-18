@@ -590,5 +590,83 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Print Report: " + ex);
             }
         }
+
+        private void btnPrintTimeDaily_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument15.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument15_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm15 = new Bitmap(this.dgvTSDaily.Width, this.dgvTSDaily.Height);
+                dgvTSDaily.DrawToBitmap(bm15, new Rectangle(0, 0, this.dgvTSDaily.Width, this.dgvTSDaily.Height));
+                e.Graphics.DrawImage(bm15, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintTimeWeekly_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument16.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument16_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm16 = new Bitmap(this.dgvTSWeekly.Width, this.dgvTSWeekly.Height);
+                dgvTSWeekly.DrawToBitmap(bm16, new Rectangle(0, 0, this.dgvTSWeekly.Width, this.dgvTSWeekly.Height));
+                e.Graphics.DrawImage(bm16, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
+
+        private void btnPrintTimeMonth_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDocument17.Print(); // Prints the Data Grid View
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex); // Shows Message Box If Error Occurs
+            }
+        }
+
+        private void printDocument17_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        {
+            try
+            {
+                Bitmap bm17 = new Bitmap(this.dgvTSMonthly.Width, this.dgvTSMonthly.Height);
+                dgvTSMonthly.DrawToBitmap(bm17, new Rectangle(0, 0, this.dgvTSMonthly.Width, this.dgvTSMonthly.Height));
+                e.Graphics.DrawImage(bm17, 10, 10);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot Print Report: " + ex);
+            }
+        }
     }
 }
