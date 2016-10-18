@@ -36,7 +36,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 this.Hide(); // Will Hide this Form
-                frmTripUsage tU = new frmTripUsage(); // Creates an Object 
+                frmTripPlan tU = new frmTripPlan(); // Creates an Object 
                 tU.ShowDialog(); // Shows the Trip and Usage Form
             }
             catch(Exception ex)

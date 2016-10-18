@@ -126,15 +126,15 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                string query = "SELECT Location_ID from Location;";
+                string query = "SELECT Trip_ID from TripUsage;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
                 DataSet ds = new DataSet();
-                da.Fill(ds, "Location");
-                cboL_ID.ValueMember = "Location_ID";
-                cboL_ID.DisplayMember = "Location_ID";
-                cboL_ID.DataSource = ds.Tables["Location"];
+                da.Fill(ds, "TripUsage");
+                cboT_ID.ValueMember = "Trip_ID";
+                cboT_ID.DisplayMember = "Trip_ID";
+                cboT_ID.DataSource = ds.Tables["TripUsage"];
                 objDBConnect.sqlConn.Close();
 
             }

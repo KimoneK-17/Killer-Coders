@@ -8,22 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MessagingToolkit.QRCode.Codec;
+using MessagingToolkit.QRCode.Codec.Data;
 
 namespace FleetTrackingInformationSystem
 {
-    public partial class frmTripUsage : Form
+    public partial class frmTripPlan : Form
     {
         string T_ID;
-       
-       
         string V_RN;
         string T_FROM;
         string T_TO;
-        string T_FUEL;
-        string T_INCIDENTS;
-        string T_MILEAGE;
 
-        public frmTripUsage()
+        string trip_plan;
+
+        public frmTripPlan()
         {
             InitializeComponent();
         }
@@ -59,10 +58,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 txtTripID.Clear();
-                txtFuelUsage.Clear();
-                txtVehicleIncidents.Clear(); // Clears Text Box
                
-                txtKM.Clear();
             }
             catch(Exception ex)
             {
@@ -78,11 +74,9 @@ namespace FleetTrackingInformationSystem
           
 
             exit = check.CheckEmpty(T_ID, "Trip ID");
-            exit = check.CheckEmpty(T_FUEL, "Fuel Usage");
-            exit = check.CheckEmpty(T_MILEAGE, "KM Travelled");
+            
             exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
-            exit = check.CheckForLetters(T_MILEAGE, "KM Travelled");
-            exit = check.CheckForLetters(T_FUEL, "Fuel Usage");
+           
               
             if(exit == false)
             {
@@ -91,13 +85,14 @@ namespace FleetTrackingInformationSystem
                     DBConnect objDBConnect = new DBConnect();
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo, @Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
                     MessageBox.Show("Succesfully inserted");
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
@@ -153,14 +148,12 @@ namespace FleetTrackingInformationSystem
 
               objDBConnect.OpenConnection();
 
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo, Trip_FuelUsed=@Trip_FuelUsed,Trip_Incidents= @Trip_Incidents,Trip_Mileage= @Trip_Mileage)", objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo)", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+		    
               objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
               MessageBox.Show("SUCCESSFULLY UPDATED");
               objDBConnect.sqlDR.Close();
@@ -178,13 +171,13 @@ namespace FleetTrackingInformationSystem
 
         public void getValues()
         {
-            T_FUEL = txtFuelUsage.Text;
-            T_MILEAGE = txtKM.Text;
+            
             T_ID = txtTripID.Text;
-            T_INCIDENTS = txtVehicleIncidents.Text;
             T_TO = dtpDateTo.Text;
             T_FROM = dtpDateFrom.Text;
             V_RN = cboV_RN.SelectedValue.ToString();
+            
+
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
@@ -213,6 +206,15 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
+        }
+
+        private void btnGenQR_Click(object sender, EventArgs e)
+        {
+            getValues();
+            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
+            QRCodeEncoder encodeQR = new QRCodeEncoder();
+            Bitmap qr = encodeQR.Encode(trip_plan);
+            pbxQR.Image = qr as Image;
         }
    }
 }

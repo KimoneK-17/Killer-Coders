@@ -1,6 +1,6 @@
 ﻿namespace FleetTrackingInformationSystem
 {
-    partial class frmTripUsage
+    partial class frmTripPlan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTripUsage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTripPlan));
             this.lblVehicleRegNo = new System.Windows.Forms.Label();
-            this.lblFuelUsage = new System.Windows.Forms.Label();
-            this.lblVehicleIncidents = new System.Windows.Forms.Label();
             this.lblDateFrom = new System.Windows.Forms.Label();
-            this.txtVehicleIncidents = new System.Windows.Forms.TextBox();
-            this.txtFuelUsage = new System.Windows.Forms.TextBox();
             this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
             this.lblTripUsage = new System.Windows.Forms.Label();
             this.pnlTripUsage = new System.Windows.Forms.Panel();
@@ -48,15 +44,16 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.lblDateTo = new System.Windows.Forms.Label();
             this.dtpDateTo = new System.Windows.Forms.DateTimePicker();
-            this.lblKm = new System.Windows.Forms.Label();
-            this.txtKM = new System.Windows.Forms.TextBox();
             this.lblTripID = new System.Windows.Forms.Label();
             this.txtTripID = new System.Windows.Forms.TextBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.cboV_RN = new System.Windows.Forms.ComboBox();
+            this.pbxQR = new System.Windows.Forms.PictureBox();
+            this.btnGenQR = new System.Windows.Forms.Button();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxQR)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVehicleRegNo
@@ -72,32 +69,6 @@
             this.lblVehicleRegNo.TabIndex = 0;
             this.lblVehicleRegNo.Text = "Vehicle Reg Number:";
             // 
-            // lblFuelUsage
-            // 
-            this.lblFuelUsage.AutoSize = true;
-            this.lblFuelUsage.BackColor = System.Drawing.Color.Transparent;
-            this.lblFuelUsage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblFuelUsage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuelUsage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFuelUsage.Location = new System.Drawing.Point(68, 360);
-            this.lblFuelUsage.Name = "lblFuelUsage";
-            this.lblFuelUsage.Size = new System.Drawing.Size(85, 19);
-            this.lblFuelUsage.TabIndex = 2;
-            this.lblFuelUsage.Text = "Fuel Usage:";
-            // 
-            // lblVehicleIncidents
-            // 
-            this.lblVehicleIncidents.AutoSize = true;
-            this.lblVehicleIncidents.BackColor = System.Drawing.Color.Transparent;
-            this.lblVehicleIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblVehicleIncidents.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleIncidents.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblVehicleIncidents.Location = new System.Drawing.Point(68, 416);
-            this.lblVehicleIncidents.Name = "lblVehicleIncidents";
-            this.lblVehicleIncidents.Size = new System.Drawing.Size(127, 19);
-            this.lblVehicleIncidents.TabIndex = 3;
-            this.lblVehicleIncidents.Text = "Vehicle Incidents:";
-            // 
             // lblDateFrom
             // 
             this.lblDateFrom.AutoSize = true;
@@ -110,24 +81,6 @@
             this.lblDateFrom.Size = new System.Drawing.Size(114, 19);
             this.lblDateFrom.TabIndex = 4;
             this.lblDateFrom.Text = "Trip Date From:";
-            // 
-            // txtVehicleIncidents
-            // 
-            this.txtVehicleIncidents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVehicleIncidents.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleIncidents.Location = new System.Drawing.Point(232, 409);
-            this.txtVehicleIncidents.Name = "txtVehicleIncidents";
-            this.txtVehicleIncidents.Size = new System.Drawing.Size(197, 26);
-            this.txtVehicleIncidents.TabIndex = 6;
-            // 
-            // txtFuelUsage
-            // 
-            this.txtFuelUsage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFuelUsage.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFuelUsage.Location = new System.Drawing.Point(232, 353);
-            this.txtFuelUsage.Name = "txtFuelUsage";
-            this.txtFuelUsage.Size = new System.Drawing.Size(197, 26);
-            this.txtFuelUsage.TabIndex = 7;
             // 
             // dtpDateFrom
             // 
@@ -258,28 +211,6 @@
             this.dtpDateTo.Size = new System.Drawing.Size(197, 26);
             this.dtpDateTo.TabIndex = 16;
             // 
-            // lblKm
-            // 
-            this.lblKm.AutoSize = true;
-            this.lblKm.BackColor = System.Drawing.Color.Transparent;
-            this.lblKm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblKm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblKm.Location = new System.Drawing.Point(68, 477);
-            this.lblKm.Name = "lblKm";
-            this.lblKm.Size = new System.Drawing.Size(102, 19);
-            this.lblKm.TabIndex = 17;
-            this.lblKm.Text = "KM Travelled:";
-            // 
-            // txtKM
-            // 
-            this.txtKM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKM.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKM.Location = new System.Drawing.Point(232, 470);
-            this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(197, 26);
-            this.txtKM.TabIndex = 18;
-            // 
             // lblTripID
             // 
             this.lblTripID.AutoSize = true;
@@ -324,32 +255,47 @@
             this.cboV_RN.Size = new System.Drawing.Size(121, 21);
             this.cboV_RN.TabIndex = 22;
             // 
-            // frmTripUsage
+            // pbxQR
+            // 
+            this.pbxQR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxQR.Location = new System.Drawing.Point(41, 354);
+            this.pbxQR.Name = "pbxQR";
+            this.pbxQR.Size = new System.Drawing.Size(194, 147);
+            this.pbxQR.TabIndex = 23;
+            this.pbxQR.TabStop = false;
+            // 
+            // btnGenQR
+            // 
+            this.btnGenQR.Location = new System.Drawing.Point(277, 425);
+            this.btnGenQR.Name = "btnGenQR";
+            this.btnGenQR.Size = new System.Drawing.Size(181, 23);
+            this.btnGenQR.TabIndex = 24;
+            this.btnGenQR.Text = "Generate QR Code";
+            this.btnGenQR.UseVisualStyleBackColor = true;
+            this.btnGenQR.Click += new System.EventHandler(this.btnGenQR_Click);
+            // 
+            // frmTripPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 643);
+            this.Controls.Add(this.btnGenQR);
+            this.Controls.Add(this.pbxQR);
             this.Controls.Add(this.cboV_RN);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtTripID);
             this.Controls.Add(this.lblTripID);
-            this.Controls.Add(this.txtKM);
-            this.Controls.Add(this.lblKm);
             this.Controls.Add(this.dtpDateTo);
             this.Controls.Add(this.lblDateTo);
-            this.Controls.Add(this.txtVehicleIncidents);
-            this.Controls.Add(this.lblVehicleIncidents);
-            this.Controls.Add(this.txtFuelUsage);
-            this.Controls.Add(this.lblFuelUsage);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.dtpDateFrom);
             this.Controls.Add(this.pnlTripUsage);
             this.Controls.Add(this.lblVehicleRegNo);
             this.Controls.Add(this.lblDateFrom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmTripUsage";
+            this.Name = "frmTripPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmTripUsage_Load);
@@ -358,6 +304,7 @@
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,11 +313,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblVehicleRegNo;
-        private System.Windows.Forms.Label lblFuelUsage;
-        private System.Windows.Forms.Label lblVehicleIncidents;
         private System.Windows.Forms.Label lblDateFrom;
-        private System.Windows.Forms.TextBox txtVehicleIncidents;
-        private System.Windows.Forms.TextBox txtFuelUsage;
         private System.Windows.Forms.DateTimePicker dtpDateFrom;
         private System.Windows.Forms.Label lblTripUsage;
         private System.Windows.Forms.Panel pnlTripUsage;
@@ -382,13 +325,13 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblDateTo;
         private System.Windows.Forms.DateTimePicker dtpDateTo;
-        private System.Windows.Forms.Label lblKm;
-        private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.Label lblTripID;
         private System.Windows.Forms.TextBox txtTripID;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.ComboBox cboV_RN;
+        private System.Windows.Forms.PictureBox pbxQR;
+        private System.Windows.Forms.Button btnGenQR;
     }
 }
