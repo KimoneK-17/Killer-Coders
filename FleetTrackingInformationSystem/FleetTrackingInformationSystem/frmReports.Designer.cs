@@ -103,6 +103,10 @@
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.printDocument3 = new System.Drawing.Printing.PrintDocument();
             this.printDocument4 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument5 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument6 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument7 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument8 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -357,6 +361,7 @@
             this.btnPrintVehSerComDaily.TabIndex = 20;
             this.btnPrintVehSerComDaily.Text = "Print";
             this.btnPrintVehSerComDaily.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComDaily.Click += new System.EventHandler(this.btnPrintVehSerComDaily_Click);
             // 
             // dgvVSDaily
             // 
@@ -387,6 +392,7 @@
             this.btnPrintVehSerComWeek.TabIndex = 20;
             this.btnPrintVehSerComWeek.Text = "Print";
             this.btnPrintVehSerComWeek.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComWeek.Click += new System.EventHandler(this.btnPrintVehSerComWeek_Click);
             // 
             // dgvVSWeekly
             // 
@@ -416,6 +422,7 @@
             this.btnPrintVehSerMonth.TabIndex = 20;
             this.btnPrintVehSerMonth.Text = "Print";
             this.btnPrintVehSerMonth.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerMonth.Click += new System.EventHandler(this.btnPrintVehSerMonth_Click);
             // 
             // dgvVSMonthly
             // 
@@ -445,6 +452,7 @@
             this.btnPrintVehSerYear.TabIndex = 20;
             this.btnPrintVehSerYear.Text = "Print";
             this.btnPrintVehSerYear.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerYear.Click += new System.EventHandler(this.btnPrintVehSerYear_Click);
             // 
             // dgvVSYearly
             // 
@@ -852,6 +860,22 @@
             // 
             this.printDocument4.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument4_PrintPage);
             // 
+            // printDocument5
+            // 
+            this.printDocument5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument5_PrintPage);
+            // 
+            // printDocument6
+            // 
+            this.printDocument6.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument6_PrintPage);
+            // 
+            // printDocument7
+            // 
+            this.printDocument7.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument7_PrintPage);
+            // 
+            // printDocument8
+            // 
+            this.printDocument8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument8_PrintPage);
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,5 +1019,9 @@
         private System.Drawing.Printing.PrintDocument printDocument2;
         private System.Drawing.Printing.PrintDocument printDocument3;
         private System.Drawing.Printing.PrintDocument printDocument4;
+        private System.Drawing.Printing.PrintDocument printDocument5;
+        private System.Drawing.Printing.PrintDocument printDocument6;
+        private System.Drawing.Printing.PrintDocument printDocument7;
+        private System.Drawing.Printing.PrintDocument printDocument8;
     }
 }
