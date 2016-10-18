@@ -107,6 +107,12 @@
             this.printDocument6 = new System.Drawing.Printing.PrintDocument();
             this.printDocument7 = new System.Drawing.Printing.PrintDocument();
             this.printDocument8 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument9 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument10 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument11 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument12 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument13 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument14 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -482,6 +488,7 @@
             this.btnPrintDetailSerInfo.TabIndex = 20;
             this.btnPrintDetailSerInfo.Text = "Print";
             this.btnPrintDetailSerInfo.UseVisualStyleBackColor = true;
+            this.btnPrintDetailSerInfo.Click += new System.EventHandler(this.btnPrintDetailSerInfo_Click);
             // 
             // dgvDetailedService
             // 
@@ -532,6 +539,7 @@
             this.btnPrintPlanTripDaily.TabIndex = 20;
             this.btnPrintPlanTripDaily.Text = "Print";
             this.btnPrintPlanTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripDaily.Click += new System.EventHandler(this.btnPrintPlanTripDaily_Click);
             // 
             // dgvPTDaily
             // 
@@ -562,6 +570,7 @@
             this.btnPrintPlanTripWeek.TabIndex = 20;
             this.btnPrintPlanTripWeek.Text = "Print";
             this.btnPrintPlanTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripWeek.Click += new System.EventHandler(this.btnPrintPlanTripWeek_Click);
             // 
             // dgvPTWeekly
             // 
@@ -613,6 +622,7 @@
             this.btnPrintComTripDaily.TabIndex = 20;
             this.btnPrintComTripDaily.Text = "Print";
             this.btnPrintComTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintComTripDaily.Click += new System.EventHandler(this.btnPrintComTripDaily_Click);
             // 
             // dgvCTDaily
             // 
@@ -643,6 +653,7 @@
             this.btnPrintComTripWeek.TabIndex = 20;
             this.btnPrintComTripWeek.Text = "Print";
             this.btnPrintComTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintComTripWeek.Click += new System.EventHandler(this.btnPrintComTripWeek_Click);
             // 
             // dgvCTWeekly
             // 
@@ -672,6 +683,7 @@
             this.btnPrintComTripMonth.TabIndex = 20;
             this.btnPrintComTripMonth.Text = "Print";
             this.btnPrintComTripMonth.UseVisualStyleBackColor = true;
+            this.btnPrintComTripMonth.Click += new System.EventHandler(this.btnPrintComTripMonth_Click);
             // 
             // dgvCTMonthly
             // 
@@ -876,6 +888,30 @@
             // 
             this.printDocument8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument8_PrintPage);
             // 
+            // printDocument9
+            // 
+            this.printDocument9.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument9_PrintPage);
+            // 
+            // printDocument10
+            // 
+            this.printDocument10.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument10_PrintPage);
+            // 
+            // printDocument11
+            // 
+            this.printDocument11.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument11_PrintPage);
+            // 
+            // printDocument12
+            // 
+            this.printDocument12.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument12_PrintPage);
+            // 
+            // printDocument13
+            // 
+            this.printDocument13.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument13_PrintPage);
+            // 
+            // printDocument14
+            // 
+            this.printDocument14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument14_PrintPage);
+            // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1023,5 +1059,11 @@
         private System.Drawing.Printing.PrintDocument printDocument6;
         private System.Drawing.Printing.PrintDocument printDocument7;
         private System.Drawing.Printing.PrintDocument printDocument8;
+        private System.Drawing.Printing.PrintDocument printDocument9;
+        private System.Drawing.Printing.PrintDocument printDocument10;
+        private System.Drawing.Printing.PrintDocument printDocument11;
+        private System.Drawing.Printing.PrintDocument printDocument12;
+        private System.Drawing.Printing.PrintDocument printDocument13;
+        private System.Drawing.Printing.PrintDocument printDocument14;
     }
 }
