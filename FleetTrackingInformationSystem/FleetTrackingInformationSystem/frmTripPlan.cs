@@ -21,7 +21,7 @@ namespace FleetTrackingInformationSystem
         string T_TO;
 
         string trip_plan;
-
+        DBConnect objDBConnect = new DBConnect();
         public frmTripPlan()
         {
             InitializeComponent();
@@ -82,7 +82,6 @@ namespace FleetTrackingInformationSystem
             {
                 try
                 {
-                    DBConnect objDBConnect = new DBConnect();
                     objDBConnect.OpenConnection();
 
                     objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo)", objDBConnect.sqlConn);
@@ -94,8 +93,7 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
                     MessageBox.Show("Succesfully inserted");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+                    CloseConnections();
 
 
                 }
@@ -115,7 +113,6 @@ namespace FleetTrackingInformationSystem
             getValues();
             try
             {
-                DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
 
@@ -128,8 +125,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
                 MessageBox.Show("SUCCESS");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                CloseConnections();
             }
             catch (SqlException ex)
             {
@@ -146,7 +142,6 @@ namespace FleetTrackingInformationSystem
             getValues();
             try
             {
-                DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
 
@@ -158,8 +153,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY UPDATED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                CloseConnections();
             }
             catch (SqlException ex)
             {
@@ -184,7 +178,7 @@ namespace FleetTrackingInformationSystem
 
         private void frmTripUsage_Load(object sender, EventArgs e)
         {
-            DBConnect objDBConnect = new DBConnect();
+
             try
             {
 
@@ -197,7 +191,7 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.ValueMember = "Vehicle_RegNumber";
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
-                objDBConnect.sqlConn.Close();
+                CloseConnections();
 
             }
             catch (SqlException ex)
@@ -265,6 +259,12 @@ namespace FleetTrackingInformationSystem
             }
 
 
+        }
+
+        public void CloseConnections()
+        {
+            objDBConnect.sqlDR.Close();
+            objDBConnect.sqlConn.Close();
         }
     }
 }
