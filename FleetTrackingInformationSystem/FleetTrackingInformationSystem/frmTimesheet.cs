@@ -17,7 +17,7 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
-
+        DBConnect objDBConnect = new DBConnect();
         int T_ID;
         string E_ID;
         double T_HOURS;
@@ -51,7 +51,7 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-                txtEmployeeID.Clear();
+                
                 updHoursWorked.Value = 0;
             }
             catch(Exception ex)
@@ -67,6 +67,12 @@ namespace FleetTrackingInformationSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            T_ID = int.Parse(txtT_ID.Text);
+            E_ID = cboE_ID.SelectedValue.ToString();
+            T_HOURS = int.Parse(updHoursWorked.Text);
+
+
+
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -94,6 +100,29 @@ namespace FleetTrackingInformationSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmTimesheet_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string query = "SELECT Emp_ID from Employee;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Employee");
+                cboE_ID.ValueMember = "Emp_ID";
+                cboE_ID.DisplayMember = "Emp_ID";
+                cboE_ID.DataSource = ds.Tables["Employee"];
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

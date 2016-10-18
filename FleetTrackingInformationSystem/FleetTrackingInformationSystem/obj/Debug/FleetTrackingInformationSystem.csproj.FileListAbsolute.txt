@@ -323,3 +323,6 @@ C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\Fle
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmVehicles.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.Properties.Resources.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
+C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
+C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.pdb
