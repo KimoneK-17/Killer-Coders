@@ -61,7 +61,7 @@ namespace FleetTrackingInformationSystem
                 txtTripID.Clear();
                 txtFuelUsage.Clear();
                 txtVehicleIncidents.Clear(); // Clears Text Box
-                txtVehicleRegNumber.Clear();
+               
                 txtKM.Clear();
             }
             catch(Exception ex)
@@ -184,7 +184,13 @@ namespace FleetTrackingInformationSystem
             T_INCIDENTS = txtVehicleIncidents.Text;
             T_TO = dtpDateTo.Text;
             T_FROM = dtpDateFrom.Text;
-            V_RN = txtVehicleRegNumber.Text;
+            V_RN = cboV_RN.SelectedValue.ToString();
+        }
+
+        private void frmTripUsage_Load(object sender, EventArgs e)
+        {
+            frmService objService = new frmService();
+            objService.populateV_RN();
         }
    }
 }

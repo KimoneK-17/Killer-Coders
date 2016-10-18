@@ -47,22 +47,14 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
-      
+        DataTable dtSearch = new DataTable();
         private void frmSearch_Load(object sender, EventArgs e)
         {
+            frmService objService = new frmService();
             try
             {
 
-                string query = "SELECT Emp_ID from Employee;";
-                objDBConnect.OpenConnection();
-                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Employee");
-                cboE_ID.ValueMember = "Emp_ID";
-                cboE_ID.DisplayMember = "Emp_ID";
-                cboE_ID.DataSource = ds.Tables["Employee"];
-                objDBConnect.sqlConn.Close();
+                objService.populateE_ID();
 
             }
             catch (SqlException ex)
@@ -148,16 +140,7 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                string query = "SELECT Vehicle_RegNumber from Vehicle;";
-                objDBConnect.OpenConnection();
-                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Vehicle");
-                cboV_RN.ValueMember = "Vehicle_RegNumber";
-                cboV_RN.DisplayMember = "Vehicle_RegNumber";
-                cboV_RN.DataSource = ds.Tables["Vehicle"];
-                objDBConnect.sqlConn.Close();
+                objService.populateV_RN();
 
             }
             catch (SqlException ex)
@@ -200,9 +183,7 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Customer WHERE Cust_ID  LIKE @C_ID");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID ", C_ID );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch);
+                data();
                 dgvEmployee.DataSource = dtSearch;
                 dgvEmployee.AutoResizeColumns();
 	
@@ -225,9 +206,7 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from TripUsage WHERE Trip_ID LIKE @T_ID");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
+                data();
 	            dgvTripUsage.DataSource = dtSearch;
 	            dgvTripUsage.AutoResizeColumns();
 	
@@ -249,9 +228,7 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
                     objDBConnect.GiveCommand("SELECT * from Employee WHERE Emp_ID  LIKE @E_ID;");
 	                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID ", E_ID );
-	                objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	                DataTable dtSearch = new DataTable();
-	                objDBConnect.sqlDA.Fill(dtSearch); 
+                    data();
 	                dgvEmployee.DataSource = dtSearch;
                     dgvEmployee.AutoResizeColumns();
 	
@@ -275,9 +252,7 @@ namespace FleetTrackingInformationSystem
                
                 objDBConnect.GiveCommand("SELECT * from Location WHERE Location_ID LIKE @Location_ID ");
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
+                data(); 
 	            dgvLocation.DataSource = dtSearch;
                 dgvLocation.AutoResizeColumns();
 	
@@ -299,9 +274,7 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Vehicle  WHERE Vehicle_RegNumber LIKE @V_RN");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch);
+                data();
                 dgvVehicleRegNum.DataSource = dtSearch;
                 dgvVehicleRegNum.AutoResizeColumns();
 	
@@ -324,9 +297,7 @@ namespace FleetTrackingInformationSystem
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Service  WHERE tblService_ID LIKE @S_ID");
 	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
+                data();
 	            dgvService.DataSource = dtSearch;
                 dgvService.AutoResizeColumns();
 	
@@ -339,6 +310,13 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(""); // Shows an error message
             }
+        }
+
+        public void data()
+        {
+ objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
+	            
+	            objDBConnect.sqlDA.Fill(dtSearch);
         }
     }
  }

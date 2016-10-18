@@ -14,11 +14,12 @@ namespace FleetTrackingInformationSystem
     public partial class frmService : Form
     {
         string S_ID;
-        int V_RN;
-        int E_ID;
+        string V_RN;
+        string E_ID;
         string S_DATE;
         string S_TIME;
         string S_DES;
+        DBConnect objDBConnect = new DBConnect();
         public frmService()
         {
             InitializeComponent();
@@ -56,8 +57,8 @@ namespace FleetTrackingInformationSystem
             {
                 txtServiceID.Clear();
                 rtfAppointDescription.Clear(); // Clears text Box
-                txtEmployeeID.Clear();
-                txtVehicleRegNumber.Clear();
+
+
             }
             catch (Exception ex)
             {
@@ -161,13 +162,72 @@ namespace FleetTrackingInformationSystem
         public void getValues()
         {
             S_ID = txtServiceID.Text; ;
-            V_RN = int.Parse(txtVehicleRegNumber.Text);
-            E_ID = int.Parse(txtEmployeeID.Text);
+            V_RN = cboV_RN.SelectedValue.ToString();
+            E_ID = cboE_ID.SelectedValue.ToString();
             S_DATE = dtpAppointmentDate.Text;
             S_TIME = cboAppointTime.GetItemText(cboAppointTime).ToString();
             S_DES = rtfAppointDescription.Text;
         }
 
-       
+        private void frmService_Load(object sender, EventArgs e)
+        {
+
+            populateV_RN();
+            populateE_ID();
+        }
+
+        public void populateE_ID()
+        {
+            try
+            {
+
+                string query = "SELECT Emp_ID from Employee;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Employee");
+                cboE_ID.ValueMember = "Emp_ID";
+                cboE_ID.DisplayMember = "Emp_ID";
+                cboE_ID.DataSource = ds.Tables["Employee"];
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Shows an error message
+            }
+        }
+
+        public void populateV_RN()
+        {
+            try
+            {
+
+                string query = "SELECT Vehicle_RegNumber from Vehicle;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Vehicle");
+                cboV_RN.ValueMember = "Vehicle_RegNumber";
+                cboV_RN.DisplayMember = "Vehicle_RegNumber";
+                cboV_RN.DataSource = ds.Tables["Vehicle"];
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Shows an error message
+            }
+        }
     }
 }

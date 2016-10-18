@@ -32,8 +32,6 @@
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.lblVehicleRegNumber = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.txtVehicleRegNumber = new System.Windows.Forms.TextBox();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
             this.pnlService = new System.Windows.Forms.Panel();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +50,8 @@
             this.lblAppointDescription = new System.Windows.Forms.Label();
             this.lblAppointDate = new System.Windows.Forms.Label();
             this.rtfAppointDescription = new System.Windows.Forms.RichTextBox();
+            this.cboV_RN = new System.Windows.Forms.ComboBox();
+            this.cboE_ID = new System.Windows.Forms.ComboBox();
             this.pnlService.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -96,24 +96,6 @@
             this.lblService.Size = new System.Drawing.Size(97, 33);
             this.lblService.TabIndex = 5;
             this.lblService.Text = "Service";
-            // 
-            // txtVehicleRegNumber
-            // 
-            this.txtVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleRegNumber.Location = new System.Drawing.Point(247, 187);
-            this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
-            this.txtVehicleRegNumber.Size = new System.Drawing.Size(247, 26);
-            this.txtVehicleRegNumber.TabIndex = 7;
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmployeeID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeID.Location = new System.Drawing.Point(247, 241);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(247, 26);
-            this.txtEmployeeID.TabIndex = 9;
             // 
             // pnlService
             // 
@@ -318,6 +300,22 @@
             this.rtfAppointDescription.TabIndex = 7;
             this.rtfAppointDescription.Text = "";
             // 
+            // cboV_RN
+            // 
+            this.cboV_RN.FormattingEnabled = true;
+            this.cboV_RN.Location = new System.Drawing.Point(247, 194);
+            this.cboV_RN.Name = "cboV_RN";
+            this.cboV_RN.Size = new System.Drawing.Size(121, 21);
+            this.cboV_RN.TabIndex = 21;
+            // 
+            // cboE_ID
+            // 
+            this.cboE_ID.FormattingEnabled = true;
+            this.cboE_ID.Location = new System.Drawing.Point(247, 248);
+            this.cboE_ID.Name = "cboE_ID";
+            this.cboE_ID.Size = new System.Drawing.Size(121, 21);
+            this.cboE_ID.TabIndex = 22;
+            // 
             // frmService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +323,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(734, 685);
+            this.Controls.Add(this.cboE_ID);
+            this.Controls.Add(this.cboV_RN);
             this.Controls.Add(this.rtfAppointDescription);
             this.Controls.Add(this.lblAppointDescription);
             this.Controls.Add(this.lblAppointDate);
@@ -336,15 +336,13 @@
             this.Controls.Add(this.txtServiceID);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlService);
-            this.Controls.Add(this.txtEmployeeID);
-            this.Controls.Add(this.txtVehicleRegNumber);
             this.Controls.Add(this.lblVehicleRegNumber);
             this.Controls.Add(this.lblEmployeeName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
-         
+            this.Load += new System.EventHandler(this.frmService_Load);
             this.pnlService.ResumeLayout(false);
             this.pnlService.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
@@ -360,8 +358,6 @@
         private System.Windows.Forms.Label lblEmployeeName;
         private System.Windows.Forms.Label lblVehicleRegNumber;
         private System.Windows.Forms.Label lblService;
-        private System.Windows.Forms.TextBox txtVehicleRegNumber;
-        private System.Windows.Forms.TextBox txtEmployeeID;
         private System.Windows.Forms.Panel pnlService;
         private System.Windows.Forms.MenuStrip mnuFleet;
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
@@ -380,5 +376,7 @@
         private System.Windows.Forms.Label lblAppointDescription;
         private System.Windows.Forms.Label lblAppointDate;
         private System.Windows.Forms.RichTextBox rtfAppointDescription;
+        private System.Windows.Forms.ComboBox cboV_RN;
+        private System.Windows.Forms.ComboBox cboE_ID;
     }
 }

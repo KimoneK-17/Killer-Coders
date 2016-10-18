@@ -33,7 +33,6 @@
             this.lblFuelUsage = new System.Windows.Forms.Label();
             this.lblVehicleIncidents = new System.Windows.Forms.Label();
             this.lblDateFrom = new System.Windows.Forms.Label();
-            this.txtVehicleRegNumber = new System.Windows.Forms.TextBox();
             this.txtVehicleIncidents = new System.Windows.Forms.TextBox();
             this.txtFuelUsage = new System.Windows.Forms.TextBox();
             this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +53,7 @@
             this.lblTripID = new System.Windows.Forms.Label();
             this.txtTripID = new System.Windows.Forms.TextBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.cboV_RN = new System.Windows.Forms.ComboBox();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -110,15 +110,6 @@
             this.lblDateFrom.Size = new System.Drawing.Size(114, 19);
             this.lblDateFrom.TabIndex = 4;
             this.lblDateFrom.Text = "Trip Date From:";
-            // 
-            // txtVehicleRegNumber
-            // 
-            this.txtVehicleRegNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVehicleRegNumber.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleRegNumber.Location = new System.Drawing.Point(232, 196);
-            this.txtVehicleRegNumber.Name = "txtVehicleRegNumber";
-            this.txtVehicleRegNumber.Size = new System.Drawing.Size(197, 26);
-            this.txtVehicleRegNumber.TabIndex = 5;
             // 
             // txtVehicleIncidents
             // 
@@ -325,6 +316,14 @@
             this.pnlButtons.Size = new System.Drawing.Size(530, 64);
             this.pnlButtons.TabIndex = 21;
             // 
+            // cboV_RN
+            // 
+            this.cboV_RN.FormattingEnabled = true;
+            this.cboV_RN.Location = new System.Drawing.Point(232, 203);
+            this.cboV_RN.Name = "cboV_RN";
+            this.cboV_RN.Size = new System.Drawing.Size(121, 21);
+            this.cboV_RN.TabIndex = 22;
+            // 
             // frmTripUsage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +331,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 643);
+            this.Controls.Add(this.cboV_RN);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtTripID);
             this.Controls.Add(this.lblTripID);
@@ -346,13 +346,13 @@
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.dtpDateFrom);
             this.Controls.Add(this.pnlTripUsage);
-            this.Controls.Add(this.txtVehicleRegNumber);
             this.Controls.Add(this.lblVehicleRegNo);
             this.Controls.Add(this.lblDateFrom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTripUsage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
+            this.Load += new System.EventHandler(this.frmTripUsage_Load);
             this.pnlTripUsage.ResumeLayout(false);
             this.pnlTripUsage.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
@@ -369,7 +369,6 @@
         private System.Windows.Forms.Label lblFuelUsage;
         private System.Windows.Forms.Label lblVehicleIncidents;
         private System.Windows.Forms.Label lblDateFrom;
-        private System.Windows.Forms.TextBox txtVehicleRegNumber;
         private System.Windows.Forms.TextBox txtVehicleIncidents;
         private System.Windows.Forms.TextBox txtFuelUsage;
         private System.Windows.Forms.DateTimePicker dtpDateFrom;
@@ -390,5 +389,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.ComboBox cboV_RN;
     }
 }
