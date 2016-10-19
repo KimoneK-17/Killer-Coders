@@ -99,6 +99,23 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument3 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument4 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument5 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument6 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument7 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument8 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument9 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument10 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument11 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument12 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument13 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument14 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument15 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument16 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument17 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -187,6 +204,7 @@
             this.btnPrintVehicleStat.TabIndex = 18;
             this.btnPrintVehicleStat.Text = "Print";
             this.btnPrintVehicleStat.UseVisualStyleBackColor = true;
+            this.btnPrintVehicleStat.Click += new System.EventHandler(this.btnPrintVehicleStat_Click_1);
             // 
             // dgvVehicleStatus
             // 
@@ -238,6 +256,7 @@
             this.btnPrintSerAppDaily.TabIndex = 20;
             this.btnPrintSerAppDaily.Text = "Print";
             this.btnPrintSerAppDaily.UseVisualStyleBackColor = true;
+            this.btnPrintSerAppDaily.Click += new System.EventHandler(this.btnPrintSerAppDaily_Click);
             // 
             // dgvSADaily
             // 
@@ -268,6 +287,7 @@
             this.btnPrintSerAppWeek.TabIndex = 20;
             this.btnPrintSerAppWeek.Text = "Print";
             this.btnPrintSerAppWeek.UseVisualStyleBackColor = true;
+            this.btnPrintSerAppWeek.Click += new System.EventHandler(this.btnPrintSerAppWeek_Click);
             // 
             // dgvSAWeekly
             // 
@@ -297,6 +317,7 @@
             this.btnPrintSerReq.TabIndex = 20;
             this.btnPrintSerReq.Text = "Print";
             this.btnPrintSerReq.UseVisualStyleBackColor = true;
+            this.btnPrintSerReq.Click += new System.EventHandler(this.btnPrintSerReq_Click);
             // 
             // dgvServiceReq
             // 
@@ -349,6 +370,7 @@
             this.btnPrintVehSerComDaily.TabIndex = 20;
             this.btnPrintVehSerComDaily.Text = "Print";
             this.btnPrintVehSerComDaily.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComDaily.Click += new System.EventHandler(this.btnPrintVehSerComDaily_Click);
             // 
             // dgvVSDaily
             // 
@@ -379,6 +401,7 @@
             this.btnPrintVehSerComWeek.TabIndex = 20;
             this.btnPrintVehSerComWeek.Text = "Print";
             this.btnPrintVehSerComWeek.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComWeek.Click += new System.EventHandler(this.btnPrintVehSerComWeek_Click);
             // 
             // dgvVSWeekly
             // 
@@ -408,6 +431,7 @@
             this.btnPrintVehSerMonth.TabIndex = 20;
             this.btnPrintVehSerMonth.Text = "Print";
             this.btnPrintVehSerMonth.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerMonth.Click += new System.EventHandler(this.btnPrintVehSerMonth_Click);
             // 
             // dgvVSMonthly
             // 
@@ -437,6 +461,7 @@
             this.btnPrintVehSerYear.TabIndex = 20;
             this.btnPrintVehSerYear.Text = "Print";
             this.btnPrintVehSerYear.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerYear.Click += new System.EventHandler(this.btnPrintVehSerYear_Click);
             // 
             // dgvVSYearly
             // 
@@ -466,6 +491,7 @@
             this.btnPrintDetailSerInfo.TabIndex = 20;
             this.btnPrintDetailSerInfo.Text = "Print";
             this.btnPrintDetailSerInfo.UseVisualStyleBackColor = true;
+            this.btnPrintDetailSerInfo.Click += new System.EventHandler(this.btnPrintDetailSerInfo_Click);
             // 
             // dgvDetailedService
             // 
@@ -516,6 +542,7 @@
             this.btnPrintPlanTripDaily.TabIndex = 20;
             this.btnPrintPlanTripDaily.Text = "Print";
             this.btnPrintPlanTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripDaily.Click += new System.EventHandler(this.btnPrintPlanTripDaily_Click);
             // 
             // dgvPTDaily
             // 
@@ -546,6 +573,7 @@
             this.btnPrintPlanTripWeek.TabIndex = 20;
             this.btnPrintPlanTripWeek.Text = "Print";
             this.btnPrintPlanTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripWeek.Click += new System.EventHandler(this.btnPrintPlanTripWeek_Click);
             // 
             // dgvPTWeekly
             // 
@@ -597,6 +625,7 @@
             this.btnPrintComTripDaily.TabIndex = 20;
             this.btnPrintComTripDaily.Text = "Print";
             this.btnPrintComTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintComTripDaily.Click += new System.EventHandler(this.btnPrintComTripDaily_Click);
             // 
             // dgvCTDaily
             // 
@@ -627,6 +656,7 @@
             this.btnPrintComTripWeek.TabIndex = 20;
             this.btnPrintComTripWeek.Text = "Print";
             this.btnPrintComTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintComTripWeek.Click += new System.EventHandler(this.btnPrintComTripWeek_Click);
             // 
             // dgvCTWeekly
             // 
@@ -656,6 +686,7 @@
             this.btnPrintComTripMonth.TabIndex = 20;
             this.btnPrintComTripMonth.Text = "Print";
             this.btnPrintComTripMonth.UseVisualStyleBackColor = true;
+            this.btnPrintComTripMonth.Click += new System.EventHandler(this.btnPrintComTripMonth_Click);
             // 
             // dgvCTMonthly
             // 
@@ -707,6 +738,7 @@
             this.btnPrintTimeDaily.TabIndex = 20;
             this.btnPrintTimeDaily.Text = "Print";
             this.btnPrintTimeDaily.UseVisualStyleBackColor = true;
+            this.btnPrintTimeDaily.Click += new System.EventHandler(this.btnPrintTimeDaily_Click);
             // 
             // dgvTSDaily
             // 
@@ -737,6 +769,7 @@
             this.btnPrintTimeWeekly.TabIndex = 20;
             this.btnPrintTimeWeekly.Text = "Print";
             this.btnPrintTimeWeekly.UseVisualStyleBackColor = true;
+            this.btnPrintTimeWeekly.Click += new System.EventHandler(this.btnPrintTimeWeekly_Click);
             // 
             // dgvTSWeekly
             // 
@@ -766,6 +799,7 @@
             this.btnPrintTimeMonth.TabIndex = 20;
             this.btnPrintTimeMonth.Text = "Print";
             this.btnPrintTimeMonth.UseVisualStyleBackColor = true;
+            this.btnPrintTimeMonth.Click += new System.EventHandler(this.btnPrintTimeMonth_Click);
             // 
             // dgvTSMonthly
             // 
@@ -804,7 +838,6 @@
             this.mnuFleet.Size = new System.Drawing.Size(1448, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
-
             // 
             // mnuOptions
             // 
@@ -828,6 +861,74 @@
             this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDocument2
+            // 
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            // 
+            // printDocument3
+            // 
+            this.printDocument3.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument3_PrintPage);
+            // 
+            // printDocument4
+            // 
+            this.printDocument4.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument4_PrintPage);
+            // 
+            // printDocument5
+            // 
+            this.printDocument5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument5_PrintPage);
+            // 
+            // printDocument6
+            // 
+            this.printDocument6.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument6_PrintPage);
+            // 
+            // printDocument7
+            // 
+            this.printDocument7.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument7_PrintPage);
+            // 
+            // printDocument8
+            // 
+            this.printDocument8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument8_PrintPage);
+            // 
+            // printDocument9
+            // 
+            this.printDocument9.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument9_PrintPage);
+            // 
+            // printDocument10
+            // 
+            this.printDocument10.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument10_PrintPage);
+            // 
+            // printDocument11
+            // 
+            this.printDocument11.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument11_PrintPage);
+            // 
+            // printDocument12
+            // 
+            this.printDocument12.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument12_PrintPage);
+            // 
+            // printDocument13
+            // 
+            this.printDocument13.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument13_PrintPage);
+            // 
+            // printDocument14
+            // 
+            this.printDocument14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument14_PrintPage);
+            // 
+            // printDocument15
+            // 
+            this.printDocument15.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument15_PrintPage);
+            // 
+            // printDocument16
+            // 
+            this.printDocument16.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument16_PrintPage);
+            // 
+            // printDocument17
+            // 
+            this.printDocument17.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument17_PrintPage);
             // 
             // frmReports
             // 
@@ -968,5 +1069,22 @@
         private System.Windows.Forms.Button btnPrintTimeDaily;
         private System.Windows.Forms.Button btnPrintTimeWeekly;
         private System.Windows.Forms.Button btnPrintTimeMonth;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Drawing.Printing.PrintDocument printDocument3;
+        private System.Drawing.Printing.PrintDocument printDocument4;
+        private System.Drawing.Printing.PrintDocument printDocument5;
+        private System.Drawing.Printing.PrintDocument printDocument6;
+        private System.Drawing.Printing.PrintDocument printDocument7;
+        private System.Drawing.Printing.PrintDocument printDocument8;
+        private System.Drawing.Printing.PrintDocument printDocument9;
+        private System.Drawing.Printing.PrintDocument printDocument10;
+        private System.Drawing.Printing.PrintDocument printDocument11;
+        private System.Drawing.Printing.PrintDocument printDocument12;
+        private System.Drawing.Printing.PrintDocument printDocument13;
+        private System.Drawing.Printing.PrintDocument printDocument14;
+        private System.Drawing.Printing.PrintDocument printDocument15;
+        private System.Drawing.Printing.PrintDocument printDocument16;
+        private System.Drawing.Printing.PrintDocument printDocument17;
     }
 }

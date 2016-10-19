@@ -16,7 +16,7 @@ namespace FleetTrackingInformationSystem
         public frmSearch()
         {
             InitializeComponent();
-              
+
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace FleetTrackingInformationSystem
         }
 
         DBConnect objDBConnect = new DBConnect();
-             
+
 
         private void mnuExit_Click(object sender, EventArgs e)
         {
@@ -47,9 +47,11 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
         }
-      
+        DataTable dtSearch = new DataTable();
         private void frmSearch_Load(object sender, EventArgs e)
         {
+
+            frmService objService = new frmService();
             try
             {
 
@@ -73,7 +75,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-        
+
             try
             {
 
@@ -104,7 +106,7 @@ namespace FleetTrackingInformationSystem
                 string query = "SELECT Location_ID from Location;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
-                
+
                 DataSet ds = new DataSet();
                 da.Fill(ds, "Location");
                 cboL_ID.ValueMember = "Location_ID";
@@ -123,16 +125,16 @@ namespace FleetTrackingInformationSystem
             }
             try
             {
-               
-               string query = "SELECT Location_ID from Location;";
+
+                string query = "SELECT Trip_ID from TripUsage;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
-                
+
                 DataSet ds = new DataSet();
-                da.Fill(ds, "Location");
-                cboL_ID.ValueMember = "Location_ID";
-                cboL_ID.DisplayMember = "Location_ID";
-                cboL_ID.DataSource = ds.Tables["Location"];
+                da.Fill(ds, "TripUsage");
+                cboT_ID.ValueMember = "Trip_ID";
+                cboT_ID.DisplayMember = "Trip_ID";
+                cboT_ID.DataSource = ds.Tables["TripUsage"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -144,7 +146,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-            
+
             try
             {
 
@@ -199,13 +201,11 @@ namespace FleetTrackingInformationSystem
             try
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Customer WHERE Cust_ID  LIKE @C_ID");
-	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID ", C_ID );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID ", C_ID);
+                data();
                 dgvEmployee.DataSource = dtSearch;
                 dgvEmployee.AutoResizeColumns();
-	
+
             }
             catch (SqlException ex)
             {
@@ -217,20 +217,18 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-      
+
         private void btnTrip_Click(object sender, EventArgs e)
         {
             string T_ID = cboT_ID.SelectedItem.ToString();
             try
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from TripUsage WHERE Trip_ID LIKE @T_ID");
-	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
-	            dgvTripUsage.DataSource = dtSearch;
-	            dgvTripUsage.AutoResizeColumns();
-	
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                data();
+                dgvTripUsage.DataSource = dtSearch;
+                dgvTripUsage.AutoResizeColumns();
+
             }
             catch (SqlException ex)
             {
@@ -243,18 +241,16 @@ namespace FleetTrackingInformationSystem
         }
 
         private void btnEmp_Click(object sender, EventArgs e)
-        {   
+        {
             string E_ID = cboE_ID.SelectedItem.ToString();
             try
             {	//creates object of DBConnect class
-                    objDBConnect.GiveCommand("SELECT * from Employee WHERE Emp_ID  LIKE @E_ID;");
-	                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID ", E_ID );
-	                objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	                DataTable dtSearch = new DataTable();
-	                objDBConnect.sqlDA.Fill(dtSearch); 
-	                dgvEmployee.DataSource = dtSearch;
-                    dgvEmployee.AutoResizeColumns();
-	
+                objDBConnect.GiveCommand("SELECT * from Employee WHERE Emp_ID  LIKE @E_ID;");
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID ", E_ID);
+                data();
+                dgvEmployee.DataSource = dtSearch;
+                dgvEmployee.AutoResizeColumns();
+
             }
             catch (SqlException ex)
             {
@@ -272,15 +268,13 @@ namespace FleetTrackingInformationSystem
             try
             {	//creates object of DBConnect class
 
-               
+
                 objDBConnect.GiveCommand("SELECT * from Location WHERE Location_ID LIKE @Location_ID ");
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
-	            dgvLocation.DataSource = dtSearch;
+                data();
+                dgvLocation.DataSource = dtSearch;
                 dgvLocation.AutoResizeColumns();
-	
+
             }
             catch (SqlException ex)
             {
@@ -298,13 +292,11 @@ namespace FleetTrackingInformationSystem
             try
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Vehicle  WHERE Vehicle_RegNumber LIKE @V_RN");
-	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN );
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                data();
                 dgvVehicleRegNum.DataSource = dtSearch;
                 dgvVehicleRegNum.AutoResizeColumns();
-	
+
             }
             catch (SqlException ex)
             {
@@ -323,13 +315,11 @@ namespace FleetTrackingInformationSystem
             try
             {	//creates object of DBConnect class
                 objDBConnect.GiveCommand("SELECT * from Service  WHERE tblService_ID LIKE @S_ID");
-	            objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-	            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-	            DataTable dtSearch = new DataTable();
-	            objDBConnect.sqlDA.Fill(dtSearch); 
-	            dgvService.DataSource = dtSearch;
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+                data();
+                dgvService.DataSource = dtSearch;
                 dgvService.AutoResizeColumns();
-	
+
             }
             catch (SqlException ex)
             {
@@ -340,5 +330,12 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(""); // Shows an error message
             }
         }
+
+        public void data()
+        {
+            objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
+
+            objDBConnect.sqlDA.Fill(dtSearch);
+        }
     }
- }
+}
