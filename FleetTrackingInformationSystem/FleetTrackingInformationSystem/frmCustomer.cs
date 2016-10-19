@@ -34,7 +34,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.ShowDialog();
+                men.Show();
             }
             catch(Exception ex)
             {

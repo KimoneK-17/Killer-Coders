@@ -35,7 +35,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.ShowDialog();
+                men.Show();
             }
             catch(Exception ex)
             {
@@ -91,7 +91,15 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Invalid email address: " + ex.Message); // Shows an error message
             }
             E_SALARY = txtSalary.Text;
-
+            try
+            {
+                E_POS = this.cboPosition.GetItemText(this.cboPosition.SelectedItem);
+                //C_TYPE = cboCustomer.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
             Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
 
             exit = check.CheckEmpty(E_NAME, "Employee Name");
@@ -115,7 +123,7 @@ namespace FleetTrackingInformationSystem
 
                         objDBConnect.OpenConnection();
 
-                        objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Employee WHERE E_ID = @Emp_ID) BEGIN INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position,@Emp_Address, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position,@Emp_Address, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);

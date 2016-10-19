@@ -74,6 +74,14 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
             }
+            try
+            {
+                T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
         }
     }
 }
