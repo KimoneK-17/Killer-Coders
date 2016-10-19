@@ -19,6 +19,7 @@ namespace FleetTrackingInformationSystem
         string V_RN;
         string T_FROM;
         string T_TO;
+        string T_Complete;
 
         string trip_plan;
         DBConnect objDBConnect = new DBConnect();
@@ -84,11 +85,12 @@ namespace FleetTrackingInformationSystem
                 {
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,@Trip_Completed)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Completed", T_Complete);
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
@@ -181,6 +183,18 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Cobobox error: " + ex.Message);
             }
+
+            if(radYes.Checked==true)
+            {
+                T_Complete = "YES";
+            }
+            else
+            {
+                if(radNo.Checked==true)
+                {
+                    T_Complete = "NO";
+                }
+            }
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
@@ -209,6 +223,8 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
+
+            radNo.Checked = true;
         }
 
         private void btnGenQR_Click(object sender, EventArgs e)

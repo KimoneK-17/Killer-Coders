@@ -52,6 +52,9 @@
             this.btnGenQR = new System.Windows.Forms.Button();
             this.btnSaveQR = new System.Windows.Forms.Button();
             this.lblCompleted = new System.Windows.Forms.LinkLabel();
+            this.lblComTrip = new System.Windows.Forms.Label();
+            this.radYes = new System.Windows.Forms.RadioButton();
+            this.radNo = new System.Windows.Forms.RadioButton();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -248,7 +251,7 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Location = new System.Drawing.Point(40, 543);
+            this.pnlButtons.Location = new System.Drawing.Point(40, 593);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(530, 64);
             this.pnlButtons.TabIndex = 21;
@@ -265,7 +268,7 @@
             // 
             this.pbxQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbxQR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbxQR.Location = new System.Drawing.Point(41, 354);
+            this.pbxQR.Location = new System.Drawing.Point(40, 417);
             this.pbxQR.Name = "pbxQR";
             this.pbxQR.Size = new System.Drawing.Size(194, 170);
             this.pbxQR.TabIndex = 23;
@@ -273,7 +276,7 @@
             // 
             // btnGenQR
             // 
-            this.btnGenQR.Location = new System.Drawing.Point(264, 354);
+            this.btnGenQR.Location = new System.Drawing.Point(264, 417);
             this.btnGenQR.Name = "btnGenQR";
             this.btnGenQR.Size = new System.Drawing.Size(181, 23);
             this.btnGenQR.TabIndex = 24;
@@ -283,7 +286,7 @@
             // 
             // btnSaveQR
             // 
-            this.btnSaveQR.Location = new System.Drawing.Point(264, 393);
+            this.btnSaveQR.Location = new System.Drawing.Point(264, 456);
             this.btnSaveQR.Name = "btnSaveQR";
             this.btnSaveQR.Size = new System.Drawing.Size(95, 23);
             this.btnSaveQR.TabIndex = 25;
@@ -295,7 +298,7 @@
             // 
             this.lblCompleted.AutoSize = true;
             this.lblCompleted.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblCompleted.Location = new System.Drawing.Point(404, 621);
+            this.lblCompleted.Location = new System.Drawing.Point(392, 673);
             this.lblCompleted.Name = "lblCompleted";
             this.lblCompleted.Size = new System.Drawing.Size(178, 13);
             this.lblCompleted.TabIndex = 26;
@@ -303,13 +306,47 @@
             this.lblCompleted.Text = "Click here if trip has been completed";
             this.lblCompleted.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCompleted_LinkClicked);
             // 
+            // lblComTrip
+            // 
+            this.lblComTrip.AutoSize = true;
+            this.lblComTrip.Location = new System.Drawing.Point(68, 341);
+            this.lblComTrip.Name = "lblComTrip";
+            this.lblComTrip.Size = new System.Drawing.Size(84, 13);
+            this.lblComTrip.TabIndex = 27;
+            this.lblComTrip.Text = "Trip Completed?";
+            // 
+            // radYes
+            // 
+            this.radYes.AutoSize = true;
+            this.radYes.Location = new System.Drawing.Point(232, 336);
+            this.radYes.Name = "radYes";
+            this.radYes.Size = new System.Drawing.Size(46, 17);
+            this.radYes.TabIndex = 28;
+            this.radYes.TabStop = true;
+            this.radYes.Text = "YES";
+            this.radYes.UseVisualStyleBackColor = true;
+            // 
+            // radNo
+            // 
+            this.radNo.AutoSize = true;
+            this.radNo.Location = new System.Drawing.Point(300, 336);
+            this.radNo.Name = "radNo";
+            this.radNo.Size = new System.Drawing.Size(41, 17);
+            this.radNo.TabIndex = 29;
+            this.radNo.TabStop = true;
+            this.radNo.Text = "NO";
+            this.radNo.UseVisualStyleBackColor = true;
+            // 
             // frmTripPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(594, 643);
+            this.ClientSize = new System.Drawing.Size(594, 695);
+            this.Controls.Add(this.radNo);
+            this.Controls.Add(this.radYes);
+            this.Controls.Add(this.lblComTrip);
             this.Controls.Add(this.lblCompleted);
             this.Controls.Add(this.btnSaveQR);
             this.Controls.Add(this.btnGenQR);
@@ -366,5 +403,8 @@
         private System.Windows.Forms.Button btnGenQR;
         private System.Windows.Forms.Button btnSaveQR;
         private System.Windows.Forms.LinkLabel lblCompleted;
+        private System.Windows.Forms.Label lblComTrip;
+        private System.Windows.Forms.RadioButton radYes;
+        private System.Windows.Forms.RadioButton radNo;
     }
 }

@@ -70,11 +70,13 @@ namespace FleetTrackingInformationSystem
                     DBConnect objDBConnect = new DBConnect();
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET (Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET (Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage, Trip_Completed = @Trip_Completed) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Completed", "YES");
+
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                     MessageBox.Show("Succesfully inserted");
