@@ -103,20 +103,29 @@ namespace FleetTrackingInformationSystem
             getValues();
             try
             {
-                DBConnect objDBConnect = new DBConnect();
-                objDBConnect.OpenConnection();
+                Check check = new Check();
+                bool executeSQL = check.CheckDB("Service", "Service_ID", S_ID);
+                if (executeSQL == false)
+                {
+                    DBConnect objDBConnect = new DBConnect();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Service WHERE S_ID = @Service_ID) BEGIN INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("Succesfully inserted");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("Succesfully inserted");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("That Service ID already exists in the database");
+                }
             }
             catch (SqlException ex)
             {
