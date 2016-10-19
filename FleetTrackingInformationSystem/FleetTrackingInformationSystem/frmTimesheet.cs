@@ -79,7 +79,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Timesheet WHERE T_ID = @T_ID) BEGIN INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,T_DATE = GETDATE())", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,T_DATE = GETDATE())", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);
@@ -122,6 +122,14 @@ namespace FleetTrackingInformationSystem
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            try
+            {
+               E_ID = this.cboE_ID.GetItemText(this.cboE_ID.SelectedItem); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: "+ ex.Message);
             }
         }
     }

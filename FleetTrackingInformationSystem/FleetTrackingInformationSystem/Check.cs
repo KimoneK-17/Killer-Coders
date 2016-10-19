@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace FleetTrackingInformationSystem
 {
@@ -53,6 +55,29 @@ namespace FleetTrackingInformationSystem
                 exit = true;
             }
             return exit;
+        }
+        public bool CheckDB(string tableName, string fieldName, string field)
+        {
+            bool checkID;
+            string exist_id;
+            DBConnect objDBConnect = new DBConnect();
+            objDBConnect.OpenConnection();
+
+            objDBConnect.sqlCmd = new SqlCommand("SELECT COUNT(*) FROM " + tableName + " WHERE " + fieldName + " LIKE @" + fieldName + ";", objDBConnect.sqlConn);
+            objDBConnect.sqlCmd.Parameters.AddWithValue("@" + fieldName, field);
+            exist_id = objDBConnect.sqlCmd.ExecuteScalar().ToString();
+
+            if (int.Parse(exist_id) > 0)
+            {
+                checkID = true;
+            }
+            else
+            {
+                checkID = false;
+            }
+
+            objDBConnect.sqlConn.Close();
+            return checkID;
         }
     }
 }

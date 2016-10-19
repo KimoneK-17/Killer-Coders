@@ -44,7 +44,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmRegistration reg = new frmRegistration(); // Creates an Object 
-                reg.ShowDialog(); // Shows the Registration Form
+                reg.Show(); // Shows the Registration Form
             }
             catch (Exception ex)
             {
@@ -158,7 +158,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF EXISTS(SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME) BEGIN SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME END", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand(" SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME END", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
 
                     string email = ((string)objDBConnect.sqlCmd.ExecuteScalar());

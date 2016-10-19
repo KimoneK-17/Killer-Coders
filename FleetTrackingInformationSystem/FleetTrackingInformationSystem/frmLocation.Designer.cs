@@ -215,6 +215,7 @@
             this.cboLocationName.Name = "cboLocationName";
             this.cboLocationName.Size = new System.Drawing.Size(180, 26);
             this.cboLocationName.TabIndex = 30;
+            this.cboLocationName.SelectedIndexChanged += new System.EventHandler(this.cboLocationName_SelectedIndexChanged);
             // 
             // cboCity
             // 

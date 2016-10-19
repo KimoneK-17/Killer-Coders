@@ -52,19 +52,28 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-                DBConnect objDBConnect = new DBConnect();
-                objDBConnect.OpenConnection();
+                Check check = new Check();
+                bool executeSQL = check.CheckDB("TripUsage", "Trip_ID", T_ID);
+                if(executeSQL == false)
+                {
+                    DBConnect objDBConnect = new DBConnect();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("Succesfully inserted");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("Succesfully inserted");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("That Trip ID already exists in the database");
+                }
             }
             catch (SqlException ex)
             {
@@ -73,6 +82,14 @@ namespace FleetTrackingInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
+            }
+            try
+            {
+                T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
             }
         }
     }
