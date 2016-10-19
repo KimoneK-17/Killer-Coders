@@ -23,7 +23,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmService ser = new frmService(); // Creates an Object 
-                ser.ShowDialog(); // Shows the Service Form
+                ser.Show(); // Shows the Service Form
             }
             catch(Exception ex)
             {
@@ -37,7 +37,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmTripPlan tU = new frmTripPlan(); // Creates an Object 
-                tU.ShowDialog(); // Shows the Trip and Usage Form
+                tU.Show(); // Shows the Trip and Usage Form
             }
             catch(Exception ex)
             {
@@ -51,7 +51,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmReports rp = new frmReports(); // Creates an Object 
-                rp.ShowDialog(); // Shows the Report Form
+                rp.Show(); // Shows the Report Form
             }
             catch(Exception ex)
             {
@@ -65,7 +65,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmTimesheet tS = new frmTimesheet(); // Creates an Object 
-                tS.ShowDialog(); // Shows the Timesheet Form
+                tS.Show(); // Shows the Timesheet Form
             }
             catch(Exception ex)
             {
@@ -79,14 +79,13 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmLocation loc = new frmLocation(); // Creates an Object 
-                loc.ShowDialog(); // Shows the Location Form
+                loc.Show(); // Shows the Location Form
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error Cannot Go To Location Form: " + ex.Message); // Shows an error message 
             }
         }
-
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             try
@@ -100,28 +99,26 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Go To Customer Form: " + ex.Message); // Shows an error message
             }
         }
-
         private void btnVehicle_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Hide(); // Will Hide this Form
                 frmVehicles veh = new frmVehicles(); // Creates an Object 
-                veh.ShowDialog(); // Shows the Vehicle Form
+                veh.Show(); // Shows the Vehicle Form
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error Cannot Go To Vehicle Form: " + ex.Message); // Shows an error message 
             }
         }
-
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             try
             {
                 this.Hide(); // Will Hide this Form
                 frmEmployee emp = new frmEmployee(); // Creates an Object 
-                emp.ShowDialog(); // Shows the Employee Form
+                emp.Show(); // Shows the Employee Form
             }
             catch(Exception ex)
             {
@@ -147,7 +144,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmLogin log = new frmLogin();
-                log.ShowDialog(); // Goes back to Login Form
+                log.Show(); // Goes back to Login Form
             }
             catch(Exception ex)
             {
@@ -161,7 +158,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmSearch search = new frmSearch();
-                search.ShowDialog(); // Goes To the Search Form
+                search.Show(); // Goes To the Search Form
             }
             catch (Exception ex)
             {

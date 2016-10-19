@@ -84,7 +84,7 @@ namespace FleetTrackingInformationSystem
                 {
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM TripUsage WHERE T_ID = @Trip_ID) BEGIN INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
@@ -104,6 +104,14 @@ namespace FleetTrackingInformationSystem
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
+                }
+                try
+                {
+                    V_RN = this.cboV_RN.GetItemText(this.cboV_RN.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cobobox error: " + ex.Message);
                 }
             }
         }

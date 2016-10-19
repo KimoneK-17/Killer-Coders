@@ -51,7 +51,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmLogin log = new frmLogin(); // Goes back to Login Form
-                log.ShowDialog();
+                log.Show();
             }
             catch(Exception ex)
             {
@@ -177,7 +177,7 @@ namespace FleetTrackingInformationSystem
 
                                                 this.Hide();
                                                 frmLogin log = new frmLogin();
-                                                log.ShowDialog(); // Goes back to Login Form
+                                                log.Show(); // Goes back to Login Form
                                             }
                                             catch(Exception ex)
                                             {

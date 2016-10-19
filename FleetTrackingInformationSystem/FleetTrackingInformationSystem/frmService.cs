@@ -103,29 +103,20 @@ namespace FleetTrackingInformationSystem
             getValues();
             try
             {
-                Check check = new Check();
-                bool executeSQL = check.CheckDB("Service", "Service_ID", S_ID);
-                if (executeSQL == false)
-                {
-                    DBConnect objDBConnect = new DBConnect();
-                    objDBConnect.OpenConnection();
+                DBConnect objDBConnect = new DBConnect();
+                objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                    MessageBox.Show("Succesfully inserted");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
-                }
-                else
-                {
-                    MessageBox.Show("That Service ID already exists in the database");
-                }
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                MessageBox.Show("Succesfully inserted");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
             }
             catch (SqlException ex)
             {
@@ -134,6 +125,30 @@ namespace FleetTrackingInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Add Record to Service Table in Database: " + ex.Message);
+            }
+            try
+            {
+                V_RN = this.cboV_RN.GetItemText(this.cboV_RN.SelectedItem);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
+            try
+            {
+                E_ID = this.cboE_ID.GetItemText(this.cboE_ID.SelectedItem);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
+            try
+            {
+                S_TIME = this.cboAppointTime.GetItemText(this.cboAppointTime.SelectedItem);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
             }
         }
 
