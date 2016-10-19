@@ -63,7 +63,7 @@ namespace FleetTrackingInformationSystem
                 dgvVehicleStatus.ReadOnly = true;
                 dgvVehicleStatus.DataSource = ds.Tables[0];
 
-                string selectServiceAppointDaily = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date";
+                string selectServiceAppointDaily = "Select * FROM tblService WHERE Month(Service_Date) = MONTH(GETDATE()) AND YEAR(Service_Date) = YEAR(GETDATE()) AND DAY(Service_Date) = DAY(GETDATE())";                  
                 db.sqlDA = new SqlDataAdapter(selectServiceAppointDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder2 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds2 = new DataSet();
@@ -72,7 +72,7 @@ namespace FleetTrackingInformationSystem
                 dgvSADaily.DataSource = ds2.Tables[0];
 
 
-                string selectServiceAppointWeekly = "SELECT * FROM tblService WHERE Service_Date BETWEEN GETDATE() and GETDATE()+5 ORDER BY Service_Date";
+                string selectServiceAppointWeekly = "SELECT * FROM tblService WHERE Service_Date BETWEEN GETDATE()-1 and GETDATE()+5 ORDER BY Service_Date";
                 db.sqlDA = new SqlDataAdapter(selectServiceAppointWeekly, db.sqlConn);
                 SqlCommandBuilder commandBuilder11 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds11 = new DataSet();
@@ -88,7 +88,7 @@ namespace FleetTrackingInformationSystem
                 dgvServiceReq.ReadOnly = true;
                 dgvServiceReq.DataSource = ds3.Tables[0];
 
-                string selectVehicleServicesDaily = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date"; // Sql For Data Grid View
+                string selectVehicleServicesDaily = "SELECT * FROM tblService WHERE Month(service_date) = MONTH(GETDATE()) AND YEAR(service_date) = YEAR(GETDATE()) AND DAY(service_date) = DAY(GETDATE())"; // Sql For Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectVehicleServicesDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder4 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds4 = new DataSet();
@@ -96,7 +96,7 @@ namespace FleetTrackingInformationSystem
                 dgvVSDaily.ReadOnly = true;
                 dgvVSDaily.DataSource = ds4.Tables[0];
 
-                string selectVehicleServicesWeekly = "SELECT * FROM tblService WHERE Service_Date BETWEEN GETDATE() and GETDATE()+5 ORDER BY Service_Date";
+                string selectVehicleServicesWeekly = "SELECT * FROM tblService WHERE service_date BETWEEN getdate()-5 and getdate()";
                 db.sqlDA = new SqlDataAdapter(selectVehicleServicesWeekly, db.sqlConn);
                 SqlCommandBuilder commandBuilder12 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds12 = new DataSet();
@@ -104,7 +104,7 @@ namespace FleetTrackingInformationSystem
                 dgvVSWeekly.ReadOnly = true;
                 dgvVSWeekly.DataSource = ds12.Tables[0];
 
-                string selectVehicleServicesMonthly = "SELECT * FROM tblService WHERE MONTH(Service_Date) = MONTH(dateadd(dd, -1, GetDate())) ORDER BY Service_Date";
+                string selectVehicleServicesMonthly = "SELECT * FROM tblService WHERE Service_Date < getdate() and Month(Service_Date) = Month(GETDATE())";
                 db.sqlDA = new SqlDataAdapter(selectVehicleServicesMonthly, db.sqlConn);
                 SqlCommandBuilder commandBuilder13 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds13 = new DataSet();
@@ -112,7 +112,7 @@ namespace FleetTrackingInformationSystem
                 dgvVSMonthly.ReadOnly = true;
                 dgvVSMonthly.DataSource = ds13.Tables[0];
 
-                string selectVehicleServicesYearly = "SELECT * FROM tblService WHERE YEAR(Service_Date) = YEAR(dateadd(dd, -1, GetDate())) ORDER BY Service_Date";
+                string selectVehicleServicesYearly = "SELECT * FROM tblService WHERE Service_Date < getdate() AND Year(Service_Date) = YEAR(GETDATE())";
                 db.sqlDA = new SqlDataAdapter(selectVehicleServicesYearly, db.sqlConn);
                 SqlCommandBuilder commandBuilder14 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds14 = new DataSet();
@@ -120,7 +120,7 @@ namespace FleetTrackingInformationSystem
                 dgvVSYearly.ReadOnly = true;
                 dgvVSYearly.DataSource = ds14.Tables[0];
 
-                string selectDetailService = "SELECT * FROM tblService WHERE Service_Date = GETDATE() ORDER BY Service_Date"; // Sql For Data Grid View
+                string selectDetailService = "SELECT * FROM tblService WHERE Service_Date < GETDATE() ORDER BY Service_Date"; // Sql For Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectDetailService, db.sqlConn);
                 SqlCommandBuilder commandBuilder5 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds5 = new DataSet();
@@ -184,7 +184,7 @@ namespace FleetTrackingInformationSystem
                 dgvTSMonthly.ReadOnly = true;
                 dgvTSMonthly.DataSource = ds9.Tables[0];
 
-                string selectTimeSheetDaily = "Select * FROM Timesheet Where Month(T_DATE) = MONTH(GETDATE()) AND YEAR(T_DATE) = YEAR(GETDATE()) AND DAY(T_DATE) = DAY(GETDATE());";
+                string selectTimeSheetDaily = "Select * FROM Timesheet Where Month(T_DATE) = MONTH(GETDATE()) AND YEAR(T_DATE) = YEAR(GETDATE()) AND DAY(T_DATE) = DAY(GETDATE())";
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder10 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds10 = new DataSet();
