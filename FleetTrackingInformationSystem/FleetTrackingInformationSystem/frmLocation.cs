@@ -86,23 +86,31 @@ namespace FleetTrackingInformationSystem
             {
                 try
                 {
-                    DBConnect objDBConnect = new DBConnect();
+                    bool executeSQL = check.CheckDB("Location", "Location_ID", L_ID);
+                    if (executeSQL == false)
+                    {
+                        DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
+                        objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM LOCATION WHERE L_ID = @Location_ID) BEGIN INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Location VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    MessageBox.Show("SUCCESSFULLY INSERTED");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+                        MessageBox.Show("SUCCESSFULLY INSERTED");
+                        objDBConnect.sqlDR.Close();
+                        objDBConnect.sqlConn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("That Location ID already exists in the database");
+                    }
                 }
                 catch (SqlException ex)
                 {
