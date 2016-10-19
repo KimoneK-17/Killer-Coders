@@ -35,7 +35,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.Show();
+                men.ShowDialog();
             }
             catch(Exception ex)
             {
@@ -91,15 +91,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Invalid email address: " + ex.Message); // Shows an error message
             }
             E_SALARY = txtSalary.Text;
-            try
-            {
-                E_POS = this.cboPosition.GetItemText(this.cboPosition.SelectedItem);
-                //C_TYPE = cboCustomer.SelectedValue.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cobobox error: " + ex.Message);
-            }
+
             Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
 
             exit = check.CheckEmpty(E_NAME, "Employee Name");
@@ -119,26 +111,34 @@ namespace FleetTrackingInformationSystem
                 {
                     try
                     {
-                        DBConnect objDBConnect = new DBConnect();
+                        bool executeSQL = check.CheckDB("Employee", "Emp_ID", E_ID);
+                        if (executeSQL == false)
+                        {
+                            DBConnect objDBConnect = new DBConnect();
 
-                        objDBConnect.OpenConnection();
+                            objDBConnect.OpenConnection();
 
-                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position,@Emp_Address, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Address", E_ADDRESS);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
-                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+                            objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Employee VALUES (@Emp_ID, @Emp_Name, @Emp_Surname, @Emp_Position,@Emp_Address, @Emp_ContactNo, @Emp_Email, @Emp_MonthlySalary)", objDBConnect.sqlConn);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Address", E_ADDRESS);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+                            objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
 
-                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                            objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                        string message = objEmp.SuccessMessage();
-                        MessageBox.Show(message);
-                        objDBConnect.sqlDR.Close();
-                        objDBConnect.sqlConn.Close();
+                            string message = objEmp.SuccessMessage();
+                            MessageBox.Show(message);
+                            objDBConnect.sqlDR.Close();
+                            objDBConnect.sqlConn.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("That Employee ID already exists in the database");
+                        }
                     }
                     catch (SqlException ex)
                     {
