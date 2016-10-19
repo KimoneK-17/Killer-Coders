@@ -51,6 +51,7 @@
             this.pbxQR = new System.Windows.Forms.PictureBox();
             this.btnGenQR = new System.Windows.Forms.Button();
             this.btnSaveQR = new System.Windows.Forms.Button();
+            this.lblCompleted = new System.Windows.Forms.LinkLabel();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -290,6 +291,18 @@
             this.btnSaveQR.UseVisualStyleBackColor = true;
             this.btnSaveQR.Click += new System.EventHandler(this.btnSaveQR_Click);
             // 
+            // lblCompleted
+            // 
+            this.lblCompleted.AutoSize = true;
+            this.lblCompleted.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCompleted.Location = new System.Drawing.Point(404, 621);
+            this.lblCompleted.Name = "lblCompleted";
+            this.lblCompleted.Size = new System.Drawing.Size(178, 13);
+            this.lblCompleted.TabIndex = 26;
+            this.lblCompleted.TabStop = true;
+            this.lblCompleted.Text = "Click here if trip has been completed";
+            this.lblCompleted.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCompleted_LinkClicked);
+            // 
             // frmTripPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +310,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 643);
+            this.Controls.Add(this.lblCompleted);
             this.Controls.Add(this.btnSaveQR);
             this.Controls.Add(this.btnGenQR);
             this.Controls.Add(this.pbxQR);
@@ -351,5 +365,6 @@
         private System.Windows.Forms.PictureBox pbxQR;
         private System.Windows.Forms.Button btnGenQR;
         private System.Windows.Forms.Button btnSaveQR;
+        private System.Windows.Forms.LinkLabel lblCompleted;
     }
 }

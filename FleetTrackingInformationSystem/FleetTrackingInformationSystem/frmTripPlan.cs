@@ -84,11 +84,11 @@ namespace FleetTrackingInformationSystem
                 {
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
@@ -99,7 +99,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("ERROR!!!"+ex.Message);
                 }
                 catch (Exception ex)
                 {
@@ -290,6 +290,13 @@ namespace FleetTrackingInformationSystem
         private void btnSaveQR_Click(object sender, EventArgs e)
         {
             checkPicture();
+        }
+
+        private void lblCompleted_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmCompletedTripDetails com = new frmCompletedTripDetails();
+            this.Hide();
+            com.Show();
         }
     }
 }
