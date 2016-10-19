@@ -32,7 +32,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.ShowDialog();
+                men.Show();
             }
             catch(Exception ex)
             {
@@ -67,13 +67,12 @@ namespace FleetTrackingInformationSystem
             }
         }
 
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             getValues();
             Check check = new Check();
             bool exit = false;
-
-            
 
             exit = check.CheckEmpty(L_ID, "Location ID");
             exit = check.CheckEmpty(L_MANAGER, "Manager In Charge");
@@ -82,7 +81,7 @@ namespace FleetTrackingInformationSystem
             exit = check.CheckEmpty(L_PROVINCE, "Province");
             exit = check.CheckForNumbers(L_MANAGER, "Manager In Charge");
 
-            if(exit == false)
+            if (exit == false)
             {
                 try
                 {
@@ -90,7 +89,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM LOCATION WHERE L_ID = @Location_ID) BEGIN INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
@@ -111,6 +110,30 @@ namespace FleetTrackingInformationSystem
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Submit Location Details: " + ex.Message);
+                }
+                try
+                {
+                    L_NAME = this.cboLocationName.GetItemText(this.cboLocationName.SelectedItem);
+                }
+                catch (Exception  ex)
+                {
+                    MessageBox.Show("Cobobox error: " + ex.Message);
+                }
+                try
+                {
+                    L_CITY = this.cboCity.GetItemText(this.cboCity.SelectedItem); 
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Cobobox error: " + ex.Message);
+                }
+                try
+                {
+                    L_PROVINCE = this.cboProvince.GetItemText(this.cboProvince.SelectedItem); 
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Cobobox error: " + ex.Message);
                 }
             }
         }
@@ -177,6 +200,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
             }
+
         }
 
         public void getValues()
@@ -188,6 +212,11 @@ namespace FleetTrackingInformationSystem
             L_VEHICLES = int.Parse(updVehicles.Text);
             L_EMPLOYEES = int.Parse(updEmployees.Text);
             L_MANAGER = txtManager.Text;
+        }
+
+        private void cboLocationName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
    }
 }

@@ -32,7 +32,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide();
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
-                men.ShowDialog();
+                men.Show();
             }
             catch(Exception ex)
             {
@@ -92,7 +92,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE Vehicle_RegNumber = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -114,9 +114,16 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Error! You Cannot Submit Vehicle Details: " + ex.Message);
                 }
+                try
+                {
+                    V_TYPE = this.cboType.GetItemText(this.cboType.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cobobox error: " + ex.Message);
+                }
             }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             getValues();
