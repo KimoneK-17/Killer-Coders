@@ -318,7 +318,6 @@ C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\Fle
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmSearch.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmService.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTimesheet.resources
-C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTripUsage.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmLocation.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmVehicles.resources
 C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.Properties.Resources.resources
@@ -362,3 +361,6 @@ C:\Users\Nikhil\Source\Repos\Killer-Coders3\FleetTrackingInformationSystem\Fleet
 C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\MessagingToolkit.QRCode.dll
 C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmCompletedTripDetails.resources
 C:\Users\kimon\Downloads\git6\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTripPlan.resources
+C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmCompletedTripDetails.resources
+C:\Users\15005917\Source\Repos\Killer-Coders2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTripPlan.resources
