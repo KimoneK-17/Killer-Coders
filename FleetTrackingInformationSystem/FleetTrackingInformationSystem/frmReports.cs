@@ -184,7 +184,7 @@ namespace FleetTrackingInformationSystem
                 dgvTSMonthly.ReadOnly = true;
                 dgvTSMonthly.DataSource = ds9.Tables[0];
 
-                string selectTimeSheetDaily = "SELECT * FROM Timesheet ORDER BY T_Date";
+                string selectTimeSheetDaily = "Select * FROM Timesheet Where Month(T_DATE) = MONTH(GETDATE()) AND YEAR(T_DATE) = YEAR(GETDATE()) AND DAY(T_DATE) = DAY(GETDATE());";
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder10 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds10 = new DataSet();
