@@ -42,7 +42,6 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblContactNum = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblHours = new System.Windows.Forms.Label();
             this.lblSalary = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -51,7 +50,6 @@
             this.txtContactNum = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
-            this.updHours = new System.Windows.Forms.NumericUpDown();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -60,13 +58,12 @@
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.pnlEmployee.SuspendLayout();
             this.mnuFleet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updHours)).BeginInit();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlEmployee
             // 
-            this.pnlEmployee.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlEmployee.BackColor = System.Drawing.Color.Transparent;
             this.pnlEmployee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlEmployee.Controls.Add(this.lblEmployee);
             this.pnlEmployee.Location = new System.Drawing.Point(33, 60);
@@ -78,6 +75,7 @@
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmployee.Location = new System.Drawing.Point(179, 10);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(148, 39);
@@ -120,8 +118,10 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblName.Location = new System.Drawing.Point(50, 194);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(124, 19);
@@ -131,8 +131,10 @@
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
+            this.lblSurname.BackColor = System.Drawing.Color.Transparent;
             this.lblSurname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSurname.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblSurname.Location = new System.Drawing.Point(50, 240);
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(145, 19);
@@ -142,8 +144,10 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblID.Location = new System.Drawing.Point(50, 286);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(98, 19);
@@ -153,8 +157,10 @@
             // lblPosition
             // 
             this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPosition.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPosition.Location = new System.Drawing.Point(50, 338);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(139, 19);
@@ -164,8 +170,10 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
+            this.lblAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblAddress.Location = new System.Drawing.Point(50, 388);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(138, 19);
@@ -175,8 +183,10 @@
             // lblContactNum
             // 
             this.lblContactNum.AutoSize = true;
+            this.lblContactNum.BackColor = System.Drawing.Color.Transparent;
             this.lblContactNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblContactNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactNum.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblContactNum.Location = new System.Drawing.Point(50, 430);
             this.lblContactNum.Name = "lblContactNum";
             this.lblContactNum.Size = new System.Drawing.Size(126, 19);
@@ -186,31 +196,24 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmail.Location = new System.Drawing.Point(50, 475);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(108, 19);
             this.lblEmail.TabIndex = 23;
             this.lblEmail.Text = "Email Address:";
             // 
-            // lblHours
-            // 
-            this.lblHours.AutoSize = true;
-            this.lblHours.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblHours.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHours.Location = new System.Drawing.Point(50, 521);
-            this.lblHours.Name = "lblHours";
-            this.lblHours.Size = new System.Drawing.Size(111, 19);
-            this.lblHours.TabIndex = 24;
-            this.lblHours.Text = "Hours Worked:";
-            // 
             // lblSalary
             // 
             this.lblSalary.AutoSize = true;
+            this.lblSalary.BackColor = System.Drawing.Color.Transparent;
             this.lblSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSalary.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(50, 569);
+            this.lblSalary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSalary.Location = new System.Drawing.Point(50, 525);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(114, 19);
             this.lblSalary.TabIndex = 25;
@@ -274,18 +277,10 @@
             // 
             this.txtSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSalary.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(246, 562);
+            this.txtSalary.Location = new System.Drawing.Point(246, 518);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(234, 26);
             this.txtSalary.TabIndex = 34;
-            // 
-            // updHours
-            // 
-            this.updHours.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updHours.Location = new System.Drawing.Point(246, 514);
-            this.updHours.Name = "updHours";
-            this.updHours.Size = new System.Drawing.Size(234, 26);
-            this.updHours.TabIndex = 35;
             // 
             // cboPosition
             // 
@@ -345,6 +340,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -360,11 +356,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(585, 728);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboPosition);
-            this.Controls.Add(this.updHours);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtContactNum);
@@ -373,7 +369,6 @@
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblSalary);
-            this.Controls.Add(this.lblHours);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblContactNum);
             this.Controls.Add(this.lblAddress);
@@ -391,7 +386,6 @@
             this.pnlEmployee.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.updHours)).EndInit();
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -413,7 +407,6 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblContactNum;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblHours;
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
@@ -422,7 +415,6 @@
         private System.Windows.Forms.TextBox txtContactNum;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.NumericUpDown updHours;
         private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;

@@ -53,20 +53,26 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUser.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblUser.Location = new System.Drawing.Point(43, 173);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(107, 26);
+            this.lblUser.Size = new System.Drawing.Size(109, 28);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Username:";
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
+            this.lblPass.BackColor = System.Drawing.Color.Transparent;
+            this.lblPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPass.Location = new System.Drawing.Point(43, 236);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(100, 26);
+            this.lblPass.Size = new System.Drawing.Size(102, 28);
             this.lblPass.TabIndex = 1;
             this.lblPass.Text = "Password:";
             // 
@@ -115,6 +121,7 @@
             // 
             this.lblFleet.AutoSize = true;
             this.lblFleet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFleet.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblFleet.Location = new System.Drawing.Point(41, 15);
             this.lblFleet.Name = "lblFleet";
             this.lblFleet.Size = new System.Drawing.Size(398, 33);
@@ -168,6 +175,7 @@
             // 
             // picCargoFleet
             // 
+            this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
             this.picCargoFleet.Location = new System.Drawing.Point(394, 173);
             this.picCargoFleet.Name = "picCargoFleet";
@@ -177,12 +185,13 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnLog);
             this.pnlButtons.Controls.Add(this.btnPassReset);
             this.pnlButtons.Controls.Add(this.btnReg);
-            this.pnlButtons.Location = new System.Drawing.Point(15, 305);
+            this.pnlButtons.Location = new System.Drawing.Point(15, 319);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(507, 125);
             this.pnlButtons.TabIndex = 14;
@@ -203,6 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(541, 468);
             this.Controls.Add(this.pnlButtons);

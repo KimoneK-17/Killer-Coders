@@ -34,17 +34,9 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error");
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error! You Cannot Go Back To Previous Form: " + ex.Message);
             }
         }
 
@@ -54,17 +46,9 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch
+            catch(Exception ex)
             {
-                int stopper = 1;
-                while (stopper == 1)
-                {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
-                }
+                MessageBox.Show("Error! You Cannot Exit This Application: " + ex.Message); // Shows an error message
             }
         }
 
@@ -77,31 +61,21 @@ namespace FleetTrackingInformationSystem
                 txtModel.Clear();
                 txtMake.Clear();
             }
-            catch
+            catch(Exception ex)
             {
                 int stopper = 1;
                 while (stopper == 1)
                 {
-                    MessageBox.Show("Application Error"); // Shows an error message and takes you back to Form Login if an error has to occur
-                    this.Hide();
-                    frmLogin log = new frmLogin();
-                    log.ShowDialog();
-                    --stopper;
+                    MessageBox.Show("Error! You Cannot Clear The Form: " + ex.Message); // Shows an error message
                 }
             }
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            getValues();
             Check check = new Check();
             bool exit = false;
-
-            V_MILEAGE = txtMileage.Text;
-            V_MAKE = txtMake.Text;
-            V_TYPE = cboType.SelectedItem.ToString();
-            V_MODEL = txtModel.Text;
-            V_YEAR = dtpVehicleYear.Value.ToString();
-            V_RN = txtRegNum.Text;
 
             exit = check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
             exit = check.CheckEmpty(V_MAKE, "Vehicle Make");
@@ -118,7 +92,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE V_RN = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM Vehicle WHERE Vehicle_RegNumber = @Vehicle_RegNumber) BEGIN INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -132,16 +106,20 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
                 }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error" + ex.Message);
+                    MessageBox.Show("Error! You Cannot Submit Vehicle Details: " + ex.Message);
                 }
             }
         }
 
-
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -156,24 +134,29 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESS");
+                MessageBox.Show("SUCCESSFUL");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error! You Cannot Delete Vehicle Details: " + ex.Message);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
               DBConnect objDBConnect = new DBConnect();
 
               objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)",objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET (Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage, Vehicle_RecordNumber=@Vehicle_RecordNumber) WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -181,16 +164,30 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RecordNumber", V_REC);
+              objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
               MessageBox.Show("SUCCESSFULLY UPDATED");
               objDBConnect.sqlDR.Close();
               objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error! You Cannot Update Vehicle Details: " + ex.Message);
             }
+        }
+
+        private void getValues()
+        {
+            V_MILEAGE = txtMileage.Text;
+            V_MAKE = txtMake.Text;
+            V_TYPE = cboType.SelectedItem.ToString();
+            V_MODEL = txtModel.Text;
+            V_YEAR = dtpVehicleYear.Value.ToString();
+            V_RN = txtRegNum.Text;
         }
     }
 }

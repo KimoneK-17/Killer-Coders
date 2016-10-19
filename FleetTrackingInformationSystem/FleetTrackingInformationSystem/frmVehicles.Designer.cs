@@ -71,6 +71,7 @@
             // 
             this.lblVehicle.AutoSize = true;
             this.lblVehicle.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVehicle.Location = new System.Drawing.Point(218, 14);
             this.lblVehicle.Name = "lblVehicle";
             this.lblVehicle.Size = new System.Drawing.Size(108, 33);
@@ -83,7 +84,7 @@
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
             this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(630, 24);
+            this.mnuFleet.Size = new System.Drawing.Size(605, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
             // 
@@ -113,8 +114,10 @@
             // lblType
             // 
             this.lblType.AutoSize = true;
+            this.lblType.BackColor = System.Drawing.Color.Transparent;
             this.lblType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblType.Location = new System.Drawing.Point(55, 200);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(118, 19);
@@ -124,8 +127,10 @@
             // lblRegNum
             // 
             this.lblRegNum.AutoSize = true;
+            this.lblRegNum.BackColor = System.Drawing.Color.Transparent;
             this.lblRegNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblRegNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegNum.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblRegNum.Location = new System.Drawing.Point(55, 245);
             this.lblRegNum.Name = "lblRegNum";
             this.lblRegNum.Size = new System.Drawing.Size(155, 19);
@@ -135,8 +140,10 @@
             // lblMileage
             // 
             this.lblMileage.AutoSize = true;
+            this.lblMileage.BackColor = System.Drawing.Color.Transparent;
             this.lblMileage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMileage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMileage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblMileage.Location = new System.Drawing.Point(55, 291);
             this.lblMileage.Name = "lblMileage";
             this.lblMileage.Size = new System.Drawing.Size(119, 19);
@@ -146,8 +153,10 @@
             // lblMake
             // 
             this.lblMake.AutoSize = true;
+            this.lblMake.BackColor = System.Drawing.Color.Transparent;
             this.lblMake.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMake.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMake.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblMake.Location = new System.Drawing.Point(55, 341);
             this.lblMake.Name = "lblMake";
             this.lblMake.Size = new System.Drawing.Size(103, 19);
@@ -157,8 +166,10 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
+            this.lblModel.BackColor = System.Drawing.Color.Transparent;
             this.lblModel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblModel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblModel.Location = new System.Drawing.Point(55, 390);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(109, 19);
@@ -168,8 +179,10 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
+            this.lblYear.BackColor = System.Drawing.Color.Transparent;
             this.lblYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblYear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYear.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblYear.Location = new System.Drawing.Point(55, 437);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(94, 19);
@@ -235,7 +248,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(254, 13);
+            this.btnUpdate.Location = new System.Drawing.Point(280, 13);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 35);
             this.btnUpdate.TabIndex = 17;
@@ -246,7 +259,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(81, 13);
+            this.btnDelete.Location = new System.Drawing.Point(40, 13);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 35);
             this.btnDelete.TabIndex = 16;
@@ -257,7 +270,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(169, 13);
+            this.btnAdd.Location = new System.Drawing.Point(162, 13);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
@@ -268,7 +281,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(342, 13);
+            this.btnClear.Location = new System.Drawing.Point(394, 13);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -278,6 +291,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -294,7 +308,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(630, 648);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(605, 637);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.dtpVehicleYear);
             this.Controls.Add(this.cboType);

@@ -72,30 +72,39 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblName.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblName.Location = new System.Drawing.Point(43, 149);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(57, 21);
+            this.lblName.Size = new System.Drawing.Size(59, 23);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name:";
             // 
             // lblSurname
             // 
             this.lblSurname.AutoSize = true;
+            this.lblSurname.BackColor = System.Drawing.Color.Transparent;
+            this.lblSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSurname.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblSurname.Location = new System.Drawing.Point(43, 194);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(78, 21);
+            this.lblSurname.Size = new System.Drawing.Size(80, 23);
             this.lblSurname.TabIndex = 2;
             this.lblSurname.Text = "Surname:";
             // 
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDateOfBirth.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDateOfBirth.Location = new System.Drawing.Point(43, 239);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(106, 21);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(108, 23);
             this.lblDateOfBirth.TabIndex = 3;
             this.lblDateOfBirth.Text = "Date of Birth:";
             // 
@@ -160,8 +169,10 @@
             // 
             // pnlReg
             // 
+            this.pnlReg.BackColor = System.Drawing.Color.Transparent;
             this.pnlReg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlReg.Controls.Add(this.lblReg);
+            this.pnlReg.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.pnlReg.Location = new System.Drawing.Point(23, 56);
             this.pnlReg.Name = "pnlReg";
             this.pnlReg.Size = new System.Drawing.Size(526, 66);
@@ -170,20 +181,26 @@
             // lblPostion
             // 
             this.lblPostion.AutoSize = true;
+            this.lblPostion.BackColor = System.Drawing.Color.Transparent;
+            this.lblPostion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPostion.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPostion.Location = new System.Drawing.Point(43, 284);
             this.lblPostion.Name = "lblPostion";
-            this.lblPostion.Size = new System.Drawing.Size(146, 21);
+            this.lblPostion.Size = new System.Drawing.Size(148, 23);
             this.lblPostion.TabIndex = 12;
             this.lblPostion.Text = "Employee Position:";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
+            this.lblUserName.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUserName.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblUserName.Location = new System.Drawing.Point(43, 374);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(88, 21);
+            this.lblUserName.Size = new System.Drawing.Size(90, 23);
             this.lblUserName.TabIndex = 14;
             this.lblUserName.Text = "Username:";
             // 
@@ -198,10 +215,13 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPassword.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPassword.Location = new System.Drawing.Point(43, 419);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(83, 21);
+            this.lblPassword.Size = new System.Drawing.Size(85, 23);
             this.lblPassword.TabIndex = 16;
             this.lblPassword.Text = "Password:";
             // 
@@ -252,10 +272,13 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblEmail.Location = new System.Drawing.Point(43, 329);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(114, 21);
+            this.lblEmail.Size = new System.Drawing.Size(116, 23);
             this.lblEmail.TabIndex = 40;
             this.lblEmail.Text = "Email Address:";
             // 
@@ -269,6 +292,7 @@
             // 
             // picCargoFleet
             // 
+            this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
             this.picCargoFleet.Location = new System.Drawing.Point(430, 239);
             this.picCargoFleet.Name = "picCargoFleet";
@@ -278,6 +302,7 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
@@ -292,6 +317,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(561, 592);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.picCargoFleet);

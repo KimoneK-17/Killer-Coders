@@ -36,7 +36,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 this.Hide(); // Will Hide this Form
-                frmTripUsage tU = new frmTripUsage(); // Creates an Object 
+                frmTripPlan tU = new frmTripPlan(); // Creates an Object 
                 tU.ShowDialog(); // Shows the Trip and Usage Form
             }
             catch(Exception ex)
@@ -93,7 +93,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmCustomer cus = new frmCustomer(); // Creates an Object 
-                cus.ShowDialog(); // Shows the Customer Form
+                cus.Show(); // Shows the Customer Form
             }
             catch(Exception ex)
             {
@@ -163,10 +163,10 @@ namespace FleetTrackingInformationSystem
                 frmSearch search = new frmSearch();
                 search.ShowDialog(); // Goes To the Search Form
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
             }
-        }
+        }   
     }
 }

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
@@ -50,10 +53,11 @@
     <Compile Include="Check.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="FleetTrackingDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
+    <Compile Include="frmCompletedTripDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompletedTripDetails.Designer.cs">
+      <DependentUpon>frmCompletedTripDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
@@ -92,6 +96,12 @@
     <Compile Include="frmReports.Designer.cs">
       <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +120,11 @@
     <Compile Include="frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTripUsage.cs">
+    <Compile Include="frmTripPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTripUsage.Designer.cs">
-      <DependentUpon>frmTripUsage.cs</DependentUpon>
+    <Compile Include="frmTripPlan.Designer.cs">
+      <DependentUpon>frmTripPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLocation.cs">
       <SubType>Form</SubType>
@@ -130,11 +140,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs" />
-    <Compile Include="ReportVieweer.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="frmCompletedTripDetails.resx">
+      <DependentUpon>frmCompletedTripDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployee.resx">
       <DependentUpon>frmEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,14 +161,17 @@
     <EmbeddedResource Include="frmReports.resx">
       <DependentUpon>frmReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimesheet.resx">
       <DependentUpon>frmTimesheet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTripUsage.resx">
-      <DependentUpon>frmTripUsage.cs</DependentUpon>
+    <EmbeddedResource Include="frmTripPlan.resx">
+      <DependentUpon>frmTripPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocation.resx">
       <DependentUpon>frmLocation.cs</DependentUpon>
@@ -177,18 +188,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reports.rdlc" />
-    <None Include="FleetTrackingDBDataSet.xsc">
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FleetTrackingDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FleetTrackingDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FleetTrackingDBDataSet.xss">
-      <DependentUpon>FleetTrackingDBDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,17 +198,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ReportVieweer.xsc">
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </None>
-    <None Include="ReportVieweer.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportVieweer.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ReportVieweer.xss">
-      <DependentUpon>ReportVieweer.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

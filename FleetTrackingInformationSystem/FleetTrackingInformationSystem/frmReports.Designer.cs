@@ -31,63 +31,140 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
             this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.FleetTrackingDBDataSet = new FleetTrackingInformationSystem.FleetTrackingDBDataSet();
             this.tabReports = new System.Windows.Forms.TabControl();
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
+            this.btnPrintVehicleStat = new System.Windows.Forms.Button();
+            this.dgvVehicleStatus = new System.Windows.Forms.DataGridView();
             this.tabServiceAppoint = new System.Windows.Forms.TabPage();
+            this.tabSADailyWeekly = new System.Windows.Forms.TabControl();
+            this.tabSADaily = new System.Windows.Forms.TabPage();
+            this.btnPrintSerAppDaily = new System.Windows.Forms.Button();
+            this.dgvSADaily = new System.Windows.Forms.DataGridView();
+            this.tabSAWeekly = new System.Windows.Forms.TabPage();
+            this.btnPrintSerAppWeek = new System.Windows.Forms.Button();
+            this.dgvSAWeekly = new System.Windows.Forms.DataGridView();
             this.tabServiceRequire = new System.Windows.Forms.TabPage();
+            this.btnPrintSerReq = new System.Windows.Forms.Button();
+            this.dgvServiceReq = new System.Windows.Forms.DataGridView();
             this.tabVehicleServiceCompleted = new System.Windows.Forms.TabPage();
+            this.tabDWMYVehicleServices = new System.Windows.Forms.TabControl();
+            this.tabVSDaily = new System.Windows.Forms.TabPage();
+            this.btnPrintVehSerComDaily = new System.Windows.Forms.Button();
+            this.dgvVSDaily = new System.Windows.Forms.DataGridView();
+            this.tabVSWeekly = new System.Windows.Forms.TabPage();
+            this.btnPrintVehSerComWeek = new System.Windows.Forms.Button();
+            this.dgvVSWeekly = new System.Windows.Forms.DataGridView();
+            this.tabVSMonthly = new System.Windows.Forms.TabPage();
+            this.btnPrintVehSerMonth = new System.Windows.Forms.Button();
+            this.dgvVSMonthly = new System.Windows.Forms.DataGridView();
+            this.tabVSYearly = new System.Windows.Forms.TabPage();
+            this.btnPrintVehSerYear = new System.Windows.Forms.Button();
+            this.dgvVSYearly = new System.Windows.Forms.DataGridView();
             this.tabDetailedServiceInfo = new System.Windows.Forms.TabPage();
+            this.btnPrintDetailSerInfo = new System.Windows.Forms.Button();
+            this.dgvDetailedService = new System.Windows.Forms.DataGridView();
             this.tabPlannedTrip = new System.Windows.Forms.TabPage();
+            this.tabDWPlannedTrip = new System.Windows.Forms.TabControl();
+            this.tabPTDaily = new System.Windows.Forms.TabPage();
+            this.btnPrintPlanTripDaily = new System.Windows.Forms.Button();
+            this.dgvPTDaily = new System.Windows.Forms.DataGridView();
+            this.tabPTWeekly = new System.Windows.Forms.TabPage();
+            this.btnPrintPlanTripWeek = new System.Windows.Forms.Button();
+            this.dgvPTWeekly = new System.Windows.Forms.DataGridView();
             this.tabCompletedTrip = new System.Windows.Forms.TabPage();
+            this.tabDWMCompletedTrip = new System.Windows.Forms.TabControl();
+            this.tabCTDaily = new System.Windows.Forms.TabPage();
+            this.btnPrintComTripDaily = new System.Windows.Forms.Button();
+            this.dgvCTDaily = new System.Windows.Forms.DataGridView();
+            this.tabCTWeekly = new System.Windows.Forms.TabPage();
+            this.btnPrintComTripWeek = new System.Windows.Forms.Button();
+            this.dgvCTWeekly = new System.Windows.Forms.DataGridView();
+            this.tabCTMonthly = new System.Windows.Forms.TabPage();
+            this.btnPrintComTripMonth = new System.Windows.Forms.Button();
+            this.dgvCTMonthly = new System.Windows.Forms.DataGridView();
             this.tabTimesheet = new System.Windows.Forms.TabPage();
-            this.VehicleTableAdapter = new FleetTrackingInformationSystem.FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter();
+            this.tabDWMTimeSheet = new System.Windows.Forms.TabControl();
+            this.tabTSDaily = new System.Windows.Forms.TabPage();
+            this.btnPrintTimeDaily = new System.Windows.Forms.Button();
+            this.dgvTSDaily = new System.Windows.Forms.DataGridView();
+            this.tabTSWeekly = new System.Windows.Forms.TabPage();
+            this.btnPrintTimeWeekly = new System.Windows.Forms.Button();
+            this.dgvTSWeekly = new System.Windows.Forms.DataGridView();
+            this.tabTSMonthly = new System.Windows.Forms.TabPage();
+            this.btnPrintTimeMonth = new System.Windows.Forms.Button();
+            this.dgvTSMonthly = new System.Windows.Forms.DataGridView();
             this.pnlCustomer = new System.Windows.Forms.Panel();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvVehicleStatus = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument3 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument4 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument5 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument6 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument7 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument8 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument9 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument10 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument11 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument12 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument13 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument14 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument15 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument16 = new System.Drawing.Printing.PrintDocument();
+            this.printDocument17 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).BeginInit();
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).BeginInit();
             this.tabServiceAppoint.SuspendLayout();
+            this.tabSADailyWeekly.SuspendLayout();
+            this.tabSADaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).BeginInit();
+            this.tabSAWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).BeginInit();
             this.tabServiceRequire.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceReq)).BeginInit();
             this.tabVehicleServiceCompleted.SuspendLayout();
+            this.tabDWMYVehicleServices.SuspendLayout();
+            this.tabVSDaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).BeginInit();
+            this.tabVSWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).BeginInit();
+            this.tabVSMonthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).BeginInit();
+            this.tabVSYearly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).BeginInit();
             this.tabDetailedServiceInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailedService)).BeginInit();
             this.tabPlannedTrip.SuspendLayout();
+            this.tabDWPlannedTrip.SuspendLayout();
+            this.tabPTDaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTDaily)).BeginInit();
+            this.tabPTWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTWeekly)).BeginInit();
             this.tabCompletedTrip.SuspendLayout();
+            this.tabDWMCompletedTrip.SuspendLayout();
+            this.tabCTDaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTDaily)).BeginInit();
+            this.tabCTWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTWeekly)).BeginInit();
+            this.tabCTMonthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTMonthly)).BeginInit();
             this.tabTimesheet.SuspendLayout();
+            this.tabDWMTimeSheet.SuspendLayout();
+            this.tabTSDaily.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSDaily)).BeginInit();
+            this.tabTSWeekly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSWeekly)).BeginInit();
+            this.tabTSMonthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).BeginInit();
             this.pnlCustomer.SuspendLayout();
             this.mnuFleet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.SuspendLayout();
-            // 
-            // VehicleBindingSource
-            // 
-            this.VehicleBindingSource.DataMember = "Vehicle";
-            this.VehicleBindingSource.DataSource = this.FleetTrackingDBDataSet;
-            // 
-            // FleetTrackingDBDataSet
-            // 
-            this.FleetTrackingDBDataSet.DataSetName = "FleetTrackingDBDataSet";
-            this.FleetTrackingDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabReports
             // 
@@ -99,97 +176,638 @@
             this.tabReports.Controls.Add(this.tabPlannedTrip);
             this.tabReports.Controls.Add(this.tabCompletedTrip);
             this.tabReports.Controls.Add(this.tabTimesheet);
+            this.tabReports.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabReports.Location = new System.Drawing.Point(70, 140);
             this.tabReports.Name = "tabReports";
             this.tabReports.SelectedIndex = 0;
-            this.tabReports.Size = new System.Drawing.Size(1023, 472);
+            this.tabReports.Size = new System.Drawing.Size(1312, 586);
             this.tabReports.TabIndex = 0;
             // 
             // tabVehicleStat
             // 
+            this.tabVehicleStat.Controls.Add(this.btnPrintVehicleStat);
             this.tabVehicleStat.Controls.Add(this.dgvVehicleStatus);
-            this.tabVehicleStat.Location = new System.Drawing.Point(4, 22);
+            this.tabVehicleStat.Location = new System.Drawing.Point(4, 27);
             this.tabVehicleStat.Name = "tabVehicleStat";
             this.tabVehicleStat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVehicleStat.Size = new System.Drawing.Size(1015, 446);
+            this.tabVehicleStat.Size = new System.Drawing.Size(1304, 555);
             this.tabVehicleStat.TabIndex = 0;
             this.tabVehicleStat.Text = "Vehicle Status Report";
             this.tabVehicleStat.UseVisualStyleBackColor = true;
             // 
+            // btnPrintVehicleStat
+            // 
+            this.btnPrintVehicleStat.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehicleStat.Location = new System.Drawing.Point(600, 475);
+            this.btnPrintVehicleStat.Name = "btnPrintVehicleStat";
+            this.btnPrintVehicleStat.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehicleStat.TabIndex = 18;
+            this.btnPrintVehicleStat.Text = "Print";
+            this.btnPrintVehicleStat.UseVisualStyleBackColor = true;
+            this.btnPrintVehicleStat.Click += new System.EventHandler(this.btnPrintVehicleStat_Click_1);
+            // 
+            // dgvVehicleStatus
+            // 
+            this.dgvVehicleStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVehicleStatus.Location = new System.Drawing.Point(0, 3);
+            this.dgvVehicleStatus.Name = "dgvVehicleStatus";
+            this.dgvVehicleStatus.Size = new System.Drawing.Size(1304, 448);
+            this.dgvVehicleStatus.TabIndex = 0;
+            // 
             // tabServiceAppoint
             // 
-            this.tabServiceAppoint.Controls.Add(this.dataGridView2);
-            this.tabServiceAppoint.Location = new System.Drawing.Point(4, 22);
+            this.tabServiceAppoint.Controls.Add(this.tabSADailyWeekly);
+            this.tabServiceAppoint.Location = new System.Drawing.Point(4, 27);
             this.tabServiceAppoint.Name = "tabServiceAppoint";
             this.tabServiceAppoint.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServiceAppoint.Size = new System.Drawing.Size(1015, 446);
+            this.tabServiceAppoint.Size = new System.Drawing.Size(1304, 555);
             this.tabServiceAppoint.TabIndex = 1;
             this.tabServiceAppoint.Text = "Service Appointment list";
             this.tabServiceAppoint.UseVisualStyleBackColor = true;
             // 
+            // tabSADailyWeekly
+            // 
+            this.tabSADailyWeekly.Controls.Add(this.tabSADaily);
+            this.tabSADailyWeekly.Controls.Add(this.tabSAWeekly);
+            this.tabSADailyWeekly.Location = new System.Drawing.Point(7, 7);
+            this.tabSADailyWeekly.Name = "tabSADailyWeekly";
+            this.tabSADailyWeekly.SelectedIndex = 0;
+            this.tabSADailyWeekly.Size = new System.Drawing.Size(1294, 548);
+            this.tabSADailyWeekly.TabIndex = 0;
+            // 
+            // tabSADaily
+            // 
+            this.tabSADaily.Controls.Add(this.btnPrintSerAppDaily);
+            this.tabSADaily.Controls.Add(this.dgvSADaily);
+            this.tabSADaily.Location = new System.Drawing.Point(4, 27);
+            this.tabSADaily.Name = "tabSADaily";
+            this.tabSADaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSADaily.Size = new System.Drawing.Size(1286, 517);
+            this.tabSADaily.TabIndex = 0;
+            this.tabSADaily.Text = "Daily";
+            this.tabSADaily.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintSerAppDaily
+            // 
+            this.btnPrintSerAppDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerAppDaily.Location = new System.Drawing.Point(591, 439);
+            this.btnPrintSerAppDaily.Name = "btnPrintSerAppDaily";
+            this.btnPrintSerAppDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerAppDaily.TabIndex = 20;
+            this.btnPrintSerAppDaily.Text = "Print";
+            this.btnPrintSerAppDaily.UseVisualStyleBackColor = true;
+            this.btnPrintSerAppDaily.Click += new System.EventHandler(this.btnPrintSerAppDaily_Click);
+            // 
+            // dgvSADaily
+            // 
+            this.dgvSADaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSADaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvSADaily.Name = "dgvSADaily";
+            this.dgvSADaily.Size = new System.Drawing.Size(1283, 411);
+            this.dgvSADaily.TabIndex = 0;
+            // 
+            // tabSAWeekly
+            // 
+            this.tabSAWeekly.Controls.Add(this.btnPrintSerAppWeek);
+            this.tabSAWeekly.Controls.Add(this.dgvSAWeekly);
+            this.tabSAWeekly.Location = new System.Drawing.Point(4, 27);
+            this.tabSAWeekly.Name = "tabSAWeekly";
+            this.tabSAWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSAWeekly.Size = new System.Drawing.Size(1286, 517);
+            this.tabSAWeekly.TabIndex = 1;
+            this.tabSAWeekly.Text = "Weekly";
+            this.tabSAWeekly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintSerAppWeek
+            // 
+            this.btnPrintSerAppWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerAppWeek.Location = new System.Drawing.Point(592, 439);
+            this.btnPrintSerAppWeek.Name = "btnPrintSerAppWeek";
+            this.btnPrintSerAppWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerAppWeek.TabIndex = 20;
+            this.btnPrintSerAppWeek.Text = "Print";
+            this.btnPrintSerAppWeek.UseVisualStyleBackColor = true;
+            this.btnPrintSerAppWeek.Click += new System.EventHandler(this.btnPrintSerAppWeek_Click);
+            // 
+            // dgvSAWeekly
+            // 
+            this.dgvSAWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSAWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvSAWeekly.Name = "dgvSAWeekly";
+            this.dgvSAWeekly.Size = new System.Drawing.Size(1283, 415);
+            this.dgvSAWeekly.TabIndex = 0;
+            // 
             // tabServiceRequire
             // 
-            this.tabServiceRequire.Controls.Add(this.dataGridView3);
-            this.tabServiceRequire.Location = new System.Drawing.Point(4, 22);
+            this.tabServiceRequire.Controls.Add(this.btnPrintSerReq);
+            this.tabServiceRequire.Controls.Add(this.dgvServiceReq);
+            this.tabServiceRequire.Location = new System.Drawing.Point(4, 27);
             this.tabServiceRequire.Name = "tabServiceRequire";
-            this.tabServiceRequire.Size = new System.Drawing.Size(1015, 446);
+            this.tabServiceRequire.Size = new System.Drawing.Size(1304, 555);
             this.tabServiceRequire.TabIndex = 2;
             this.tabServiceRequire.Text = "Service Requirement Job Sheet";
             this.tabServiceRequire.UseVisualStyleBackColor = true;
             // 
+            // btnPrintSerReq
+            // 
+            this.btnPrintSerReq.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerReq.Location = new System.Drawing.Point(599, 470);
+            this.btnPrintSerReq.Name = "btnPrintSerReq";
+            this.btnPrintSerReq.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerReq.TabIndex = 20;
+            this.btnPrintSerReq.Text = "Print";
+            this.btnPrintSerReq.UseVisualStyleBackColor = true;
+            this.btnPrintSerReq.Click += new System.EventHandler(this.btnPrintSerReq_Click);
+            // 
+            // dgvServiceReq
+            // 
+            this.dgvServiceReq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServiceReq.Location = new System.Drawing.Point(-4, 0);
+            this.dgvServiceReq.Name = "dgvServiceReq";
+            this.dgvServiceReq.Size = new System.Drawing.Size(1305, 450);
+            this.dgvServiceReq.TabIndex = 0;
+            // 
             // tabVehicleServiceCompleted
             // 
-            this.tabVehicleServiceCompleted.Controls.Add(this.dataGridView4);
-            this.tabVehicleServiceCompleted.Location = new System.Drawing.Point(4, 22);
+            this.tabVehicleServiceCompleted.Controls.Add(this.tabDWMYVehicleServices);
+            this.tabVehicleServiceCompleted.Location = new System.Drawing.Point(4, 27);
             this.tabVehicleServiceCompleted.Name = "tabVehicleServiceCompleted";
-            this.tabVehicleServiceCompleted.Size = new System.Drawing.Size(1015, 446);
+            this.tabVehicleServiceCompleted.Size = new System.Drawing.Size(1304, 555);
             this.tabVehicleServiceCompleted.TabIndex = 3;
             this.tabVehicleServiceCompleted.Text = "Vehicle Services Completed";
             this.tabVehicleServiceCompleted.UseVisualStyleBackColor = true;
             // 
+            // tabDWMYVehicleServices
+            // 
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSDaily);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSWeekly);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSMonthly);
+            this.tabDWMYVehicleServices.Controls.Add(this.tabVSYearly);
+            this.tabDWMYVehicleServices.Location = new System.Drawing.Point(0, 4);
+            this.tabDWMYVehicleServices.Name = "tabDWMYVehicleServices";
+            this.tabDWMYVehicleServices.SelectedIndex = 0;
+            this.tabDWMYVehicleServices.Size = new System.Drawing.Size(1304, 551);
+            this.tabDWMYVehicleServices.TabIndex = 0;
+            // 
+            // tabVSDaily
+            // 
+            this.tabVSDaily.Controls.Add(this.btnPrintVehSerComDaily);
+            this.tabVSDaily.Controls.Add(this.dgvVSDaily);
+            this.tabVSDaily.Location = new System.Drawing.Point(4, 27);
+            this.tabVSDaily.Name = "tabVSDaily";
+            this.tabVSDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVSDaily.Size = new System.Drawing.Size(1296, 520);
+            this.tabVSDaily.TabIndex = 0;
+            this.tabVSDaily.Text = "Daily";
+            this.tabVSDaily.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintVehSerComDaily
+            // 
+            this.btnPrintVehSerComDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerComDaily.Location = new System.Drawing.Point(592, 439);
+            this.btnPrintVehSerComDaily.Name = "btnPrintVehSerComDaily";
+            this.btnPrintVehSerComDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerComDaily.TabIndex = 20;
+            this.btnPrintVehSerComDaily.Text = "Print";
+            this.btnPrintVehSerComDaily.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComDaily.Click += new System.EventHandler(this.btnPrintVehSerComDaily_Click);
+            // 
+            // dgvVSDaily
+            // 
+            this.dgvVSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvVSDaily.Name = "dgvVSDaily";
+            this.dgvVSDaily.Size = new System.Drawing.Size(1290, 414);
+            this.dgvVSDaily.TabIndex = 0;
+            // 
+            // tabVSWeekly
+            // 
+            this.tabVSWeekly.Controls.Add(this.btnPrintVehSerComWeek);
+            this.tabVSWeekly.Controls.Add(this.dgvVSWeekly);
+            this.tabVSWeekly.Location = new System.Drawing.Point(4, 27);
+            this.tabVSWeekly.Name = "tabVSWeekly";
+            this.tabVSWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVSWeekly.Size = new System.Drawing.Size(1296, 520);
+            this.tabVSWeekly.TabIndex = 1;
+            this.tabVSWeekly.Text = "Weekly";
+            this.tabVSWeekly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintVehSerComWeek
+            // 
+            this.btnPrintVehSerComWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerComWeek.Location = new System.Drawing.Point(594, 439);
+            this.btnPrintVehSerComWeek.Name = "btnPrintVehSerComWeek";
+            this.btnPrintVehSerComWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerComWeek.TabIndex = 20;
+            this.btnPrintVehSerComWeek.Text = "Print";
+            this.btnPrintVehSerComWeek.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerComWeek.Click += new System.EventHandler(this.btnPrintVehSerComWeek_Click);
+            // 
+            // dgvVSWeekly
+            // 
+            this.dgvVSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvVSWeekly.Name = "dgvVSWeekly";
+            this.dgvVSWeekly.Size = new System.Drawing.Size(1293, 414);
+            this.dgvVSWeekly.TabIndex = 0;
+            // 
+            // tabVSMonthly
+            // 
+            this.tabVSMonthly.Controls.Add(this.btnPrintVehSerMonth);
+            this.tabVSMonthly.Controls.Add(this.dgvVSMonthly);
+            this.tabVSMonthly.Location = new System.Drawing.Point(4, 27);
+            this.tabVSMonthly.Name = "tabVSMonthly";
+            this.tabVSMonthly.Size = new System.Drawing.Size(1296, 520);
+            this.tabVSMonthly.TabIndex = 2;
+            this.tabVSMonthly.Text = "Monthly";
+            this.tabVSMonthly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintVehSerMonth
+            // 
+            this.btnPrintVehSerMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerMonth.Location = new System.Drawing.Point(589, 442);
+            this.btnPrintVehSerMonth.Name = "btnPrintVehSerMonth";
+            this.btnPrintVehSerMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerMonth.TabIndex = 20;
+            this.btnPrintVehSerMonth.Text = "Print";
+            this.btnPrintVehSerMonth.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerMonth.Click += new System.EventHandler(this.btnPrintVehSerMonth_Click);
+            // 
+            // dgvVSMonthly
+            // 
+            this.dgvVSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvVSMonthly.Name = "dgvVSMonthly";
+            this.dgvVSMonthly.Size = new System.Drawing.Size(1293, 420);
+            this.dgvVSMonthly.TabIndex = 0;
+            // 
+            // tabVSYearly
+            // 
+            this.tabVSYearly.Controls.Add(this.btnPrintVehSerYear);
+            this.tabVSYearly.Controls.Add(this.dgvVSYearly);
+            this.tabVSYearly.Location = new System.Drawing.Point(4, 27);
+            this.tabVSYearly.Name = "tabVSYearly";
+            this.tabVSYearly.Size = new System.Drawing.Size(1296, 520);
+            this.tabVSYearly.TabIndex = 3;
+            this.tabVSYearly.Text = "Yearly";
+            this.tabVSYearly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintVehSerYear
+            // 
+            this.btnPrintVehSerYear.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerYear.Location = new System.Drawing.Point(597, 440);
+            this.btnPrintVehSerYear.Name = "btnPrintVehSerYear";
+            this.btnPrintVehSerYear.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerYear.TabIndex = 20;
+            this.btnPrintVehSerYear.Text = "Print";
+            this.btnPrintVehSerYear.UseVisualStyleBackColor = true;
+            this.btnPrintVehSerYear.Click += new System.EventHandler(this.btnPrintVehSerYear_Click);
+            // 
+            // dgvVSYearly
+            // 
+            this.dgvVSYearly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVSYearly.Location = new System.Drawing.Point(0, 0);
+            this.dgvVSYearly.Name = "dgvVSYearly";
+            this.dgvVSYearly.Size = new System.Drawing.Size(1293, 420);
+            this.dgvVSYearly.TabIndex = 0;
+            // 
             // tabDetailedServiceInfo
             // 
-            this.tabDetailedServiceInfo.Controls.Add(this.dataGridView5);
-            this.tabDetailedServiceInfo.Location = new System.Drawing.Point(4, 22);
+            this.tabDetailedServiceInfo.Controls.Add(this.btnPrintDetailSerInfo);
+            this.tabDetailedServiceInfo.Controls.Add(this.dgvDetailedService);
+            this.tabDetailedServiceInfo.Location = new System.Drawing.Point(4, 27);
             this.tabDetailedServiceInfo.Name = "tabDetailedServiceInfo";
-            this.tabDetailedServiceInfo.Size = new System.Drawing.Size(1015, 446);
+            this.tabDetailedServiceInfo.Size = new System.Drawing.Size(1304, 555);
             this.tabDetailedServiceInfo.TabIndex = 4;
             this.tabDetailedServiceInfo.Text = "Detailed Service Information";
             this.tabDetailedServiceInfo.UseVisualStyleBackColor = true;
             // 
+            // btnPrintDetailSerInfo
+            // 
+            this.btnPrintDetailSerInfo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintDetailSerInfo.Location = new System.Drawing.Point(613, 475);
+            this.btnPrintDetailSerInfo.Name = "btnPrintDetailSerInfo";
+            this.btnPrintDetailSerInfo.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintDetailSerInfo.TabIndex = 20;
+            this.btnPrintDetailSerInfo.Text = "Print";
+            this.btnPrintDetailSerInfo.UseVisualStyleBackColor = true;
+            this.btnPrintDetailSerInfo.Click += new System.EventHandler(this.btnPrintDetailSerInfo_Click);
+            // 
+            // dgvDetailedService
+            // 
+            this.dgvDetailedService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailedService.Location = new System.Drawing.Point(0, 0);
+            this.dgvDetailedService.Name = "dgvDetailedService";
+            this.dgvDetailedService.Size = new System.Drawing.Size(1301, 455);
+            this.dgvDetailedService.TabIndex = 0;
+            // 
             // tabPlannedTrip
             // 
-            this.tabPlannedTrip.Controls.Add(this.dataGridView6);
-            this.tabPlannedTrip.Location = new System.Drawing.Point(4, 22);
+            this.tabPlannedTrip.Controls.Add(this.tabDWPlannedTrip);
+            this.tabPlannedTrip.Location = new System.Drawing.Point(4, 27);
             this.tabPlannedTrip.Name = "tabPlannedTrip";
-            this.tabPlannedTrip.Size = new System.Drawing.Size(1015, 446);
+            this.tabPlannedTrip.Size = new System.Drawing.Size(1304, 555);
             this.tabPlannedTrip.TabIndex = 5;
             this.tabPlannedTrip.Text = "Planned Trip Report";
             this.tabPlannedTrip.UseVisualStyleBackColor = true;
             // 
+            // tabDWPlannedTrip
+            // 
+            this.tabDWPlannedTrip.Controls.Add(this.tabPTDaily);
+            this.tabDWPlannedTrip.Controls.Add(this.tabPTWeekly);
+            this.tabDWPlannedTrip.Location = new System.Drawing.Point(4, 4);
+            this.tabDWPlannedTrip.Name = "tabDWPlannedTrip";
+            this.tabDWPlannedTrip.SelectedIndex = 0;
+            this.tabDWPlannedTrip.Size = new System.Drawing.Size(1297, 548);
+            this.tabDWPlannedTrip.TabIndex = 0;
+            // 
+            // tabPTDaily
+            // 
+            this.tabPTDaily.Controls.Add(this.btnPrintPlanTripDaily);
+            this.tabPTDaily.Controls.Add(this.dgvPTDaily);
+            this.tabPTDaily.Location = new System.Drawing.Point(4, 27);
+            this.tabPTDaily.Name = "tabPTDaily";
+            this.tabPTDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPTDaily.Size = new System.Drawing.Size(1289, 517);
+            this.tabPTDaily.TabIndex = 0;
+            this.tabPTDaily.Text = "Daily";
+            this.tabPTDaily.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintPlanTripDaily
+            // 
+            this.btnPrintPlanTripDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPlanTripDaily.Location = new System.Drawing.Point(605, 432);
+            this.btnPrintPlanTripDaily.Name = "btnPrintPlanTripDaily";
+            this.btnPrintPlanTripDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintPlanTripDaily.TabIndex = 20;
+            this.btnPrintPlanTripDaily.Text = "Print";
+            this.btnPrintPlanTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripDaily.Click += new System.EventHandler(this.btnPrintPlanTripDaily_Click);
+            // 
+            // dgvPTDaily
+            // 
+            this.dgvPTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvPTDaily.Name = "dgvPTDaily";
+            this.dgvPTDaily.Size = new System.Drawing.Size(1286, 410);
+            this.dgvPTDaily.TabIndex = 0;
+            // 
+            // tabPTWeekly
+            // 
+            this.tabPTWeekly.Controls.Add(this.btnPrintPlanTripWeek);
+            this.tabPTWeekly.Controls.Add(this.dgvPTWeekly);
+            this.tabPTWeekly.Location = new System.Drawing.Point(4, 27);
+            this.tabPTWeekly.Name = "tabPTWeekly";
+            this.tabPTWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPTWeekly.Size = new System.Drawing.Size(1289, 517);
+            this.tabPTWeekly.TabIndex = 1;
+            this.tabPTWeekly.Text = "Weekly";
+            this.tabPTWeekly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintPlanTripWeek
+            // 
+            this.btnPrintPlanTripWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPlanTripWeek.Location = new System.Drawing.Point(634, 432);
+            this.btnPrintPlanTripWeek.Name = "btnPrintPlanTripWeek";
+            this.btnPrintPlanTripWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintPlanTripWeek.TabIndex = 20;
+            this.btnPrintPlanTripWeek.Text = "Print";
+            this.btnPrintPlanTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintPlanTripWeek.Click += new System.EventHandler(this.btnPrintPlanTripWeek_Click);
+            // 
+            // dgvPTWeekly
+            // 
+            this.dgvPTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPTWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvPTWeekly.Name = "dgvPTWeekly";
+            this.dgvPTWeekly.Size = new System.Drawing.Size(1286, 410);
+            this.dgvPTWeekly.TabIndex = 0;
+            // 
             // tabCompletedTrip
             // 
-            this.tabCompletedTrip.Controls.Add(this.dataGridView7);
-            this.tabCompletedTrip.Location = new System.Drawing.Point(4, 22);
+            this.tabCompletedTrip.Controls.Add(this.tabDWMCompletedTrip);
+            this.tabCompletedTrip.Location = new System.Drawing.Point(4, 27);
             this.tabCompletedTrip.Name = "tabCompletedTrip";
-            this.tabCompletedTrip.Size = new System.Drawing.Size(1015, 446);
+            this.tabCompletedTrip.Size = new System.Drawing.Size(1304, 555);
             this.tabCompletedTrip.TabIndex = 6;
             this.tabCompletedTrip.Text = "Completed Trip Report";
             this.tabCompletedTrip.UseVisualStyleBackColor = true;
             // 
+            // tabDWMCompletedTrip
+            // 
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTDaily);
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTWeekly);
+            this.tabDWMCompletedTrip.Controls.Add(this.tabCTMonthly);
+            this.tabDWMCompletedTrip.Location = new System.Drawing.Point(4, 4);
+            this.tabDWMCompletedTrip.Name = "tabDWMCompletedTrip";
+            this.tabDWMCompletedTrip.SelectedIndex = 0;
+            this.tabDWMCompletedTrip.Size = new System.Drawing.Size(1304, 548);
+            this.tabDWMCompletedTrip.TabIndex = 0;
+            // 
+            // tabCTDaily
+            // 
+            this.tabCTDaily.Controls.Add(this.btnPrintComTripDaily);
+            this.tabCTDaily.Controls.Add(this.dgvCTDaily);
+            this.tabCTDaily.Location = new System.Drawing.Point(4, 27);
+            this.tabCTDaily.Name = "tabCTDaily";
+            this.tabCTDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCTDaily.Size = new System.Drawing.Size(1296, 517);
+            this.tabCTDaily.TabIndex = 0;
+            this.tabCTDaily.Text = "Daily";
+            this.tabCTDaily.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintComTripDaily
+            // 
+            this.btnPrintComTripDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripDaily.Location = new System.Drawing.Point(605, 436);
+            this.btnPrintComTripDaily.Name = "btnPrintComTripDaily";
+            this.btnPrintComTripDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripDaily.TabIndex = 20;
+            this.btnPrintComTripDaily.Text = "Print";
+            this.btnPrintComTripDaily.UseVisualStyleBackColor = true;
+            this.btnPrintComTripDaily.Click += new System.EventHandler(this.btnPrintComTripDaily_Click);
+            // 
+            // dgvCTDaily
+            // 
+            this.dgvCTDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvCTDaily.Name = "dgvCTDaily";
+            this.dgvCTDaily.Size = new System.Drawing.Size(1290, 414);
+            this.dgvCTDaily.TabIndex = 0;
+            // 
+            // tabCTWeekly
+            // 
+            this.tabCTWeekly.Controls.Add(this.btnPrintComTripWeek);
+            this.tabCTWeekly.Controls.Add(this.dgvCTWeekly);
+            this.tabCTWeekly.Location = new System.Drawing.Point(4, 27);
+            this.tabCTWeekly.Name = "tabCTWeekly";
+            this.tabCTWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCTWeekly.Size = new System.Drawing.Size(1296, 517);
+            this.tabCTWeekly.TabIndex = 1;
+            this.tabCTWeekly.Text = "Weekly";
+            this.tabCTWeekly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintComTripWeek
+            // 
+            this.btnPrintComTripWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripWeek.Location = new System.Drawing.Point(625, 438);
+            this.btnPrintComTripWeek.Name = "btnPrintComTripWeek";
+            this.btnPrintComTripWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripWeek.TabIndex = 20;
+            this.btnPrintComTripWeek.Text = "Print";
+            this.btnPrintComTripWeek.UseVisualStyleBackColor = true;
+            this.btnPrintComTripWeek.Click += new System.EventHandler(this.btnPrintComTripWeek_Click);
+            // 
+            // dgvCTWeekly
+            // 
+            this.dgvCTWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvCTWeekly.Name = "dgvCTWeekly";
+            this.dgvCTWeekly.Size = new System.Drawing.Size(1293, 414);
+            this.dgvCTWeekly.TabIndex = 0;
+            // 
+            // tabCTMonthly
+            // 
+            this.tabCTMonthly.Controls.Add(this.btnPrintComTripMonth);
+            this.tabCTMonthly.Controls.Add(this.dgvCTMonthly);
+            this.tabCTMonthly.Location = new System.Drawing.Point(4, 27);
+            this.tabCTMonthly.Name = "tabCTMonthly";
+            this.tabCTMonthly.Size = new System.Drawing.Size(1296, 517);
+            this.tabCTMonthly.TabIndex = 2;
+            this.tabCTMonthly.Text = "Monthly";
+            this.tabCTMonthly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintComTripMonth
+            // 
+            this.btnPrintComTripMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripMonth.Location = new System.Drawing.Point(605, 436);
+            this.btnPrintComTripMonth.Name = "btnPrintComTripMonth";
+            this.btnPrintComTripMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripMonth.TabIndex = 20;
+            this.btnPrintComTripMonth.Text = "Print";
+            this.btnPrintComTripMonth.UseVisualStyleBackColor = true;
+            this.btnPrintComTripMonth.Click += new System.EventHandler(this.btnPrintComTripMonth_Click);
+            // 
+            // dgvCTMonthly
+            // 
+            this.dgvCTMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvCTMonthly.Name = "dgvCTMonthly";
+            this.dgvCTMonthly.Size = new System.Drawing.Size(1293, 420);
+            this.dgvCTMonthly.TabIndex = 0;
+            // 
             // tabTimesheet
             // 
-            this.tabTimesheet.Controls.Add(this.dataGridView8);
-            this.tabTimesheet.Location = new System.Drawing.Point(4, 22);
+            this.tabTimesheet.Controls.Add(this.tabDWMTimeSheet);
+            this.tabTimesheet.Location = new System.Drawing.Point(4, 27);
             this.tabTimesheet.Name = "tabTimesheet";
-            this.tabTimesheet.Size = new System.Drawing.Size(1015, 446);
+            this.tabTimesheet.Size = new System.Drawing.Size(1304, 555);
             this.tabTimesheet.TabIndex = 7;
             this.tabTimesheet.Text = "Time Sheet Report";
             this.tabTimesheet.UseVisualStyleBackColor = true;
             // 
-            // VehicleTableAdapter
+            // tabDWMTimeSheet
             // 
-            this.VehicleTableAdapter.ClearBeforeFill = true;
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSDaily);
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSWeekly);
+            this.tabDWMTimeSheet.Controls.Add(this.tabTSMonthly);
+            this.tabDWMTimeSheet.Location = new System.Drawing.Point(3, 0);
+            this.tabDWMTimeSheet.Name = "tabDWMTimeSheet";
+            this.tabDWMTimeSheet.SelectedIndex = 0;
+            this.tabDWMTimeSheet.Size = new System.Drawing.Size(1298, 552);
+            this.tabDWMTimeSheet.TabIndex = 0;
+            // 
+            // tabTSDaily
+            // 
+            this.tabTSDaily.Controls.Add(this.btnPrintTimeDaily);
+            this.tabTSDaily.Controls.Add(this.dgvTSDaily);
+            this.tabTSDaily.Location = new System.Drawing.Point(4, 27);
+            this.tabTSDaily.Name = "tabTSDaily";
+            this.tabTSDaily.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTSDaily.Size = new System.Drawing.Size(1290, 521);
+            this.tabTSDaily.TabIndex = 0;
+            this.tabTSDaily.Text = "Daily";
+            this.tabTSDaily.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintTimeDaily
+            // 
+            this.btnPrintTimeDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeDaily.Location = new System.Drawing.Point(593, 437);
+            this.btnPrintTimeDaily.Name = "btnPrintTimeDaily";
+            this.btnPrintTimeDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeDaily.TabIndex = 20;
+            this.btnPrintTimeDaily.Text = "Print";
+            this.btnPrintTimeDaily.UseVisualStyleBackColor = true;
+            this.btnPrintTimeDaily.Click += new System.EventHandler(this.btnPrintTimeDaily_Click);
+            // 
+            // dgvTSDaily
+            // 
+            this.dgvTSDaily.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSDaily.Location = new System.Drawing.Point(3, 3);
+            this.dgvTSDaily.Name = "dgvTSDaily";
+            this.dgvTSDaily.Size = new System.Drawing.Size(1284, 411);
+            this.dgvTSDaily.TabIndex = 0;
+            // 
+            // tabTSWeekly
+            // 
+            this.tabTSWeekly.Controls.Add(this.btnPrintTimeWeekly);
+            this.tabTSWeekly.Controls.Add(this.dgvTSWeekly);
+            this.tabTSWeekly.Location = new System.Drawing.Point(4, 27);
+            this.tabTSWeekly.Name = "tabTSWeekly";
+            this.tabTSWeekly.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTSWeekly.Size = new System.Drawing.Size(1290, 521);
+            this.tabTSWeekly.TabIndex = 1;
+            this.tabTSWeekly.Text = "Weekly";
+            this.tabTSWeekly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintTimeWeekly
+            // 
+            this.btnPrintTimeWeekly.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeWeekly.Location = new System.Drawing.Point(606, 439);
+            this.btnPrintTimeWeekly.Name = "btnPrintTimeWeekly";
+            this.btnPrintTimeWeekly.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeWeekly.TabIndex = 20;
+            this.btnPrintTimeWeekly.Text = "Print";
+            this.btnPrintTimeWeekly.UseVisualStyleBackColor = true;
+            this.btnPrintTimeWeekly.Click += new System.EventHandler(this.btnPrintTimeWeekly_Click);
+            // 
+            // dgvTSWeekly
+            // 
+            this.dgvTSWeekly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSWeekly.Location = new System.Drawing.Point(3, 3);
+            this.dgvTSWeekly.Name = "dgvTSWeekly";
+            this.dgvTSWeekly.Size = new System.Drawing.Size(1287, 411);
+            this.dgvTSWeekly.TabIndex = 0;
+            // 
+            // tabTSMonthly
+            // 
+            this.tabTSMonthly.Controls.Add(this.btnPrintTimeMonth);
+            this.tabTSMonthly.Controls.Add(this.dgvTSMonthly);
+            this.tabTSMonthly.Location = new System.Drawing.Point(4, 27);
+            this.tabTSMonthly.Name = "tabTSMonthly";
+            this.tabTSMonthly.Size = new System.Drawing.Size(1290, 521);
+            this.tabTSMonthly.TabIndex = 2;
+            this.tabTSMonthly.Text = "Monthly";
+            this.tabTSMonthly.UseVisualStyleBackColor = true;
+            // 
+            // btnPrintTimeMonth
+            // 
+            this.btnPrintTimeMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeMonth.Location = new System.Drawing.Point(606, 439);
+            this.btnPrintTimeMonth.Name = "btnPrintTimeMonth";
+            this.btnPrintTimeMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeMonth.TabIndex = 20;
+            this.btnPrintTimeMonth.Text = "Print";
+            this.btnPrintTimeMonth.UseVisualStyleBackColor = true;
+            this.btnPrintTimeMonth.Click += new System.EventHandler(this.btnPrintTimeMonth_Click);
+            // 
+            // dgvTSMonthly
+            // 
+            this.dgvTSMonthly.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTSMonthly.Location = new System.Drawing.Point(0, 0);
+            this.dgvTSMonthly.Name = "dgvTSMonthly";
+            this.dgvTSMonthly.Size = new System.Drawing.Size(1287, 417);
+            this.dgvTSMonthly.TabIndex = 0;
             // 
             // pnlCustomer
             // 
@@ -198,14 +816,14 @@
             this.pnlCustomer.Controls.Add(this.lblCustomer);
             this.pnlCustomer.Location = new System.Drawing.Point(70, 41);
             this.pnlCustomer.Name = "pnlCustomer";
-            this.pnlCustomer.Size = new System.Drawing.Size(1016, 66);
+            this.pnlCustomer.Size = new System.Drawing.Size(1312, 66);
             this.pnlCustomer.TabIndex = 10;
             // 
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustomer.Location = new System.Drawing.Point(443, 13);
+            this.lblCustomer.Location = new System.Drawing.Point(609, 12);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(103, 33);
             this.lblCustomer.TabIndex = 7;
@@ -217,7 +835,7 @@
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
             this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(1148, 24);
+            this.mnuFleet.Size = new System.Drawing.Size(1448, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
             // 
@@ -244,77 +862,80 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // dgvVehicleStatus
+            // printDocument1
             // 
-            this.dgvVehicleStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehicleStatus.Location = new System.Drawing.Point(0, 3);
-            this.dgvVehicleStatus.Name = "dgvVehicleStatus";
-            this.dgvVehicleStatus.Size = new System.Drawing.Size(1015, 479);
-            this.dgvVehicleStatus.TabIndex = 0;
-            this.dgvVehicleStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // dataGridView2
+            // printDocument2
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1019, 483);
-            this.dataGridView2.TabIndex = 0;
+            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
             // 
-            // dataGridView3
+            // printDocument3
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1023, 450);
-            this.dataGridView3.TabIndex = 0;
+            this.printDocument3.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument3_PrintPage);
             // 
-            // dataGridView4
+            // printDocument4
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1023, 533);
-            this.dataGridView4.TabIndex = 0;
+            this.printDocument4.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument4_PrintPage);
             // 
-            // dataGridView5
+            // printDocument5
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(1019, 493);
-            this.dataGridView5.TabIndex = 0;
+            this.printDocument5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument5_PrintPage);
             // 
-            // dataGridView6
+            // printDocument6
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(1032, 483);
-            this.dataGridView6.TabIndex = 0;
+            this.printDocument6.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument6_PrintPage);
             // 
-            // dataGridView7
+            // printDocument7
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(1016, 517);
-            this.dataGridView7.TabIndex = 0;
+            this.printDocument7.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument7_PrintPage);
             // 
-            // dataGridView8
+            // printDocument8
             // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(-4, 0);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(1045, 496);
-            this.dataGridView8.TabIndex = 0;
+            this.printDocument8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument8_PrintPage);
+            // 
+            // printDocument9
+            // 
+            this.printDocument9.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument9_PrintPage);
+            // 
+            // printDocument10
+            // 
+            this.printDocument10.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument10_PrintPage);
+            // 
+            // printDocument11
+            // 
+            this.printDocument11.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument11_PrintPage);
+            // 
+            // printDocument12
+            // 
+            this.printDocument12.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument12_PrintPage);
+            // 
+            // printDocument13
+            // 
+            this.printDocument13.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument13_PrintPage);
+            // 
+            // printDocument14
+            // 
+            this.printDocument14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument14_PrintPage);
+            // 
+            // printDocument15
+            // 
+            this.printDocument15.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument15_PrintPage);
+            // 
+            // printDocument16
+            // 
+            this.printDocument16.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument16_PrintPage);
+            // 
+            // printDocument17
+            // 
+            this.printDocument17.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument17_PrintPage);
             // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1148, 643);
+            this.ClientSize = new System.Drawing.Size(1448, 760);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCustomer);
             this.Controls.Add(this.tabReports);
@@ -323,28 +944,55 @@
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FleetTrackingDBDataSet)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabVehicleStat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).EndInit();
             this.tabServiceAppoint.ResumeLayout(false);
+            this.tabSADailyWeekly.ResumeLayout(false);
+            this.tabSADaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSADaily)).EndInit();
+            this.tabSAWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSAWeekly)).EndInit();
             this.tabServiceRequire.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServiceReq)).EndInit();
             this.tabVehicleServiceCompleted.ResumeLayout(false);
+            this.tabDWMYVehicleServices.ResumeLayout(false);
+            this.tabVSDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSDaily)).EndInit();
+            this.tabVSWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSWeekly)).EndInit();
+            this.tabVSMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSMonthly)).EndInit();
+            this.tabVSYearly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVSYearly)).EndInit();
             this.tabDetailedServiceInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailedService)).EndInit();
             this.tabPlannedTrip.ResumeLayout(false);
+            this.tabDWPlannedTrip.ResumeLayout(false);
+            this.tabPTDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTDaily)).EndInit();
+            this.tabPTWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPTWeekly)).EndInit();
             this.tabCompletedTrip.ResumeLayout(false);
+            this.tabDWMCompletedTrip.ResumeLayout(false);
+            this.tabCTDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTDaily)).EndInit();
+            this.tabCTWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTWeekly)).EndInit();
+            this.tabCTMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTMonthly)).EndInit();
             this.tabTimesheet.ResumeLayout(false);
+            this.tabDWMTimeSheet.ResumeLayout(false);
+            this.tabTSDaily.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSDaily)).EndInit();
+            this.tabTSWeekly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSWeekly)).EndInit();
+            this.tabTSMonthly.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).EndInit();
             this.pnlCustomer.ResumeLayout(false);
             this.pnlCustomer.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,8 +1010,6 @@
         private System.Windows.Forms.TabPage tabCompletedTrip;
         private System.Windows.Forms.TabPage tabTimesheet;
         private System.Windows.Forms.BindingSource VehicleBindingSource;
-        private FleetTrackingDBDataSet FleetTrackingDBDataSet;
-        private FleetTrackingDBDataSetTableAdapters.VehicleTableAdapter VehicleTableAdapter;
         private System.Windows.Forms.Panel pnlCustomer;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.MenuStrip mnuFleet;
@@ -371,12 +1017,74 @@
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.DataGridView dgvVehicleStatus;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridView dataGridView7;
-        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView dgvServiceReq;
+        private System.Windows.Forms.DataGridView dgvDetailedService;
+        private System.Windows.Forms.TabControl tabDWMTimeSheet;
+        private System.Windows.Forms.TabPage tabTSDaily;
+        private System.Windows.Forms.TabPage tabTSWeekly;
+        private System.Windows.Forms.TabControl tabDWMCompletedTrip;
+        private System.Windows.Forms.TabPage tabCTDaily;
+        private System.Windows.Forms.TabPage tabCTWeekly;
+        private System.Windows.Forms.TabPage tabCTMonthly;
+        private System.Windows.Forms.TabPage tabTSMonthly;
+        private System.Windows.Forms.TabControl tabDWPlannedTrip;
+        private System.Windows.Forms.TabPage tabPTDaily;
+        private System.Windows.Forms.TabPage tabPTWeekly;
+        private System.Windows.Forms.TabControl tabDWMYVehicleServices;
+        private System.Windows.Forms.TabPage tabVSDaily;
+        private System.Windows.Forms.TabPage tabVSWeekly;
+        private System.Windows.Forms.TabPage tabVSMonthly;
+        private System.Windows.Forms.TabPage tabVSYearly;
+        private System.Windows.Forms.DataGridView dgvVSDaily;
+        private System.Windows.Forms.DataGridView dgvVSWeekly;
+        private System.Windows.Forms.DataGridView dgvVSMonthly;
+        private System.Windows.Forms.DataGridView dgvVSYearly;
+        private System.Windows.Forms.DataGridView dgvPTDaily;
+        private System.Windows.Forms.DataGridView dgvPTWeekly;
+        private System.Windows.Forms.DataGridView dgvCTDaily;
+        private System.Windows.Forms.DataGridView dgvCTWeekly;
+        private System.Windows.Forms.DataGridView dgvCTMonthly;
+        private System.Windows.Forms.DataGridView dgvTSDaily;
+        private System.Windows.Forms.DataGridView dgvTSWeekly;
+        private System.Windows.Forms.DataGridView dgvTSMonthly;
+        private System.Windows.Forms.TabControl tabSADailyWeekly;
+        private System.Windows.Forms.TabPage tabSADaily;
+        private System.Windows.Forms.DataGridView dgvSADaily;
+        private System.Windows.Forms.TabPage tabSAWeekly;
+        private System.Windows.Forms.DataGridView dgvSAWeekly;
+        private System.Windows.Forms.Button btnPrintVehicleStat;
+        private System.Windows.Forms.Button btnPrintSerAppDaily;
+        private System.Windows.Forms.Button btnPrintSerAppWeek;
+        private System.Windows.Forms.Button btnPrintSerReq;
+        private System.Windows.Forms.Button btnPrintVehSerComDaily;
+        private System.Windows.Forms.Button btnPrintVehSerComWeek;
+        private System.Windows.Forms.Button btnPrintVehSerMonth;
+        private System.Windows.Forms.Button btnPrintVehSerYear;
+        private System.Windows.Forms.Button btnPrintDetailSerInfo;
+        private System.Windows.Forms.Button btnPrintPlanTripDaily;
+        private System.Windows.Forms.Button btnPrintPlanTripWeek;
+        private System.Windows.Forms.Button btnPrintComTripDaily;
+        private System.Windows.Forms.Button btnPrintComTripWeek;
+        private System.Windows.Forms.Button btnPrintComTripMonth;
+        private System.Windows.Forms.Button btnPrintTimeDaily;
+        private System.Windows.Forms.Button btnPrintTimeWeekly;
+        private System.Windows.Forms.Button btnPrintTimeMonth;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Drawing.Printing.PrintDocument printDocument3;
+        private System.Drawing.Printing.PrintDocument printDocument4;
+        private System.Drawing.Printing.PrintDocument printDocument5;
+        private System.Drawing.Printing.PrintDocument printDocument6;
+        private System.Drawing.Printing.PrintDocument printDocument7;
+        private System.Drawing.Printing.PrintDocument printDocument8;
+        private System.Drawing.Printing.PrintDocument printDocument9;
+        private System.Drawing.Printing.PrintDocument printDocument10;
+        private System.Drawing.Printing.PrintDocument printDocument11;
+        private System.Drawing.Printing.PrintDocument printDocument12;
+        private System.Drawing.Printing.PrintDocument printDocument13;
+        private System.Drawing.Printing.PrintDocument printDocument14;
+        private System.Drawing.Printing.PrintDocument printDocument15;
+        private System.Drawing.Printing.PrintDocument printDocument16;
+        private System.Drawing.Printing.PrintDocument printDocument17;
     }
 }

@@ -69,16 +69,11 @@ namespace FleetTrackingInformationSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            getValues();
             Check check = new Check();
             bool exit = false;
 
-            L_ID = txtLocationID.Text;
-            L_NAME = cboLocationName.SelectedItem.ToString();
-            L_CITY = cboCity.SelectedItem.ToString();
-            L_PROVINCE = cboProvince.SelectedItem.ToString();
-            L_VEHICLES = int.Parse(updVehicles.Text);
-            L_EMPLOYEES = int.Parse(updEmployees.Text);
-            L_MANAGER = txtManager.Text;
+            
 
             exit = check.CheckEmpty(L_ID, "Location ID");
             exit = check.CheckEmpty(L_MANAGER, "Manager In Charge");
@@ -109,6 +104,10 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
                 }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Submit Location Details: " + ex.Message);
@@ -118,6 +117,7 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -138,6 +138,10 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlConn.Close();
 
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Delete Location Details: " + ex.Message);
@@ -147,28 +151,43 @@ namespace FleetTrackingInformationSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            getValues();
             try
             {
                 DBConnect objDBConnect = new DBConnect();
 
                 objDBConnect.OpenConnection();
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)",objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION SET Location_Name=@Location_Name , Location_City=@Location_City, Location_NumVehicles = @Location_NumVehicles,Location_NumEmployees= @Location_NumEmployees,Location_Manager= @Location_Manager WHERE Location_ID = @Location_ID", objDBConnect.sqlConn);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
 		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
-
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
             }
-
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
             }
+        }
+
+        public void getValues()
+        {
+            L_ID = txtLocationID.Text;
+            L_NAME = cboLocationName.SelectedItem.ToString();
+            L_CITY = cboCity.SelectedItem.ToString();
+            L_PROVINCE = cboProvince.SelectedItem.ToString();
+            L_VEHICLES = int.Parse(updVehicles.Text);
+            L_EMPLOYEES = int.Parse(updEmployees.Text);
+            L_MANAGER = txtManager.Text;
         }
    }
 }

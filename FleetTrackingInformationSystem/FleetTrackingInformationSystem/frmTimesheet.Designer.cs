@@ -37,15 +37,15 @@
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.lblEmployeeID = new System.Windows.Forms.Label();
             this.lblNumHoursWorked = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.updHoursWorked = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.lblT_ID = new System.Windows.Forms.Label();
+            this.txtT_ID = new System.Windows.Forms.TextBox();
+            this.cboE_ID = new System.Windows.Forms.ComboBox();
             this.pnlTimesheet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updHoursWorked)).BeginInit();
@@ -66,6 +66,7 @@
             // 
             this.lblTimesheet.AutoSize = true;
             this.lblTimesheet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimesheet.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTimesheet.Location = new System.Drawing.Point(193, 14);
             this.lblTimesheet.Name = "lblTimesheet";
             this.lblTimesheet.Size = new System.Drawing.Size(133, 33);
@@ -108,58 +109,41 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
+            this.lblEmployeeID.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmployeeID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeID.Location = new System.Drawing.Point(38, 170);
+            this.lblEmployeeID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblEmployeeID.Location = new System.Drawing.Point(59, 227);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(98, 19);
+            this.lblEmployeeID.Size = new System.Drawing.Size(100, 21);
             this.lblEmployeeID.TabIndex = 17;
             this.lblEmployeeID.Text = "Employee ID:";
             // 
             // lblNumHoursWorked
             // 
             this.lblNumHoursWorked.AutoSize = true;
+            this.lblNumHoursWorked.BackColor = System.Drawing.Color.Transparent;
+            this.lblNumHoursWorked.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNumHoursWorked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblNumHoursWorked.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumHoursWorked.Location = new System.Drawing.Point(38, 225);
+            this.lblNumHoursWorked.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumHoursWorked.Location = new System.Drawing.Point(59, 285);
             this.lblNumHoursWorked.Name = "lblNumHoursWorked";
-            this.lblNumHoursWorked.Size = new System.Drawing.Size(191, 19);
+            this.lblNumHoursWorked.Size = new System.Drawing.Size(193, 21);
             this.lblNumHoursWorked.TabIndex = 18;
             this.lblNumHoursWorked.Text = "Number Of Hours Worked:";
             // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(38, 285);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(45, 19);
-            this.lblDate.TabIndex = 19;
-            this.lblDate.Text = "Date:";
-            // 
-            // txtEmployeeID
-            // 
-            this.txtEmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmployeeID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmployeeID.Location = new System.Drawing.Point(244, 163);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(234, 26);
-            this.txtEmployeeID.TabIndex = 20;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.CalendarFont = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Location = new System.Drawing.Point(244, 278);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(234, 26);
-            this.dtpDate.TabIndex = 21;
-            // 
             // updHoursWorked
             // 
+            this.updHoursWorked.DecimalPlaces = 1;
             this.updHoursWorked.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updHoursWorked.Location = new System.Drawing.Point(244, 218);
+            this.updHoursWorked.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.updHoursWorked.Location = new System.Drawing.Point(274, 280);
             this.updHoursWorked.Name = "updHoursWorked";
             this.updHoursWorked.Size = new System.Drawing.Size(234, 26);
             this.updHoursWorked.TabIndex = 35;
@@ -173,6 +157,7 @@
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -209,28 +194,54 @@
             // 
             // pnlButtons
             // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Location = new System.Drawing.Point(29, 362);
+            this.pnlButtons.Location = new System.Drawing.Point(29, 400);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 37;
+            // 
+            // lblT_ID
+            // 
+            this.lblT_ID.AutoSize = true;
+            this.lblT_ID.Location = new System.Drawing.Point(59, 178);
+            this.lblT_ID.Name = "lblT_ID";
+            this.lblT_ID.Size = new System.Drawing.Size(70, 13);
+            this.lblT_ID.TabIndex = 38;
+            this.lblT_ID.Text = "Timesheet ID";
+            // 
+            // txtT_ID
+            // 
+            this.txtT_ID.Location = new System.Drawing.Point(274, 170);
+            this.txtT_ID.Name = "txtT_ID";
+            this.txtT_ID.Size = new System.Drawing.Size(100, 20);
+            this.txtT_ID.TabIndex = 39;
+            // 
+            // cboE_ID
+            // 
+            this.cboE_ID.FormattingEnabled = true;
+            this.cboE_ID.Location = new System.Drawing.Point(274, 227);
+            this.cboE_ID.Name = "cboE_ID";
+            this.cboE_ID.Size = new System.Drawing.Size(125, 21);
+            this.cboE_ID.TabIndex = 40;
             // 
             // frmTimesheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(577, 489);
+            this.Controls.Add(this.cboE_ID);
+            this.Controls.Add(this.txtT_ID);
+            this.Controls.Add(this.lblT_ID);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.updHoursWorked);
-            this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.txtEmployeeID);
-            this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblNumHoursWorked);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.mnuFleet);
@@ -239,6 +250,7 @@
             this.Name = "frmTimesheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
+            this.Load += new System.EventHandler(this.frmTimesheet_Load);
             this.pnlTimesheet.ResumeLayout(false);
             this.pnlTimesheet.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
@@ -260,14 +272,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.Label lblNumHoursWorked;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.TextBox txtEmployeeID;
-        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.NumericUpDown updHoursWorked;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Label lblT_ID;
+        private System.Windows.Forms.TextBox txtT_ID;
+        private System.Windows.Forms.ComboBox cboE_ID;
     }
 }
