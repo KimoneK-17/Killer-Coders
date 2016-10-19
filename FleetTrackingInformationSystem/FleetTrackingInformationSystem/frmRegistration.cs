@@ -123,21 +123,31 @@ namespace FleetTrackingInformationSystem
                                     {
                                         try
                                         {
-                                            DBConnect objDBConnect = new DBConnect();
-                                            objDBConnect.OpenConnection();
+                                            Check check = new Check();
+                                            bool executeSQL = check.CheckDB("Register", "R_UNAME", R_UNAME);
 
-                                            objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Register VALUES (@R_DOB, @R_NAME, @R_SNAME,@R_EMPPOS,@R_EMAIL,@R_UNAME, @R_PWORD)", objDBConnect.sqlConn);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", R_DOB);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_NAME", R_NAME);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_SNAME", R_SNAME);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMPPOS", R_EMPPOS);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMAIL", R_EMAIL);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
-                                            objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
+                                            if (executeSQL == false)
+                                            {
+                                                DBConnect objDBConnect = new DBConnect();
+                                                objDBConnect.OpenConnection();
 
-                                            objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                                            objDBConnect.sqlDR.Close();
-                                            objDBConnect.sqlConn.Close();
+                                                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Register VALUES (@R_DOB, @R_NAME, @R_SNAME,@R_EMPPOS,@R_EMAIL,@R_UNAME, @R_PWORD)", objDBConnect.sqlConn);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", R_DOB);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_NAME", R_NAME);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_SNAME", R_SNAME);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMPPOS", R_EMPPOS);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMAIL", R_EMAIL);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
+
+                                                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                                                objDBConnect.sqlDR.Close();
+                                                objDBConnect.sqlConn.Close();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("That username already exists");
+                                            }
 
                                             try
                                             {
