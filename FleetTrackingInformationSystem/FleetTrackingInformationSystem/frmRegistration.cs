@@ -27,8 +27,8 @@ namespace FleetTrackingInformationSystem
         string R_UNAME;
         string R_PWORD;
         string R_EMAIL;
-        string R_MEMAIL = "myvcemail@gmail.com";
-        string R_EPWORD = "ice-cream2";
+        string R_MEMAIL = "cargofleetdonotreply@gmail.com";
+        string R_EPWORD = "Pass123456";
         string R_CURRDATE;
         string R_EMPPOS;
 
