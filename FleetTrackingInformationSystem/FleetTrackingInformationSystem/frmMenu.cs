@@ -93,7 +93,7 @@ namespace FleetTrackingInformationSystem
             {
                 this.Hide(); // Will Hide this Form
                 frmCustomer cus = new frmCustomer(); // Creates an Object 
-                cus.ShowDialog(); // Shows the Customer Form
+                cus.Show(); // Shows the Customer Form
             }
             catch(Exception ex)
             {
