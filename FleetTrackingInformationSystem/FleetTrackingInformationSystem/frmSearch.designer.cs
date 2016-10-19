@@ -33,7 +33,7 @@
             this.tabCust = new System.Windows.Forms.TabPage();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.cboC_ID = new System.Windows.Forms.ComboBox();
-            this.dgvSearch = new System.Windows.Forms.DataGridView();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.lblCustID = new System.Windows.Forms.Label();
             this.tabTripUsage = new System.Windows.Forms.TabPage();
             this.btnTrip = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.tabSearch.SuspendLayout();
             this.tabCust.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tabTripUsage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTripUsage)).BeginInit();
             this.tabEmployee.SuspendLayout();
@@ -103,7 +103,7 @@
             this.tabCust.AutoScroll = true;
             this.tabCust.Controls.Add(this.btnEmployee);
             this.tabCust.Controls.Add(this.cboC_ID);
-            this.tabCust.Controls.Add(this.dgvSearch);
+            this.tabCust.Controls.Add(this.dgvCustomer);
             this.tabCust.Controls.Add(this.lblCustID);
             this.tabCust.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCust.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -134,13 +134,13 @@
             this.cboC_ID.Size = new System.Drawing.Size(209, 27);
             this.cboC_ID.TabIndex = 3;
             // 
-            // dgvSearch
+            // dgvCustomer
             // 
-            this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearch.Location = new System.Drawing.Point(27, 95);
-            this.dgvSearch.Name = "dgvSearch";
-            this.dgvSearch.Size = new System.Drawing.Size(978, 292);
-            this.dgvSearch.TabIndex = 2;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(27, 95);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(978, 292);
+            this.dgvCustomer.TabIndex = 2;
             // 
             // lblCustID
             // 
@@ -479,7 +479,7 @@
             this.tabSearch.ResumeLayout(false);
             this.tabCust.ResumeLayout(false);
             this.tabCust.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tabTripUsage.ResumeLayout(false);
             this.tabTripUsage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTripUsage)).EndInit();
@@ -508,7 +508,7 @@
 
         private System.Windows.Forms.TabControl tabSearch;
         private System.Windows.Forms.TabPage tabCust;
-        private System.Windows.Forms.DataGridView dgvSearch;
+        private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Label lblCustID;
         private System.Windows.Forms.TabPage tabTripUsage;
         private System.Windows.Forms.DataGridView dgvTripUsage;
