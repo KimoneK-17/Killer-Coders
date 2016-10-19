@@ -1,4 +1,4 @@
-﻿using System;
+﻿   using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -194,33 +194,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(ex.Message); // Shows an error message
             }
         }
-      
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            string C_ID = cboC_ID.SelectedValue.ToString();
-            try
-            {	//creates object of DBConnect class
-
-
-                objDBConnect.GiveCommand("SELECT * from Customer WHERE Cust_ID LIKE @Cust_ID ");
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
-                objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
-                DataTable dtSearch = new DataTable();
-                objDBConnect.sqlDA.Fill(dtSearch);
-                dgvCustomer.DataSource = dtSearch;
-                dgvCustomer.AutoResizeColumns();
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message); // Shows an error message
-            }
-        }
-
 
         private void btnTrip_Click(object sender, EventArgs e)
         {
@@ -312,8 +285,8 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
                 DataTable dtSearch = new DataTable();
                 objDBConnect.sqlDA.Fill(dtSearch);
-                dgvVehicleRegNum.DataSource = dtSearch;
-                dgvVehicleRegNum.AutoResizeColumns();
+                dgvVehicle.DataSource = dtSearch;
+                dgvVehicle.AutoResizeColumns();
 
             }
             catch (SqlException ex)
@@ -356,6 +329,32 @@ namespace FleetTrackingInformationSystem
         public void data()
         {
 
+        }
+
+        private void btnCust_Click(object sender, EventArgs e)
+        {
+            string C_ID = cboC_ID.SelectedValue.ToString();
+            try
+            {	//creates object of DBConnect class
+
+
+                objDBConnect.GiveCommand("SELECT * from Customer WHERE Cust_ID LIKE @Cust_ID ");
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
+                objDBConnect.sqlDA = new SqlDataAdapter(objDBConnect.sqlCmd);
+                DataTable dtSearch = new DataTable();
+                objDBConnect.sqlDA.Fill(dtSearch);
+                dgvCustomer.DataSource = dtSearch;
+                dgvCustomer.AutoResizeColumns();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Shows an error message
+            }
         }
     }
 }
