@@ -223,11 +223,19 @@ namespace FleetTrackingInformationSystem
             E_ID = txtID.Text;
             E_NAME = txtName.Text;
             E_SNAME = txtSurname.Text;
-            E_POS = cboPosition.SelectedValue.ToString();
+            try
+            {
+                E_POS = this.cboPosition.GetItemText(this.cboPosition.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
             E_ADDRESS = txtAddress.Text;
             E_CONTACT = txtContactNum.Text;
             E_EMAIL = txtEmail.Text;
             E_SALARY = txtSalary.Text;
+            
         }
     }
 }

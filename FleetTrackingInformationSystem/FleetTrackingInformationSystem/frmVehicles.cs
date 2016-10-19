@@ -114,14 +114,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Error! You Cannot Submit Vehicle Details: " + ex.Message);
                 }
-                try
-                {
-                    V_TYPE = this.cboType.GetItemText(this.cboType.SelectedItem);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Cobobox error: " + ex.Message);
-                }
+                
             }
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -186,12 +179,18 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error! You Cannot Update Vehicle Details: " + ex.Message);
             }
         }
-
         private void getValues()
         {
             V_MILEAGE = txtMileage.Text;
             V_MAKE = txtMake.Text;
-            V_TYPE = cboType.SelectedItem.ToString();
+            try
+            {
+                V_TYPE = this.cboType.GetItemText(this.cboType.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
             V_MODEL = txtModel.Text;
             V_YEAR = dtpVehicleYear.Value.ToString();
             V_RN = txtRegNum.Text;
