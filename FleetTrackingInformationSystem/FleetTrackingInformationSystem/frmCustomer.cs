@@ -121,25 +121,33 @@ namespace FleetTrackingInformationSystem
             {
                 try
                 {
-                    DBConnect objDBConnect = new DBConnect();
+                    bool executeSQL = check.CheckDB("Customer", "Cust_ID", C_ID);
+                    if (executeSQL == false)
+                    {
+                        DBConnect objDBConnect = new DBConnect();
 
-                    objDBConnect.OpenConnection();
-                    //IF NOT EXISTS (SELECT * FROM Customer WHERE Cust_ID = @Cust_ID) BEGIN 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); 
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
+                        objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Type", C_TYPE);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ContactNo", C_CONTACT);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Email", C_EMAIL);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayDue", C_DUE);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_PayMade", C_MADE);
 
-                    MessageBox.Show("SUCCESSFULLY INSERTED");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                        MessageBox.Show("Successfully Inserted");
+                        objDBConnect.sqlDR.Close();
+                        objDBConnect.sqlConn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("That Customer ID already exists in the database");
+                    }
                 }
                 catch (SqlException ex)
                 {
