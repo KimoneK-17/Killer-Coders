@@ -105,14 +105,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
                 }
-                try
-                {
-                    V_RN = this.cboV_RN.GetItemText(this.cboV_RN.SelectedItem);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Cobobox error: " + ex.Message);
-                }
+                
             }
         }
 
@@ -180,9 +173,14 @@ namespace FleetTrackingInformationSystem
             T_ID = txtTripID.Text;
             T_TO = dtpDateTo.Text;
             T_FROM = dtpDateFrom.Text;
-            V_RN = cboV_RN.SelectedValue.ToString();
-
-
+            try
+            {
+                V_RN = this.cboV_RN.GetItemText(this.cboV_RN.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
