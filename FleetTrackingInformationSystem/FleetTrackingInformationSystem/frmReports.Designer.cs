@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReports));
-            this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabReports = new System.Windows.Forms.TabControl();
             this.tabVehicleStat = new System.Windows.Forms.TabPage();
             this.btnPrintVehicleStat = new System.Windows.Forms.Button();
@@ -116,7 +115,7 @@
             this.printDocument15 = new System.Drawing.Printing.PrintDocument();
             this.printDocument16 = new System.Drawing.Printing.PrintDocument();
             this.printDocument17 = new System.Drawing.Printing.PrintDocument();
-            ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
+            this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).BeginInit();
@@ -164,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTSMonthly)).BeginInit();
             this.pnlCustomer.SuspendLayout();
             this.mnuFleet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabReports
@@ -198,9 +198,10 @@
             // btnPrintVehicleStat
             // 
             this.btnPrintVehicleStat.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintVehicleStat.Location = new System.Drawing.Point(600, 475);
+            this.btnPrintVehicleStat.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnPrintVehicleStat.Location = new System.Drawing.Point(600, 487);
             this.btnPrintVehicleStat.Name = "btnPrintVehicleStat";
-            this.btnPrintVehicleStat.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehicleStat.Size = new System.Drawing.Size(125, 39);
             this.btnPrintVehicleStat.TabIndex = 18;
             this.btnPrintVehicleStat.Text = "Print";
             this.btnPrintVehicleStat.UseVisualStyleBackColor = true;
@@ -250,9 +251,10 @@
             // btnPrintSerAppDaily
             // 
             this.btnPrintSerAppDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerAppDaily.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintSerAppDaily.Location = new System.Drawing.Point(591, 439);
             this.btnPrintSerAppDaily.Name = "btnPrintSerAppDaily";
-            this.btnPrintSerAppDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerAppDaily.Size = new System.Drawing.Size(125, 39);
             this.btnPrintSerAppDaily.TabIndex = 20;
             this.btnPrintSerAppDaily.Text = "Print";
             this.btnPrintSerAppDaily.UseVisualStyleBackColor = true;
@@ -281,9 +283,10 @@
             // btnPrintSerAppWeek
             // 
             this.btnPrintSerAppWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerAppWeek.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintSerAppWeek.Location = new System.Drawing.Point(592, 439);
             this.btnPrintSerAppWeek.Name = "btnPrintSerAppWeek";
-            this.btnPrintSerAppWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerAppWeek.Size = new System.Drawing.Size(125, 39);
             this.btnPrintSerAppWeek.TabIndex = 20;
             this.btnPrintSerAppWeek.Text = "Print";
             this.btnPrintSerAppWeek.UseVisualStyleBackColor = true;
@@ -311,9 +314,10 @@
             // btnPrintSerReq
             // 
             this.btnPrintSerReq.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintSerReq.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintSerReq.Location = new System.Drawing.Point(599, 470);
             this.btnPrintSerReq.Name = "btnPrintSerReq";
-            this.btnPrintSerReq.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintSerReq.Size = new System.Drawing.Size(125, 39);
             this.btnPrintSerReq.TabIndex = 20;
             this.btnPrintSerReq.Text = "Print";
             this.btnPrintSerReq.UseVisualStyleBackColor = true;
@@ -364,9 +368,10 @@
             // btnPrintVehSerComDaily
             // 
             this.btnPrintVehSerComDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerComDaily.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintVehSerComDaily.Location = new System.Drawing.Point(592, 439);
             this.btnPrintVehSerComDaily.Name = "btnPrintVehSerComDaily";
-            this.btnPrintVehSerComDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerComDaily.Size = new System.Drawing.Size(125, 39);
             this.btnPrintVehSerComDaily.TabIndex = 20;
             this.btnPrintVehSerComDaily.Text = "Print";
             this.btnPrintVehSerComDaily.UseVisualStyleBackColor = true;
@@ -395,9 +400,10 @@
             // btnPrintVehSerComWeek
             // 
             this.btnPrintVehSerComWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerComWeek.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintVehSerComWeek.Location = new System.Drawing.Point(594, 439);
             this.btnPrintVehSerComWeek.Name = "btnPrintVehSerComWeek";
-            this.btnPrintVehSerComWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerComWeek.Size = new System.Drawing.Size(125, 39);
             this.btnPrintVehSerComWeek.TabIndex = 20;
             this.btnPrintVehSerComWeek.Text = "Print";
             this.btnPrintVehSerComWeek.UseVisualStyleBackColor = true;
@@ -425,9 +431,10 @@
             // btnPrintVehSerMonth
             // 
             this.btnPrintVehSerMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerMonth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintVehSerMonth.Location = new System.Drawing.Point(589, 442);
             this.btnPrintVehSerMonth.Name = "btnPrintVehSerMonth";
-            this.btnPrintVehSerMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerMonth.Size = new System.Drawing.Size(125, 39);
             this.btnPrintVehSerMonth.TabIndex = 20;
             this.btnPrintVehSerMonth.Text = "Print";
             this.btnPrintVehSerMonth.UseVisualStyleBackColor = true;
@@ -455,9 +462,10 @@
             // btnPrintVehSerYear
             // 
             this.btnPrintVehSerYear.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintVehSerYear.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintVehSerYear.Location = new System.Drawing.Point(597, 440);
             this.btnPrintVehSerYear.Name = "btnPrintVehSerYear";
-            this.btnPrintVehSerYear.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintVehSerYear.Size = new System.Drawing.Size(125, 39);
             this.btnPrintVehSerYear.TabIndex = 20;
             this.btnPrintVehSerYear.Text = "Print";
             this.btnPrintVehSerYear.UseVisualStyleBackColor = true;
@@ -485,9 +493,10 @@
             // btnPrintDetailSerInfo
             // 
             this.btnPrintDetailSerInfo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintDetailSerInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintDetailSerInfo.Location = new System.Drawing.Point(613, 475);
             this.btnPrintDetailSerInfo.Name = "btnPrintDetailSerInfo";
-            this.btnPrintDetailSerInfo.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintDetailSerInfo.Size = new System.Drawing.Size(125, 39);
             this.btnPrintDetailSerInfo.TabIndex = 20;
             this.btnPrintDetailSerInfo.Text = "Print";
             this.btnPrintDetailSerInfo.UseVisualStyleBackColor = true;
@@ -536,9 +545,10 @@
             // btnPrintPlanTripDaily
             // 
             this.btnPrintPlanTripDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPlanTripDaily.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintPlanTripDaily.Location = new System.Drawing.Point(605, 432);
             this.btnPrintPlanTripDaily.Name = "btnPrintPlanTripDaily";
-            this.btnPrintPlanTripDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintPlanTripDaily.Size = new System.Drawing.Size(125, 39);
             this.btnPrintPlanTripDaily.TabIndex = 20;
             this.btnPrintPlanTripDaily.Text = "Print";
             this.btnPrintPlanTripDaily.UseVisualStyleBackColor = true;
@@ -567,9 +577,10 @@
             // btnPrintPlanTripWeek
             // 
             this.btnPrintPlanTripWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintPlanTripWeek.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintPlanTripWeek.Location = new System.Drawing.Point(634, 432);
             this.btnPrintPlanTripWeek.Name = "btnPrintPlanTripWeek";
-            this.btnPrintPlanTripWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintPlanTripWeek.Size = new System.Drawing.Size(125, 39);
             this.btnPrintPlanTripWeek.TabIndex = 20;
             this.btnPrintPlanTripWeek.Text = "Print";
             this.btnPrintPlanTripWeek.UseVisualStyleBackColor = true;
@@ -619,9 +630,10 @@
             // btnPrintComTripDaily
             // 
             this.btnPrintComTripDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripDaily.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintComTripDaily.Location = new System.Drawing.Point(605, 436);
             this.btnPrintComTripDaily.Name = "btnPrintComTripDaily";
-            this.btnPrintComTripDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripDaily.Size = new System.Drawing.Size(125, 39);
             this.btnPrintComTripDaily.TabIndex = 20;
             this.btnPrintComTripDaily.Text = "Print";
             this.btnPrintComTripDaily.UseVisualStyleBackColor = true;
@@ -650,9 +662,10 @@
             // btnPrintComTripWeek
             // 
             this.btnPrintComTripWeek.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripWeek.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintComTripWeek.Location = new System.Drawing.Point(625, 438);
             this.btnPrintComTripWeek.Name = "btnPrintComTripWeek";
-            this.btnPrintComTripWeek.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripWeek.Size = new System.Drawing.Size(125, 39);
             this.btnPrintComTripWeek.TabIndex = 20;
             this.btnPrintComTripWeek.Text = "Print";
             this.btnPrintComTripWeek.UseVisualStyleBackColor = true;
@@ -680,9 +693,10 @@
             // btnPrintComTripMonth
             // 
             this.btnPrintComTripMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintComTripMonth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintComTripMonth.Location = new System.Drawing.Point(605, 436);
             this.btnPrintComTripMonth.Name = "btnPrintComTripMonth";
-            this.btnPrintComTripMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintComTripMonth.Size = new System.Drawing.Size(125, 39);
             this.btnPrintComTripMonth.TabIndex = 20;
             this.btnPrintComTripMonth.Text = "Print";
             this.btnPrintComTripMonth.UseVisualStyleBackColor = true;
@@ -732,9 +746,10 @@
             // btnPrintTimeDaily
             // 
             this.btnPrintTimeDaily.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeDaily.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintTimeDaily.Location = new System.Drawing.Point(593, 437);
             this.btnPrintTimeDaily.Name = "btnPrintTimeDaily";
-            this.btnPrintTimeDaily.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeDaily.Size = new System.Drawing.Size(125, 39);
             this.btnPrintTimeDaily.TabIndex = 20;
             this.btnPrintTimeDaily.Text = "Print";
             this.btnPrintTimeDaily.UseVisualStyleBackColor = true;
@@ -763,9 +778,10 @@
             // btnPrintTimeWeekly
             // 
             this.btnPrintTimeWeekly.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeWeekly.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintTimeWeekly.Location = new System.Drawing.Point(606, 439);
             this.btnPrintTimeWeekly.Name = "btnPrintTimeWeekly";
-            this.btnPrintTimeWeekly.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeWeekly.Size = new System.Drawing.Size(125, 39);
             this.btnPrintTimeWeekly.TabIndex = 20;
             this.btnPrintTimeWeekly.Text = "Print";
             this.btnPrintTimeWeekly.UseVisualStyleBackColor = true;
@@ -793,9 +809,10 @@
             // btnPrintTimeMonth
             // 
             this.btnPrintTimeMonth.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintTimeMonth.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnPrintTimeMonth.Location = new System.Drawing.Point(606, 439);
             this.btnPrintTimeMonth.Name = "btnPrintTimeMonth";
-            this.btnPrintTimeMonth.Size = new System.Drawing.Size(132, 51);
+            this.btnPrintTimeMonth.Size = new System.Drawing.Size(125, 39);
             this.btnPrintTimeMonth.TabIndex = 20;
             this.btnPrintTimeMonth.Text = "Print";
             this.btnPrintTimeMonth.UseVisualStyleBackColor = true;
@@ -823,6 +840,7 @@
             // 
             this.lblCustomer.AutoSize = true;
             this.lblCustomer.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomer.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCustomer.Location = new System.Drawing.Point(609, 12);
             this.lblCustomer.Name = "lblCustomer";
             this.lblCustomer.Size = new System.Drawing.Size(103, 33);
@@ -935,6 +953,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1448, 760);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCustomer);
@@ -943,7 +962,6 @@
             this.Name = "frmReports";
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmReports_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).EndInit();
             this.tabReports.ResumeLayout(false);
             this.tabVehicleStat.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleStatus)).EndInit();
@@ -993,6 +1011,7 @@
             this.pnlCustomer.PerformLayout();
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VehicleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

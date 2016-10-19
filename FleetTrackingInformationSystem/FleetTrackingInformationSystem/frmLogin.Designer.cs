@@ -57,7 +57,7 @@
             this.lblUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUser.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblUser.Location = new System.Drawing.Point(43, 173);
+            this.lblUser.Location = new System.Drawing.Point(49, 196);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(109, 28);
             this.lblUser.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.lblPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblPass.Location = new System.Drawing.Point(43, 236);
+            this.lblPass.Location = new System.Drawing.Point(49, 259);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(102, 28);
             this.lblPass.TabIndex = 1;
@@ -79,7 +79,7 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.Location = new System.Drawing.Point(176, 173);
+            this.txtUser.Location = new System.Drawing.Point(182, 196);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(180, 26);
             this.txtUser.TabIndex = 2;
@@ -126,14 +126,14 @@
             this.lblFleet.Name = "lblFleet";
             this.lblFleet.Size = new System.Drawing.Size(398, 33);
             this.lblFleet.TabIndex = 7;
-            this.lblFleet.Text = "Fleet Tracking information System";
+            this.lblFleet.Text = "Fleet Tracking Information System";
             // 
             // pnlFleet
             // 
             this.pnlFleet.BackColor = System.Drawing.Color.Transparent;
             this.pnlFleet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFleet.Controls.Add(this.lblFleet);
-            this.pnlFleet.Location = new System.Drawing.Point(15, 45);
+            this.pnlFleet.Location = new System.Drawing.Point(28, 46);
             this.pnlFleet.Name = "pnlFleet";
             this.pnlFleet.Size = new System.Drawing.Size(507, 66);
             this.pnlFleet.TabIndex = 8;
@@ -144,7 +144,7 @@
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
             this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(541, 24);
+            this.mnuFleet.Size = new System.Drawing.Size(567, 24);
             this.mnuFleet.TabIndex = 9;
             this.mnuFleet.Text = "menuStrip1";
             // 
@@ -166,7 +166,7 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.txtPass.Location = new System.Drawing.Point(175, 238);
+            this.txtPass.Location = new System.Drawing.Point(181, 261);
             this.txtPass.MaxLength = 25;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
@@ -177,9 +177,9 @@
             // 
             this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
-            this.picCargoFleet.Location = new System.Drawing.Point(394, 173);
+            this.picCargoFleet.Location = new System.Drawing.Point(400, 196);
             this.picCargoFleet.Name = "picCargoFleet";
-            this.picCargoFleet.Size = new System.Drawing.Size(94, 96);
+            this.picCargoFleet.Size = new System.Drawing.Size(123, 96);
             this.picCargoFleet.TabIndex = 13;
             this.picCargoFleet.TabStop = false;
             // 
@@ -191,7 +191,7 @@
             this.pnlButtons.Controls.Add(this.btnLog);
             this.pnlButtons.Controls.Add(this.btnPassReset);
             this.pnlButtons.Controls.Add(this.btnReg);
-            this.pnlButtons.Location = new System.Drawing.Point(15, 319);
+            this.pnlButtons.Location = new System.Drawing.Point(28, 375);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(507, 125);
             this.pnlButtons.TabIndex = 14;
@@ -213,8 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(541, 468);
+            this.ClientSize = new System.Drawing.Size(567, 536);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.picCargoFleet);
             this.Controls.Add(this.txtPass);

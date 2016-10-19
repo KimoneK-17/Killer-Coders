@@ -61,12 +61,13 @@
             // 
             this.lblVehicleRegNo.AutoSize = true;
             this.lblVehicleRegNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblVehicleRegNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblVehicleRegNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleRegNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVehicleRegNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVehicleRegNo.Location = new System.Drawing.Point(68, 203);
             this.lblVehicleRegNo.Name = "lblVehicleRegNo";
-            this.lblVehicleRegNo.Size = new System.Drawing.Size(150, 19);
+            this.lblVehicleRegNo.Size = new System.Drawing.Size(152, 21);
             this.lblVehicleRegNo.TabIndex = 0;
             this.lblVehicleRegNo.Text = "Vehicle Reg Number:";
             // 
@@ -74,12 +75,13 @@
             // 
             this.lblDateFrom.AutoSize = true;
             this.lblDateFrom.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDateFrom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateFrom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDateFrom.Location = new System.Drawing.Point(68, 249);
             this.lblDateFrom.Name = "lblDateFrom";
-            this.lblDateFrom.Size = new System.Drawing.Size(114, 19);
+            this.lblDateFrom.Size = new System.Drawing.Size(116, 21);
             this.lblDateFrom.TabIndex = 4;
             this.lblDateFrom.Text = "Trip Date From:";
             // 
@@ -195,12 +197,13 @@
             // 
             this.lblDateTo.AutoSize = true;
             this.lblDateTo.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDateTo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateTo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblDateTo.Location = new System.Drawing.Point(68, 301);
             this.lblDateTo.Name = "lblDateTo";
-            this.lblDateTo.Size = new System.Drawing.Size(95, 19);
+            this.lblDateTo.Size = new System.Drawing.Size(97, 21);
             this.lblDateTo.TabIndex = 15;
             this.lblDateTo.Text = "Trip Date To:";
             // 
@@ -216,12 +219,13 @@
             // 
             this.lblTripID.AutoSize = true;
             this.lblTripID.BackColor = System.Drawing.Color.Transparent;
+            this.lblTripID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTripID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTripID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTripID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblTripID.Location = new System.Drawing.Point(68, 157);
             this.lblTripID.Name = "lblTripID";
-            this.lblTripID.Size = new System.Drawing.Size(57, 19);
+            this.lblTripID.Size = new System.Drawing.Size(59, 21);
             this.lblTripID.TabIndex = 19;
             this.lblTripID.Text = "Trip ID:";
             // 
@@ -253,7 +257,7 @@
             this.cboV_RN.FormattingEnabled = true;
             this.cboV_RN.Location = new System.Drawing.Point(232, 203);
             this.cboV_RN.Name = "cboV_RN";
-            this.cboV_RN.Size = new System.Drawing.Size(121, 21);
+            this.cboV_RN.Size = new System.Drawing.Size(197, 21);
             this.cboV_RN.TabIndex = 22;
             // 
             // pbxQR
