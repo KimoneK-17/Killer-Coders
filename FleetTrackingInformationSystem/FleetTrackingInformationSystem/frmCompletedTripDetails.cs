@@ -23,7 +23,7 @@ namespace FleetTrackingInformationSystem
             try
             {
 
-                string query = "SELECT Trip_ID from TripUsage;";
+                string query = "SELECT Trip_ID from TripUsage WHERE Trip_Completed like 'NO';";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
 
@@ -49,17 +49,28 @@ namespace FleetTrackingInformationSystem
         string T_INCIDENTS;
         string T_MILEAGE;
         private void btnAdd_Click(object sender, EventArgs e)
-        {
+        {try
+            {
+                T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cobobox error: " + ex.Message);
+            }
+        T_FUEL = txtFuelUsage.Text;
+        T_INCIDENTS = txtVehicleIncidents.Text;
+        T_MILEAGE = txtKM.Text;
+
             try
             {
-                Check check = new Check();
-                bool executeSQL = check.CheckDB("TripUsage", "Trip_ID", T_ID);
-                if(executeSQL == false)
-                {
+                //Check check = new Check();
+                //bool executeSQL = check.CheckDB("TripUsage", "Trip_ID", T_ID);
+                //if(executeSQL == false)
+                //{
                     DBConnect objDBConnect = new DBConnect();
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_FuelUsed, @Trip_Incidents, @Trip_Mileage) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET (Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
@@ -69,11 +80,11 @@ namespace FleetTrackingInformationSystem
                     MessageBox.Show("Succesfully inserted");
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
-                }
-                else
-                {
-                    MessageBox.Show("That Trip ID already exists in the database");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("That Trip ID already exists in the database");
+                //}
             }
             catch (SqlException ex)
             {
@@ -83,14 +94,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
             }
-            try
-            {
-                T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cobobox error: " + ex.Message);
-            }
+            
         }
     }
 }
