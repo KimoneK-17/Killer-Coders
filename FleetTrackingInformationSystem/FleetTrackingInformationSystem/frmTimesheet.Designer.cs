@@ -79,7 +79,7 @@
             this.mnuOptions});
             this.mnuFleet.Location = new System.Drawing.Point(0, 0);
             this.mnuFleet.Name = "mnuFleet";
-            this.mnuFleet.Size = new System.Drawing.Size(577, 24);
+            this.mnuFleet.Size = new System.Drawing.Size(584, 24);
             this.mnuFleet.TabIndex = 14;
             this.mnuFleet.Text = "menuStrip1";
             // 
@@ -114,7 +114,7 @@
             this.lblEmployeeID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmployeeID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblEmployeeID.Location = new System.Drawing.Point(59, 227);
+            this.lblEmployeeID.Location = new System.Drawing.Point(58, 259);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(100, 21);
             this.lblEmployeeID.TabIndex = 17;
@@ -128,7 +128,7 @@
             this.lblNumHoursWorked.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblNumHoursWorked.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumHoursWorked.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblNumHoursWorked.Location = new System.Drawing.Point(59, 285);
+            this.lblNumHoursWorked.Location = new System.Drawing.Point(58, 312);
             this.lblNumHoursWorked.Name = "lblNumHoursWorked";
             this.lblNumHoursWorked.Size = new System.Drawing.Size(193, 21);
             this.lblNumHoursWorked.TabIndex = 18;
@@ -143,7 +143,7 @@
             0,
             0,
             65536});
-            this.updHoursWorked.Location = new System.Drawing.Point(274, 280);
+            this.updHoursWorked.Location = new System.Drawing.Point(273, 307);
             this.updHoursWorked.Name = "updHoursWorked";
             this.updHoursWorked.Size = new System.Drawing.Size(234, 26);
             this.updHoursWorked.TabIndex = 35;
@@ -201,7 +201,7 @@
             this.pnlButtons.Controls.Add(this.btnAdd);
             this.pnlButtons.Controls.Add(this.btnDelete);
             this.pnlButtons.Controls.Add(this.btnUpdate);
-            this.pnlButtons.Location = new System.Drawing.Point(29, 400);
+            this.pnlButtons.Location = new System.Drawing.Point(29, 430);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 37;
@@ -209,25 +209,29 @@
             // lblT_ID
             // 
             this.lblT_ID.AutoSize = true;
-            this.lblT_ID.Location = new System.Drawing.Point(59, 178);
+            this.lblT_ID.BackColor = System.Drawing.Color.Transparent;
+            this.lblT_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblT_ID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblT_ID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblT_ID.Location = new System.Drawing.Point(58, 206);
             this.lblT_ID.Name = "lblT_ID";
-            this.lblT_ID.Size = new System.Drawing.Size(70, 13);
+            this.lblT_ID.Size = new System.Drawing.Size(103, 21);
             this.lblT_ID.TabIndex = 38;
-            this.lblT_ID.Text = "Timesheet ID";
+            this.lblT_ID.Text = "Timesheet ID:";
             // 
             // txtT_ID
             // 
-            this.txtT_ID.Location = new System.Drawing.Point(274, 170);
+            this.txtT_ID.Location = new System.Drawing.Point(273, 198);
             this.txtT_ID.Name = "txtT_ID";
-            this.txtT_ID.Size = new System.Drawing.Size(100, 20);
+            this.txtT_ID.Size = new System.Drawing.Size(234, 20);
             this.txtT_ID.TabIndex = 39;
             // 
             // cboE_ID
             // 
             this.cboE_ID.FormattingEnabled = true;
-            this.cboE_ID.Location = new System.Drawing.Point(274, 227);
+            this.cboE_ID.Location = new System.Drawing.Point(273, 252);
             this.cboE_ID.Name = "cboE_ID";
-            this.cboE_ID.Size = new System.Drawing.Size(125, 21);
+            this.cboE_ID.Size = new System.Drawing.Size(234, 21);
             this.cboE_ID.TabIndex = 40;
             // 
             // frmTimesheet
@@ -236,7 +240,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(577, 489);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(584, 534);
             this.Controls.Add(this.cboE_ID);
             this.Controls.Add(this.txtT_ID);
             this.Controls.Add(this.lblT_ID);
