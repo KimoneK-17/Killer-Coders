@@ -88,7 +88,17 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
 
-            C_TYPE = cboCustomer.SelectedValue.ToString();
+            try
+            {
+
+                C_TYPE = this.cboCustomer.GetItemText(this.cboCustomer.SelectedItem);
+  //C_TYPE = cboCustomer.SelectedValue.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Cobobox error: "+ex.Message);
+            }
+          
             C_CONTACT = txtContact.Text;
             C_DUE = txtPaymentDue.Text;
             C_MADE = txtPaymentMade.Text;
@@ -114,8 +124,8 @@ namespace FleetTrackingInformationSystem
                     DBConnect objDBConnect = new DBConnect();
 
                     objDBConnect.OpenConnection();
-
-                    objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS (SELECT * FROM Customer WHERE C_ID = @Cust_ID) BEGIN INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); 
+                    //IF NOT EXISTS (SELECT * FROM Customer WHERE Cust_ID = @Cust_ID) BEGIN 
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Customer VALUES (@Cust_ID, @Cust_Name, @Cust_Surname, @Cust_Type, @Cust_ContactNo,@Cust_Email, @Cust_PayDue, @Cust_PayMade)", objDBConnect.sqlConn); 
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
@@ -133,7 +143,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("error: ",ex.Message);
+                    MessageBox.Show("error: " + ex.Message);
                 }
                 catch (Exception ex)
                 {
