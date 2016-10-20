@@ -304,9 +304,10 @@
             // lblLocationID
             // 
             this.lblLocationID.AutoSize = true;
+            this.lblLocationID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLocationID.Location = new System.Drawing.Point(32, 43);
             this.lblLocationID.Name = "lblLocationID";
-            this.lblLocationID.Size = new System.Drawing.Size(89, 19);
+            this.lblLocationID.Size = new System.Drawing.Size(91, 21);
             this.lblLocationID.TabIndex = 1;
             this.lblLocationID.Text = "Location ID:";
             // 

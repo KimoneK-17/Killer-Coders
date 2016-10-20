@@ -255,10 +255,11 @@
             // 
             // cboV_RN
             // 
+            this.cboV_RN.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboV_RN.FormattingEnabled = true;
-            this.cboV_RN.Location = new System.Drawing.Point(232, 203);
+            this.cboV_RN.Location = new System.Drawing.Point(232, 198);
             this.cboV_RN.Name = "cboV_RN";
-            this.cboV_RN.Size = new System.Drawing.Size(197, 21);
+            this.cboV_RN.Size = new System.Drawing.Size(197, 26);
             this.cboV_RN.TabIndex = 22;
             // 
             // pbxQR
