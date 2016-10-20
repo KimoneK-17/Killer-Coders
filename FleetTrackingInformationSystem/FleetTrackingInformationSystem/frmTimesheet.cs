@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace FleetTrackingInformationSystem
 {
@@ -29,7 +30,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
@@ -41,7 +42,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
@@ -51,10 +52,10 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-                
+
                 updHoursWorked.Value = 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear The Form: " + ex.Message); // Shows an error message
             }
@@ -99,6 +100,39 @@ namespace FleetTrackingInformationSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                T_ID = int.Parse(Interaction.InputBox("Please enter Timesheet ID: ", "Timesheet ID", "Default Text"));
+                T_HOURS = double.Parse(Interaction.InputBox("Please enter Number of hours worked: " + T_ID, "Hours Worked", "Default Text"));
+
+            }
+            catch (FormatException f)
+            {
+                MessageBox.Show("Invalid Format. Please only enter digits: " + f.Message);
+            }
+
+
+            try
+            {
+                DBConnect objDBConnect = new DBConnect();
+
+                objDBConnect.OpenConnection();
+
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Timesheet SET T_HOURS = @T_HOURS WHERE T_ID = @T_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);
+
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                MessageBox.Show("SUCCESSFULLY INSERTED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Submit Vehicle Details: " + ex.Message);
+            }
 
         }
 
@@ -125,11 +159,11 @@ namespace FleetTrackingInformationSystem
             }
             try
             {
-               E_ID = this.cboE_ID.GetItemText(this.cboE_ID.SelectedItem); 
+                E_ID = this.cboE_ID.GetItemText(this.cboE_ID.SelectedItem);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: "+ ex.Message);
+                MessageBox.Show("Cobobox error: " + ex.Message);
             }
         }
     }
