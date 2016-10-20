@@ -262,6 +262,7 @@
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(268, 385);
+            this.txtContact.MaxLength = 10;
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(234, 26);
             this.txtContact.TabIndex = 29;
