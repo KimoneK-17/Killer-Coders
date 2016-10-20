@@ -40,12 +40,15 @@
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlCTD = new System.Windows.Forms.Panel();
             this.lblFleet = new System.Windows.Forms.Label();
+            this.mnuFleet = new System.Windows.Forms.MenuStrip();
+            this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlButtons.SuspendLayout();
             this.pnlCTD.SuspendLayout();
+            this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtKM
@@ -147,8 +150,6 @@
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnAdd);
-            this.pnlButtons.Controls.Add(this.btnDelete);
-            this.pnlButtons.Controls.Add(this.btnUpdate);
             this.pnlButtons.Location = new System.Drawing.Point(12, 368);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(530, 64);
@@ -157,43 +158,24 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(404, 13);
+            this.btnClear.Location = new System.Drawing.Point(13, 13);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(163, 13);
+            this.btnAdd.Location = new System.Drawing.Point(420, 13);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 35);
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(39, 13);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(82, 35);
-            this.btnDelete.TabIndex = 16;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(290, 13);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(82, 35);
-            this.btnUpdate.TabIndex = 17;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // pnlCTD
             // 
@@ -217,6 +199,39 @@
             this.lblFleet.Text = "Completed Trip Details";
             this.lblFleet.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // mnuFleet
+            // 
+            this.mnuFleet.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuOptions});
+            this.mnuFleet.Location = new System.Drawing.Point(0, 0);
+            this.mnuFleet.Name = "mnuFleet";
+            this.mnuFleet.Size = new System.Drawing.Size(573, 24);
+            this.mnuFleet.TabIndex = 29;
+            this.mnuFleet.Text = "menuStrip1";
+            // 
+            // mnuOptions
+            // 
+            this.mnuOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuBack,
+            this.mnuExit});
+            this.mnuOptions.Name = "mnuOptions";
+            this.mnuOptions.Size = new System.Drawing.Size(61, 20);
+            this.mnuOptions.Text = "Options";
+            // 
+            // mnuBack
+            // 
+            this.mnuBack.Name = "mnuBack";
+            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
+            // 
+            // mnuExit
+            // 
+            this.mnuExit.Name = "mnuExit";
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
             // frmCompletedTripDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +239,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(573, 459);
+            this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCTD);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboT_ID);
@@ -241,6 +257,8 @@
             this.pnlButtons.ResumeLayout(false);
             this.pnlCTD.ResumeLayout(false);
             this.pnlCTD.PerformLayout();
+            this.mnuFleet.ResumeLayout(false);
+            this.mnuFleet.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,9 +277,11 @@
         private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel pnlCTD;
         private System.Windows.Forms.Label lblFleet;
+        private System.Windows.Forms.MenuStrip mnuFleet;
+        private System.Windows.Forms.ToolStripMenuItem mnuOptions;
+        private System.Windows.Forms.ToolStripMenuItem mnuBack;
+        private System.Windows.Forms.ToolStripMenuItem mnuExit;
     }
 }
