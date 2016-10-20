@@ -294,6 +294,7 @@
             // 
             // rtfAppointDescription
             // 
+            this.rtfAppointDescription.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtfAppointDescription.Location = new System.Drawing.Point(247, 403);
             this.rtfAppointDescription.Name = "rtfAppointDescription";
             this.rtfAppointDescription.Size = new System.Drawing.Size(344, 96);

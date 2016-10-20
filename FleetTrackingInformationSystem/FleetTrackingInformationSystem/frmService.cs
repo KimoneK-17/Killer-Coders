@@ -23,6 +23,12 @@ namespace FleetTrackingInformationSystem
         public frmService()
         {
             InitializeComponent();
+
+            cboAppointTime.SelectedItem = "8:00"; // Sets the Default value showing in the Drop Down list as 8:00 
+            cboAppointTime.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List 
+
+            cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List 
+            cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
