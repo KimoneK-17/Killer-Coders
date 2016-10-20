@@ -49,17 +49,12 @@ namespace FleetTrackingInformationSystem
         string T_INCIDENTS;
         string T_MILEAGE;
         private void btnAdd_Click(object sender, EventArgs e)
-        {try
-            {
-                T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cobobox error: " + ex.Message);
-            }
-        T_FUEL = txtFuelUsage.Text;
-        T_INCIDENTS = txtVehicleIncidents.Text;
-        T_MILEAGE = txtKM.Text;
+        {
+            T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
+
+            T_FUEL = txtFuelUsage.Text;
+            T_INCIDENTS = txtVehicleIncidents.Text;
+            T_MILEAGE = txtKM.Text;
 
             try
             {
@@ -67,21 +62,21 @@ namespace FleetTrackingInformationSystem
                 //bool executeSQL = check.CheckDB("TripUsage", "Trip_ID", T_ID);
                 //if(executeSQL == false)
                 //{
-                    DBConnect objDBConnect = new DBConnect();
-                    objDBConnect.OpenConnection();
+                DBConnect objDBConnect = new DBConnect();
+                objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET (Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage, Trip_Completed = @Trip_Completed) WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Completed", "YES");
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage, Trip_Completed = @Trip_Completed WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_FuelUsed", T_FUEL);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Incidents", T_INCIDENTS);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Mileage", T_MILEAGE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Completed", "YES");
 
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                    MessageBox.Show("Succesfully inserted");
-                    objDBConnect.sqlDR.Close();
-                    objDBConnect.sqlConn.Close();
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                MessageBox.Show("Succesfully inserted");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
                 //}
                 //else
                 //{
@@ -96,7 +91,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
             }
-            
+
         }
     }
 }

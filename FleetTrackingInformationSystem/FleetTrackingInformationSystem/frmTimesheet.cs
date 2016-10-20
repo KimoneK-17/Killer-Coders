@@ -69,7 +69,7 @@ namespace FleetTrackingInformationSystem
         {
             T_ID = int.Parse(txtT_ID.Text);
             E_ID = cboE_ID.SelectedValue.ToString();
-            T_HOURS = int.Parse(updHoursWorked.Text);
+            T_HOURS = double.Parse(updHoursWorked.Text);
 
 
 
@@ -79,7 +79,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,T_DATE = GETDATE())", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,GETDATE())", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);

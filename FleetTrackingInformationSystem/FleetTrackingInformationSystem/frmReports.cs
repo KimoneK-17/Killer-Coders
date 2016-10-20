@@ -128,7 +128,7 @@ namespace FleetTrackingInformationSystem
                 dgvDetailedService.ReadOnly = true;
                 dgvDetailedService.DataSource = ds5.Tables[0];
 
-                string selectPlannedTripDaily = "Select * FROM TripUsage WHERE Month(Trip_DateFrom) = MONTH(GETDATE()) AND YEAR(Trip_DateFrom) = YEAR(GETDATE()) AND DAY(Trip_DateFrom) = DAY(GETDATE())";               
+                string selectPlannedTripDaily = "Select * FROM TripUsage WHERE Month(Trip_DateFrom) = MONTH(GETDATE()) AND YEAR(Trip_DateFrom) = YEAR(GETDATE()) AND DAY(Trip_DateFrom) = DAY(GETDATE()) AND Trip_Completed LIKE 'NO'";               
                 db.sqlDA = new SqlDataAdapter(selectPlannedTripDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder6 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds6 = new DataSet();
