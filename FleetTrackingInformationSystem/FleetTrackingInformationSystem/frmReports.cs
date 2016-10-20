@@ -20,7 +20,8 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
-
+         DBConnect db = new DBConnect();
+         DataSet ds;
         private void frmReports_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -50,9 +51,8 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Problem with Resizing Data Grid Views: " + ex); // Shows Error Message if there is a Problem
             }
 
-            DBConnect db = new DBConnect();
-            db.OpenConnection();
 
+            db.OpenConnection();
             try // Adds Data to the Data Grid Views
             {
                 string selectVehicleStatus = "SELECT * FROM Vehicle ORDER BY Vehicle_Year"; // Sql For Data Grid View         
@@ -668,5 +668,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Print Report: " + ex);
             }
         }
+
+        
     }
 }
