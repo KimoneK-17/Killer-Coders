@@ -49,13 +49,13 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtContactNum = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtSalary = new System.Windows.Forms.TextBox();
             this.cboPosition = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.txtSalary = new System.Windows.Forms.MaskedTextBox();
             this.pnlEmployee.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -193,7 +193,7 @@
             this.lblContactNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblContactNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContactNum.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblContactNum.Location = new System.Drawing.Point(50, 430);
+            this.lblContactNum.Location = new System.Drawing.Point(48, 482);
             this.lblContactNum.Name = "lblContactNum";
             this.lblContactNum.Size = new System.Drawing.Size(128, 21);
             this.lblContactNum.TabIndex = 22;
@@ -207,7 +207,7 @@
             this.lblEmail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblEmail.Location = new System.Drawing.Point(50, 475);
+            this.lblEmail.Location = new System.Drawing.Point(48, 527);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(110, 21);
             this.lblEmail.TabIndex = 23;
@@ -221,7 +221,7 @@
             this.lblSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblSalary.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalary.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSalary.Location = new System.Drawing.Point(50, 525);
+            this.lblSalary.Location = new System.Drawing.Point(48, 577);
             this.lblSalary.Name = "lblSalary";
             this.lblSalary.Size = new System.Drawing.Size(116, 21);
             this.lblSalary.TabIndex = 25;
@@ -258,16 +258,18 @@
             // 
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(246, 381);
+            this.txtAddress.Location = new System.Drawing.Point(246, 388);
+            this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(234, 26);
+            this.txtAddress.Size = new System.Drawing.Size(234, 66);
             this.txtAddress.TabIndex = 30;
             // 
             // txtContactNum
             // 
             this.txtContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContactNum.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactNum.Location = new System.Drawing.Point(246, 423);
+            this.txtContactNum.Location = new System.Drawing.Point(244, 475);
+            this.txtContactNum.MaxLength = 10;
             this.txtContactNum.Name = "txtContactNum";
             this.txtContactNum.Size = new System.Drawing.Size(234, 26);
             this.txtContactNum.TabIndex = 31;
@@ -276,19 +278,10 @@
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(246, 468);
+            this.txtEmail.Location = new System.Drawing.Point(244, 520);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(234, 26);
             this.txtEmail.TabIndex = 32;
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSalary.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(246, 518);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(234, 26);
-            this.txtSalary.TabIndex = 34;
             // 
             // cboPosition
             // 
@@ -360,6 +353,15 @@
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 38;
             // 
+            // txtSalary
+            // 
+            this.txtSalary.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
+            this.txtSalary.Location = new System.Drawing.Point(244, 572);
+            this.txtSalary.Mask = "000000,00";
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(234, 26);
+            this.txtSalary.TabIndex = 39;
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,9 +369,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(585, 728);
+            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboPosition);
-            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtContactNum);
             this.Controls.Add(this.txtAddress);
@@ -422,12 +424,12 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtContactNum;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.ComboBox cboPosition;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.MaskedTextBox txtSalary;
     }
 }
