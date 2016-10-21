@@ -97,16 +97,16 @@ namespace FleetTrackingInformationSystem
 
             Employee objEmp = new Employee(E_ID, E_NAME, E_SNAME, E_POS, E_CONTACT, E_EMAIL, E_SALARY);
 
-               exit = check.CheckEmpty(E_NAME, "Employee Name");
-                exit = check.CheckEmpty(E_ID, "Employee ID");
-                exit = check.CheckEmpty(E_SNAME, "Employee Surname");
-                exit = check.CheckEmpty(E_POS, "Employee Position");
-                exit = check.CheckEmpty(E_CONTACT, "Employee Contact");
-                exit = check.CheckEmpty(E_EMAIL, "Employee Email");
-                exit = check.CheckForNumbers(E_NAME, "Employee Name");
-                exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
-                exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
-                exit = check.CheckForLetters(E_SALARY, "Employee Salary");
+            exit = check.CheckEmpty(E_NAME, "Employee Name", exit);
+            exit = check.CheckEmpty(E_ID, "Employee ID", exit);
+            exit = check.CheckEmpty(E_SNAME, "Employee Surname", exit);
+            exit = check.CheckEmpty(E_POS, "Employee Position", exit);
+            exit = check.CheckEmpty(E_CONTACT, "Employee Contact", exit);
+            exit = check.CheckEmpty(E_EMAIL, "Employee Email", exit);
+            exit = check.CheckForNumbers(E_NAME, "Employee Name");
+            exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
+            exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
+            exit = check.CheckForLetters(E_SALARY, "Employee Salary");
                
 
             if (accepted == true)

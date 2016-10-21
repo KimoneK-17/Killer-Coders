@@ -74,9 +74,9 @@ namespace FleetTrackingInformationSystem
             getValues();
             
 
-            exit = check.CheckEmpty(T_ID, "Trip ID");
+            exit = check.CheckEmpty(T_ID, "Trip ID", exit);
 
-            exit = check.CheckEmpty(V_RN, "Vehicle Reg Number");
+            exit = check.CheckEmpty(V_RN, "Vehicle Reg Number", exit);
 
 
             if (exit == false)
