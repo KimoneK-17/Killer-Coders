@@ -149,7 +149,7 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
             userName = txtUser.Text;
-            exit = check.CheckEmpty(userName, "Username");
+            exit = check.CheckEmpty(userName, "Username", exit);
             if (exit == false)
             {
                 try

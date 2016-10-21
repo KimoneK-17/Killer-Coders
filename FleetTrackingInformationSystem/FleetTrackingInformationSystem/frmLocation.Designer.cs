@@ -42,7 +42,6 @@
             this.lblEmployees = new System.Windows.Forms.Label();
             this.lblManager = new System.Windows.Forms.Label();
             this.txtManager = new System.Windows.Forms.TextBox();
-            this.cboLocationName = new System.Windows.Forms.ComboBox();
             this.cboCity = new System.Windows.Forms.ComboBox();
             this.cboProvince = new System.Windows.Forms.ComboBox();
             this.updEmployees = new System.Windows.Forms.NumericUpDown();
@@ -54,6 +53,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.txtLocName = new System.Windows.Forms.TextBox();
             this.pnlLocation.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.updEmployees)).BeginInit();
@@ -207,20 +207,27 @@
             this.txtManager.Size = new System.Drawing.Size(180, 26);
             this.txtManager.TabIndex = 29;
             // 
-            // cboLocationName
-            // 
-            this.cboLocationName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLocationName.FormattingEnabled = true;
-            this.cboLocationName.Location = new System.Drawing.Point(252, 180);
-            this.cboLocationName.Name = "cboLocationName";
-            this.cboLocationName.Size = new System.Drawing.Size(180, 26);
-            this.cboLocationName.TabIndex = 30;
-            this.cboLocationName.SelectedIndexChanged += new System.EventHandler(this.cboLocationName_SelectedIndexChanged);
-            // 
             // cboCity
             // 
             this.cboCity.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCity.FormattingEnabled = true;
+            this.cboCity.Items.AddRange(new object[] {
+            "Durban",
+            "Johnessburg",
+            "Cape Town",
+            "Pretoria",
+            "Port Elizabeth",
+            "Bloemfontein",
+            "Pietermaritzburg",
+            "East London",
+            "Polokwane",
+            "Nelspruit",
+            "Kimberly",
+            "Soweto",
+            "Rustenburg",
+            "Benoni",
+            "Richards bay",
+            "Umhlazi"});
             this.cboCity.Location = new System.Drawing.Point(252, 284);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(180, 26);
@@ -230,6 +237,16 @@
             // 
             this.cboProvince.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProvince.FormattingEnabled = true;
+            this.cboProvince.Items.AddRange(new object[] {
+            "The Eastern Cape.",
+            "The Free State.",
+            "Gauteng.",
+            "KwaZulu-Natal.",
+            "Limpopo.",
+            "Mpumalanga.",
+            "The Northern Cape.",
+            "North West.",
+            "Western Cape."});
             this.cboProvince.Location = new System.Drawing.Point(252, 340);
             this.cboProvince.Name = "cboProvince";
             this.cboProvince.Size = new System.Drawing.Size(180, 26);
@@ -331,6 +348,14 @@
             this.pnlButtons.Size = new System.Drawing.Size(526, 66);
             this.pnlButtons.TabIndex = 38;
             // 
+            // txtLocName
+            // 
+            this.txtLocName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocName.Location = new System.Drawing.Point(252, 182);
+            this.txtLocName.Name = "txtLocName";
+            this.txtLocName.Size = new System.Drawing.Size(180, 26);
+            this.txtLocName.TabIndex = 39;
+            // 
             // frmLocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +363,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(558, 688);
+            this.Controls.Add(this.txtLocName);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.txtLocationID);
             this.Controls.Add(this.lblLocationID);
@@ -345,7 +371,6 @@
             this.Controls.Add(this.updEmployees);
             this.Controls.Add(this.cboProvince);
             this.Controls.Add(this.cboCity);
-            this.Controls.Add(this.cboLocationName);
             this.Controls.Add(this.txtManager);
             this.Controls.Add(this.lblManager);
             this.Controls.Add(this.lblEmployees);
@@ -386,7 +411,6 @@
         private System.Windows.Forms.Label lblEmployees;
         private System.Windows.Forms.Label lblManager;
         private System.Windows.Forms.TextBox txtManager;
-        private System.Windows.Forms.ComboBox cboLocationName;
         private System.Windows.Forms.ComboBox cboCity;
         private System.Windows.Forms.ComboBox cboProvince;
         private System.Windows.Forms.NumericUpDown updEmployees;
@@ -398,5 +422,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.TextBox txtLocName;
     }
 }

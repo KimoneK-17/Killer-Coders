@@ -12,12 +12,11 @@ namespace FleetTrackingInformationSystem
     class Check
     {
         double doubleTryParseOut;
-        public bool CheckEmpty(string text, string fieldName)
+        public bool CheckEmpty(string text, string fieldName, bool exit)
         {
-            bool exit = false;
             if (text == string.Empty)
             {
-                MessageBox.Show("The {0} field is empty", fieldName);
+                MessageBox.Show("The " + fieldName + " field is empty");
                 exit = true;
             }
             return exit;
@@ -34,7 +33,7 @@ namespace FleetTrackingInformationSystem
                     numbers[x] = (x + 1).ToString();
                     if (text.Contains(numbers[x]))
                     {
-                        MessageBox.Show("The {0} field cannot contain numbers", fieldName);
+                        MessageBox.Show("The " + fieldName + " field cannot contain numbers");
                         exit = true;
                     }
                 }
@@ -51,7 +50,7 @@ namespace FleetTrackingInformationSystem
             bool exit = false;
             if (double.TryParse(text, out doubleTryParseOut) == false)
             {
-                MessageBox.Show("The {0} field cannot contain letters", fieldName);
+                MessageBox.Show("The " + fieldName + " field cannot contain letters");
                 exit = true;
             }
             return exit;

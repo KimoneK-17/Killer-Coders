@@ -1,4 +1,4 @@
-﻿   using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +17,12 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
 
+            cboC_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
+            cboT_ID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboL_ID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboS_ID.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void mnuBack_Click(object sender, EventArgs e)

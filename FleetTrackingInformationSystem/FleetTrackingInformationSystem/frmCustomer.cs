@@ -107,22 +107,18 @@ namespace FleetTrackingInformationSystem
             C_MADE = txtPaymentMade.Text;
             C_NAME = txtName.Text;
             C_SNAME = txtSurname.Text;
-
             
-                exit = check.CheckEmpty(C_TYPE, "Customer Type");
-                exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number");
-                exit = check.CheckEmpty(C_DUE, "Payment Due");
-                exit = check.CheckEmpty(C_MADE, "Payment Made");
-                exit = check.CheckEmpty(C_NAME, "Customer Name");
-                exit = check.CheckEmpty(C_SNAME, "Customer Surname");
-                exit = check.CheckForNumbers(C_NAME, "Customer Name");
-                exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
-                exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
-                exit = check.CheckForLetters(C_DUE, "Payment Due");
-                exit = check.CheckForLetters(C_MADE, "Payment Made");
-
-             
-
+            exit = check.CheckEmpty(C_TYPE, "Customer Type", exit);
+            exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number", exit);
+            exit = check.CheckEmpty(C_DUE, "Payment Due", exit);
+            exit = check.CheckEmpty(C_MADE, "Payment Made", exit);
+            exit = check.CheckEmpty(C_NAME, "Customer Name", exit);
+            exit = check.CheckEmpty(C_SNAME, "Customer Surname", exit);
+            exit = check.CheckForNumbers(C_NAME, "Customer Name");
+            exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
+            exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
+            exit = check.CheckForLetters(C_DUE, "Payment Due");
+            exit = check.CheckForLetters(C_MADE, "Payment Made");
 
             if (exit == false)
             {
@@ -158,12 +154,16 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("error: " + ex.Message);
+                    MessageBox.Show("Error cannot add customer details " + ex.Message);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message + ex.Data + ex.StackTrace);
                 }
+            }
+            else
+            {
+                MessageBox.Show("One or more fields are empty");
             }
         }
 

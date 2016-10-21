@@ -24,6 +24,9 @@ namespace FleetTrackingInformationSystem
         public frmVehicles()
         {
             InitializeComponent();
+
+            cboType.SelectedItem = "Log"; // Sets the Default value showing in the Drop Down list as Log
+            cboType.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -77,11 +80,11 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
 
-            exit = check.CheckEmpty(V_MILEAGE, "Vehicle Milage");
-            exit = check.CheckEmpty(V_MAKE, "Vehicle Make");
-            exit = check.CheckEmpty(V_MODEL, "Vehicle Model");
-            exit = check.CheckEmpty(V_RN, "Registration Number");
-            exit = check.CheckEmpty(V_TYPE, "Type of Vehicle");
+            exit = check.CheckEmpty(V_MILEAGE, "Vehicle Milage", exit);
+            exit = check.CheckEmpty(V_MAKE, "Vehicle Make", exit);
+            exit = check.CheckEmpty(V_MODEL, "Vehicle Model", exit);
+            exit = check.CheckEmpty(V_RN, "Registration Number", exit);
+            exit = check.CheckEmpty(V_TYPE, "Type of Vehicle", exit);
             exit = check.CheckForLetters(V_MILEAGE, "Vehicle Milage");
 
             if (exit == false)
@@ -102,7 +105,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    MessageBox.Show("Successfully Inserted");
                     objDBConnect.sqlDR.Close();
                     objDBConnect.sqlConn.Close();
                 }
