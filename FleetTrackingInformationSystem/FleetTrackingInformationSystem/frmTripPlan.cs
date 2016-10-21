@@ -26,6 +26,8 @@ namespace FleetTrackingInformationSystem
         public frmTripPlan()
         {
             InitializeComponent();
+           
+            cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
         private void btnBack_Click(object sender, EventArgs e)
