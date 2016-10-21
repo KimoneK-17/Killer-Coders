@@ -137,10 +137,11 @@
             // 
             // cboT_ID
             // 
+            this.cboT_ID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboT_ID.FormattingEnabled = true;
-            this.cboT_ID.Location = new System.Drawing.Point(214, 139);
+            this.cboT_ID.Location = new System.Drawing.Point(214, 134);
             this.cboT_ID.Name = "cboT_ID";
-            this.cboT_ID.Size = new System.Drawing.Size(209, 21);
+            this.cboT_ID.Size = new System.Drawing.Size(209, 26);
             this.cboT_ID.TabIndex = 26;
             // 
             // pnlButtons
@@ -158,7 +159,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(13, 13);
+            this.btnClear.Location = new System.Drawing.Point(23, 13);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(82, 35);
             this.btnClear.TabIndex = 15;
@@ -192,7 +193,7 @@
             this.lblFleet.AutoSize = true;
             this.lblFleet.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFleet.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFleet.Location = new System.Drawing.Point(117, 15);
+            this.lblFleet.Location = new System.Drawing.Point(133, 16);
             this.lblFleet.Name = "lblFleet";
             this.lblFleet.Size = new System.Drawing.Size(271, 33);
             this.lblFleet.TabIndex = 7;
@@ -252,7 +253,7 @@
             this.Controls.Add(this.lblFuelUsage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCompletedTripDetails";
-            this.Text = "frmCompletedTripDetails";
+            this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmCompletedTripDetails_Load);
             this.pnlButtons.ResumeLayout(false);
             this.pnlCTD.ResumeLayout(false);

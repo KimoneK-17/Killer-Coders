@@ -20,6 +20,9 @@ namespace FleetTrackingInformationSystem
         public frmRegistration()
         {
             InitializeComponent();
+
+            cboEmpPosition.SelectedItem = "Manager"; // Sets the Default value showing in the Drop Down list as Manager
+            cboEmpPosition.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
         string R_DOB;
         string R_NAME;

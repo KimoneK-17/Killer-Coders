@@ -26,6 +26,9 @@ namespace FleetTrackingInformationSystem
         public frmCustomer()
         {
             InitializeComponent();
+
+            cboCustomer.SelectedItem = "Vehicle Hire"; // Sets the Default value showing in the Drop Down list as Vehicle Hire
+            cboCustomer.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -17,11 +17,16 @@ namespace FleetTrackingInformationSystem
         public frmTimesheet()
         {
             InitializeComponent();
+
+            cboE_ID.SelectedItem = "100"; // Sets the Default value showing in the Drop Down list as 100
+            cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
+
         DBConnect objDBConnect = new DBConnect();
         int T_ID;
         string E_ID;
         double T_HOURS;
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             try
@@ -52,7 +57,6 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-
                 updHoursWorked.Value = 0;
             }
             catch (Exception ex)
@@ -71,8 +75,6 @@ namespace FleetTrackingInformationSystem
             T_ID = int.Parse(txtT_ID.Text);
             E_ID = cboE_ID.SelectedValue.ToString();
             T_HOURS = double.Parse(updHoursWorked.Text);
-
-
 
             try
             {
@@ -111,7 +113,6 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Invalid Format. Please only enter digits: " + f.Message);
             }
 
-
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -121,7 +122,6 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlCmd = new SqlCommand("UPDATE Timesheet SET T_HOURS = @T_HOURS WHERE T_ID = @T_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);
-
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
@@ -133,14 +133,12 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Submit Vehicle Details: " + ex.Message);
             }
-
         }
 
         private void frmTimesheet_Load(object sender, EventArgs e)
         {
             try
             {
-
                 string query = "SELECT Emp_ID from Employee;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
