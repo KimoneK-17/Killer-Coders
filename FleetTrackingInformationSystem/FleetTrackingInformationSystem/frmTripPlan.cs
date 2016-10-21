@@ -202,7 +202,7 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.ValueMember = "Vehicle_RegNumber";
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
-                CloseConnections();
+                objDBConnect.sqlConn.Close();
 
             }
             catch (SqlException ex)
@@ -213,7 +213,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-
            
         }
 
