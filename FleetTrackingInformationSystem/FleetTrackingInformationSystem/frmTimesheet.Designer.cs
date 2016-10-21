@@ -221,17 +221,19 @@
             // 
             // txtT_ID
             // 
-            this.txtT_ID.Location = new System.Drawing.Point(273, 198);
+            this.txtT_ID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtT_ID.Location = new System.Drawing.Point(273, 201);
             this.txtT_ID.Name = "txtT_ID";
-            this.txtT_ID.Size = new System.Drawing.Size(234, 20);
+            this.txtT_ID.Size = new System.Drawing.Size(234, 26);
             this.txtT_ID.TabIndex = 39;
             // 
             // cboE_ID
             // 
+            this.cboE_ID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboE_ID.FormattingEnabled = true;
             this.cboE_ID.Location = new System.Drawing.Point(273, 252);
             this.cboE_ID.Name = "cboE_ID";
-            this.cboE_ID.Size = new System.Drawing.Size(234, 21);
+            this.cboE_ID.Size = new System.Drawing.Size(234, 26);
             this.cboE_ID.TabIndex = 40;
             // 
             // frmTimesheet

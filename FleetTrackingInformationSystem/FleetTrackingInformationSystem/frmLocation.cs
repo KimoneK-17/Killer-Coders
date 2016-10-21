@@ -20,7 +20,7 @@ namespace FleetTrackingInformationSystem
         int L_VEHICLES;
         int L_EMPLOYEES;
         string L_PROVINCE;
-        
+        bool success = false;
         public frmLocation()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.Show();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back to Previous Form: " + ex);
             }
@@ -46,7 +46,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit the Application: " + ex); // Shows an error message 
             }
@@ -61,7 +61,7 @@ namespace FleetTrackingInformationSystem
                 updEmployees.Value = 0;
                 updVehicles.Value = 0;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear the Form: " + ex); // Shows an error message 
             }
@@ -74,12 +74,15 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
 
+
             exit = check.CheckEmpty(L_ID, "Location ID");
             exit = check.CheckEmpty(L_MANAGER, "Manager In Charge");
             exit = check.CheckEmpty(L_CITY, "City");
             exit = check.CheckEmpty(L_NAME, "Location");
             exit = check.CheckEmpty(L_PROVINCE, "Province");
             exit = check.CheckForNumbers(L_MANAGER, "Manager In Charge");
+
+
 
             if (exit == false)
             {
@@ -164,12 +167,12 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
                 objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION SET Location_Name=@Location_Name , Location_City=@Location_City, Location_NumVehicles = @Location_NumVehicles,Location_NumEmployees= @Location_NumEmployees,Location_Manager= @Location_Manager WHERE Location_ID = @Location_ID", objDBConnect.sqlConn);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
-		        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY UPDATED");
                 objDBConnect.sqlDR.Close();
@@ -222,6 +225,6 @@ namespace FleetTrackingInformationSystem
         {
 
         }
-   }
+    }
 }
 

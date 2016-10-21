@@ -21,12 +21,15 @@ namespace FleetTrackingInformationSystem
         string E_EMAIL;
         string E_SALARY;
         string E_ADDRESS;
-        
+
         string[] numbers = new string[10];
-        
+        bool success = false;
         public frmEmployee()
         {
             InitializeComponent();
+
+            cboPosition.SelectedItem = "Manager"; // Sets the Default value showing in the Drop Down list as Manager
+            cboPosition.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back to Previous Form: " + ex.Message); // Shows an Error Message
             }
@@ -49,7 +52,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
@@ -66,9 +69,9 @@ namespace FleetTrackingInformationSystem
                 txtName.Clear();
                 txtSalary.Clear();
                 txtSurname.Clear();
-              
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message
             }
@@ -86,28 +89,29 @@ namespace FleetTrackingInformationSystem
                 var addr = new System.Net.Mail.MailAddress(E_EMAIL);// Validates email address
                 accepted = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Invalid email address: " + ex.Message); // Shows an error message
             }
             E_SALARY = txtSalary.Text;
 
-            Employee objEmp = new Employee(E_ID,E_NAME,E_SNAME,E_POS,E_CONTACT,E_EMAIL,E_SALARY);
+            Employee objEmp = new Employee(E_ID, E_NAME, E_SNAME, E_POS, E_CONTACT, E_EMAIL, E_SALARY);
 
-            exit = check.CheckEmpty(E_NAME, "Employee Name");
-            exit = check.CheckEmpty(E_ID, "Employee ID");
-            exit = check.CheckEmpty(E_SNAME, "Employee Surname");
-            exit = check.CheckEmpty(E_POS, "Employee Position");
-            exit = check.CheckEmpty(E_CONTACT, "Employee Contact");
-            exit = check.CheckEmpty(E_EMAIL, "Employee Email");
-            exit = check.CheckForNumbers(E_NAME, "Employee Name");
-            exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
-            exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
-            exit = check.CheckForLetters(E_SALARY, "Employee Salary");
+               exit = check.CheckEmpty(E_NAME, "Employee Name");
+                exit = check.CheckEmpty(E_ID, "Employee ID");
+                exit = check.CheckEmpty(E_SNAME, "Employee Surname");
+                exit = check.CheckEmpty(E_POS, "Employee Position");
+                exit = check.CheckEmpty(E_CONTACT, "Employee Contact");
+                exit = check.CheckEmpty(E_EMAIL, "Employee Email");
+                exit = check.CheckForNumbers(E_NAME, "Employee Name");
+                exit = check.CheckForNumbers(E_SNAME, "Employee Surname");
+                exit = check.CheckForLetters(E_CONTACT, "Employee Contact Number");
+                exit = check.CheckForLetters(E_SALARY, "Employee Salary");
+               
 
             if (accepted == true)
             {
-                if(exit == false)
+                if (success == true)
                 {
                     try
                     {
@@ -189,24 +193,24 @@ namespace FleetTrackingInformationSystem
             getValues();
             try
             {
-               DBConnect objDBConnect = new DBConnect();
+                DBConnect objDBConnect = new DBConnect();
 
-               objDBConnect.OpenConnection();
+                objDBConnect.OpenConnection();
 
-               objDBConnect.sqlCmd = new SqlCommand("UPDATE Employee SET (Emp_Name=@Emp_Name,Emp_Surname= @Emp_Surname,Emp_Address = @Emp_Address,Emp_Position= @Emp_Position,Emp_ContactNo= @Emp_ContactNo, Emp_Email=@Emp_Email, Emp_MonthlySalary=@Emp_MonthlySalary) WHERE Emp_ID = @Emp_ID", objDBConnect.sqlConn);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
-               objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Address", E_ADDRESS);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
-		       objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
-		       objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Employee SET Emp_Name=@Emp_Name,Emp_Surname= @Emp_Surname,Emp_Address = @Emp_Address,Emp_Position= @Emp_Position,Emp_ContactNo= @Emp_ContactNo, Emp_Email=@Emp_Email, Emp_MonthlySalary=@Emp_MonthlySalary WHERE Emp_ID = @Emp_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Name", E_NAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Surname", E_SNAME);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Address", E_ADDRESS);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Position", E_POS);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ContactNo", E_CONTACT);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_Email", E_EMAIL);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_MonthlySalary", E_SALARY);
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-               MessageBox.Show("SUCCESSFULLY UPDATED");
-               objDBConnect.sqlDR.Close();
-               objDBConnect.sqlConn.Close();
+                MessageBox.Show("SUCCESSFULLY UPDATED");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
             }
             catch (SqlException ex)
             {
@@ -235,7 +239,9 @@ namespace FleetTrackingInformationSystem
             E_CONTACT = txtContactNum.Text;
             E_EMAIL = txtEmail.Text;
             E_SALARY = txtSalary.Text;
-            
+
         }
+
+        
     }
 }

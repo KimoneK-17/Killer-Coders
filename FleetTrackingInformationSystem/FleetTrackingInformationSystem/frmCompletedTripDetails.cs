@@ -58,11 +58,8 @@ namespace FleetTrackingInformationSystem
 
             try
             {
-                //Check check = new Check();
-                //bool executeSQL = check.CheckDB("TripUsage", "Trip_ID", T_ID);
-                //if(executeSQL == false)
-                //{
-                DBConnect objDBConnect = new DBConnect();
+                
+                
                 objDBConnect.OpenConnection();
 
                 objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage, Trip_Completed = @Trip_Completed WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
@@ -77,11 +74,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Succesfully inserted");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("That Trip ID already exists in the database");
-                //}
+                
             }
             catch (SqlException ex)
             {
@@ -92,6 +85,27 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
             }
 
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu();
+            this.Hide();
+            menu.Show();
+
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtFuelUsage.Text = "";
+            txtKM.Text = "";
+            txtVehicleIncidents.Text = "";
         }
     }
 }

@@ -85,12 +85,12 @@ namespace FleetTrackingInformationSystem
                 {
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,@Trip_Completed)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,'NO')", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_Completed", T_Complete);
+                    
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
@@ -149,7 +149,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET(Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
@@ -184,17 +184,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cobobox error: " + ex.Message);
             }
 
-            if(radYes.Checked==true)
-            {
-                T_Complete = "YES";
-            }
-            else
-            {
-                if(radNo.Checked==true)
-                {
-                    T_Complete = "NO";
-                }
-            }
+            
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
@@ -212,7 +202,7 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.ValueMember = "Vehicle_RegNumber";
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
-                CloseConnections();
+                objDBConnect.sqlConn.Close();
 
             }
             catch (SqlException ex)
@@ -223,8 +213,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-
-            radNo.Checked = true;
+           
         }
 
         private void btnGenQR_Click(object sender, EventArgs e)

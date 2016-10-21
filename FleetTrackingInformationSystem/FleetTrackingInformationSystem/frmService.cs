@@ -23,6 +23,12 @@ namespace FleetTrackingInformationSystem
         public frmService()
         {
             InitializeComponent();
+
+            cboAppointTime.SelectedItem = "8:00"; // Sets the Default value showing in the Drop Down list as 8:00 
+            cboAppointTime.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List 
+
+            cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List 
+            cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -146,7 +152,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET (Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description) WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);

@@ -35,7 +35,7 @@
             this.btnReports = new System.Windows.Forms.Button();
             this.btnTrip = new System.Windows.Forms.Button();
             this.btnService = new System.Windows.Forms.Button();
-            this.btnScheduling = new System.Windows.Forms.Button();
+            this.btnTimesheet = new System.Windows.Forms.Button();
             this.btnLocation = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.mnuFleet = new System.Windows.Forms.MenuStrip();
@@ -135,17 +135,17 @@
             this.btnService.UseVisualStyleBackColor = true;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
-            // btnScheduling
+            // btnTimesheet
             // 
-            this.btnScheduling.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnScheduling.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnScheduling.Location = new System.Drawing.Point(16, 22);
-            this.btnScheduling.Name = "btnScheduling";
-            this.btnScheduling.Size = new System.Drawing.Size(100, 31);
-            this.btnScheduling.TabIndex = 6;
-            this.btnScheduling.Text = "Scheduling";
-            this.btnScheduling.UseVisualStyleBackColor = true;
-            this.btnScheduling.Click += new System.EventHandler(this.btnScheduling_Click);
+            this.btnTimesheet.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimesheet.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTimesheet.Location = new System.Drawing.Point(16, 22);
+            this.btnTimesheet.Name = "btnTimesheet";
+            this.btnTimesheet.Size = new System.Drawing.Size(100, 31);
+            this.btnTimesheet.TabIndex = 6;
+            this.btnTimesheet.Text = "Timesheet";
+            this.btnTimesheet.UseVisualStyleBackColor = true;
+            this.btnTimesheet.Click += new System.EventHandler(this.btnScheduling_Click);
             // 
             // btnLocation
             // 
@@ -238,7 +238,7 @@
             // 
             this.pnlTime.BackColor = System.Drawing.Color.Transparent;
             this.pnlTime.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlTime.Controls.Add(this.btnScheduling);
+            this.pnlTime.Controls.Add(this.btnTimesheet);
             this.pnlTime.Location = new System.Drawing.Point(27, 305);
             this.pnlTime.Name = "pnlTime";
             this.pnlTime.Size = new System.Drawing.Size(138, 79);
@@ -366,7 +366,7 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnTrip;
         private System.Windows.Forms.Button btnService;
-        private System.Windows.Forms.Button btnScheduling;
+        private System.Windows.Forms.Button btnTimesheet;
         private System.Windows.Forms.Button btnLocation;
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.MenuStrip mnuFleet;

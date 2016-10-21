@@ -22,10 +22,13 @@ namespace FleetTrackingInformationSystem
         string C_DUE;
         string C_MADE;
         string[] numbers = new string[10];
-
+        bool success = false;
         public frmCustomer()
         {
             InitializeComponent();
+
+            cboCustomer.SelectedItem = "Vehicle Hire"; // Sets the Default value showing in the Drop Down list as Vehicle Hire
+            cboCustomer.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace FleetTrackingInformationSystem
                 frmMenu men = new frmMenu(); // Goes back to the Menu Form
                 men.Show();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go back to Previous Form: " + ex.Message); // Shows an error message
             }
@@ -48,7 +51,7 @@ namespace FleetTrackingInformationSystem
             {
                 System.Environment.Exit(0); // Exits the Entire Application
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Exit the Application: " + ex.Message); // Shows an error message
             }
@@ -66,7 +69,7 @@ namespace FleetTrackingInformationSystem
                 txtPaymentMade.Clear();
                 txtSurname.Clear();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Clear the Form: " + ex.Message); // Shows an error message 
             }
@@ -92,30 +95,34 @@ namespace FleetTrackingInformationSystem
             {
 
                 C_TYPE = this.cboCustomer.GetItemText(this.cboCustomer.SelectedItem);
-  //C_TYPE = cboCustomer.SelectedValue.ToString();
+                //C_TYPE = cboCustomer.SelectedValue.ToString();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: "+ex.Message);
+                MessageBox.Show("Cobobox error: " + ex.Message);
             }
-          
+
             C_CONTACT = txtContact.Text;
             C_DUE = txtPaymentDue.Text;
             C_MADE = txtPaymentMade.Text;
             C_NAME = txtName.Text;
             C_SNAME = txtSurname.Text;
 
-            exit = check.CheckEmpty(C_TYPE, "Customer Type");
-            exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number");
-            exit = check.CheckEmpty(C_DUE, "Payment Due");
-            exit = check.CheckEmpty(C_MADE, "Payment Made");
-            exit = check.CheckEmpty(C_NAME, "Customer Name");
-            exit = check.CheckEmpty(C_SNAME, "Customer Surname");
-            exit = check.CheckForNumbers(C_NAME, "Customer Name");
-            exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
-            exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
-            exit = check.CheckForLetters(C_DUE, "Payment Due");
-            exit = check.CheckForLetters(C_MADE, "Payment Made");
+            
+                exit = check.CheckEmpty(C_TYPE, "Customer Type");
+                exit = check.CheckEmpty(C_CONTACT, "Customer Contact Number");
+                exit = check.CheckEmpty(C_DUE, "Payment Due");
+                exit = check.CheckEmpty(C_MADE, "Payment Made");
+                exit = check.CheckEmpty(C_NAME, "Customer Name");
+                exit = check.CheckEmpty(C_SNAME, "Customer Surname");
+                exit = check.CheckForNumbers(C_NAME, "Customer Name");
+                exit = check.CheckForNumbers(C_SNAME, "Customer Surname");
+                exit = check.CheckForLetters(C_CONTACT, "Customer Contact Number");
+                exit = check.CheckForLetters(C_DUE, "Payment Due");
+                exit = check.CheckForLetters(C_MADE, "Payment Made");
+
+             
+
 
             if (exit == false)
             {
@@ -155,7 +162,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message+ex.Data+ex.StackTrace);
+                    MessageBox.Show("Error Cannot Add Customer Details: " + ex.Message + ex.Data + ex.StackTrace);
                 }
             }
         }
@@ -198,7 +205,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Customer SET (Cust_Name= @Cust_Name, Cust_Surname=@Cust_Surname, Cust_Type=@Cust_Type, Cust_ContactNo=@Cust_ContactNo,Cust_Email=@Cust_Email, Cust_PayDue=@Cust_PayDue, Cust_PayMade=@Cust_PayMade) WHERE Cust_ID = @Cust_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Customer SET Cust_Name= @Cust_Name, Cust_Surname=@Cust_Surname, Cust_Type=@Cust_Type, Cust_ContactNo=@Cust_ContactNo,Cust_Email=@Cust_Email, Cust_PayDue=@Cust_PayDue, Cust_PayMade=@Cust_PayMade WHERE Cust_ID = @Cust_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_ID", C_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Name", C_NAME);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Cust_Surname", C_SNAME);
@@ -221,9 +228,9 @@ namespace FleetTrackingInformationSystem
             catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
-            }                        
+            }
         }
 
-      
+
     }
 }

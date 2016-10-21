@@ -20,7 +20,8 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
         }
-
+         DBConnect db = new DBConnect();
+         DataSet ds;
         private void frmReports_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -50,9 +51,8 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Problem with Resizing Data Grid Views: " + ex); // Shows Error Message if there is a Problem
             }
 
-            DBConnect db = new DBConnect();
-            db.OpenConnection();
 
+            db.OpenConnection();
             try // Adds Data to the Data Grid Views
             {
                 string selectVehicleStatus = "SELECT * FROM Vehicle ORDER BY Vehicle_Year"; // Sql For Data Grid View         
@@ -136,7 +136,7 @@ namespace FleetTrackingInformationSystem
                 dgvPTDaily.ReadOnly = true;
                 dgvPTDaily.DataSource = ds6.Tables[0];
 
-                string selectPlannedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5";
+                string selectPlannedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5 AND Trip_Completed LIKE 'NO'";
                 db.sqlDA = new SqlDataAdapter(selectPlannedTripWeekly, db.sqlConn);
                 SqlCommandBuilder commandBuilder15 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds15 = new DataSet();
@@ -144,7 +144,7 @@ namespace FleetTrackingInformationSystem
                 dgvPTWeekly.ReadOnly = true;
                 dgvPTWeekly.DataSource = ds15.Tables[0];
 
-                string selectCompletedTripDaily = "SELECT * FROM TripUsage WHERE Trip_DateFrom = GETDATE() ORDER BY Trip_DateFrom";
+                string selectCompletedTripDaily = "Select * FROM TripUsage WHERE Month(Trip_DateFrom) = MONTH(GETDATE()) AND YEAR(Trip_DateFrom) = YEAR(GETDATE()) AND DAY(Trip_DateFrom) = DAY(GETDATE()) AND Trip_Completed LIKE 'YES'";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder7 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds7 = new DataSet();
@@ -152,7 +152,7 @@ namespace FleetTrackingInformationSystem
                 dgvCTDaily.ReadOnly = true;
                 dgvCTDaily.DataSource = ds7.Tables[0];
 
-                string selectCompletedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5 ORDER BY Trip_DateFrom";
+                string selectCompletedTripWeekly = "SELECT * FROM TripUsage WHERE Trip_DateFrom BETWEEN GETDATE() and GETDATE()+5 AND Trip_Completed LIKE 'YES' ORDER BY Trip_DateFrom";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripWeekly, db.sqlConn);
                 SqlCommandBuilder commandBuilder16 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds16 = new DataSet();
@@ -160,7 +160,7 @@ namespace FleetTrackingInformationSystem
                 dgvCTWeekly.ReadOnly = true;
                 dgvCTWeekly.DataSource = ds16.Tables[0];
 
-                string selectCompletedTripMonthly = "SELECT * FROM TripUsage WHERE MONTH(Trip_DateFrom) = MONTH(dateadd(dd, -1, GetDate())) ORDER BY Trip_DateFrom";
+                string selectCompletedTripMonthly = "SELECT * FROM TripUsage WHERE MONTH(Trip_DateFrom) = MONTH(GETDATE()) AND  Trip_Completed LIKE 'YES'";
                 db.sqlDA = new SqlDataAdapter(selectCompletedTripMonthly, db.sqlConn);
                 SqlCommandBuilder commandBuilder17 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds17 = new DataSet();
@@ -668,5 +668,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cannot Print Report: " + ex);
             }
         }
+
+        
     }
 }
