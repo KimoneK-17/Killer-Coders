@@ -81,11 +81,11 @@ namespace FleetTrackingInformationSystem
             bool exit = false;
 
 
-            exit = check.CheckEmpty(L_ID, "Location ID");
-            exit = check.CheckEmpty(L_MANAGER, "Manager In Charge");
-            exit = check.CheckEmpty(L_CITY, "City");
-            exit = check.CheckEmpty(L_NAME, "Location");
-            exit = check.CheckEmpty(L_PROVINCE, "Province");
+            exit = check.CheckEmpty(L_ID, "Location ID", exit);
+            exit = check.CheckEmpty(L_MANAGER, "Manager In Charge", exit);
+            exit = check.CheckEmpty(L_CITY, "City", exit);
+            exit = check.CheckEmpty(L_NAME, "Location", exit);
+            exit = check.CheckEmpty(L_PROVINCE, "Province", exit);
             exit = check.CheckForNumbers(L_MANAGER, "Manager In Charge");
 
             if (exit == false)
