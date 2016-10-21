@@ -289,7 +289,12 @@
             this.cboPosition.FormattingEnabled = true;
             this.cboPosition.Items.AddRange(new object[] {
             "Manager",
-            "Driver"});
+            "Driver",
+            "Office Manager",
+            "Vehicle Information Administrator",
+            "Trip/Usage Manager",
+            "Service Manager",
+            "Timesheet Manager"});
             this.cboPosition.Location = new System.Drawing.Point(246, 331);
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(234, 26);
