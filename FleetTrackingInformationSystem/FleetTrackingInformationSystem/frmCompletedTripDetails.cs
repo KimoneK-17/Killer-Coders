@@ -16,6 +16,8 @@ namespace FleetTrackingInformationSystem
         public frmCompletedTripDetails()
         {
             InitializeComponent();
+
+            cboT_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
         DBConnect objDBConnect = new DBConnect();
         private void frmCompletedTripDetails_Load(object sender, EventArgs e)

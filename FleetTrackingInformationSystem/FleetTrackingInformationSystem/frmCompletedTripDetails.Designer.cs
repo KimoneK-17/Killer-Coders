@@ -55,7 +55,7 @@
             // 
             this.txtKM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKM.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKM.Location = new System.Drawing.Point(214, 304);
+            this.txtKM.Location = new System.Drawing.Point(214, 321);
             this.txtKM.Name = "txtKM";
             this.txtKM.Size = new System.Drawing.Size(209, 26);
             this.txtKM.TabIndex = 24;
@@ -68,7 +68,7 @@
             this.lblKm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblKm.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblKm.Location = new System.Drawing.Point(50, 310);
+            this.lblKm.Location = new System.Drawing.Point(50, 326);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(104, 21);
             this.lblKm.TabIndex = 23;
@@ -92,7 +92,7 @@
             this.lblVehicleIncidents.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblVehicleIncidents.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVehicleIncidents.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblVehicleIncidents.Location = new System.Drawing.Point(50, 253);
+            this.lblVehicleIncidents.Location = new System.Drawing.Point(50, 262);
             this.lblVehicleIncidents.Name = "lblVehicleIncidents";
             this.lblVehicleIncidents.Size = new System.Drawing.Size(129, 21);
             this.lblVehicleIncidents.TabIndex = 20;
@@ -151,7 +151,7 @@
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlButtons.Controls.Add(this.btnClear);
             this.pnlButtons.Controls.Add(this.btnAdd);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 368);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 407);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(530, 64);
             this.pnlButtons.TabIndex = 27;
@@ -222,14 +222,14 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Size = new System.Drawing.Size(99, 22);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -239,7 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(573, 459);
+            this.ClientSize = new System.Drawing.Size(573, 498);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCTD);
             this.Controls.Add(this.pnlButtons);
