@@ -221,6 +221,23 @@
             // 
             this.cboCity.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCity.FormattingEnabled = true;
+            this.cboCity.Items.AddRange(new object[] {
+            "Durban",
+            "Johnessburg",
+            "Cape Town",
+            "Pretoria",
+            "Port Elizabeth",
+            "Bloemfontein",
+            "Pietermaritzburg",
+            "East London",
+            "Polokwane",
+            "Nelspruit",
+            "Kimberly",
+            "Soweto",
+            "Rustenburg",
+            "Benoni",
+            "Richards bay",
+            "Umhlazi"});
             this.cboCity.Location = new System.Drawing.Point(252, 284);
             this.cboCity.Name = "cboCity";
             this.cboCity.Size = new System.Drawing.Size(180, 26);
@@ -230,6 +247,16 @@
             // 
             this.cboProvince.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProvince.FormattingEnabled = true;
+            this.cboProvince.Items.AddRange(new object[] {
+            "The Eastern Cape.",
+            "The Free State.",
+            "Gauteng.",
+            "KwaZulu-Natal.",
+            "Limpopo.",
+            "Mpumalanga.",
+            "The Northern Cape.",
+            "North West.",
+            "Western Cape."});
             this.cboProvince.Location = new System.Drawing.Point(252, 340);
             this.cboProvince.Name = "cboProvince";
             this.cboProvince.Size = new System.Drawing.Size(180, 26);

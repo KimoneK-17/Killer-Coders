@@ -229,6 +229,22 @@
             // 
             this.cboType.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboType.FormattingEnabled = true;
+            this.cboType.Items.AddRange(new object[] {
+            "Bus(9-15 Seats,Including Driver)",
+            "Dump",
+            "Pole",
+            "Bus(16 Or More Seats Including Driver)",
+            "Concrete Mixer",
+            "Log",
+            "Van/Enclosed Box",
+            "Auto Transporter",
+            "Intermodal Chassis",
+            "Cargo Tank",
+            "Garbage/Refuse",
+            "Vehicle Towing Motor Vehicle",
+            "Flat Bed",
+            "Grain,Chips,Gravel",
+            "No Cargo Body"});
             this.cboType.Location = new System.Drawing.Point(216, 193);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(234, 26);
