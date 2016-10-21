@@ -152,7 +152,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET (Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description) WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
