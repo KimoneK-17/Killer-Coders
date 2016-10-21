@@ -24,6 +24,12 @@ namespace FleetTrackingInformationSystem
         public frmLocation()
         {
             InitializeComponent();
+
+            cboCity.SelectedItem = "Durban"; // Sets the Default value showing in the Drop Down list as Durban
+            cboCity.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
+
+            cboProvince.SelectedItem = "KwaZulu-Natal."; // Sets the Default value showing in the Drop Down list as KZN
+            cboProvince.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -81,8 +87,6 @@ namespace FleetTrackingInformationSystem
             exit = check.CheckEmpty(L_NAME, "Location", exit);
             exit = check.CheckEmpty(L_PROVINCE, "Province", exit);
             exit = check.CheckForNumbers(L_MANAGER, "Manager In Charge");
-
-
 
             if (exit == false)
             {
@@ -194,7 +198,7 @@ namespace FleetTrackingInformationSystem
             L_ID = txtLocationID.Text;
             try
             {
-                L_NAME = this.cboLocationName.GetItemText(this.cboLocationName.SelectedItem);
+                L_NAME = this.txtLocName.Text;
             }
             catch (Exception ex)
             {
