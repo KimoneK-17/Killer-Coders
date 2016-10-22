@@ -42,9 +42,9 @@ namespace FleetTrackingInformationSystem
                 System.Environment.Exit(0);
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message);
+                MessageBox.Show("Error Cannot Exit The Application: " + ex.Message);
             }
         }
 
@@ -56,7 +56,7 @@ namespace FleetTrackingInformationSystem
                 frmLogin log = new frmLogin(); // Goes back to Login Form
                 log.Show();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Cannot Go Back To Previous Form: " + ex.Message);
             }
@@ -71,7 +71,7 @@ namespace FleetTrackingInformationSystem
                 txtUserName.Clear();
                 txtPass.Clear();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error Clear The Form: " + ex.Message); // Shows an error message 
             }
@@ -122,7 +122,7 @@ namespace FleetTrackingInformationSystem
                             {
                                 if (!R_UNAME.Equals(""))
                                 {
-                                    if(!R_PWORD.Equals(""))
+                                    if (!R_PWORD.Equals(""))
                                     {
                                         try
                                         {
@@ -146,15 +146,8 @@ namespace FleetTrackingInformationSystem
                                                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                                                 objDBConnect.sqlDR.Close();
                                                 objDBConnect.sqlConn.Close();
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("That username already exists");
-                                            }
-
-                                            try
-                                            {
                                                 string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_EMPPOS + "," + R_UNAME + "," + R_PWORD;
+                                                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_MEMAIL);
 
                                                 try
                                                 {
@@ -184,17 +177,10 @@ namespace FleetTrackingInformationSystem
                                                 {
                                                     MessageBox.Show("Email Confirmation Not Sent:\n" + ex.Message);
                                                 }
-
-
-                                                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_MEMAIL);
-
-                                                this.Hide();
-                                                frmLogin log = new frmLogin();
-                                                log.Show(); // Goes back to Login Form
                                             }
-                                            catch(Exception ex)
+                                            else
                                             {
-                                                MessageBox.Show("Error Cannot Be Registered: " + ex.Message); // Shows an error message 
+                                                MessageBox.Show("That username already exists");
                                             }
 
                                         }
@@ -219,7 +205,7 @@ namespace FleetTrackingInformationSystem
                             }
                             else
                             {
-                                MessageBox.Show("Invalid Email Address: "+ R_EMAIL);
+                                MessageBox.Show("Invalid Email Address: " + R_EMAIL);
                             }
                         }
                         else
@@ -240,7 +226,7 @@ namespace FleetTrackingInformationSystem
             else
             {
                 MessageBox.Show("Please Enter Your Name");
-            }           
+            }
         }
     }
 }

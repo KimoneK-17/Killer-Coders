@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MessagingToolkit.QRCode.Codec;
 using MessagingToolkit.QRCode.Codec.Data;
+using Microsoft.VisualBasic;
 
 namespace FleetTrackingInformationSystem
 {
@@ -26,7 +27,7 @@ namespace FleetTrackingInformationSystem
         public frmTripPlan()
         {
             InitializeComponent();
-           
+
             cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
 
@@ -74,7 +75,7 @@ namespace FleetTrackingInformationSystem
             Check check = new Check();
             bool exit = false;
             getValues();
-            
+
 
             exit = check.CheckEmpty(T_ID, "Trip ID", exit);
 
@@ -83,39 +84,48 @@ namespace FleetTrackingInformationSystem
 
             if (exit == false)
             {
-                try
+                if (!T_ID.Equals(""))
                 {
-                    objDBConnect.OpenConnection();
+                    try
+                    {
+                        objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,'NO')", objDBConnect.sqlConn);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
-                    
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,'NO')", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
 
-                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                    MessageBox.Show("Succesfully inserted");
-                    CloseConnections();
-                   
+                        objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
+                        MessageBox.Show("Succesfully inserted");
+                        CloseConnections();
+
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("ERROR!!!" + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
+                    }
                 }
-                catch (SqlException ex)
+                else
                 {
-                    MessageBox.Show("ERROR!!!"+ex.Message);
+                    MessageBox.Show("Please enter a Trip ID");
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
-                }
-                
+
+
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            getValues();
+
+            T_ID = Interaction.InputBox("Please enter Trip ID: ", "Timesheet ID", "Default Text");
             try
             {
 
@@ -145,30 +155,39 @@ namespace FleetTrackingInformationSystem
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             getValues();
-          
-            try
-            {
 
-                objDBConnect.OpenConnection();
-
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
-
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("SUCCESSFULLY UPDATED");
-                CloseConnections();
-            }
-            catch (SqlException ex)
+            if (!(T_ID.Equals("")))
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+
+                    objDBConnect.OpenConnection();
+
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("SUCCESSFULLY UPDATED");
+                    CloseConnections();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Update Records: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error Cannot Update Records: " + ex.Message);
+                MessageBox.Show("Enter Trip ID");
+
             }
+
         }
 
         public void getValues()
@@ -186,7 +205,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cobobox error: " + ex.Message);
             }
 
-            
+
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
@@ -215,7 +234,7 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-           
+
         }
 
         private void btnGenQR_Click(object sender, EventArgs e)
@@ -284,7 +303,7 @@ namespace FleetTrackingInformationSystem
 
         public void checkPicture()
         {
-            if(pbxQR.Image==null)
+            if (pbxQR.Image == null)
             {
                 MessageBox.Show("Please Generate QR Code First");
             }
