@@ -168,7 +168,7 @@ namespace FleetTrackingInformationSystem
                 dgvCTMonthly.ReadOnly = true;
                 dgvCTMonthly.DataSource = ds17.Tables[0];
 
-                string selectTimeSheetWeek = "SELECT * FROM Timesheet WHERE T_Date BETWEEN GETDATE() and GETDATE()+5"; // Sql for Data Grid View
+                string selectTimeSheetWeek = "SELECT e.Emp_Name, e.Emp_Surname, e.Emp_ID, s.[Total Hours Weekly] FROM Employee  e JOIN (SELECT Emp_ID, SUM(T_HOURS) AS [Total Hours Weekly] FROM Timesheet s WHERE T_DATE BETWEEN GETDATE() and GETDATE()+5 GROUP BY Emp_ID) as s ON e.Emp_ID = s.Emp_ID"; // Sql for Data Grid View
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetWeek, db.sqlConn);
                 SqlCommandBuilder commandBuilder8 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds8 = new DataSet();
@@ -176,7 +176,7 @@ namespace FleetTrackingInformationSystem
                 dgvTSWeekly.ReadOnly = true;
                 dgvTSWeekly.DataSource = ds8.Tables[0];
 
-                string selectTimeSheetMonth = "SELECT * FROM Timesheet WHERE MONTH(T_Date) = MONTH(dateadd(dd, -1, GetDate()));";
+                string selectTimeSheetMonth = "SELECT e.Emp_Name, e.Emp_Surname, e.Emp_ID, s.[Total Hours Monthly] FROM Employee  e JOIN (SELECT Emp_ID, SUM(T_HOURS) AS [Total Hours Monthly] FROM Timesheet s WHERE Month(T_DATE) = Month(GETDATE())GROUP BY Emp_ID) as s ON e.Emp_ID = s.Emp_ID";
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetMonth, db.sqlConn);
                 SqlCommandBuilder commandBuilder9 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds9 = new DataSet();
@@ -184,7 +184,7 @@ namespace FleetTrackingInformationSystem
                 dgvTSMonthly.ReadOnly = true;
                 dgvTSMonthly.DataSource = ds9.Tables[0];
 
-                string selectTimeSheetDaily = "Select * FROM Timesheet Where Month(T_DATE) = MONTH(GETDATE()) AND YEAR(T_DATE) = YEAR(GETDATE()) AND DAY(T_DATE) = DAY(GETDATE())";
+                string selectTimeSheetDaily = "SELECT  e.Emp_Name, e.Emp_Surname, e.Emp_ID, t.T_ID  as 'Timesheet ID', SUM(t.T_HOURS) AS 'Total Hours Worked-Daily' FROM Employee e inner join Timesheet t on e.Emp_ID = t.Emp_ID WHERE Day(T_DATE) = day(GETDATE())and Month(T_DATE) = Month(GETDATE()) and year(T_DATE) = year(GETDATE()) GROUP BY e.Emp_Name, e.Emp_Surname, e.Emp_ID,t.T_ID,t.T_HOURS;";
                 db.sqlDA = new SqlDataAdapter(selectTimeSheetDaily, db.sqlConn);
                 SqlCommandBuilder commandBuilder10 = new SqlCommandBuilder(db.sqlDA);
                 DataSet ds10 = new DataSet();
