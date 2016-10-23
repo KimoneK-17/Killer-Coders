@@ -158,7 +158,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand(" SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME END", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand(" SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME ", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
 
                     string email = ((string)objDBConnect.sqlCmd.ExecuteScalar());
