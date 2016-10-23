@@ -21,7 +21,7 @@ namespace FleetTrackingInformationSystem
         string T_FROM;
         string T_TO;
         string T_Complete;
-
+        string L_ID;
         string trip_plan;
         DBConnect objDBConnect = new DBConnect();
         public frmTripPlan()
@@ -90,9 +90,11 @@ namespace FleetTrackingInformationSystem
                     {
                         objDBConnect.OpenConnection();
 
-                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,'NO')", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO TripUsage VALUES(@Trip_ID, @Vehicle_RegNumber,@Location_ID, @Trip_DateFrom, @Trip_DateTo,NULL,NULL,NULL,'NO')", objDBConnect.sqlConn);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
+                        objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
 
@@ -202,9 +204,10 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: " + ex.Message);
+                MessageBox.Show("Combobox error: " + ex.Message);
             }
 
+            L_ID = this.cboL_ID.GetItemText(this.cboL_ID.SelectedItem);
 
         }
 
@@ -223,6 +226,30 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.ValueMember = "Vehicle_RegNumber";
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
+                objDBConnect.sqlConn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); // Shows an error message
+            }
+
+            try
+            {
+
+                string query = "SELECT Location_ID from Location;";
+                objDBConnect.OpenConnection();
+                SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
+
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Location");
+                cboL_ID.ValueMember = "Location_ID";
+                cboL_ID.DisplayMember = "Location_ID";
+                cboL_ID.DataSource = ds.Tables["Location"];
                 objDBConnect.sqlConn.Close();
 
             }
@@ -256,7 +283,7 @@ namespace FleetTrackingInformationSystem
 
         public void trip_plans()
         {
-            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
+            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Location: "+L_ID+"\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
 
         }
 

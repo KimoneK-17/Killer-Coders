@@ -52,6 +52,8 @@
             this.btnGenQR = new System.Windows.Forms.Button();
             this.btnSaveQR = new System.Windows.Forms.Button();
             this.lblCompleted = new System.Windows.Forms.LinkLabel();
+            this.cboL_ID = new System.Windows.Forms.ComboBox();
+            this.lblL_ID = new System.Windows.Forms.Label();
             this.pnlTripUsage.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -80,7 +82,7 @@
             this.lblDateFrom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateFrom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateFrom.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblDateFrom.Location = new System.Drawing.Point(68, 249);
+            this.lblDateFrom.Location = new System.Drawing.Point(68, 290);
             this.lblDateFrom.Name = "lblDateFrom";
             this.lblDateFrom.Size = new System.Drawing.Size(116, 21);
             this.lblDateFrom.TabIndex = 4;
@@ -89,7 +91,7 @@
             // dtpDateFrom
             // 
             this.dtpDateFrom.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateFrom.Location = new System.Drawing.Point(232, 244);
+            this.dtpDateFrom.Location = new System.Drawing.Point(232, 285);
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.Size = new System.Drawing.Size(197, 26);
             this.dtpDateFrom.TabIndex = 8;
@@ -202,7 +204,7 @@
             this.lblDateTo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblDateTo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblDateTo.Location = new System.Drawing.Point(68, 301);
+            this.lblDateTo.Location = new System.Drawing.Point(68, 342);
             this.lblDateTo.Name = "lblDateTo";
             this.lblDateTo.Size = new System.Drawing.Size(97, 21);
             this.lblDateTo.TabIndex = 15;
@@ -211,7 +213,7 @@
             // dtpDateTo
             // 
             this.dtpDateTo.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDateTo.Location = new System.Drawing.Point(232, 294);
+            this.dtpDateTo.Location = new System.Drawing.Point(232, 335);
             this.dtpDateTo.Name = "dtpDateTo";
             this.dtpDateTo.Size = new System.Drawing.Size(197, 26);
             this.dtpDateTo.TabIndex = 16;
@@ -304,6 +306,29 @@
             this.lblCompleted.Text = "Click here if trip has been completed";
             this.lblCompleted.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCompleted_LinkClicked);
             // 
+            // cboL_ID
+            // 
+            this.cboL_ID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboL_ID.FormattingEnabled = true;
+            this.cboL_ID.Location = new System.Drawing.Point(232, 239);
+            this.cboL_ID.Name = "cboL_ID";
+            this.cboL_ID.Size = new System.Drawing.Size(197, 26);
+            this.cboL_ID.TabIndex = 28;
+            // 
+            // lblL_ID
+            // 
+            this.lblL_ID.AutoSize = true;
+            this.lblL_ID.BackColor = System.Drawing.Color.Transparent;
+            this.lblL_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblL_ID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblL_ID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblL_ID.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblL_ID.Location = new System.Drawing.Point(68, 244);
+            this.lblL_ID.Name = "lblL_ID";
+            this.lblL_ID.Size = new System.Drawing.Size(87, 21);
+            this.lblL_ID.TabIndex = 27;
+            this.lblL_ID.Text = "Location ID";
+            // 
             // frmTripPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +336,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(594, 695);
+            this.Controls.Add(this.cboL_ID);
+            this.Controls.Add(this.lblL_ID);
             this.Controls.Add(this.lblCompleted);
             this.Controls.Add(this.btnSaveQR);
             this.Controls.Add(this.btnGenQR);
@@ -367,5 +394,7 @@
         private System.Windows.Forms.Button btnGenQR;
         private System.Windows.Forms.Button btnSaveQR;
         private System.Windows.Forms.LinkLabel lblCompleted;
+        private System.Windows.Forms.ComboBox cboL_ID;
+        private System.Windows.Forms.Label lblL_ID;
     }
 }
