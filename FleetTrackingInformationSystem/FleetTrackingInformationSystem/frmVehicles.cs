@@ -19,7 +19,7 @@ namespace FleetTrackingInformationSystem
         string V_MAKE;
         string V_MODEL;
         string V_YEAR;
-        string V_REC;
+        
      
         public frmVehicles()
         {
@@ -165,7 +165,6 @@ namespace FleetTrackingInformationSystem
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Model", V_MODEL);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Year", V_YEAR);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_TotalMileage", V_MILEAGE);
-		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RecordNumber", V_REC);
               objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
               MessageBox.Show("SUCCESSFULLY UPDATED");

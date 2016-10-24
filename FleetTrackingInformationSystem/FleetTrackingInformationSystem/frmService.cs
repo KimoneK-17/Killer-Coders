@@ -120,7 +120,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", SqlDbType.Date).Value = dtpAppointmentDate.Value.Date;
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
@@ -156,7 +156,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", S_DATE);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", SqlDbType.Date).Value = dtpAppointmentDate.Value.Date ;
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();

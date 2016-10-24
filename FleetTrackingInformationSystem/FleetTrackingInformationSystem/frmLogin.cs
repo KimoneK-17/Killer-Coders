@@ -23,9 +23,7 @@ namespace FleetTrackingInformationSystem
         }
         string userName;
         string password;
-        System.IO.StreamReader file;
-        string[] arrUserCred;
-        int count = 0;
+      
         bool found;
         bool checkValid;
         
@@ -59,10 +57,7 @@ namespace FleetTrackingInformationSystem
             {
                 userName = txtUser.Text; // Gets the Username from Text Box
                 password = txtPass.Text; // Gets Password from Text box
-                    //this.Hide();
-                    //MessageBox.Show("Login Successful");
-                    //frmMenu m = new frmMenu();
-                    //m.ShowDialog(); //Shows Menu Form  
+                    
                 if (userName.Equals(""))
                 {
                     MessageBox.Show("Please enter Username");
