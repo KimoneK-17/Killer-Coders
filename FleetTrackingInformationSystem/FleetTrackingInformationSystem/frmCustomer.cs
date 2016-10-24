@@ -22,7 +22,6 @@ namespace FleetTrackingInformationSystem
         string C_DUE;
         string C_MADE;
         string[] numbers = new string[10];
-        bool success = false;
         public frmCustomer()
         {
             InitializeComponent();
@@ -230,7 +229,5 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Update Customer Details: " + ex.Message);
             }
         }
-
-
     }
 }

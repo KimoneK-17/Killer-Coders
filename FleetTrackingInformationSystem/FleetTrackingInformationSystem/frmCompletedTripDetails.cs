@@ -46,10 +46,12 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(ex.Message); // Shows an error message
             }
         }
+
         string T_ID;
         string T_FUEL;
         string T_INCIDENTS;
         string T_MILEAGE;
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
@@ -59,9 +61,7 @@ namespace FleetTrackingInformationSystem
             T_MILEAGE = txtKM.Text;
 
             try
-            {
-                
-                
+            {                             
                 objDBConnect.OpenConnection();
 
                 objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Trip_FuelUsed=@Trip_FuelUsed, Trip_Incidents=@Trip_Incidents, Trip_Mileage=@Trip_Mileage, Trip_Completed = @Trip_Completed WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
@@ -75,8 +75,7 @@ namespace FleetTrackingInformationSystem
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("Succesfully inserted");
                 objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
-                
+                objDBConnect.sqlConn.Close();               
             }
             catch (SqlException ex)
             {
@@ -86,7 +85,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Submit Details: " + ex.Message);
             }
-
         }
 
         private void mnuExit_Click(object sender, EventArgs e)
@@ -99,8 +97,6 @@ namespace FleetTrackingInformationSystem
             frmMenu menu = new frmMenu();
             this.Hide();
             menu.Show();
-
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)

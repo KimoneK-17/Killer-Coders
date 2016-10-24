@@ -240,8 +240,6 @@ namespace FleetTrackingInformationSystem
             E_EMAIL = txtEmail.Text;
             E_SALARY = txtSalary.Text;
 
-        }
-
-        
+        }       
     }
 }

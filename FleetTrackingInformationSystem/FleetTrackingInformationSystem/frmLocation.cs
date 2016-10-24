@@ -20,7 +20,6 @@ namespace FleetTrackingInformationSystem
         int L_VEHICLES;
         int L_EMPLOYEES;
         string L_PROVINCE;
-        bool success = false;
         public frmLocation()
         {
             InitializeComponent();
@@ -66,6 +65,7 @@ namespace FleetTrackingInformationSystem
                 txtManager.Clear();
                 updEmployees.Value = 0;
                 updVehicles.Value = 0;
+                txtLocName.Clear();
             }
             catch (Exception ex)
             {
@@ -79,7 +79,6 @@ namespace FleetTrackingInformationSystem
             getValues();
             Check check = new Check();
             bool exit = false;
-
 
             exit = check.CheckEmpty(L_ID, "Location ID", exit);
             exit = check.CheckEmpty(L_MANAGER, "Manager In Charge", exit);
@@ -190,7 +189,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
             }
-
         }
 
         public void getValues()
@@ -202,7 +200,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: " + ex.Message);
+                MessageBox.Show("TextBox error: " + ex.Message);
             }
             try
             {
@@ -210,7 +208,7 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: " + ex.Message);
+                MessageBox.Show("Combobox error: " + ex.Message);
             }
             try
             {
@@ -218,16 +216,11 @@ namespace FleetTrackingInformationSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cobobox error: " + ex.Message);
+                MessageBox.Show("Combobox error: " + ex.Message);
             }
             L_VEHICLES = int.Parse(updVehicles.Text);
             L_EMPLOYEES = int.Parse(updEmployees.Text);
             L_MANAGER = txtManager.Text;
-        }
-
-        private void cboLocationName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

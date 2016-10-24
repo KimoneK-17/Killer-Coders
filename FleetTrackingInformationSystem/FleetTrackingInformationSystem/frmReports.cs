@@ -21,7 +21,6 @@ namespace FleetTrackingInformationSystem
             InitializeComponent();
         }
          DBConnect db = new DBConnect();
-         DataSet ds;
         private void frmReports_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
