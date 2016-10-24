@@ -116,7 +116,7 @@ namespace FleetTrackingInformationSystem
                 DBConnect objDBConnect = new DBConnect();
                 objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
@@ -127,7 +127,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Succesfully inserted");
                 objDBConnect.sqlDR.Close();
                 objDBConnect.sqlConn.Close();
-            }
+                }
                 else
                 {
                     MessageBox.Show("That Service ID already exists in the database");
@@ -207,7 +207,6 @@ namespace FleetTrackingInformationSystem
 
         private void frmService_Load(object sender, EventArgs e)
         {
-
             populateV_RN();
             populateE_ID();
         }
@@ -216,7 +215,6 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-
                 string query = "SELECT Emp_ID from Employee;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
@@ -227,7 +225,6 @@ namespace FleetTrackingInformationSystem
                 cboE_ID.DisplayMember = "Emp_ID";
                 cboE_ID.DataSource = ds.Tables["Employee"];
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {
@@ -243,7 +240,6 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
-
                 string query = "SELECT Vehicle_RegNumber from Vehicle;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
@@ -254,7 +250,6 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {
