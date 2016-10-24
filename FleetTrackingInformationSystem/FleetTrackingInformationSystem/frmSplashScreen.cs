@@ -18,7 +18,7 @@ namespace FleetTrackingInformationSystem
         {
             InitializeComponent();
 
-            closeTimer.Interval = 3000; //5 seconds
+            closeTimer.Interval = 3000; //3 seconds
             closeTimer.Tick += new EventHandler(closeTimer_Tick);
             closeTimer.Start();
         }
