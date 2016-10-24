@@ -66,6 +66,7 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                txtEmail.Clear();
                 txtName.Clear(); // Clears Text Box
                 txtSurname.Clear();
                 txtUserName.Clear();
@@ -134,13 +135,14 @@ namespace FleetTrackingInformationSystem
                                                 DBConnect objDBConnect = new DBConnect();
                                                 objDBConnect.OpenConnection();
 
-                                                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Register VALUES (@R_DOB, @R_NAME, @R_SNAME,@R_EMPPOS,@R_EMAIL,@R_UNAME, @R_PWORD)", objDBConnect.sqlConn);
-                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", R_DOB);
+                                                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Register VALUES (@R_UNAME,@R_DOB, @R_NAME, @R_SNAME,@R_EMPPOS,@R_EMAIL, @R_PWORD)", objDBConnect.sqlConn);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
+                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_DOB", SqlDbType.Date).Value = dtpDateOfBirth.Value.Date;
                                                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_NAME", R_NAME);
                                                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_SNAME", R_SNAME);
                                                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMPPOS", R_EMPPOS);
                                                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_EMAIL", R_EMAIL);
-                                                objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", R_UNAME);
+                                                
                                                 objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", R_PWORD);
 
                                                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
