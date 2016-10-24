@@ -24,7 +24,9 @@ namespace FleetTrackingInformationSystem
         public frmVehicles()
         {
             InitializeComponent();
-
+            dtpVehicleYear.Format = DateTimePickerFormat.Custom;
+            dtpVehicleYear.CustomFormat = "yyyy";
+            dtpVehicleYear.ShowUpDown = true;
             cboType.SelectedItem = "Log"; // Sets the Default value showing in the Drop Down list as Log
             cboType.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
         }
@@ -77,6 +79,7 @@ namespace FleetTrackingInformationSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             getValues();
+            MessageBox.Show("" + V_YEAR);
             Check check = new Check();
             bool exit = false;
 
@@ -95,7 +98,7 @@ namespace FleetTrackingInformationSystem
 
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage, @Vehicle_RecordNumber)", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Vehicle VALUES (@Vehicle_RegNumber, @Vehicle_Type, @Vehicle_Make, @Vehicle_Model, @Vehicle_Year, @Vehicle_TotalMileage)", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -158,7 +161,7 @@ namespace FleetTrackingInformationSystem
               DBConnect objDBConnect = new DBConnect();
 
               objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET (Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage, Vehicle_RecordNumber=@Vehicle_RecordNumber) WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET (Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage) WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
@@ -193,7 +196,7 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cobobox error: " + ex.Message);
             }
             V_MODEL = txtModel.Text;
-            V_YEAR = dtpVehicleYear.Value.ToString();
+            V_YEAR = dtpVehicleYear.Text;
             V_RN = txtRegNum.Text;
         }
     }
