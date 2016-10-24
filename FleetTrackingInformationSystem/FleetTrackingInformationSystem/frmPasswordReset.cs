@@ -49,7 +49,7 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", username);
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                     objDBConnect.sqlDR.Close();
-                    MessageBox.Show("Susccessfully Updated");
+                    MessageBox.Show("Successfully Updated");
                 }
                 else
                 {

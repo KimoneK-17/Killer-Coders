@@ -29,6 +29,8 @@ namespace FleetTrackingInformationSystem
 
             cboV_RN.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List 
             cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            txtServiceID.MaxLength = 8; // Allows a Max Length of 8 in the Text Box
         }
 
         private void btnExit_Click(object sender, EventArgs e)

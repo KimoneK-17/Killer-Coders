@@ -20,6 +20,8 @@ namespace FleetTrackingInformationSystem
 
             cboE_ID.SelectedItem = "100"; // Sets the Default value showing in the Drop Down list as 100
             cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
+
+            txtT_ID.MaxLength = 8; // allows a Max Length of 8 characters in the text box
         }
 
         DBConnect objDBConnect = new DBConnect();

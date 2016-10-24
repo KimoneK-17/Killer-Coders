@@ -29,6 +29,8 @@ namespace FleetTrackingInformationSystem
 
             cboProvince.SelectedItem = "KwaZulu-Natal."; // Sets the Default value showing in the Drop Down list as KZN
             cboProvince.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List
+
+            txtLocationID.MaxLength = 8; // only allows you to insert a max length of 8
         }
 
         private void btnBack_Click(object sender, EventArgs e)
