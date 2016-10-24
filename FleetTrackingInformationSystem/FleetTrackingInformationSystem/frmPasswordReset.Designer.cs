@@ -166,14 +166,16 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(99, 22);
+            this.mnuBack.Size = new System.Drawing.Size(152, 22);
             this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(99, 22);
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
             this.mnuExit.Text = "Exit";
+            this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // pnlCustomer
             // 
