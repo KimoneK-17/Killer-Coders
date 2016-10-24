@@ -116,8 +116,7 @@ namespace FleetTrackingInformationSystem
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error! You Cannot Submit Vehicle Details: " + ex.Message);
-                }
-                
+                }              
             }
         }
         private void btnDelete_Click(object sender, EventArgs e)

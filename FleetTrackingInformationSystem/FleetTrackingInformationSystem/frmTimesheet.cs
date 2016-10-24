@@ -150,7 +150,6 @@ namespace FleetTrackingInformationSystem
                 cboE_ID.DisplayMember = "Emp_ID";
                 cboE_ID.DataSource = ds.Tables["Employee"];
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {

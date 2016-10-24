@@ -103,8 +103,6 @@ namespace FleetTrackingInformationSystem
 
                         MessageBox.Show("Succesfully inserted");
                         CloseConnections();
-
-
                     }
                     catch (SqlException ex)
                     {
@@ -119,8 +117,6 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show("Please enter a Trip ID");
                 }
-
-
             }
         }
 
@@ -162,7 +158,6 @@ namespace FleetTrackingInformationSystem
             {
                 try
                 {
-
                     objDBConnect.OpenConnection();
 
                     objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
@@ -187,14 +182,11 @@ namespace FleetTrackingInformationSystem
             else
             {
                 MessageBox.Show("Enter Trip ID");
-
             }
-
         }
 
         public void getValues()
         {
-
             T_ID = txtTripID.Text;
             T_TO = dtpDateTo.Text;
             T_FROM = dtpDateFrom.Text;
@@ -208,15 +200,12 @@ namespace FleetTrackingInformationSystem
             }
 
             L_ID = this.cboL_ID.GetItemText(this.cboL_ID.SelectedItem);
-
         }
 
         private void frmTripUsage_Load(object sender, EventArgs e)
         {
-
             try
             {
-
                 string query = "SELECT Vehicle_RegNumber from Vehicle;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
@@ -227,7 +216,6 @@ namespace FleetTrackingInformationSystem
                 cboV_RN.DisplayMember = "Vehicle_RegNumber";
                 cboV_RN.DataSource = ds.Tables["Vehicle"];
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {
@@ -240,7 +228,6 @@ namespace FleetTrackingInformationSystem
 
             try
             {
-
                 string query = "SELECT Location_ID from Location;";
                 objDBConnect.OpenConnection();
                 SqlDataAdapter da = new SqlDataAdapter(query, objDBConnect.sqlConn);
@@ -251,7 +238,6 @@ namespace FleetTrackingInformationSystem
                 cboL_ID.DisplayMember = "Location_ID";
                 cboL_ID.DataSource = ds.Tables["Location"];
                 objDBConnect.sqlConn.Close();
-
             }
             catch (SqlException ex)
             {
@@ -261,7 +247,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show(ex.Message); // Shows an error message
             }
-
         }
 
         private void btnGenQR_Click(object sender, EventArgs e)
@@ -284,7 +269,6 @@ namespace FleetTrackingInformationSystem
         public void trip_plans()
         {
             trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Location: "+L_ID+"\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
-
         }
 
         public void saveQR()
@@ -318,8 +302,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Save unsuccessful.\n" + ex.Message);
             }
-
-
         }
 
         public void CloseConnections()
