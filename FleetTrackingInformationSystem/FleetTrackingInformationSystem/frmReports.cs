@@ -232,9 +232,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
-                printPreviewDialog1.Document = printDocument1;
+                printPreviewDialog1.Document = printDoc1;
                 printPreviewDialog1.ShowDialog(); // Brings up a Print Preview
-                printDocument1.Print(); // Prints the Data Grid View
+                printDoc1.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -242,7 +242,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e) // Settings For The Printing
+        private void printDoc1_PrintPage(object sender, PrintPageEventArgs e) // Settings For The Printing
         {
             try
             {
@@ -261,9 +261,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog2 = new PrintPreviewDialog();
-                printPreviewDialog2.Document = printDocument2;
+                printPreviewDialog2.Document = printDoc2;
                 printPreviewDialog2.ShowDialog(); // Brings up a Print Preview
-                printDocument2.Print(); // Prints the Data Grid View
+                printDoc2.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -271,7 +271,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument2_PrintPage(object sender, PrintPageEventArgs e) // Settings For the Printing
+        private void printDoc2_PrintPage(object sender, PrintPageEventArgs e) // Settings For the Printing
         {
             try
             {
@@ -290,9 +290,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog3 = new PrintPreviewDialog();
-                printPreviewDialog3.Document = printDocument3;
+                printPreviewDialog3.Document = printDoc3;
                 printPreviewDialog3.ShowDialog(); // Brings up a Print Preview 
-                printDocument3.Print(); // Prints the Data Grid View
+                printDoc3.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -300,7 +300,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument3_PrintPage(object sender, PrintPageEventArgs e) // Setting for the Printing
+        private void printDoc3_PrintPage(object sender, PrintPageEventArgs e) // Setting for the Printing
         {
             try
             {
@@ -319,9 +319,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog4 = new PrintPreviewDialog();
-                printPreviewDialog4.Document = printDocument4;
+                printPreviewDialog4.Document = printDoc4;
                 printPreviewDialog4.ShowDialog(); // Brings up a Print Preview 
-                printDocument4.Print(); // Prints the Data Grid View
+                printDoc4.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -329,7 +329,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument4_PrintPage(object sender, PrintPageEventArgs e) // Settings for the Printing
+        private void printDoc4_PrintPage(object sender, PrintPageEventArgs e) // Settings for the Printing
         {
             try
             {
@@ -348,9 +348,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog5 = new PrintPreviewDialog();
-                printPreviewDialog5.Document = printDocument5;
+                printPreviewDialog5.Document = printDoc5;
                 printPreviewDialog5.ShowDialog(); // Brings up a Print Preview 
-                printDocument5.Print(); // Prints the Data Grid View
+                printDoc5.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -358,7 +358,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument5_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc5_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -377,9 +377,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog6 = new PrintPreviewDialog();
-                printPreviewDialog6.Document = printDocument6;
+                printPreviewDialog6.Document = printDoc6;
                 printPreviewDialog6.ShowDialog(); // Brings up a Print Preview 
-                printDocument6.Print(); // Prints the Data Grid View
+                printDoc6.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -387,7 +387,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument6_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc6_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -406,9 +406,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog7 = new PrintPreviewDialog();
-                printPreviewDialog7.Document = printDocument7;
+                printPreviewDialog7.Document = printDoc7;
                 printPreviewDialog7.ShowDialog(); // Brings up a Print Preview 
-                printDocument7.Print(); // Prints the Data Grid View
+                printDoc7.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -416,7 +416,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument7_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc7_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -435,9 +435,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog8 = new PrintPreviewDialog();
-                printPreviewDialog8.Document = printDocument8;
+                printPreviewDialog8.Document = printDoc8;
                 printPreviewDialog8.ShowDialog(); // Brings up a Print Preview 
-                printDocument8.Print(); // Prints the Data Grid View
+                printDoc8.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -445,7 +445,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument8_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc8_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -464,9 +464,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog9 = new PrintPreviewDialog();
-                printPreviewDialog9.Document = printDocument9;
+                printPreviewDialog9.Document = printDoc9;
                 printPreviewDialog9.ShowDialog(); // Brings up a Print Preview 
-                printDocument9.Print(); // Prints the Data Grid View
+                printDoc9.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -474,7 +474,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument9_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc9_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -493,9 +493,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog10 = new PrintPreviewDialog();
-                printPreviewDialog10.Document = printDocument10;
+                printPreviewDialog10.Document = printDoc10;
                 printPreviewDialog10.ShowDialog(); // Brings up a Print Preview 
-                printDocument10.Print(); // Prints the Data Grid View
+                printDoc10.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -503,7 +503,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument10_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc10_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -522,9 +522,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog11 = new PrintPreviewDialog();
-                printPreviewDialog11.Document = printDocument11;
+                printPreviewDialog11.Document = printDoc11;
                 printPreviewDialog11.ShowDialog(); // Brings up a Print Preview 
-                printDocument11.Print(); // Prints the Data Grid View
+                printDoc11.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -532,7 +532,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument11_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc11_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -551,9 +551,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog12 = new PrintPreviewDialog();
-                printPreviewDialog12.Document = printDocument12;
+                printPreviewDialog12.Document = printDoc12;
                 printPreviewDialog12.ShowDialog(); // Brings up a Print Preview 
-                printDocument12.Print(); // Prints the Data Grid View
+                printDoc12.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -561,7 +561,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument12_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc12_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -580,9 +580,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog13 = new PrintPreviewDialog();
-                printPreviewDialog13.Document = printDocument13;
+                printPreviewDialog13.Document = printDoc13;
                 printPreviewDialog13.ShowDialog(); // Brings up a Print Preview 
-                printDocument13.Print(); // Prints the Data Grid View
+                printDoc13.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -590,7 +590,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument13_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc13_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -609,9 +609,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog14 = new PrintPreviewDialog();
-                printPreviewDialog14.Document = printDocument14;
+                printPreviewDialog14.Document = printDoc14;
                 printPreviewDialog14.ShowDialog(); // Brings up a Print Preview 
-                printDocument14.Print(); // Prints the Data Grid View
+                printDoc14.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -619,7 +619,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument14_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc14_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -638,9 +638,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog15 = new PrintPreviewDialog();
-                printPreviewDialog15.Document = printDocument15;
+                printPreviewDialog15.Document = printDoc15;
                 printPreviewDialog15.ShowDialog(); // Brings up a Print Preview 
-                printDocument15.Print(); // Prints the Data Grid View
+                printDoc15.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -648,7 +648,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument15_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc15_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -667,9 +667,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog16 = new PrintPreviewDialog();
-                printPreviewDialog16.Document = printDocument16;
+                printPreviewDialog16.Document = printDoc16;
                 printPreviewDialog16.ShowDialog(); // Brings up a Print Preview 
-                printDocument16.Print(); // Prints the Data Grid View
+                printDoc16.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -677,7 +677,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument16_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc16_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {
@@ -696,9 +696,9 @@ namespace FleetTrackingInformationSystem
             try
             {
                 PrintPreviewDialog printPreviewDialog17 = new PrintPreviewDialog();
-                printPreviewDialog17.Document = printDocument17;
+                printPreviewDialog17.Document = printDoc17;
                 printPreviewDialog17.ShowDialog(); // Brings up a Print Preview 
-                printDocument17.Print(); // Prints the Data Grid View
+                printDoc17.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
             {
@@ -706,7 +706,7 @@ namespace FleetTrackingInformationSystem
             }
         }
 
-        private void printDocument17_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
+        private void printDoc17_PrintPage(object sender, PrintPageEventArgs e) // Settings For Printing
         {
             try
             {

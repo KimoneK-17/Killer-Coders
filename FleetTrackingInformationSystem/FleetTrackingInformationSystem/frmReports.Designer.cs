@@ -98,23 +98,23 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument3 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument4 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument5 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument6 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument7 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument8 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument9 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument10 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument11 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument12 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument13 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument14 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument15 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument16 = new System.Drawing.Printing.PrintDocument();
-            this.printDocument17 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc1 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc2 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc3 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc4 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc5 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc6 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc7 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc8 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc9 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc10 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc11 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc12 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc13 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc14 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc15 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc16 = new System.Drawing.Printing.PrintDocument();
+            this.printDoc17 = new System.Drawing.Printing.PrintDocument();
             this.VehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabReports.SuspendLayout();
             this.tabVehicleStat.SuspendLayout();
@@ -880,73 +880,73 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
-            // printDocument1
+            // printDoc1
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.printDoc1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc1_PrintPage);
             // 
-            // printDocument2
+            // printDoc2
             // 
-            this.printDocument2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument2_PrintPage);
+            this.printDoc2.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc2_PrintPage);
             // 
-            // printDocument3
+            // printDoc3
             // 
-            this.printDocument3.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument3_PrintPage);
+            this.printDoc3.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc3_PrintPage);
             // 
-            // printDocument4
+            // printDoc4
             // 
-            this.printDocument4.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument4_PrintPage);
+            this.printDoc4.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc4_PrintPage);
             // 
-            // printDocument5
+            // printDoc5
             // 
-            this.printDocument5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument5_PrintPage);
+            this.printDoc5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc5_PrintPage);
             // 
-            // printDocument6
+            // printDoc6
             // 
-            this.printDocument6.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument6_PrintPage);
+            this.printDoc6.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc6_PrintPage);
             // 
-            // printDocument7
+            // printDoc7
             // 
-            this.printDocument7.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument7_PrintPage);
+            this.printDoc7.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc7_PrintPage);
             // 
-            // printDocument8
+            // printDoc8
             // 
-            this.printDocument8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument8_PrintPage);
+            this.printDoc8.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc8_PrintPage);
             // 
-            // printDocument9
+            // printDoc9
             // 
-            this.printDocument9.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument9_PrintPage);
+            this.printDoc9.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc9_PrintPage);
             // 
-            // printDocument10
+            // printDoc10
             // 
-            this.printDocument10.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument10_PrintPage);
+            this.printDoc10.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc10_PrintPage);
             // 
-            // printDocument11
+            // printDoc11
             // 
-            this.printDocument11.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument11_PrintPage);
+            this.printDoc11.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc11_PrintPage);
             // 
-            // printDocument12
+            // printDoc12
             // 
-            this.printDocument12.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument12_PrintPage);
+            this.printDoc12.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc12_PrintPage);
             // 
-            // printDocument13
+            // printDoc13
             // 
-            this.printDocument13.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument13_PrintPage);
+            this.printDoc13.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc13_PrintPage);
             // 
-            // printDocument14
+            // printDoc14
             // 
-            this.printDocument14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument14_PrintPage);
+            this.printDoc14.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc14_PrintPage);
             // 
-            // printDocument15
+            // printDoc15
             // 
-            this.printDocument15.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument15_PrintPage);
+            this.printDoc15.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc15_PrintPage);
             // 
-            // printDocument16
+            // printDoc16
             // 
-            this.printDocument16.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument16_PrintPage);
+            this.printDoc16.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc16_PrintPage);
             // 
-            // printDocument17
+            // printDoc17
             // 
-            this.printDocument17.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument17_PrintPage);
+            this.printDoc17.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDoc17_PrintPage);
             // 
             // frmReports
             // 
@@ -1088,22 +1088,22 @@
         private System.Windows.Forms.Button btnPrintTimeDaily;
         private System.Windows.Forms.Button btnPrintTimeWeekly;
         private System.Windows.Forms.Button btnPrintTimeMonth;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Drawing.Printing.PrintDocument printDocument2;
-        private System.Drawing.Printing.PrintDocument printDocument3;
-        private System.Drawing.Printing.PrintDocument printDocument4;
-        private System.Drawing.Printing.PrintDocument printDocument5;
-        private System.Drawing.Printing.PrintDocument printDocument6;
-        private System.Drawing.Printing.PrintDocument printDocument7;
-        private System.Drawing.Printing.PrintDocument printDocument8;
-        private System.Drawing.Printing.PrintDocument printDocument9;
-        private System.Drawing.Printing.PrintDocument printDocument10;
-        private System.Drawing.Printing.PrintDocument printDocument11;
-        private System.Drawing.Printing.PrintDocument printDocument12;
-        private System.Drawing.Printing.PrintDocument printDocument13;
-        private System.Drawing.Printing.PrintDocument printDocument14;
-        private System.Drawing.Printing.PrintDocument printDocument15;
-        private System.Drawing.Printing.PrintDocument printDocument16;
-        private System.Drawing.Printing.PrintDocument printDocument17;
+        private System.Drawing.Printing.PrintDocument printDoc1;
+        private System.Drawing.Printing.PrintDocument printDoc2;
+        private System.Drawing.Printing.PrintDocument printDoc3;
+        private System.Drawing.Printing.PrintDocument printDoc4;
+        private System.Drawing.Printing.PrintDocument printDoc5;
+        private System.Drawing.Printing.PrintDocument printDoc6;
+        private System.Drawing.Printing.PrintDocument printDoc7;
+        private System.Drawing.Printing.PrintDocument printDoc8;
+        private System.Drawing.Printing.PrintDocument printDoc9;
+        private System.Drawing.Printing.PrintDocument printDoc10;
+        private System.Drawing.Printing.PrintDocument printDoc11;
+        private System.Drawing.Printing.PrintDocument printDoc12;
+        private System.Drawing.Printing.PrintDocument printDoc13;
+        private System.Drawing.Printing.PrintDocument printDoc14;
+        private System.Drawing.Printing.PrintDocument printDoc15;
+        private System.Drawing.Printing.PrintDocument printDoc16;
+        private System.Drawing.Printing.PrintDocument printDoc17;
     }
 }

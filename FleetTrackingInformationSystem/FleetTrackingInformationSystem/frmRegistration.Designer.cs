@@ -296,7 +296,7 @@
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
             this.picCargoFleet.Location = new System.Drawing.Point(430, 239);
             this.picCargoFleet.Name = "picCargoFleet";
-            this.picCargoFleet.Size = new System.Drawing.Size(97, 92);
+            this.picCargoFleet.Size = new System.Drawing.Size(119, 92);
             this.picCargoFleet.TabIndex = 42;
             this.picCargoFleet.TabStop = false;
             // 
