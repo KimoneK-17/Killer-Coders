@@ -502,3 +502,6 @@ C:\Users\14002499\Source\Repos\Killer-Coders3\FleetTrackingInformationSystem\Fle
 C:\Users\14002499\Source\Repos\Killer-Coders3\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmSearch.resources
 C:\Users\14002499\Source\Repos\Killer-Coders3\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmTripPlan.resources
 C:\Users\14002499\Source\Repos\Killer-Coders3\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmSplashScreen.resources
+Z:\WIL\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+Z:\WIL\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
+Z:\WIL\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.pdb
