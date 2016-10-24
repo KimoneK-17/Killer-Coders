@@ -114,7 +114,7 @@ namespace FleetTrackingInformationSystem
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Error here"+ex.Message);
                 }
                 catch (Exception ex)
                 {
@@ -161,7 +161,7 @@ namespace FleetTrackingInformationSystem
               DBConnect objDBConnect = new DBConnect();
 
               objDBConnect.OpenConnection();
-              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET (Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage) WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
+              objDBConnect.sqlCmd = new SqlCommand("UPDATE Vehicle SET Vehicle_Type=@Vehicle_Type, Vehicle_Make=@Vehicle_Make, Vehicle_Model=@Vehicle_Model, Vehicle_Year=@Vehicle_Year,Vehicle_TotalMileage= @Vehicle_TotalMileage WHERE Vehicle_RegNumber=@Vehicle_RegNumber ", objDBConnect.sqlConn);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Type", V_TYPE);
 		      objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_Make", V_MAKE);
