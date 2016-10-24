@@ -66,6 +66,7 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                txtEmail.Clear();
                 txtName.Clear(); // Clears Text Box
                 txtSurname.Clear();
                 txtUserName.Clear();
