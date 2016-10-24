@@ -20,7 +20,6 @@ namespace FleetTrackingInformationSystem
         string V_RN;
         string T_FROM;
         string T_TO;
-        string T_Complete;
         string L_ID;
         string trip_plan;
         DBConnect objDBConnect = new DBConnect();
@@ -126,7 +125,6 @@ namespace FleetTrackingInformationSystem
             T_ID = Interaction.InputBox("Please enter Trip ID: ", "Timesheet ID", "Default Text");
             try
             {
-
                 objDBConnect.OpenConnection();
 
                 string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='" + T_ID + "');";
