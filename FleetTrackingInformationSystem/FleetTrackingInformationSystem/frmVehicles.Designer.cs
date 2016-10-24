@@ -115,12 +115,13 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.BackColor = System.Drawing.Color.Transparent;
+            this.lblType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblType.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblType.Location = new System.Drawing.Point(55, 200);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(118, 19);
+            this.lblType.Size = new System.Drawing.Size(120, 21);
             this.lblType.TabIndex = 20;
             this.lblType.Text = "Type Of Vehicle:";
             // 
@@ -128,12 +129,13 @@
             // 
             this.lblRegNum.AutoSize = true;
             this.lblRegNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblRegNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblRegNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblRegNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegNum.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblRegNum.Location = new System.Drawing.Point(55, 245);
             this.lblRegNum.Name = "lblRegNum";
-            this.lblRegNum.Size = new System.Drawing.Size(155, 19);
+            this.lblRegNum.Size = new System.Drawing.Size(157, 21);
             this.lblRegNum.TabIndex = 21;
             this.lblRegNum.Text = "Registration Number:";
             // 
@@ -141,12 +143,13 @@
             // 
             this.lblMileage.AutoSize = true;
             this.lblMileage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMileage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMileage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMileage.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMileage.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblMileage.Location = new System.Drawing.Point(55, 291);
             this.lblMileage.Name = "lblMileage";
-            this.lblMileage.Size = new System.Drawing.Size(119, 19);
+            this.lblMileage.Size = new System.Drawing.Size(121, 21);
             this.lblMileage.TabIndex = 22;
             this.lblMileage.Text = "Vehicle Mileage:";
             // 
@@ -154,12 +157,13 @@
             // 
             this.lblMake.AutoSize = true;
             this.lblMake.BackColor = System.Drawing.Color.Transparent;
+            this.lblMake.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMake.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMake.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMake.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblMake.Location = new System.Drawing.Point(55, 341);
             this.lblMake.Name = "lblMake";
-            this.lblMake.Size = new System.Drawing.Size(103, 19);
+            this.lblMake.Size = new System.Drawing.Size(105, 21);
             this.lblMake.TabIndex = 23;
             this.lblMake.Text = "Vehicle Make:";
             // 
@@ -167,12 +171,13 @@
             // 
             this.lblModel.AutoSize = true;
             this.lblModel.BackColor = System.Drawing.Color.Transparent;
+            this.lblModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblModel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblModel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblModel.Location = new System.Drawing.Point(55, 390);
             this.lblModel.Name = "lblModel";
-            this.lblModel.Size = new System.Drawing.Size(109, 19);
+            this.lblModel.Size = new System.Drawing.Size(111, 21);
             this.lblModel.TabIndex = 24;
             this.lblModel.Text = "Vehicle Model:";
             // 
@@ -180,12 +185,13 @@
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.BackColor = System.Drawing.Color.Transparent;
+            this.lblYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblYear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblYear.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYear.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblYear.Location = new System.Drawing.Point(55, 437);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(94, 19);
+            this.lblYear.Size = new System.Drawing.Size(96, 21);
             this.lblYear.TabIndex = 25;
             this.lblYear.Text = "Vehicle Year:";
             // 
