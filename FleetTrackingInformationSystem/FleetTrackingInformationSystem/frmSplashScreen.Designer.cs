@@ -38,7 +38,7 @@
             // 
             this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
-            this.picCargoFleet.Location = new System.Drawing.Point(12, 12);
+            this.picCargoFleet.Location = new System.Drawing.Point(402, 12);
             this.picCargoFleet.Name = "picCargoFleet";
             this.picCargoFleet.Size = new System.Drawing.Size(247, 172);
             this.picCargoFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -49,7 +49,7 @@
             // 
             this.lblStarting.AutoSize = true;
             this.lblStarting.BackColor = System.Drawing.Color.Transparent;
-            this.lblStarting.Location = new System.Drawing.Point(597, 12);
+            this.lblStarting.Location = new System.Drawing.Point(12, 429);
             this.lblStarting.Name = "lblStarting";
             this.lblStarting.Size = new System.Drawing.Size(52, 13);
             this.lblStarting.TabIndex = 15;
