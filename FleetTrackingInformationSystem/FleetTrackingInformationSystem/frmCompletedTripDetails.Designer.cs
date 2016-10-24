@@ -253,6 +253,7 @@
             this.Controls.Add(this.lblFuelUsage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCompletedTripDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.Load += new System.EventHandler(this.frmCompletedTripDetails_Load);
             this.pnlButtons.ResumeLayout(false);

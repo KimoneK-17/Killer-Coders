@@ -37,7 +37,7 @@
             // 
             this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
             this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
-            this.picCargoFleet.Location = new System.Drawing.Point(12, 12);
+            this.picCargoFleet.Location = new System.Drawing.Point(25, 552);
             this.picCargoFleet.Name = "picCargoFleet";
             this.picCargoFleet.Size = new System.Drawing.Size(247, 172);
             this.picCargoFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -51,10 +51,15 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(661, 320);
+            this.ClientSize = new System.Drawing.Size(661, 785);
             this.Controls.Add(this.picCargoFleet);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSplashScreen";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).EndInit();
             this.ResumeLayout(false);
