@@ -98,7 +98,7 @@ namespace FleetTrackingInformationSystem
 
                         objDBConnect.OpenConnection();
 
-                        objDBConnect.sqlCmd = new SqlCommand("IF NOT EXISTS(SELECT * FROM LOCATION WHERE L_ID = @Location_ID) BEGIN INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
+                        objDBConnect.sqlCmd = new SqlCommand("INSERT INTO LOCATION VALUES (@Location_ID, @Location_Name, @Location_City, @Location_NumVehicles, @Location_NumEmployees, @Location_Manager)", objDBConnect.sqlConn);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
                         objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
