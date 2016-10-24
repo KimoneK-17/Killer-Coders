@@ -231,6 +231,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();
+                printPreviewDialog1.Document = printDocument1;
+                printPreviewDialog1.ShowDialog(); // Brings up a Print Preview
                 printDocument1.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -257,6 +260,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog2 = new PrintPreviewDialog();
+                printPreviewDialog2.Document = printDocument2;
+                printPreviewDialog2.ShowDialog(); // Brings up a Print Preview
                 printDocument2.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -283,6 +289,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog3 = new PrintPreviewDialog();
+                printPreviewDialog3.Document = printDocument3;
+                printPreviewDialog3.ShowDialog(); // Brings up a Print Preview 
                 printDocument3.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -309,6 +318,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog4 = new PrintPreviewDialog();
+                printPreviewDialog4.Document = printDocument4;
+                printPreviewDialog4.ShowDialog(); // Brings up a Print Preview 
                 printDocument4.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -335,6 +347,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog5 = new PrintPreviewDialog();
+                printPreviewDialog5.Document = printDocument5;
+                printPreviewDialog5.ShowDialog(); // Brings up a Print Preview 
                 printDocument5.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -361,6 +376,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog6 = new PrintPreviewDialog();
+                printPreviewDialog6.Document = printDocument6;
+                printPreviewDialog6.ShowDialog(); // Brings up a Print Preview 
                 printDocument6.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -387,6 +405,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog7 = new PrintPreviewDialog();
+                printPreviewDialog7.Document = printDocument7;
+                printPreviewDialog7.ShowDialog(); // Brings up a Print Preview 
                 printDocument7.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -413,6 +434,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog8 = new PrintPreviewDialog();
+                printPreviewDialog8.Document = printDocument8;
+                printPreviewDialog8.ShowDialog(); // Brings up a Print Preview 
                 printDocument8.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -439,6 +463,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog9 = new PrintPreviewDialog();
+                printPreviewDialog9.Document = printDocument9;
+                printPreviewDialog9.ShowDialog(); // Brings up a Print Preview 
                 printDocument9.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -465,6 +492,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog10 = new PrintPreviewDialog();
+                printPreviewDialog10.Document = printDocument10;
+                printPreviewDialog10.ShowDialog(); // Brings up a Print Preview 
                 printDocument10.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -491,6 +521,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog11 = new PrintPreviewDialog();
+                printPreviewDialog11.Document = printDocument11;
+                printPreviewDialog11.ShowDialog(); // Brings up a Print Preview 
                 printDocument11.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -517,6 +550,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog12 = new PrintPreviewDialog();
+                printPreviewDialog12.Document = printDocument12;
+                printPreviewDialog12.ShowDialog(); // Brings up a Print Preview 
                 printDocument12.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -543,6 +579,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog13 = new PrintPreviewDialog();
+                printPreviewDialog13.Document = printDocument13;
+                printPreviewDialog13.ShowDialog(); // Brings up a Print Preview 
                 printDocument13.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -569,6 +608,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog14 = new PrintPreviewDialog();
+                printPreviewDialog14.Document = printDocument14;
+                printPreviewDialog14.ShowDialog(); // Brings up a Print Preview 
                 printDocument14.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -595,6 +637,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog15 = new PrintPreviewDialog();
+                printPreviewDialog15.Document = printDocument15;
+                printPreviewDialog15.ShowDialog(); // Brings up a Print Preview 
                 printDocument15.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -621,6 +666,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog16 = new PrintPreviewDialog();
+                printPreviewDialog16.Document = printDocument16;
+                printPreviewDialog16.ShowDialog(); // Brings up a Print Preview 
                 printDocument16.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -647,6 +695,9 @@ namespace FleetTrackingInformationSystem
         {
             try
             {
+                PrintPreviewDialog printPreviewDialog17 = new PrintPreviewDialog();
+                printPreviewDialog17.Document = printDocument17;
+                printPreviewDialog17.ShowDialog(); // Brings up a Print Preview 
                 printDocument17.Print(); // Prints the Data Grid View
             }
             catch (Exception ex)
@@ -667,8 +718,6 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Cannot Print Report: " + ex);
             }
-        }
-
-        
+        }      
     }
 }
