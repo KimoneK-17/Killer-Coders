@@ -67,7 +67,32 @@ namespace FleetTrackingInformationSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            T_ID = int.Parse(Interaction.InputBox("Please enter Timesheet ID: ", "Timesheet ID", "Default Text"));
+            try
+            {
 
+                objDBConnect.OpenConnection();
+
+                string sql = "DELETE FROM Timesheet WHERE (T_ID ='" + T_ID + "');";
+
+                objDBConnect.sqlCmd = new SqlCommand();
+                objDBConnect.sqlCmd.CommandText = sql;
+                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+
+                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+
+                MessageBox.Show("SUCCESS");
+                objDBConnect.sqlDR.Close();
+                objDBConnect.sqlConn.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -76,28 +101,36 @@ namespace FleetTrackingInformationSystem
             E_ID = cboE_ID.SelectedValue.ToString();
             T_HOURS = double.Parse(updHoursWorked.Text);
 
-            try
+            if (!T_ID.Equals(""))
             {
-                DBConnect objDBConnect = new DBConnect();
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
 
-                objDBConnect.OpenConnection();
+                    objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,GETDATE())", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);
+                    objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Timesheet VALUES (@T_ID, @Emp_ID, @T_HOURS,GETDATE())", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@T_ID", T_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@T_HOURS", T_HOURS);
 
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESSFULLY INSERTED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                    MessageBox.Show("SUCCESSFULLY INSERTED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Submit Vehicle Details: " + ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error Cannot Submit Vehicle Details: " + ex.Message);
+                MessageBox.Show("Please enter a Timesheet ID");
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -105,7 +138,7 @@ namespace FleetTrackingInformationSystem
             try
             {
                 T_ID = int.Parse(Interaction.InputBox("Please enter Timesheet ID: ", "Timesheet ID", "Default Text"));
-                                            
+
                 T_HOURS = double.Parse(Interaction.InputBox("Please enter Number of hours worked: " + T_ID, "Hours Worked", "Default Text"));
 
             }

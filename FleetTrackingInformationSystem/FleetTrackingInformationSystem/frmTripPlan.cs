@@ -127,7 +127,7 @@ namespace FleetTrackingInformationSystem
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            T_ID = Interaction.InputBox("Please enter Trip ID: ", "Timesheet ID", "Default Text");
+            T_ID = Interaction.InputBox("Please enter Trip ID: ", "Trip ID", "Default Text");
             try
             {
 
@@ -168,8 +168,8 @@ namespace FleetTrackingInformationSystem
                     objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", T_FROM);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", T_TO);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
 
                     objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                     MessageBox.Show("SUCCESSFULLY UPDATED");
