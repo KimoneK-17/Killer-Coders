@@ -79,7 +79,7 @@ namespace FleetTrackingInformationSystem
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             getValues();
-            MessageBox.Show("" + V_YEAR);
+            
             Check check = new Check();
             bool exit = false;
 
