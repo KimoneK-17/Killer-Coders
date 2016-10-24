@@ -146,7 +146,6 @@ namespace FleetTrackingInformationSystem
             GeneratePassword newPass = new GeneratePassword();
             bool exit = false;
             string tempPass = newPass.GeneratePass(10);
-            MessageBox.Show(tempPass);
             userName = txtUser.Text;
             exit = check.CheckEmpty(userName, "Username", exit);
             if (exit == false)
@@ -177,8 +176,7 @@ namespace FleetTrackingInformationSystem
                     string password = "Pass123456";
                     string emailTo = email;
                     string subject = "Password Reset";
-                    string body = "You have requested a password reset, your new temporary password is: " + tempPass + ". Please change your password as soon as possible.";
-                    MessageBox.Show(email);
+                    string body = "You have requested a password reset, your new temporary password/Security Code is: " + tempPass + ". Please change your password as soon as possible.";
                     using (MailMessage mail = new MailMessage())
                     {
                         mail.From = new MailAddress(emailFrom);
@@ -186,7 +184,6 @@ namespace FleetTrackingInformationSystem
                         mail.Subject = subject;
                         mail.Body = body;
                         mail.IsBodyHtml = false;
-                        //mail.Attachments.Add(new Attachment("C:\\SomeFile.txt"));
 
                         using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
                         {
@@ -332,6 +329,23 @@ namespace FleetTrackingInformationSystem
             }
 
         }
+
+        private void chbShow_CheckedChanged(object sender, EventArgs e)
+        {
+            password = txtPass.Text;
+            txtPass.PasswordChar = '\0';//plain text
+            if(chbShow.Checked==true)
+            {
+                txtPass.Text = password;//sets textbox to plain text password
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';//password hidden
+
+            }
+        }//shows password
+
+        
 
     }
 }

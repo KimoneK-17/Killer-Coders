@@ -71,9 +71,9 @@
             this.lblOldPass.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblOldPass.Location = new System.Drawing.Point(32, 216);
             this.lblOldPass.Name = "lblOldPass";
-            this.lblOldPass.Size = new System.Drawing.Size(98, 20);
+            this.lblOldPass.Size = new System.Drawing.Size(99, 20);
             this.lblOldPass.TabIndex = 1;
-            this.lblOldPass.Text = "Old Password:";
+            this.lblOldPass.Text = "Security Code:";
             // 
             // lblNewPass
             // 
@@ -166,14 +166,14 @@
             // mnuBack
             // 
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(152, 22);
+            this.mnuBack.Size = new System.Drawing.Size(99, 22);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Size = new System.Drawing.Size(99, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 

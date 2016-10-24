@@ -44,6 +44,7 @@
             this.picCargoFleet = new System.Windows.Forms.PictureBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnPassReset = new System.Windows.Forms.Button();
+            this.chbShow = new System.Windows.Forms.CheckBox();
             this.pnlFleet.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).BeginInit();
@@ -207,6 +208,19 @@
             this.btnPassReset.UseVisualStyleBackColor = true;
             this.btnPassReset.Click += new System.EventHandler(this.btnPassReset_Click);
             // 
+            // chbShow
+            // 
+            this.chbShow.AutoSize = true;
+            this.chbShow.BackColor = System.Drawing.Color.Transparent;
+            this.chbShow.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold);
+            this.chbShow.Location = new System.Drawing.Point(222, 306);
+            this.chbShow.Name = "chbShow";
+            this.chbShow.Size = new System.Drawing.Size(140, 25);
+            this.chbShow.TabIndex = 15;
+            this.chbShow.Text = "Show Password";
+            this.chbShow.UseVisualStyleBackColor = false;
+            this.chbShow.CheckedChanged += new System.EventHandler(this.chbShow_CheckedChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +228,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(567, 536);
+            this.Controls.Add(this.chbShow);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.picCargoFleet);
             this.Controls.Add(this.txtPass);
@@ -255,6 +270,7 @@
         private System.Windows.Forms.PictureBox picCargoFleet;
         private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.Button btnPassReset;
+        private System.Windows.Forms.CheckBox chbShow;
     }
 }
 
