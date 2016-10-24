@@ -20,6 +20,7 @@ namespace FleetTrackingInformationSystem
         public frmRegistration()
         {
             InitializeComponent();
+            toolTip();
 
             cboEmpPosition.SelectedItem = "Manager"; // Sets the Default value showing in the Drop Down list as Manager
             cboEmpPosition.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
@@ -230,5 +231,34 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Please Enter Your Name");
             }
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                ToolTip objTooltipbtnRegister = new ToolTip();
+                objTooltipbtnRegister.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnRegister.InitialDelay = ttInitDelay;
+                objTooltipbtnRegister.ReshowDelay = ttRshwDelay;
+                objTooltipbtnRegister.SetToolTip(this.btnRegister, "Registers entry to the database");
+
+                ToolTip objTooltipbtnClear = new ToolTip();
+                objTooltipbtnClear.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnClear.InitialDelay = ttInitDelay;
+                objTooltipbtnClear.ReshowDelay = ttRshwDelay;
+                objTooltipbtnClear.SetToolTip(this.btnClear, "Clears the text fields");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

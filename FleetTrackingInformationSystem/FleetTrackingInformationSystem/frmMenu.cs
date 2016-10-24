@@ -15,6 +15,7 @@ namespace FleetTrackingInformationSystem
         public frmMenu()
         {
             InitializeComponent();
+            toolTip();
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -164,6 +165,78 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Error Cannot Go To Search Form: " + ex.Message); // Shows an error message 
             }
-        }   
+        }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                // tooltips
+                ToolTip objTooltipbtnService = new ToolTip();
+                objTooltipbtnService.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnService.InitialDelay = ttInitDelay;
+                objTooltipbtnService.ReshowDelay = ttRshwDelay;
+                objTooltipbtnService.SetToolTip(this.btnService, "Opens the Service form");
+
+                ToolTip objTooltipbtnTrip = new ToolTip();
+                objTooltipbtnTrip.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnTrip.InitialDelay = ttInitDelay;
+                objTooltipbtnTrip.ReshowDelay = ttRshwDelay;
+                objTooltipbtnTrip.SetToolTip(this.btnTrip, "Opens the Trip form");
+
+                ToolTip objTooltipbtnReports = new ToolTip();
+                objTooltipbtnReports.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnReports.InitialDelay = ttInitDelay;
+                objTooltipbtnReports.ReshowDelay = ttRshwDelay;
+                objTooltipbtnReports.SetToolTip(this.btnReports, "Opens the Reports form");
+
+                ToolTip objTooltipbtnScheduling = new ToolTip();
+                objTooltipbtnScheduling.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnScheduling.InitialDelay = ttInitDelay;
+                objTooltipbtnScheduling.ReshowDelay = ttRshwDelay;
+                objTooltipbtnScheduling.SetToolTip(this.btnTimesheet, "Opens the Timesheet form");
+
+                ToolTip objTooltipbtnLocation = new ToolTip();
+                objTooltipbtnLocation.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnLocation.InitialDelay = ttInitDelay;
+                objTooltipbtnLocation.ReshowDelay = ttRshwDelay;
+                objTooltipbtnLocation.SetToolTip(this.btnLocation, "Opens the Locations form");
+
+                ToolTip objTooltipbtnCustomer = new ToolTip();
+                objTooltipbtnCustomer.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnCustomer.InitialDelay = ttInitDelay;
+                objTooltipbtnCustomer.ReshowDelay = ttRshwDelay;
+                objTooltipbtnCustomer.SetToolTip(this.btnCustomer, "Opens the Customers form");
+
+                ToolTip objTooltipbtnEmployee = new ToolTip();
+                objTooltipbtnEmployee.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnEmployee.InitialDelay = ttInitDelay;
+                objTooltipbtnEmployee.ReshowDelay = ttRshwDelay;
+                objTooltipbtnEmployee.SetToolTip(this.btnEmployee, "Opens the Employee form");
+
+                ToolTip objTooltipbtnVehicle = new ToolTip();
+                objTooltipbtnVehicle.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnVehicle.InitialDelay = ttInitDelay;
+                objTooltipbtnVehicle.ReshowDelay = ttRshwDelay;
+                objTooltipbtnVehicle.SetToolTip(this.btnVehicle, "Opens the Vehicle form");
+
+                ToolTip objTooltipbtnSearch = new ToolTip();
+                objTooltipbtnSearch.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnSearch.InitialDelay = ttInitDelay;
+                objTooltipbtnSearch.ReshowDelay = ttRshwDelay;
+                objTooltipbtnSearch.SetToolTip(this.btnSearch, "Opens the Search form");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

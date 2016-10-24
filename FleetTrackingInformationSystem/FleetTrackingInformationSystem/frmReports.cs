@@ -19,6 +19,7 @@ namespace FleetTrackingInformationSystem
         public frmReports()
         {
             InitializeComponent();
+            toolTip();
         }
          DBConnect db = new DBConnect();
         private void frmReports_Load(object sender, EventArgs e)
@@ -717,6 +718,127 @@ namespace FleetTrackingInformationSystem
             {
                 MessageBox.Show("Cannot Print Report: " + ex);
             }
-        }      
+        }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                //tooltips
+                ToolTip objTooltipbtnPrintVehicleStat = new ToolTip();
+                objTooltipbtnPrintVehicleStat.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehicleStat.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehicleStat.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehicleStat.SetToolTip(this.btnPrintVehicleStat, "Print the Vehicle Status report");
+
+                ToolTip objTooltipbtnPrintSerAppDaily = new ToolTip();
+                objTooltipbtnPrintSerAppDaily.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintSerAppDaily.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintSerAppDaily.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintSerAppDaily.SetToolTip(this.btnPrintSerAppDaily, "Print the Daily Service Appointment report");
+
+                ToolTip objTooltipbtnPrintSerAppWeek = new ToolTip();
+                objTooltipbtnPrintSerAppWeek.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintSerAppWeek.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintSerAppWeek.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintSerAppWeek.SetToolTip(this.btnPrintSerAppWeek, "Print the Weekly Service Appointment report");
+
+                ToolTip objTooltipbtnPrintSerReq = new ToolTip();
+                objTooltipbtnPrintSerReq.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintSerReq.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintSerReq.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintSerReq.SetToolTip(this.btnPrintSerReq, "Print the Service Requirement Job Sheet report");
+
+                ToolTip objTooltipbtnPrintVehSerComDaily = new ToolTip();
+                objTooltipbtnPrintVehSerComDaily.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehSerComDaily.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehSerComDaily.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehSerComDaily.SetToolTip(this.btnPrintVehSerComDaily, "Print the Daily Completed Services report");
+
+                ToolTip objTooltipbtnPrintVehSerComWeek = new ToolTip();
+                objTooltipbtnPrintVehSerComWeek.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehSerComWeek.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehSerComWeek.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehSerComWeek.SetToolTip(this.btnPrintVehSerComWeek, "Print the Weekly Completed Services report");
+
+                ToolTip objTooltipbtnPrintVehSerMonth = new ToolTip();
+                objTooltipbtnPrintVehSerMonth.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehSerMonth.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehSerMonth.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehSerMonth.SetToolTip(this.btnPrintVehSerMonth, "Print the Monthly Completed Services report");
+
+                ToolTip objTooltipbtnPrintVehSerYear = new ToolTip();
+                objTooltipbtnPrintVehSerYear.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehSerYear.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehSerYear.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehSerYear.SetToolTip(this.btnPrintVehSerYear, "Print the Yearly Completed Services report");
+
+                ToolTip objTooltipbtnPrintDetailSerInfo = new ToolTip();
+                objTooltipbtnPrintDetailSerInfo.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintDetailSerInfo.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintDetailSerInfo.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintDetailSerInfo.SetToolTip(this.btnPrintDetailSerInfo, "Print the Detailed Service Information report");
+
+                ToolTip objTooltipbtnPrintPlanTripDaily = new ToolTip();
+                objTooltipbtnPrintPlanTripDaily.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintPlanTripDaily.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintPlanTripDaily.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintPlanTripDaily.SetToolTip(this.btnPrintPlanTripDaily, "Print the Daily Planned Trip report");
+
+                ToolTip objTooltipbtnPrintPlanTripWeek = new ToolTip();
+                objTooltipbtnPrintPlanTripWeek.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintPlanTripWeek.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintPlanTripWeek.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintPlanTripWeek.SetToolTip(this.btnPrintPlanTripWeek, "Print the Weekly Planned Trip report");
+
+                ToolTip objTooltipbtnPrintComTripDaily = new ToolTip();
+                objTooltipbtnPrintComTripDaily.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintComTripDaily.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintComTripDaily.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintComTripDaily.SetToolTip(this.btnPrintComTripDaily, "Print the Daily Completed Trips report");
+
+                ToolTip objTooltipbtnPrintComTripWeek = new ToolTip();
+                objTooltipbtnPrintComTripWeek.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintComTripWeek.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintComTripWeek.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintComTripWeek.SetToolTip(this.btnPrintComTripWeek, "Print the Weekly Completed Trips report");
+
+                ToolTip objTooltipbtnPrintComTripMonth = new ToolTip();
+                objTooltipbtnPrintComTripMonth.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintComTripMonth.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintComTripMonth.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintComTripMonth.SetToolTip(this.btnPrintComTripMonth, "Print the Monthly Completed Trips report");
+
+                ToolTip objTooltipbtnPrintTimeDaily = new ToolTip();
+                objTooltipbtnPrintVehicleStat.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintVehicleStat.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintVehicleStat.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintVehicleStat.SetToolTip(this.btnPrintTimeDaily, "Print the Daily Timesheet report");
+
+                ToolTip objTooltipbtnPrintTimeWeekly = new ToolTip();
+                objTooltipbtnPrintTimeWeekly.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintTimeWeekly.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintTimeWeekly.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintTimeWeekly.SetToolTip(this.btnPrintTimeWeekly, "Print the Weekly Timesheet report");
+
+                ToolTip objTooltipbtnPrintTimeMonth = new ToolTip();
+                objTooltipbtnPrintTimeMonth.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnPrintTimeMonth.InitialDelay = ttInitDelay;
+                objTooltipbtnPrintTimeMonth.ReshowDelay = ttRshwDelay;
+                objTooltipbtnPrintTimeMonth.SetToolTip(this.btnPrintTimeMonth, "Print the Monthly Timesheet report");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

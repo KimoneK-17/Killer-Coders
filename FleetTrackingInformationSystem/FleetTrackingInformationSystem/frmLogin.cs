@@ -20,6 +20,7 @@ namespace FleetTrackingInformationSystem
         public frmLogin()
         {
             InitializeComponent();
+            toolTip();
         }
         string userName;
         string password;
@@ -289,5 +290,48 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Check Validation of Users In Database: " + ex.Message); // Shows an error message
             }
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                //tooltips
+                ToolTip objTooltipBtnLogin = new ToolTip();
+                objTooltipBtnLogin.AutoPopDelay = ttAutoDelay;
+                objTooltipBtnLogin.InitialDelay = ttInitDelay;
+                objTooltipBtnLogin.ReshowDelay = ttRshwDelay;
+                objTooltipBtnLogin.SetToolTip(this.btnLog, "Login to the Fleet Tracking system");
+
+                ToolTip objTooltipBtnClear = new ToolTip();
+                objTooltipBtnClear.AutoPopDelay = ttAutoDelay;
+                objTooltipBtnClear.InitialDelay = ttInitDelay;
+                objTooltipBtnClear.ReshowDelay = ttRshwDelay;
+                objTooltipBtnClear.SetToolTip(this.btnClear, "Clear login details");
+
+                ToolTip objTooltipBtnPassReset = new ToolTip();
+                objTooltipBtnPassReset.AutoPopDelay = ttAutoDelay;
+                objTooltipBtnPassReset.InitialDelay = ttInitDelay;
+                objTooltipBtnPassReset.ReshowDelay = ttRshwDelay;
+                objTooltipBtnPassReset.SetToolTip(this.btnPassReset, "Takes you to the password reset form");
+
+                ToolTip objTooltipBtnReg = new ToolTip();
+                objTooltipBtnReg.AutoPopDelay = ttAutoDelay;
+                objTooltipBtnReg.InitialDelay = ttInitDelay;
+                objTooltipBtnReg.ReshowDelay = ttRshwDelay;
+                objTooltipBtnReg.SetToolTip(this.btnReg, "Register to the Fleet Tracking System");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

@@ -105,5 +105,35 @@ namespace FleetTrackingInformationSystem
             txtKM.Text = "";
             txtVehicleIncidents.Text = "";
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                // tooltips
+                ToolTip objTooltipbtnAdd = new ToolTip();
+                objTooltipbtnAdd.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnAdd.InitialDelay = ttInitDelay;
+                objTooltipbtnAdd.ReshowDelay = ttRshwDelay;
+                objTooltipbtnAdd.SetToolTip(this.btnAdd, "Adds entry to the Completed trips");
+
+                ToolTip objTooltipbtnClear = new ToolTip();
+                objTooltipbtnClear.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnClear.InitialDelay = ttInitDelay;
+                objTooltipbtnClear.ReshowDelay = ttRshwDelay;
+                objTooltipbtnClear.SetToolTip(this.btnClear, "Clears the text fields");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

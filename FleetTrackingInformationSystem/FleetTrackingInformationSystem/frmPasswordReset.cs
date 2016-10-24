@@ -21,6 +21,7 @@ namespace FleetTrackingInformationSystem
         public frmPasswordReset()
         {
             InitializeComponent();
+            toolTip();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -83,5 +84,34 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Error Cannot Exit The Application: " + ex.Message); // Shows an error message 
             }
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                ToolTip objTooltipbtnSubmit = new ToolTip();
+                objTooltipbtnSubmit.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnSubmit.InitialDelay = ttInitDelay;
+                objTooltipbtnSubmit.ReshowDelay = ttRshwDelay;
+                objTooltipbtnSubmit.SetToolTip(this.btnSubmit, "Confirm password reset");
+
+                ToolTip objTooltipbtnClear = new ToolTip();
+                objTooltipbtnClear.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnClear.InitialDelay = ttInitDelay;
+                objTooltipbtnClear.ReshowDelay = ttRshwDelay;
+                objTooltipbtnClear.SetToolTip(this.btnClear, "Remove text from text fields");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

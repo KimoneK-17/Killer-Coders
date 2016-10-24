@@ -16,6 +16,7 @@ namespace FleetTrackingInformationSystem
         public frmSearch()
         {
             InitializeComponent();
+            toolTip();
 
             cboC_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
             cboT_ID.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -347,5 +348,58 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(ex.Message); // Shows an error message
             }
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+
+                ToolTip objTooltipbtnTrip = new ToolTip();
+                objTooltipbtnTrip.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnTrip.InitialDelay = ttInitDelay;
+                objTooltipbtnTrip.ReshowDelay = ttRshwDelay;
+                objTooltipbtnTrip.SetToolTip(this.btnTrip, "Search for all entries containting the specified Trip ID");
+
+                ToolTip objTooltipbtnCust = new ToolTip();
+                objTooltipbtnCust.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnCust.InitialDelay = ttInitDelay;
+                objTooltipbtnCust.ReshowDelay = ttRshwDelay;
+                objTooltipbtnCust.SetToolTip(this.btnCust, "Search for all entries containting the specified Customer ID");
+
+                ToolTip objTooltipbtnEmp = new ToolTip();
+                objTooltipbtnEmp.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnEmp.InitialDelay = ttInitDelay;
+                objTooltipbtnEmp.ReshowDelay = ttRshwDelay;
+                objTooltipbtnEmp.SetToolTip(this.btnEmp, "Search for all entries containting the specified Employee ID");
+
+                ToolTip objTooltipbtnService = new ToolTip();
+                objTooltipbtnService.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnService.InitialDelay = ttInitDelay;
+                objTooltipbtnService.ReshowDelay = ttRshwDelay;
+                objTooltipbtnService.SetToolTip(this.btnService, "Search for all entries containting the specified Service ID");
+
+                ToolTip objTooltipbtnVehicle = new ToolTip();
+                objTooltipbtnVehicle.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnVehicle.InitialDelay = ttInitDelay;
+                objTooltipbtnVehicle.ReshowDelay = ttRshwDelay;
+                objTooltipbtnVehicle.SetToolTip(this.btnVehicle, "Search for all entries containting the specified Vehicle ID");
+
+                ToolTip objTooltipbtnLocation = new ToolTip();
+                objTooltipbtnLocation.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnLocation.InitialDelay = ttInitDelay;
+                objTooltipbtnLocation.ReshowDelay = ttRshwDelay;
+                objTooltipbtnLocation.SetToolTip(this.btnLocation, "Search for all entries containting the specified Location ID");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

@@ -17,7 +17,7 @@ namespace FleetTrackingInformationSystem
         public frmTimesheet()
         {
             InitializeComponent();
-
+            toolTip();
             cboE_ID.SelectedItem = "100"; // Sets the Default value showing in the Drop Down list as 100
             cboE_ID.DropDownStyle = ComboBoxStyle.DropDownList; // Prevents User from inputting Values in the Combo Box, makes the style of the combo box a Drop Down List  
 
@@ -199,5 +199,46 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show("Cobobox error: " + ex.Message);
             }
         }
+
+        public void toolTip()
+        {
+            try
+            {
+                // tooltip properties
+                int ttAutoDelay = 5000;
+                int ttInitDelay = 1000;
+                int ttRshwDelay = 500;
+                //tooltips
+                ToolTip objTooltipbtnAdd = new ToolTip();
+                objTooltipbtnAdd.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnAdd.InitialDelay = ttInitDelay;
+                objTooltipbtnAdd.ReshowDelay = ttRshwDelay;
+                objTooltipbtnAdd.SetToolTip(this.btnAdd, "Adds entry to the database");
+
+                ToolTip objTooltipbtnDelete = new ToolTip();
+                objTooltipbtnDelete.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnDelete.InitialDelay = ttInitDelay;
+                objTooltipbtnDelete.ReshowDelay = ttRshwDelay;
+                objTooltipbtnDelete.SetToolTip(this.btnDelete, "Deletes entry from the database");
+
+                ToolTip objTooltipbtnClear = new ToolTip();
+                objTooltipbtnClear.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnClear.InitialDelay = ttInitDelay;
+                objTooltipbtnClear.ReshowDelay = ttRshwDelay;
+                objTooltipbtnClear.SetToolTip(this.btnClear, "Clears the text fields");
+
+                ToolTip objTooltipbtnUpdate = new ToolTip();
+                objTooltipbtnUpdate.AutoPopDelay = ttAutoDelay;
+                objTooltipbtnUpdate.InitialDelay = ttInitDelay;
+                objTooltipbtnUpdate.ReshowDelay = ttRshwDelay;
+                objTooltipbtnUpdate.SetToolTip(this.btnUpdate, "Updates entry to the database");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }
