@@ -177,6 +177,9 @@
     <EmbeddedResource Include="frmService.resx">
       <DependentUpon>frmService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTimesheet.resx">
       <DependentUpon>frmTimesheet.cs</DependentUpon>
     </EmbeddedResource>

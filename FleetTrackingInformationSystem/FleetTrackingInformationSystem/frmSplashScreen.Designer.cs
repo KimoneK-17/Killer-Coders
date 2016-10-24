@@ -29,7 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
+            this.picCargoFleet = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // picCargoFleet
+            // 
+            this.picCargoFleet.BackColor = System.Drawing.Color.Transparent;
+            this.picCargoFleet.Image = ((System.Drawing.Image)(resources.GetObject("picCargoFleet.Image")));
+            this.picCargoFleet.Location = new System.Drawing.Point(12, 12);
+            this.picCargoFleet.Name = "picCargoFleet";
+            this.picCargoFleet.Size = new System.Drawing.Size(247, 172);
+            this.picCargoFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picCargoFleet.TabIndex = 14;
+            this.picCargoFleet.TabStop = false;
             // 
             // frmSplashScreen
             // 
@@ -37,14 +50,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(661, 543);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(661, 320);
+            this.Controls.Add(this.picCargoFleet);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSplashScreen";
             this.Text = "Fleet Tracking Information System";
+            ((System.ComponentModel.ISupportInitialize)(this.picCargoFleet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox picCargoFleet;
     }
 }
