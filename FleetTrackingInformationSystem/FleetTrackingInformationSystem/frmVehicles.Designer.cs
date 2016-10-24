@@ -199,7 +199,7 @@
             // 
             this.txtRegNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRegNum.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegNum.Location = new System.Drawing.Point(216, 238);
+            this.txtRegNum.Location = new System.Drawing.Point(260, 240);
             this.txtRegNum.Name = "txtRegNum";
             this.txtRegNum.Size = new System.Drawing.Size(234, 26);
             this.txtRegNum.TabIndex = 26;
@@ -208,7 +208,7 @@
             // 
             this.txtMileage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMileage.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMileage.Location = new System.Drawing.Point(216, 284);
+            this.txtMileage.Location = new System.Drawing.Point(260, 286);
             this.txtMileage.Name = "txtMileage";
             this.txtMileage.Size = new System.Drawing.Size(234, 26);
             this.txtMileage.TabIndex = 27;
@@ -217,7 +217,7 @@
             // 
             this.txtMake.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMake.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMake.Location = new System.Drawing.Point(216, 334);
+            this.txtMake.Location = new System.Drawing.Point(260, 336);
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(234, 26);
             this.txtMake.TabIndex = 28;
@@ -226,7 +226,7 @@
             // 
             this.txtModel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtModel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtModel.Location = new System.Drawing.Point(216, 383);
+            this.txtModel.Location = new System.Drawing.Point(260, 385);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(234, 26);
             this.txtModel.TabIndex = 29;
@@ -251,7 +251,7 @@
             "Flat Bed",
             "Grain,Chips,Gravel",
             "No Cargo Body"});
-            this.cboType.Location = new System.Drawing.Point(216, 193);
+            this.cboType.Location = new System.Drawing.Point(260, 195);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(234, 26);
             this.cboType.TabIndex = 33;
@@ -261,7 +261,7 @@
             this.dtpVehicleYear.CustomFormat = "yyyy";
             this.dtpVehicleYear.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVehicleYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVehicleYear.Location = new System.Drawing.Point(216, 432);
+            this.dtpVehicleYear.Location = new System.Drawing.Point(260, 432);
             this.dtpVehicleYear.Name = "dtpVehicleYear";
             this.dtpVehicleYear.Size = new System.Drawing.Size(234, 26);
             this.dtpVehicleYear.TabIndex = 34;
