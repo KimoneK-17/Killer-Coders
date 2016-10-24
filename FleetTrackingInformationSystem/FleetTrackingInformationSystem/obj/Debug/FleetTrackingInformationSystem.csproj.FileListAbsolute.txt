@@ -529,3 +529,5 @@ C:\Users\kimon\Music\git11\FleetTrackingInformationSystem\FleetTrackingInformati
 C:\Users\kimon\Music\git11\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmVehicles.resources
 C:\Users\kimon\Music\git11\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.Properties.Resources.resources
 C:\Users\kimon\Music\git11\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
+C:\Users\14002499\Source\Repos\Killer-Coders4\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmPasswordReset.resources
+C:\Users\14002499\Source\Repos\Killer-Coders4\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmSplashScreen.resources
