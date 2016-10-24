@@ -147,7 +147,10 @@ namespace FleetTrackingInformationSystem
         {
             //Code adapted from: http://www.codeproject.com/Tips/520998/Send-Email-from-Yahoo-Gmail-Hotmail-Csharp
             Check check = new Check();
+            GeneratePassword newPass = new GeneratePassword();
             bool exit = false;
+            string tempPass = newPass.GeneratePass(10);
+            MessageBox.Show(tempPass);
             userName = txtUser.Text;
             exit = check.CheckEmpty(userName, "Username", exit);
             if (exit == false)
@@ -157,12 +160,17 @@ namespace FleetTrackingInformationSystem
                     DBConnect objDBConnect = new DBConnect();
 
                     objDBConnect.OpenConnection();
-
-                    objDBConnect.sqlCmd = new SqlCommand(" SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME ", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE Register SET R_PWORD = @R_PWORD WHERE R_UNAME = @R_UNAME", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_PWORD", tempPass);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR.Close();
 
+                    MessageBox.Show("Successfully updated password");
+
+                    objDBConnect.sqlCmd = new SqlCommand("SELECT R_EMAIL FROM Register WHERE R_UNAME = @R_UNAME", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@R_UNAME", userName);
                     string email = ((string)objDBConnect.sqlCmd.ExecuteScalar());
-
                     objDBConnect.sqlConn.Close();
 
                     string smtpAddress = "smtp.gmail.com";
@@ -172,8 +180,8 @@ namespace FleetTrackingInformationSystem
                     string emailFrom = "cargofleetdonotreply@gmail.com";
                     string password = "Pass123456";
                     string emailTo = email;
-                    string subject = "Test";
-                    string body = "This is a test";
+                    string subject = "Password Reset";
+                    string body = "You have requested a password reset, your new temporary password is: " + tempPass + ". Please change your password as soon as possible.";
                     MessageBox.Show(email);
                     using (MailMessage mail = new MailMessage())
                     {
@@ -182,10 +190,7 @@ namespace FleetTrackingInformationSystem
                         mail.Subject = subject;
                         mail.Body = body;
                         mail.IsBodyHtml = false;
-                        // Can set to false, if you are sending pure text.
-
                         //mail.Attachments.Add(new Attachment("C:\\SomeFile.txt"));
-                        //mail.Attachments.Add(new Attachment("C:\\SomeZip.zip"));
 
                         using (SmtpClient smtp = new SmtpClient(smtpAddress, portNumber))
                         {
@@ -195,6 +200,9 @@ namespace FleetTrackingInformationSystem
                             MessageBox.Show("An email has been sent. If you do not receive the email within 5 minutes check that the username you entered is correct");
                         }
                     }
+                    this.Hide();
+                    frmPasswordReset passReset = new frmPasswordReset();
+                    passReset.Show();
                 }
                 catch (SqlException ex)
                 {
@@ -212,7 +220,7 @@ namespace FleetTrackingInformationSystem
                 {
                     MessageBox.Show(ex.Message);
                 }
-            } 
+            }
         }
 
         private void CheckExisting()
