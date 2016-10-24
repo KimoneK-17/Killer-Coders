@@ -81,7 +81,7 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                string sql = "DELETE FROM Service WHERE (Service_ID ='" + S_ID + "');";
+                string sql = "DELETE FROM tblService WHERE (Service_ID ='" + S_ID + "');";
 
                 objDBConnect.sqlCmd = new SqlCommand();
                 objDBConnect.sqlCmd.CommandText = sql;
@@ -110,18 +110,20 @@ namespace FleetTrackingInformationSystem
             try
             {
                 Check check = new Check();
-                bool executeSQL = check.CheckDB("Service", "Service_ID", S_ID);
+                bool executeSQL = check.CheckDB("tblService", "Service_ID", S_ID);
                 if (executeSQL == false)
                 {
                 DBConnect objDBConnect = new DBConnect();
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO Service VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Description)", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("INSERT INTO tblService VALUES (@Service_ID, @Vehicle_RegNumber, @Emp_ID, @Service_Date, @Service_Time,@Service_Description)", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", SqlDbType.Date).Value = dtpAppointmentDate.Value.Date;
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Time", S_TIME);
+
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
                 MessageBox.Show("Succesfully inserted");
@@ -152,11 +154,13 @@ namespace FleetTrackingInformationSystem
 
                 objDBConnect.OpenConnection();
 
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE Service SET Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Description = @Service_Description WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
+                objDBConnect.sqlCmd = new SqlCommand("UPDATE tblService SET Vehicle_RegNumber=@Vehicle_RegNumber,Emp_ID= @Emp_ID,Service_Date= @Service_Date,Service_Time = @Service_Time,Service_Description = @Service_Description WHERE Service_ID = @Service_ID", objDBConnect.sqlConn);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_ID", S_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Emp_ID", E_ID);
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Date", SqlDbType.Date).Value = dtpAppointmentDate.Value.Date ;
+                objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Time", S_TIME);
+
                 objDBConnect.sqlCmd.Parameters.AddWithValue("@Service_Description", S_DES);
 
                 objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
