@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompletedTripDetails));
-            this.txtKM = new System.Windows.Forms.TextBox();
             this.lblKm = new System.Windows.Forms.Label();
             this.txtVehicleIncidents = new System.Windows.Forms.TextBox();
             this.lblVehicleIncidents = new System.Windows.Forms.Label();
-            this.txtFuelUsage = new System.Windows.Forms.TextBox();
             this.lblFuelUsage = new System.Windows.Forms.Label();
             this.lblTripID = new System.Windows.Forms.Label();
             this.cboT_ID = new System.Windows.Forms.ComboBox();
@@ -46,19 +45,15 @@
             this.mnuOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtFuelUsage = new System.Windows.Forms.MaskedTextBox();
+            this.lblHFuel = new System.Windows.Forms.Label();
+            this.ttpFuel = new System.Windows.Forms.ToolTip(this.components);
+            this.lblHKm = new System.Windows.Forms.Label();
+            this.txtKM = new System.Windows.Forms.MaskedTextBox();
             this.pnlButtons.SuspendLayout();
             this.pnlCTD.SuspendLayout();
             this.mnuFleet.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtKM
-            // 
-            this.txtKM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKM.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKM.Location = new System.Drawing.Point(214, 321);
-            this.txtKM.Name = "txtKM";
-            this.txtKM.Size = new System.Drawing.Size(209, 26);
-            this.txtKM.TabIndex = 24;
             // 
             // lblKm
             // 
@@ -78,7 +73,7 @@
             // 
             this.txtVehicleIncidents.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVehicleIncidents.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVehicleIncidents.Location = new System.Drawing.Point(214, 228);
+            this.txtVehicleIncidents.Location = new System.Drawing.Point(214, 245);
             this.txtVehicleIncidents.Multiline = true;
             this.txtVehicleIncidents.Name = "txtVehicleIncidents";
             this.txtVehicleIncidents.Size = new System.Drawing.Size(209, 55);
@@ -97,15 +92,6 @@
             this.lblVehicleIncidents.Size = new System.Drawing.Size(129, 21);
             this.lblVehicleIncidents.TabIndex = 20;
             this.lblVehicleIncidents.Text = "Vehicle Incidents:";
-            // 
-            // txtFuelUsage
-            // 
-            this.txtFuelUsage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFuelUsage.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFuelUsage.Location = new System.Drawing.Point(214, 181);
-            this.txtFuelUsage.Name = "txtFuelUsage";
-            this.txtFuelUsage.Size = new System.Drawing.Size(209, 26);
-            this.txtFuelUsage.TabIndex = 22;
             // 
             // lblFuelUsage
             // 
@@ -233,6 +219,42 @@
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
+            // txtFuelUsage
+            // 
+            this.txtFuelUsage.Location = new System.Drawing.Point(214, 196);
+            this.txtFuelUsage.Mask = "0000.00";
+            this.txtFuelUsage.Name = "txtFuelUsage";
+            this.txtFuelUsage.Size = new System.Drawing.Size(100, 20);
+            this.txtFuelUsage.TabIndex = 30;
+            // 
+            // lblHFuel
+            // 
+            this.lblHFuel.AutoSize = true;
+            this.lblHFuel.Location = new System.Drawing.Point(320, 199);
+            this.lblHFuel.Name = "lblHFuel";
+            this.lblHFuel.Size = new System.Drawing.Size(13, 13);
+            this.lblHFuel.TabIndex = 31;
+            this.lblHFuel.Text = "?";
+            this.ttpFuel.SetToolTip(this.lblHFuel, "Enter Fuel in Litres");
+            // 
+            // lblHKm
+            // 
+            this.lblHKm.AutoSize = true;
+            this.lblHKm.Location = new System.Drawing.Point(320, 326);
+            this.lblHKm.Name = "lblHKm";
+            this.lblHKm.Size = new System.Drawing.Size(13, 13);
+            this.lblHKm.TabIndex = 32;
+            this.lblHKm.Text = "?";
+            this.ttpFuel.SetToolTip(this.lblHKm, "Enter Mileage in KM");
+            // 
+            // txtKM
+            // 
+            this.txtKM.Location = new System.Drawing.Point(214, 318);
+            this.txtKM.Mask = "0000.00";
+            this.txtKM.Name = "txtKM";
+            this.txtKM.Size = new System.Drawing.Size(100, 20);
+            this.txtKM.TabIndex = 33;
+            // 
             // frmCompletedTripDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,16 +262,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(573, 498);
+            this.Controls.Add(this.txtKM);
+            this.Controls.Add(this.lblHKm);
+            this.Controls.Add(this.lblHFuel);
+            this.Controls.Add(this.txtFuelUsage);
             this.Controls.Add(this.mnuFleet);
             this.Controls.Add(this.pnlCTD);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.cboT_ID);
             this.Controls.Add(this.lblTripID);
-            this.Controls.Add(this.txtKM);
             this.Controls.Add(this.lblKm);
             this.Controls.Add(this.txtVehicleIncidents);
             this.Controls.Add(this.lblVehicleIncidents);
-            this.Controls.Add(this.txtFuelUsage);
             this.Controls.Add(this.lblFuelUsage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCompletedTripDetails";
@@ -268,11 +292,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.Label lblKm;
         private System.Windows.Forms.TextBox txtVehicleIncidents;
         private System.Windows.Forms.Label lblVehicleIncidents;
-        private System.Windows.Forms.TextBox txtFuelUsage;
         private System.Windows.Forms.Label lblFuelUsage;
         private System.Windows.Forms.Label lblTripID;
         private System.Windows.Forms.ComboBox cboT_ID;
@@ -285,5 +307,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnuOptions;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
+        private System.Windows.Forms.MaskedTextBox txtFuelUsage;
+        private System.Windows.Forms.Label lblHFuel;
+        private System.Windows.Forms.ToolTip ttpFuel;
+        private System.Windows.Forms.Label lblHKm;
+        private System.Windows.Forms.MaskedTextBox txtKM;
     }
 }

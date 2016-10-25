@@ -48,17 +48,18 @@ namespace FleetTrackingInformationSystem
         }
 
         string T_ID;
-        string T_FUEL;
+        double T_FUEL;
         string T_INCIDENTS;
-        string T_MILEAGE;
+        double T_MILEAGE;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             T_ID = this.cboT_ID.GetItemText(this.cboT_ID.SelectedItem);
 
-            T_FUEL = txtFuelUsage.Text;
+            T_FUEL = double.Parse(txtFuelUsage.Text);
             T_INCIDENTS = txtVehicleIncidents.Text;
-            T_MILEAGE = txtKM.Text;
+            T_MILEAGE = double.Parse(txtKM.Text);
+            
 
             try
             {                             
@@ -134,6 +135,8 @@ namespace FleetTrackingInformationSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+       
 
     }
 }
