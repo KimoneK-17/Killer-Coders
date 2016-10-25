@@ -627,3 +627,6 @@ C:\Users\kimon\Music\git2\FleetTrackingInformationSystem\FleetTrackingInformatio
 C:\Users\kimon\Music\git2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.frmVehicles.resources
 C:\Users\kimon\Music\git2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.Properties.Resources.resources
 C:\Users\kimon\Music\git2\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.csproj.GenerateResource.Cache
+C:\Users\kimon\Music\Cargo-Fleet-Tracking-Application\FleetTrackingInformationSystem\FleetTrackingInformationSystem\bin\Debug\FleetTrackingInformationSystem.exe.config
+C:\Users\kimon\Music\Cargo-Fleet-Tracking-Application\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.exe
+C:\Users\kimon\Music\Cargo-Fleet-Tracking-Application\FleetTrackingInformationSystem\FleetTrackingInformationSystem\obj\Debug\FleetTrackingInformationSystem.pdb
