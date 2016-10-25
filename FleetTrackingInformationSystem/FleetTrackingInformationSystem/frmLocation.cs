@@ -169,7 +169,7 @@ namespace FleetTrackingInformationSystem
         string sql;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            try// allows user to choose which fields they want to update.
             {
                 L_ID = Interaction.InputBox("Please enter Location ID: ", "Location ID", "");
 
