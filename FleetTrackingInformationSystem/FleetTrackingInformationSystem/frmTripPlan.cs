@@ -125,29 +125,40 @@ namespace FleetTrackingInformationSystem
         {
 
             T_ID = Interaction.InputBox("Please enter Trip ID: ", "Trip ID", "Default Text");
-            try
+            bool isNumeric = T_ID.All(char.IsDigit);
+
+            
+            if (isNumeric == true)
             {
-                objDBConnect.OpenConnection();
+                try
+                {
+                    objDBConnect.OpenConnection();
 
-                string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='" + T_ID + "');";
+                    string sql = "DELETE FROM TripUsage WHERE (Trip_ID ='" + T_ID + "');";
 
-                objDBConnect.sqlCmd = new SqlCommand();
-                objDBConnect.sqlCmd.CommandText = sql;
-                objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
+                    objDBConnect.sqlCmd = new SqlCommand();
+                    objDBConnect.sqlCmd.CommandText = sql;
+                    objDBConnect.sqlCmd.Connection = objDBConnect.sqlConn;
 
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
 
-                MessageBox.Show("SUCCESS");
-                CloseConnections();
+                    MessageBox.Show("SUCCESS");
+                    CloseConnections();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
+                }
             }
-            catch (SqlException ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Invalid Format. Only enter digits");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Delete Records: " + ex.Message);
-            }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -160,9 +171,8 @@ namespace FleetTrackingInformationSystem
                 {
                     objDBConnect.OpenConnection();
 
-                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Vehicle_RegNumber=@Vehicle_RegNumber,Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE TripUsage SET Trip_DateFrom= @Trip_DateFrom,Trip_DateTo= @Trip_DateTo WHERE Trip_ID = @Trip_ID", objDBConnect.sqlConn);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_ID", T_ID);
-                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Vehicle_RegNumber", V_RN);
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateFrom", SqlDbType.Date).Value = dtpDateFrom.Value.Date;
                     objDBConnect.sqlCmd.Parameters.AddWithValue("@Trip_DateTo", SqlDbType.Date).Value = dtpDateTo.Value.Date;
 
@@ -254,11 +264,19 @@ namespace FleetTrackingInformationSystem
             try
             {
                 getValues();
-                trip_plans();
-                QRCodeEncoder encodeQR = new QRCodeEncoder();
-                Bitmap qr = encodeQR.Encode(trip_plan);
-                pbxQR.Image = qr as Image;
-                pbxQR.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (!(T_ID.Equals("")))
+                {
+                    trip_plans();
+                    QRCodeEncoder encodeQR = new QRCodeEncoder();
+                    Bitmap qr = encodeQR.Encode(trip_plan);
+                    pbxQR.Image = qr as Image;
+                    pbxQR.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a Timesheet ID and Try Again");
+                }
+
             }
             catch (Exception ex)
             {
@@ -268,7 +286,7 @@ namespace FleetTrackingInformationSystem
 
         public void trip_plans()
         {
-            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Location: "+L_ID+"\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
+            trip_plan = "Trip ID: " + T_ID + "\nVehicle Registration Number: " + V_RN + "\nTrip Location: " + L_ID + "\nTrip Start Date: " + T_FROM + "\nTrip End Date: " + T_TO;
         }
 
         public void saveQR()

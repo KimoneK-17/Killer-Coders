@@ -276,9 +276,10 @@
             // 
             // btnGenQR
             // 
+            this.btnGenQR.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnGenQR.Location = new System.Drawing.Point(264, 417);
             this.btnGenQR.Name = "btnGenQR";
-            this.btnGenQR.Size = new System.Drawing.Size(181, 23);
+            this.btnGenQR.Size = new System.Drawing.Size(196, 33);
             this.btnGenQR.TabIndex = 24;
             this.btnGenQR.Text = "Generate QR Code";
             this.btnGenQR.UseVisualStyleBackColor = true;
@@ -286,9 +287,10 @@
             // 
             // btnSaveQR
             // 
+            this.btnSaveQR.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btnSaveQR.Location = new System.Drawing.Point(264, 456);
             this.btnSaveQR.Name = "btnSaveQR";
-            this.btnSaveQR.Size = new System.Drawing.Size(95, 23);
+            this.btnSaveQR.Size = new System.Drawing.Size(196, 36);
             this.btnSaveQR.TabIndex = 25;
             this.btnSaveQR.Text = "Save QR Image";
             this.btnSaveQR.UseVisualStyleBackColor = true;
