@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,7 +133,8 @@ namespace FleetTrackingInformationSystem
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            getValues();
+            L_ID = Interaction.InputBox("Please enter Location ID: ", "Location ID", "Default Text");
+
             try
             {
                 DBConnect objDBConnect = new DBConnect();
@@ -163,36 +165,91 @@ namespace FleetTrackingInformationSystem
             }
 
         }
-
+        int update;
+        string sql;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            getValues();
             try
             {
-                DBConnect objDBConnect = new DBConnect();
+                L_ID = Interaction.InputBox("Please enter Location ID: ", "Location ID", "");
 
-                objDBConnect.OpenConnection();
-                objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION SET Location_Name=@Location_Name , Location_City=@Location_City, Location_NumVehicles = @Location_NumVehicles,Location_NumEmployees= @Location_NumEmployees,Location_Manager= @Location_Manager WHERE Location_ID = @Location_ID", objDBConnect.sqlConn);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Name", L_NAME);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_City", L_CITY);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumVehicles", L_VEHICLES);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_NumEmployees", L_EMPLOYEES);
-                objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_Manager", L_MANAGER);
-                objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
-                MessageBox.Show("SUCCESSFULLY UPDATED");
-                objDBConnect.sqlDR.Close();
-                objDBConnect.sqlConn.Close();
+                update = int.Parse(Interaction.InputBox("Please enter the number associated with field you want to update:\n 1.Number of Employees\n2. Number of Vehicles\n3. Location Manager ", "Updates", "Default Text"));
+
+
+
+                while(update!=1 && update!=2 && update!=3)
+                {
+                    update = int.Parse(Interaction.InputBox("Please enter  correct number associated with field you want to update:\n 1.Number of Employees\n2. Number of Vehicles\n3. Location Manager ", "Updates", "Default Text"));
+
+                }
+
+
+                if (update == 1)
+                {
+                    L_EMPLOYEES = int.Parse(Interaction.InputBox("Please enter Number of Employees: ", "Number of Employees", ""));
+
+                    sql = "Location_NumEmployees= " + L_EMPLOYEES;
+                }
+                else
+                {
+                    if (update == 2)
+                    {
+                        L_VEHICLES = int.Parse(Interaction.InputBox("Please enter Number of Vehicles: ", "Number of vehicles", ""));
+
+                        sql = "Location_NumVehicles = " + L_VEHICLES;
+                    }
+                    else
+                    {
+                        if (update == 3)
+                        {
+                            L_MANAGER = Interaction.InputBox("Please enter Location Manager: ", "Location Manager", "");
+
+                            sql = "Location_Manager = " + L_MANAGER;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter corresponding numbers only");
+
+                        }
+                    }
+
+                }
+
+
+
+                try
+                {
+                    DBConnect objDBConnect = new DBConnect();
+
+                    objDBConnect.OpenConnection();
+                    objDBConnect.sqlCmd = new SqlCommand("UPDATE LOCATION SET " + sql + " WHERE Location_ID = @Location_ID", objDBConnect.sqlConn);
+                    objDBConnect.sqlCmd.Parameters.AddWithValue("@Location_ID", L_ID);
+
+                    objDBConnect.sqlDR = objDBConnect.sqlCmd.ExecuteReader();
+                    MessageBox.Show("SUCCESSFULLY UPDATED");
+                    objDBConnect.sqlDR.Close();
+                    objDBConnect.sqlConn.Close();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
+                }
             }
-            catch (SqlException ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Invalid option: Cannot Update.");
+                
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error Cannot Update Location Details: " + ex.Message);
-            }
+
+
+
         }
+        
+    
 
         public void getValues()
         {
