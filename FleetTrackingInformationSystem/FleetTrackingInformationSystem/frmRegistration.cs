@@ -150,8 +150,7 @@ namespace FleetTrackingInformationSystem
                                                 objDBConnect.sqlDR.Close();
                                                 objDBConnect.sqlConn.Close();
                                                 string s = R_DOB + "," + R_NAME + "," + R_SNAME + "," + R_EMPPOS + "," + R_UNAME + "," + R_PWORD;
-                                                MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_MEMAIL);
-
+                                                MessageBox.Show("You have been successfully registered. Please be patient while an email is sent to you.");
                                                 try
                                                 {
 
@@ -173,7 +172,7 @@ namespace FleetTrackingInformationSystem
                                                     msg.Body = "Hello " + R_NAME.ToUpper() + " " + R_SNAME.ToUpper() + "\n\nThis is confirmation indicating that you have successfully registered to use the Fleet Tracking Application. \n\nDate: " + R_CURRDATE + "\nUser Name: " + R_UNAME + "\n(Use this to log into the application, along with your password)\n\nKind Regards,\nFleet Tracking Team\n(0312521212)";
 
                                                     client.Send(msg);
-
+                                                    MessageBox.Show("Registration Successful\nConfirmation Email Sent to: " + R_MEMAIL);
                                                     Cursor.Current = Cursors.Default;// when processing is done default curser will appear
                                                 }
                                                 catch (Exception ex)
