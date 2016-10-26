@@ -122,6 +122,7 @@
             this.txtNewPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNewPass.Location = new System.Drawing.Point(230, 268);
             this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(206, 26);
             this.txtNewPass.TabIndex = 6;
             // 
@@ -130,6 +131,7 @@
             this.txtConfirmPass.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmPass.Location = new System.Drawing.Point(230, 326);
             this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(206, 26);
             this.txtConfirmPass.TabIndex = 7;
             // 

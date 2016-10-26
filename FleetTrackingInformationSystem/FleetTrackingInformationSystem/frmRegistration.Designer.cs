@@ -340,6 +340,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuFleet;
             this.Name = "frmRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fleet Tracking Information System";
             this.mnuFleet.ResumeLayout(false);
             this.mnuFleet.PerformLayout();
